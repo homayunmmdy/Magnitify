@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import "../styles/globals.css";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 export default function RootLayout({
   children,
@@ -20,14 +21,6 @@ export default function RootLayout({
     </>
   );
 
-  const footer = (
-    <footer>
-      <div className="border-t border-slate-400 mt-12 py-6 text-center text-slate-400">
-        <h3>Designed by Pixegami</h3>
-      </div>
-    </footer>
-  );
-
   return (
     <html dir="rtl" lang="fa">
       <head />
@@ -36,7 +29,7 @@ export default function RootLayout({
         <div className="mx-auto  max-w-2xl px-6">
           {header}
           {children}
-          {footer}
+          <Footer />
         </div>
       </body>
     </html>
