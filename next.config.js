@@ -5,6 +5,14 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+  images: {
+    remotePatterns: [
+        {
+            hostname: "media.licdn.com",
+            protocol: "https",
+        },
+    ],
+},
 };
 
 module.exports = nextConfig;
