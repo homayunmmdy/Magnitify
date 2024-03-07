@@ -21,7 +21,7 @@ React-use یک کتابخانه مفید برای ReactJS است که ابزار
 
 <div dir="ltr">
 
-```bash
+```javascript
 npm install react-use
 ```
 
@@ -32,7 +32,7 @@ npm install react-use
 
 <div dir="ltr">
 
-```bash
+```react
 import { useBattery } from 'react-use';
 ```
 
@@ -43,7 +43,7 @@ import { useBattery } from 'react-use';
 <div dir="ltr">
 
 
-```bash
+```react
 import React from "react";
 import { useBattery } from "react-use";
 

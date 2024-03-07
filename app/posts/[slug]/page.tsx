@@ -31,6 +31,7 @@ const PostPage = (props: any) => {
       </div>
 
       <article className="prose">
+      <div id="pos-article-display-card-94403"></div>
         <Markdown>{post.content}</Markdown>
       </article>
     </div>

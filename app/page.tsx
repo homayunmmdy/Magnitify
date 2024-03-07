@@ -8,7 +8,10 @@ const HomePage = () => {
   ));
 
   return (
+    <>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-20">{postPreviews}</div>
+    <div id="pos-article-text-94402"></div>
+    </>
   );
 };
 
