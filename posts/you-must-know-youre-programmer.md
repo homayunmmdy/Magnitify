@@ -10,7 +10,7 @@ subtitle : "یک برنامه نویسی چندین مفهوم اصلی وجود
 با تشکر از وقت شما مگ نتی فای
 
 
+<div id="pos-article-text-card-94410"></div>
 <div id="pos-article-display-94407"></div>
-
 
 نسخه انگلیسی :‌ [ لینکدین ](https://www.linkedin.com/pulse/you-must-know-youre-programmer-homayoun-mohammadi-z3uic/?trackingId=ENoXhYKPTXO19eSPfLJEig%3D%3D)

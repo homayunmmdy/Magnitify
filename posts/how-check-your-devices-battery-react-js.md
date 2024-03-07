@@ -91,8 +91,8 @@ export default App;
 
 با تشکر از وقت شما مگ نتی فای
 
+<div id="pos-article-text-card-94410"></div>
 <div id="pos-article-display-94407"></div>
-
 
 سورس کد: [گیت هاب ](https://github.com/homayunmmdy/Projects/tree/master/Device%20Battery%20Dectector)
 

@@ -69,7 +69,7 @@ date: "February 26, 2024"
 
 
 با تشکر از وقت شما مگ نتی فای
-
+<div id="pos-article-text-card-94410"></div>
 <div id="pos-article-display-94407"></div>
 
 

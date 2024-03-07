@@ -12,7 +12,7 @@ subtitle : "مطالعه بی پایان یا جستجوی زبان برنامه
 با تشکر از وقت شما مگ نتی فای
 
 
+<div id="pos-article-text-card-94410"></div>
 <div id="pos-article-display-94407"></div>
-
 
 نسخه انگلیسی :‌ [ لینکدین ](https://www.linkedin.com/pulse/you-dont-need-studying-just-write-code-homayoun-mohammadi-zgtqf/?trackingId=6J4n51IxS7OaI5mFhJ8Szg%3D%3D)
