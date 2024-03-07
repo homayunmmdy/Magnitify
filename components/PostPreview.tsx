@@ -4,6 +4,7 @@ import Image from "next/image";
 
 const PostPreview = (props: PostMetadata) => {
   return (
+    <>
     <article
       className="max-w-sm overflow-hidden shadow-xl bg-gray6 y-6 hover:scale-105 rounded-xl transition-transform ease-in-out duration-500"
     >
@@ -15,6 +16,8 @@ const PostPreview = (props: PostMetadata) => {
       </div>
       </Link>
     </article>
+    <div id="pos-article-display-94407"></div>
+    </>
   );
 };
 
