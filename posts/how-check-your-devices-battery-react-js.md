@@ -90,6 +90,9 @@ export default App;
 
 با تشکر از وقت شما مگ نتی فای
 
+<div id="pos-article-display-94407"></div>
+
+
 سورس کد: [گیت هاب ](https://github.com/homayunmmdy/Projects/tree/master/Device%20Battery%20Dectector)
 
 نسخه انگلیسی :‌ [ لینکدین ](https://www.linkedin.com/pulse/how-check-your-devices-battery-react-js-homayoun-mohammadi-fldmf/?trackingId=Tlaa%2FOJUTPS42zDl24ussA%3D%3D)

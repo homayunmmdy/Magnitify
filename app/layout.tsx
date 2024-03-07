@@ -42,7 +42,7 @@ export default function RootLayout({
       <head />
       <NavBar />
       <body>
-        <div className="mx-auto  max-w-2xl px-6">
+        <div className="mx-auto  px-6">
           {header}
           {children}
           <Footer />
