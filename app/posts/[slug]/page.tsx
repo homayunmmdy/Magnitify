@@ -25,12 +25,12 @@ const PostPage = (props: any) => {
   return (
     <div className="mt-20 flex flex-col justify-center items-center">
       <div className="my-12 text-center">
-        <Image className="bg-gray-500 mb-2 aspect-video" width={900} height={400} src={post.data.Imgsrc} title={post.data.title} alt={post.data.title}/>
+        <Image className="bg-gray-500 mb-2 aspect-video w-full h-96" width={900} height={400} src={post.data.Imgsrc} title={post.data.title} alt={post.data.title}/>
         <h1 className="text-2xl text-slate-600 ">{post.data.title}</h1>
         <p className="text-slate-400 mt-2">{post.data.date}</p>
       </div>
 
-      <article className="prose">
+      <article className="prose w-full">
       <div id="pos-article-display-card-94403"></div>
         <Markdown>{post.content}</Markdown>
       </article>
