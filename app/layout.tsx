@@ -23,6 +23,22 @@ export default function RootLayout({
 
   return (
     <html dir="rtl" lang="fa">
+        <style global jsx>{`
+    @font-face {
+      font-family: 'CustomIranSans';
+      font-style: normal;
+      font-weight: 400;
+      src: url("/static/Fonts/IRANSansWeb.eot");
+      src: url("/static/Fonts/IRANSansWeb.eot?#iefix") format('embedded-opentype'),
+        url("/static/Fonts/IRANSansWeb.woff2") format('woff2'),
+        url("/static/Fonts/IRANSansWeb.woff") format('woff'),
+        url("/static/Fonts/IRANSansWeb.ttf") format('truetype');
+    }
+
+    body {
+      font-family: 'CustomIranSans', Tahoma;
+    }
+  `}</style>
       <head />
       <NavBar />
       <body>
