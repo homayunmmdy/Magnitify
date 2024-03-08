@@ -1,18 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-  experimental: {
-    appDir: true,
-  },
   images: {
-    remotePatterns: [
-        {
-            hostname: "media.licdn.com",
-            protocol: "https",
-        },
-    ],
-},
+    domains: ["www.pinclipart.com"],
+  },
 };
 
 module.exports = nextConfig;
