@@ -1,5 +1,5 @@
 import React from "react";
-import TicketCard from "./(components)/TicketCard";
+import TicketCard from "./components/home/TicketCard";
 
 const getTickets = async () => {
   try {
