@@ -1,4 +1,4 @@
-import EditTicketForm from "../../components/home/EditTicketForm"
+import EditTicketForm from "../../ui/home/EditTicketForm"
 
 const getTicketById = async (id) => {
   const API_URL = process.env.API_URL
