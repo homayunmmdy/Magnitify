@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
-
+import {Analytics} from "@vercel/analytics/react"
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
@@ -37,6 +37,7 @@ export default function RootLayout({ children }) {
         <div className="flex flex-col h-screen max-h-screen">
           <div className="flex-grow overflow-y-auto bg-page text-default-text">
             {children}
+            <Analytics />
           </div>
         </div>
       </body>
