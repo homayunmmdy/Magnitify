@@ -19,7 +19,7 @@ const Ticket = () => {
   }, [id]); 
   const fetchBattle = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/api/Tickets/${id}`);
+      const response = await axios.get(`/api/Tickets/${id}`);
       setBattle(response.data.foundTicket);
     } catch (error) {
       console.error("Error fetching battle:", error);
