@@ -1,26 +1,10 @@
 import React from "react";
 import TicketCard from "./TicketCard";
+import GetTicket from "./GetTicket";
 
-const getTickets = async () => {
-  const API_URL = process.env.API_URL
-
-  try {
-    const res = await fetch(`${API_URL}/api/Tickets`, {
-      cache: "no-store",
-    });
-
-    if (!res.ok) {
-      throw new Error("Failed to fetch topics");
-    }
-
-    return res.json();
-  } catch (error) {
-    console.log("Error loading topics: ", error);
-  }
-};
 
 const Dashboard = async () => {
-  const data = await getTickets();
+  const data = await GetTicket();
 
   // Make sure we have tickets needed for production build.
   if (!data?.tickets) {
