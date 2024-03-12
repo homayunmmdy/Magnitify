@@ -6,9 +6,10 @@ import { useRouter } from "next/navigation";
 
 const DeleteBlock = ({ id }) => {
   const router = useRouter();
+  const API_URL = process.env.API_URL
 
   const deleteTicket = async () => {
-    const res = await fetch(`http://localhost:3000/api/Tickets/${id}`, {
+    const res = await fetch(`${API_URL}/api/Tickets/${id}`, {
       method: "DELETE",
     });
     if (res.ok) {

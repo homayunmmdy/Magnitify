@@ -11,7 +11,7 @@ import Link from "next/link";
 const Ticket = () => {
     const pathname = usePathname();
     const id = pathname.slice(9);
-
+    const API_URL = process.env.API_URL
     const [battle, setBattle] = useState();
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const Ticket = () => {
   }, [id]); 
   const fetchBattle = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/api/Tickets/${id}`);
+      const response = await axios.get(`${API_URL}/api/Tickets/${id}`);
       setBattle(response.data.foundTicket);
     } catch (error) {
       console.error("Error fetching battle:", error);
