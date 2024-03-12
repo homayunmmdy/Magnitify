@@ -1,22 +1,21 @@
-'use client'
+"use client";
 import { useState, useEffect } from "react";
 import axios from "axios";
 // import { Link, useParams } from "react-router-dom";
 import { IoHome } from "react-icons/io5";
-import { FcNext , FcPrevious} from "react-icons/fc";
-import { usePathname } from 'next/navigation';
+import { FcNext, FcPrevious } from "react-icons/fc";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-
 const Ticket = () => {
-    const pathname = usePathname();
-    const id = pathname.slice(9);
+  const pathname = usePathname();
+  const id = pathname.slice(9);
 
-    const [battle, setBattle] = useState();
+  const [battle, setBattle] = useState();
 
   useEffect(() => {
     fetchBattle();
-  }, [id]); 
+  }, [id]);
   const fetchBattle = async () => {
     try {
       const response = await axios.get(`/api/Tickets/${id}`);
@@ -29,7 +28,6 @@ const Ticket = () => {
   if (!battle) {
     return <div>Loading...</div>;
   }
-
 
   return (
     <div>
@@ -75,14 +73,18 @@ const Ticket = () => {
                   <span className="ms-3">Home</span>
                 </Link>
               </li>
-            
             </ul>
-            
           </div>
         </aside>
 
         <div className="p-4 sm:ml-64">
-            {battle.title}
+          {battle.title}
+          <p>
+          <div id="pos-article-display-card-94403"></div>
+          {battle.description}
+          </p>
+          <div id="pos-article-text-card-94410"></div>
+          <div id="pos-article-display-94407"></div>
         </div>
       </div>
     </div>

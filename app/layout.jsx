@@ -31,7 +31,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html dir="rtl" lang="fa">
     {header}
       <body className={inter.className}>
         <div className="flex flex-col h-screen max-h-screen">
