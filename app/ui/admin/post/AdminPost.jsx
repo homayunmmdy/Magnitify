@@ -20,7 +20,7 @@ const AdminPost = ({ ticket }) => {
   const createdDateTime = formatTimestamp(ticket.createdAt);
 
   return (
-    <div className="flex flex-col hover:bg-card-hover bg-card rounded-md shadow-lg p-3 m-2">
+    <div className="flex flex-col border border-gray-400 rounded-md shadow-lg p-3 m-2">
          <div className="flex mb-3">
         <div className="ml-auto">
           <DeleteBlock id={ticket._id} />

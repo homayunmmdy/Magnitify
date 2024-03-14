@@ -10,14 +10,15 @@ const EditTicketForm = ({ ticket }) => {
     description: "",
     priority: 1,
     progress: 0,
-    status: "not started",
-    category: "Hardware Problem",
-    imgurl : "no img"
+    body: "",
+    category: "",
+    imgurl : ""
   };
 
   if (EDITMODE) {
     startingTicketData["title"] = ticket.title;
     startingTicketData["description"] = ticket.description;
+    startingTicketData["body"] = ticket.body;
     startingTicketData["imgurl"] = ticket.imgurl;
   }
 
@@ -60,12 +61,12 @@ const EditTicketForm = ({ ticket }) => {
     }
 
     router.refresh();
-    router.push("/");
+    router.push("/admin");
   };
 
   const categories = [
-    "Hardware Problem",
     "Software Problem",
+    "اندرو تیت",
     "Application Deveopment",
     "Project",
   ];
@@ -78,7 +79,7 @@ const EditTicketForm = ({ ticket }) => {
         className="flex flex-col gap-3 w-1/2"
       >
         <h3>{EDITMODE ? "Update Your Ticket" : "Create New Ticket"}</h3>
-        <label>Imgurl</label>
+        <label>لینک عکس</label>
         <input
           id="imgurl"
           name="imgurl"
@@ -87,7 +88,7 @@ const EditTicketForm = ({ ticket }) => {
           required={true}
           value={formData.imgurl}
         />
-        <label>Title</label>
+        <label>تیتر</label>
         <input
           id="title"
           name="title"
@@ -96,7 +97,7 @@ const EditTicketForm = ({ ticket }) => {
           required={true}
           value={formData.title}
         />
-        <label>Description</label>
+        <label>لید</label>
         <textarea
           id="description"
           name="description"
@@ -105,7 +106,16 @@ const EditTicketForm = ({ ticket }) => {
           value={formData.description}
           rows="5"
         />
-        <label>Category</label>
+         <label>متن</label>
+        <textarea
+          id="body"
+          name="body"
+          onChange={handleChange}
+          required={true}
+          value={formData.body}
+          rows="10"
+        />
+        <label>بخش</label>
         <select
           name="category"
           value={formData.category}
@@ -120,7 +130,7 @@ const EditTicketForm = ({ ticket }) => {
         <input
           type="submit"
           className="btn max-w-xs"
-          value={EDITMODE ? "Update Ticket" : "Create Ticket"}
+          value={EDITMODE ? "دخیره" : "پست"}
         />
       </form>
     </div>

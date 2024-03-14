@@ -2,7 +2,6 @@ import React from "react";
 import TicketCard from "./TicketCard";
 import GetTicket from "./GetTicket";
 
-
 const Dashboard = async () => {
   const data = await GetTicket();
 
@@ -23,7 +22,11 @@ const Dashboard = async () => {
         {tickets &&
           uniqueCategories?.map((uniqueCategory, categoryIndex) => (
             <div key={categoryIndex} className="mb-4">
-              <h2>{uniqueCategory}</h2>
+              <div className="flex flex-wrap items-center justify-between mb-8">
+                <h2 className="mr-10 text-4xl font-bold leading-none md:text-5xl">
+                  {uniqueCategory}
+                </h2>
+              </div>
               <div className="lg:grid grid-cols-2 xl:grid-cols-4 ">
                 {tickets
                   .filter((ticket) => ticket.category === uniqueCategory)
