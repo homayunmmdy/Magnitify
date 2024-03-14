@@ -12,14 +12,15 @@ const EditTicketForm = ({ ticket }) => {
     progress: 0,
     status: "not started",
     category: "Hardware Problem",
+    imgurl : "no img"
   };
 
   if (EDITMODE) {
     startingTicketData["title"] = ticket.title;
     startingTicketData["description"] = ticket.description;
-    startingTicketData["progress"] = ticket.progress;
-    startingTicketData["status"] = ticket.status;
-    startingTicketData["category"] = ticket.category;
+    startingTicketData["imgurl"] = ticket.imgurl;
+
+
   }
 
   const [formData, setFormData] = useState(startingTicketData);
@@ -79,6 +80,15 @@ const EditTicketForm = ({ ticket }) => {
         className="flex flex-col gap-3 w-1/2"
       >
         <h3>{EDITMODE ? "Update Your Ticket" : "Create New Ticket"}</h3>
+        <label>Imgurl</label>
+        <input
+          id="imgurl"
+          name="imgurl"
+          type="text"
+          onChange={handleChange}
+          required={true}
+          value={formData.imgurl}
+        />
         <label>Title</label>
         <input
           id="title"

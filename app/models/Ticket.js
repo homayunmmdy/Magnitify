@@ -6,6 +6,7 @@ mongoose.Promise = global.Promise;
 const ticketSchema = new Schema(
   {
     title: String,
+    imgurl:String,
     description: String,
     category: String,
     body: String,

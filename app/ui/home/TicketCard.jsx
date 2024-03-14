@@ -22,6 +22,7 @@ const TicketCard = ({ ticket }) => {
   return (
     <div className="flex flex-col hover:bg-card-hover bg-card rounded-md shadow-lg p-3 m-2">
       <Link href={`/Tickets/${ticket._id}`} style={{ display: "contents" }}>
+        <img src={ticket.imgurl} alt={ticket.title} />
         <h4 className="mb-1">{ticket.title}</h4>
         <hr className="h-px  border-0 bg-page mb-2 "></hr>
         <p className="whitespace-pre-wrap">{ticket.description}</p>
