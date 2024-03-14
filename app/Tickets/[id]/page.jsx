@@ -6,7 +6,7 @@ import { IoHome } from "react-icons/io5";
 import { FcNext, FcPrevious } from "react-icons/fc";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-
+import Image from "next"
 const Ticket = () => {
   const pathname = usePathname();
   const id = pathname.slice(9);
@@ -77,6 +77,7 @@ const Ticket = () => {
           </div>
         </aside>
 
+        <img src={battle.imgurl}  title={battle.title} alt={battle.title}/>
         <div className="p-4 sm:ml-64">
           {battle.title}
           <p>
