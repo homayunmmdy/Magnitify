@@ -23,9 +23,7 @@ export const metadata = {
             `,
           }}
         />
-        <script 
-          src="https://s1.mediaad.org/serve/77542/retargeting.js"
-          async />
+
     </>
   );
 
