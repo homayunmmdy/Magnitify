@@ -8,7 +8,7 @@ import Link from "next/link";
 
 
 const links = [
-    { name: "صحفه نخست", href: "/", icon: IoHome },
+    { name: " ادمین", href: "/admin", icon: IoHome },
     { name: "پست ها", href: "/admin/posts", icon: FaBattleNet },
     { name: "پست جدید", href: "/admin/post/new", icon: FaBattleNet },
 ];

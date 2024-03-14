@@ -27,8 +27,10 @@ const AdminPost = ({ ticket }) => {
         </div>
       </div>
       <Link href={`/admin/post/${ticket._id}`} style={{ display: "contents" }}>
+      <img src={ticket.imgurl} alt={ticket.title} />
+
         <h4 className="mb-1">{ticket.title}</h4>
-        <hr className="h-px  border-0 bg-page mb-2 "></hr>
+        <hr className="h-px  border-0 bg-page mb-2"></hr>
         <p className="whitespace-pre-wrap">{ticket.description}</p>
 
         <div className="flex-grow"></div>
