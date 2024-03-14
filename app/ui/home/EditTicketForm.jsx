@@ -19,8 +19,6 @@ const EditTicketForm = ({ ticket }) => {
     startingTicketData["title"] = ticket.title;
     startingTicketData["description"] = ticket.description;
     startingTicketData["imgurl"] = ticket.imgurl;
-
-
   }
 
   const [formData, setFormData] = useState(startingTicketData);
