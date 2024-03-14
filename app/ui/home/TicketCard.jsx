@@ -12,7 +12,7 @@ const TicketCard = ({ ticket }) => {
     };
 
     const date = new Date(timestamp);
-    const formattedDate = date.toLocaleString("en-US", options);
+    const formattedDate = date.toLocaleString("fa-IR", options);
 
     return formattedDate;
   }
