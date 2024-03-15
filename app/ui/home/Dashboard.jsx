@@ -23,11 +23,11 @@ const Dashboard = async () => {
           uniqueCategories?.map((uniqueCategory, categoryIndex) => (
             <div key={categoryIndex} className="mb-4">
               <div className="flex flex-wrap items-center justify-between mb-8">
-                <h2 className="mr-10 text-4xl font-bold leading-none md:text-5xl">
+                <h2 className="mr-10 text-4xl font-bold leading-none md:text-5xl" id={uniqueCategory}>
                   {uniqueCategory}
                 </h2>
               </div>
-              <div className="lg:grid grid-cols-2 xl:grid-cols-4 ">
+              <div className="lg:grid grid-cols-2 xl:grid-cols-3 ">
                 {tickets
                   .filter((ticket) => ticket.category === uniqueCategory)
                   .map((filteredTicket, _index) => (
@@ -40,6 +40,7 @@ const Dashboard = async () => {
               </div>
             </div>
           ))}
+          <div id="pos-article-display-94687"></div>
       </div>
     </div>
   );

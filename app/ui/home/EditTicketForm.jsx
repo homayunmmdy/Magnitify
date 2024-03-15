@@ -11,7 +11,7 @@ const EditTicketForm = ({ ticket }) => {
     priority: 1,
     progress: 0,
     body: "",
-    category: "",
+    category: "همه",
     imgurl : ""
   };
 
@@ -61,14 +61,15 @@ const EditTicketForm = ({ ticket }) => {
     }
 
     router.refresh();
-    router.push("/admin");
+    router.push("/admin/posts");
   };
 
   const categories = [
-    "Software Problem",
+    "همه",
+    "48 قانون قدرت",
+    "هوش مصنوعی",
+    "برنامه نویسی",
     "اندرو تیت",
-    "Application Deveopment",
-    "Project",
   ];
 
   return (
