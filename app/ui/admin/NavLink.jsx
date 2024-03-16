@@ -11,6 +11,7 @@ const links = [
     { name: " ادمین", href: "/admin", icon: IoHome },
     { name: "پست ها", href: "/admin/posts", icon: FaBattleNet },
     { name: "پست جدید", href: "/admin/post/new", icon: FaBattleNet },
+    { name: " درباره ما", href: "/admin/about", icon: FaBattleNet },
 ];
 const AdminNavLink = () => {
     // const location = useLocation();
