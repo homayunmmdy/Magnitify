@@ -4,25 +4,25 @@ import React from "react";
 const BreadCrump = () => {
   return (
     <div>
-      <nav aria-label="Breadcrumb" class="relative">
-        <ol class="text-label flex space-x-2 justify-center" role="list">
+      <nav aria-label="Breadcrumb" className="relative">
+        <ol className="text-label flex space-x-2 justify-center" role="list">
           <li>
-            <Link href="/" class="text-blue hover:underline">
+            <Link href="/" className="text-blue hover:underline">
               Home
             </Link>
           </li>
 
-          {/* <li aria-hidden="true" class="text-black-lighter">
+          {/* <li aria-hidden="true" className="text-black-lighter">
             /
           </li> */}
 
           {/* <li>
-            <a href="/blog/" class="text-blue hover:underline">
+            <a href="/blog/" className="text-blue hover:underline">
               Blog
             </a>
           </li>
 
-          <li aria-hidden="true" class="text-black-lighter">
+          <li aria-hidden="true" className="text-black-lighter">
             /
           </li> */}
         </ol>

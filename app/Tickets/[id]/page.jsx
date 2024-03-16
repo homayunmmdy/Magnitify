@@ -29,11 +29,19 @@ const Ticket = () => {
   }
 
   return (
-    <div>
-      <div className="flex flex-row w-full px-8">
-        <div className="shrink-0 h-full	w-[70%] ">
-          <img className="w-full h-[70%] p-3" src={battle.imgurl} title={battle.title} alt={battle.title} width="880" height="450" loading="lazy"/>
-         <BreadCrump />
+    <>
+      <div className="grid grid-cols-12 gap-4">
+        <div className="col-span-12 md:col-span-8 lg:col-span-9">
+          <img
+            className="w-full p-3"
+            src={battle.imgurl}
+            title={battle.title}
+            alt={battle.title}
+            width="880"
+            height="450"
+            loading="lazy"
+          />
+          <BreadCrump />
           <div className="p-4">
             <h1 className="text-center mb-3">{battle.title}</h1>
             <p>
@@ -44,12 +52,14 @@ const Ticket = () => {
             <div id="pos-article-text-card-94410"></div>
             <div id="pos-article-display-94407"></div>
           </div>
+
+         
         </div>
-        <div className="flex-1 h-full">
-        <div id="pos-article-text-94696"></div>
-        </div>
+        <div className="col-span-0 md:col-span-4 lg:col-span-3">
+            <div id="pos-article-text-94696"></div>
+          </div>
       </div>
-    </div>
+    </>
   );
 };
 

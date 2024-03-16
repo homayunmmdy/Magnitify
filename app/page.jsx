@@ -3,15 +3,17 @@ import Dashboard from "./ui/home/Dashboard";
 const Home = () => {
   return (
     <div>
-      <div className="flex flex-row w-full px-8">
-        <div className="flex-1 h-full">
-        <div id="pos-article-display-94698"></div>
+      <div className="grid grid-cols-12 gap-4">
+        <div className="col-span-0 md:col-span-2">
+          <div id="pos-article-display-94698"></div>
         </div>
-        <div className="shrink-0 h-full	w-[65%] ">
+
+        <div className="col-span-12 md:col-span-8">
           <Dashboard />
         </div>
-        <div className="flex-1 h-full">
-        <div id="pos-article-display-94697"></div>
+
+        <div className="col-span-0 md:col-span-2">
+          <div id="pos-article-display-94697"></div>
         </div>
       </div>
       <div id="pos-article-display-94409"></div>
