@@ -3,6 +3,7 @@ import { TiHome } from "react-icons/ti";
 import { MdOutlinePostAdd , MdInfoOutline } from "react-icons/md";
 import { CgFeed } from "react-icons/cg";
 import { usePathname } from "next/navigation";
+import { PiPhoneCallFill } from "react-icons/pi";
 
 import Link from "next/link";
 
@@ -12,6 +13,7 @@ const links = [
     { name: "پست ها", href: "/admin/posts", icon: CgFeed },
     { name: "پست جدید", href: "/admin/post/new", icon: MdOutlinePostAdd },
     { name: " درباره ما", href: "/admin/about", icon: MdInfoOutline },
+    { name: " تماس باما", href: "/admin/contacts", icon: PiPhoneCallFill },
 ];
 const AdminNavLink = () => {
     const pathname = usePathname();
