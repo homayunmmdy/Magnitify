@@ -1,4 +1,5 @@
 import React from "react";
+import DeleteBlock2 from "../../ui/home/DeleteBlock2"
 
 const getData = async () => {
     const API_URL = process.env.API_URL;
@@ -30,9 +31,10 @@ const ContactsPage = async () => {
     <div className="p-5">
       <div>
         {contactData.map((data) => (
-                    <div>
+                    <div key={data._id}>
                        <h2>{data.title}</h2> 
                        <p>{data.content}</p>
+                       <DeleteBlock2 id={data._id} />
                     </div>
                   ))}
              
