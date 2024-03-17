@@ -5,7 +5,7 @@ import axios from "axios";
 import { IoHome } from "react-icons/io5";
 import { FcNext, FcPrevious } from "react-icons/fc";
 import { usePathname } from "next/navigation";
-import BreadCrump from "../../ui/components/BreadCrump";
+import BreadCrump from "../../../ui/components/BreadCrump";
 const Ticket = () => {
   const pathname = usePathname();
   const id = pathname.slice(9);
