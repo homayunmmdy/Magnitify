@@ -1,23 +1,20 @@
 'use client'
-import { FaBattleNet } from "react-icons/fa6";
-// import { Link, useLocation } from "react-router-dom";
-import { IoHome } from "react-icons/io5";
+import { TiHome } from "react-icons/ti";
+import { MdOutlinePostAdd , MdInfoOutline } from "react-icons/md";
+import { CgFeed } from "react-icons/cg";
 import { usePathname } from "next/navigation";
 
 import Link from "next/link";
 
 
 const links = [
-    { name: " ادمین", href: "/admin", icon: IoHome },
-    { name: "پست ها", href: "/admin/posts", icon: FaBattleNet },
-    { name: "پست جدید", href: "/admin/post/new", icon: FaBattleNet },
-    { name: " درباره ما", href: "/admin/about", icon: FaBattleNet },
+    { name: " ادمین", href: "/admin", icon: TiHome },
+    { name: "پست ها", href: "/admin/posts", icon: CgFeed },
+    { name: "پست جدید", href: "/admin/post/new", icon: MdOutlinePostAdd },
+    { name: " درباره ما", href: "/admin/about", icon: MdInfoOutline },
 ];
 const AdminNavLink = () => {
-    // const location = useLocation();
-    // const pathname = location.pathname;
     const pathname = usePathname();
-    // const id = pathname.slice(9);
   return (
     <ul className="mb-auto pt-1">
       {links.map((link) => {
@@ -25,15 +22,14 @@ const AdminNavLink = () => {
         return (
           <Link
             key={link.name}
-            href={link.href}
-          >
+            href={link.href}>
             {pathname === link.href ? (
               <div className="relative mb-3 flex hover:cursor-pointer">
                 <li className="my-[3px] flex cursor-pointer items-center px-8">
                   <span>
                     <LinkIcon className="h-6 w-6" color="rgb(67, 56, 202)" />
                   </span>
-                  <p className="leading-1 flex ms-4 font-medium text-gray-600">
+                  <p className="leading-1 flex ms-4 font-medium text-indigo-700">
                     {link.name}
                   </p>
                 </li>

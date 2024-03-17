@@ -19,12 +19,18 @@ const Posts = async () => {
 
   return (
     <div className="p-5">
-      <div>
+            <div>
         {tickets &&
           uniqueCategories?.map((uniqueCategory, categoryIndex) => (
-            <div key={categoryIndex} className="mb-4">
-              <h2>{uniqueCategory}</h2>
-              <div className="lg:grid grid-cols-2 xl:grid-cols-3 ">
+            <div
+              key={categoryIndex}
+              className="!z-5 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none w-full p-4 h-full"
+            >
+                <div className="mb-8 w-full">
+                  <h4 className="text-xl font-bold text-navy-700 dark:text-white">
+                    {uniqueCategory}
+                  </h4>
+                </div>
                 {tickets
                   .filter((ticket) => ticket.category === uniqueCategory)
                   .map((filteredTicket, _index) => (
@@ -34,7 +40,6 @@ const Posts = async () => {
                       ticket={filteredTicket}
                     />
                   ))}
-              </div>
             </div>
           ))}
       </div>
