@@ -1,12 +1,9 @@
-'use client'
+"use client";
 import BreadCrump from "../../../ui/components/BreadCrump";
 import CommentForm from "../../../ui/components/CommentForm";
 import useBattle from "../../../ui/home/useBattle";
 const Ticket = () => {
-
-
   const battle = useBattle();
-
 
   if (!battle) {
     return <div>Loading...</div>;
@@ -34,15 +31,13 @@ const Ticket = () => {
             </p>
             <p>{battle.body}</p>
             <div id="pos-article-text-card-94410"></div>
-                        <div id="pos-article-display-94407"></div>
+            <div id="pos-article-display-94407"></div>
             <CommentForm />
           </div>
-
-         
         </div>
         <div className="col-span-0 md:col-span-4 lg:col-span-3">
-            <div id="pos-article-text-94696"></div>
-          </div>
+          <div id="pos-article-text-94696"></div>
+        </div>
       </div>
     </>
   );

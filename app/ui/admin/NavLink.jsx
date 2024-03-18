@@ -5,6 +5,7 @@ import { CgFeed } from "react-icons/cg";
 import { usePathname } from "next/navigation";
 import { PiPhoneCallFill } from "react-icons/pi";
 import { FaRegNewspaper } from "react-icons/fa";
+import { MdOutlineNewLabel } from "react-icons/md";
 
 import Link from "next/link";
 
@@ -13,6 +14,7 @@ const links = [
     { name: " ادمین", href: "/admin", icon: TiHome },
     { name: "پست ها", href: "/admin/posts", icon: CgFeed },
     { name: "پست جدید", href: "/admin/post/new", icon: MdOutlinePostAdd },
+    { name: "برچسب", href: "/admin/category", icon: MdOutlineNewLabel },
     { name: " درباره ما", href: "/admin/about", icon: MdInfoOutline },
     { name: " تماس باما", href: "/admin/contacts", icon: PiPhoneCallFill },
     { name: "خبرنامه", href: "/admin/newsletter", icon: FaRegNewspaper },
