@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
+import axios from "axios";
 
 const EditTicketForm = ({ ticket }) => {
   const EDITMODE = ticket._id === "new" ? false : true;
@@ -63,14 +64,22 @@ const EditTicketForm = ({ ticket }) => {
     router.refresh();
     router.push("/admin/posts");
   };
+  const [categories, setCategories] = useState();
 
-  const categories = [
-    "همه",
-    "48 قانون قدرت",
-    "هوش مصنوعی",
-    "برنامه نویسی",
-    "اندرو تیت",
-  ];
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await axios.get(`/api/Category`);
+        console.log(response.data.categories)
+        setCategories(response.data.categories);
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      }
+    };
+
+    fetchCategories();
+  }, []);
+
 
   return (
     <div className=" flex justify-center">
@@ -122,9 +131,9 @@ const EditTicketForm = ({ ticket }) => {
           value={formData.category}
           onChange={handleChange}
         >
-          {categories?.map((category, _index) => (
-            <option key={_index} value={category}>
-              {category}
+          {categories?.map((category) => (
+            <option key={category._id} value={category.name}>
+              {category.name}
             </option>
           ))}
         </select>
