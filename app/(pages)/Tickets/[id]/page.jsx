@@ -1,28 +1,12 @@
-"use client";
-import { useState, useEffect } from "react";
-import axios from "axios";
-// import { Link, useParams } from "react-router-dom";
-import { IoHome } from "react-icons/io5";
-import { FcNext, FcPrevious } from "react-icons/fc";
-import { usePathname } from "next/navigation";
+'use client'
 import BreadCrump from "../../../ui/components/BreadCrump";
+import CommentForm from "../../../ui/components/CommentForm";
+import useBattle from "../../../ui/home/useBattle";
 const Ticket = () => {
-  const pathname = usePathname();
-  const id = pathname.slice(9);
 
-  const [battle, setBattle] = useState();
 
-  useEffect(() => {
-    fetchBattle();
-  }, [id]);
-  const fetchBattle = async () => {
-    try {
-      const response = await axios.get(`/api/Tickets/${id}`);
-      setBattle(response.data.foundTicket);
-    } catch (error) {
-      console.error("Error fetching battle:", error);
-    }
-  };
+  const battle = useBattle();
+
 
   if (!battle) {
     return <div>Loading...</div>;
@@ -50,7 +34,8 @@ const Ticket = () => {
             </p>
             <p>{battle.body}</p>
             <div id="pos-article-text-card-94410"></div>
-            <div id="pos-article-display-94407"></div>
+                        <div id="pos-article-display-94407"></div>
+            <CommentForm />
           </div>
 
          

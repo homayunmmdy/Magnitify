@@ -11,6 +11,8 @@ const Home = () => {
 
         <div className="col-span-12 md:col-span-8">
           <Dashboard />
+          <div id="pos-article-display-94409"></div>
+          <div id="pos-article-text-94402"></div>
           <Newsletter />
         </div>
 
@@ -18,8 +20,6 @@ const Home = () => {
           <div id="pos-article-display-94697"></div>
         </div>
       </div>
-      <div id="pos-article-display-94409"></div>
-      <div id="pos-article-text-94402"></div>
     </div>
   );
 };
