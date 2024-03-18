@@ -1,6 +1,7 @@
 "use client";
 import BreadCrump from "../../../ui/components/BreadCrump";
 import CommentForm from "../../../ui/components/CommentForm";
+import CommentsSec from "../../../ui/components/CommentsSec";
 import useBattle from "../../../ui/home/useBattle";
 const Ticket = () => {
   const battle = useBattle();
@@ -32,6 +33,7 @@ const Ticket = () => {
             <p>{battle.body}</p>
             <div id="pos-article-text-card-94410"></div>
             <div id="pos-article-display-94407"></div>
+            <CommentsSec />
             <CommentForm />
           </div>
         </div>
