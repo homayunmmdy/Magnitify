@@ -18,16 +18,15 @@ export async function POST(req) {
     const body = await req.json();
     const { email } = body;
 
-    // Check if the email is already subscribed
     const existingSubscription = await NewsletterSubscription.findOne({ email });
     if (existingSubscription) {
-      return NextResponse.json({ message: "Email is already subscribed" }, { status: 400 });
+      return NextResponse.json({ message: "ایمیل قبلاً عضو شده است" }, { status: 400 });
     }
 
     // Create new subscription
     await NewsletterSubscription.create({ email });
 
-    return NextResponse.json({ message: "Newsletter subscription created" }, { status: 201 });
+    return NextResponse.json({ message: "به خبرنامه مگ نتی فای خوش آمدید" }, { status: 201 });
   } catch (err) {
     console.log(err);
     return NextResponse.json({ message: "Error", err }, { status: 500 });
