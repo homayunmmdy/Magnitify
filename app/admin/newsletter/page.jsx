@@ -1,4 +1,6 @@
 import React from "react";
+import DeleteBlock3 from "../../ui/home/DeleteBlock3"
+
 
 const getData = async () => {
     const API_URL = process.env.API_URL;
@@ -33,6 +35,7 @@ const Newsletter = async () => {
         {subscriptionsData.map((data) => (
                     <div key={data._id}>
                        <p>{data.email}</p> 
+                       <DeleteBlock3 id={data._id} />
                     </div>
                   ))}
              
