@@ -9,6 +9,7 @@ const Login = () => {
 
   const handleLogin = () => {
     if (username == "test" && password == "123456") {
+      localStorage.setItem('isLoggedIn', true);
       router.push('/admin');
     } else {
       alert('Invalid username or password');

@@ -1,8 +1,18 @@
+'use client'
+import React, { useEffect } from 'react'
+import { useRouter } from 'next/navigation';
 import AdminSidbar from "../ui/admin/Sidebar";
 
 export default function AdminLayout({
     children,
   }) {
+    const router = useRouter()
+    useEffect(() => {
+      const isAuthenticated = localStorage.getItem("isLoggedIn");
+      if (!isAuthenticated) {
+        router.push("/login");
+      }
+    }, []);
     return (
         <div>
         <div className="flex h-full w-full">
