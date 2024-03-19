@@ -20,7 +20,7 @@ export async function POST(req) {
     await Contacts.create(contactData);
 
     return NextResponse.json(
-      { message: "Contact Data Created" },
+      { message: "پیام شما با موفقیت ارسال شد" },
       { status: 201 }
     );
   } catch (err) {
