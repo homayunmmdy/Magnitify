@@ -1,9 +1,8 @@
 import React from "react";
-import DeleteBlock3 from "../../ui/home/DeleteBlock3"
-
+import DeleteBlock3 from "../../ui/home/DeleteBlock3";
 
 const getData = async () => {
-    const API_URL = process.env.API_URL;
+  const API_URL = process.env.API_URL;
   try {
     const res = await fetch(`${API_URL}/api/Newsletter`, {
       cache: "no-store",
@@ -21,25 +20,38 @@ const getData = async () => {
 
 const Newsletter = async () => {
   const data = await getData();
-  console.log(data)
+  console.log(data);
   if (!data?.subscriptions) {
-    return <p>No  email .</p>;
+    return <p>No email .</p>;
   }
 
   const subscriptionsData = data.subscriptions;
 
-
   return (
     <div className="p-5">
       <div>
-        {subscriptionsData.map((data) => (
-                    <div key={data._id}>
-                       <p>{data.email}</p> 
-                       <DeleteBlock3 id={data._id} />
-                    </div>
-                  ))}
-             
-    
+        <div className="overflow-x-auto h-96">
+          <table className="table table-pin-rows">
+            <thead>
+              <tr>
+                <th>ایمیل</th>
+                <th>حذف</th>
+              </tr>
+            </thead>
+            {subscriptionsData.map((data) => (
+              <tbody key={data._id}>
+                <tr>
+                  <td>{data.email}</td>
+                </tr>
+                <tr>
+                  <td>
+                    <DeleteBlock3 id={data._id} />
+                  </td>
+                </tr>
+              </tbody>
+            ))}
+          </table>
+        </div>
       </div>
     </div>
   );

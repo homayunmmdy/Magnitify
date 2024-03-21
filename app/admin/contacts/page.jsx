@@ -1,8 +1,8 @@
 import React from "react";
-import DeleteBlock2 from "../../ui/home/DeleteBlock2"
+import DeleteBlock2 from "../../ui/home/DeleteBlock2";
 
 const getData = async () => {
-    const API_URL = process.env.API_URL;
+  const API_URL = process.env.API_URL;
   try {
     const res = await fetch(`${API_URL}/api/Contacts`, {
       cache: "no-store",
@@ -26,19 +26,33 @@ const ContactsPage = async () => {
 
   const contactData = data.contact;
 
-
   return (
     <div className="p-5">
       <div>
-        {contactData.map((data) => (
-                    <div key={data._id}>
-                       <h2>{data.title}</h2> 
-                       <p>{data.content}</p>
-                       <DeleteBlock2 id={data._id} />
-                    </div>
-                  ))}
-             
-    
+        <div className="overflow-x-auto">
+          <table className="table table-xs">
+            <thead>
+              <tr>
+                <th>اسم</th>
+                <th>ایمیل</th>
+                <th>پیام</th>
+                <th>حذف</th>
+              </tr>
+            </thead>
+            {contactData.map((data) => (
+              <tbody key={data.id}>
+                <tr>
+                  <td>{data.name}</td>
+                  <td>{data.email}</td>
+                  <td>{data.message}</td>
+                  <td>
+                    <DeleteBlock2 id={data._id} />
+                  </td>
+                </tr>
+              </tbody>
+            ))}
+          </table>
+        </div>
       </div>
     </div>
   );
