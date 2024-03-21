@@ -37,10 +37,10 @@ const ContactsPage = () => {
       const data = await response.json();
       setNotification(data.message);
       setFormData({
-         name: "",
-         email:"",
-         message:"",
-      })
+        name: "",
+        email: "",
+        message: "",
+      });
     } catch (error) {
       console.error("Error:", error);
       setNotification("داده ها ارسال نشد");
@@ -52,7 +52,24 @@ const ContactsPage = () => {
         <div className="flex flex-wrap -mx-4 lg:justify-between">
           <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
             <div className="relative p-8 bg-white rounded-lg shadow-lg dark:bg-dark-2 sm:p-12">
-              {notification && <p>{notification}</p>}
+              {notification && (
+                <div role="alert" className="alert alert-success">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="stroke-current shrink-0 h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <span>{notification}</span>
+                </div>
+              )}
               <form onSubmit={handleSubmit}>
                 <div className="mb-6">
                   <input
@@ -114,11 +131,10 @@ const ContactsPage = () => {
                   </svg>
                 </span>
                 <span className="absolute -right-10 top-[90px] z-[-1]">
-                <Circles />
-
+                  <Circles />
                 </span>
                 <span className="absolute -left-7 -bottom-7 z-[-1]">
-                 <Circles />
+                  <Circles />
                 </span>
               </div>
             </div>

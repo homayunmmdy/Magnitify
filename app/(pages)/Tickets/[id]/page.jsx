@@ -34,7 +34,7 @@ const Ticket = () => {
             <p>{post.body}</p>
             <div id="pos-article-text-card-94410"></div>
             <div id="pos-article-display-94407"></div>
-            <CommentsSec />
+            {/* <CommentsSec /> */}
             <CommentForm />
           </div>
         </div>

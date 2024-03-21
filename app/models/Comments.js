@@ -5,8 +5,9 @@ mongoose.Promise = global.Promise;
 
 const commentsSchema = new Schema(
   {
-    title: String,
-    content: String,
+    name: String,
+    email: String,
+    message: String,
   },
   {
     timestamps: true,

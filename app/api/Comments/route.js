@@ -20,7 +20,7 @@ export async function POST(req) {
     await Comments.create(commentData);
 
     return NextResponse.json(
-      { message: "Comment Data Created" },
+      { message: "نظر شما با موفقیت ارسال شد :)" },
       { status: 201 }
     );
   } catch (err) {
