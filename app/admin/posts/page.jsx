@@ -1,7 +1,6 @@
 import React from "react";
-import TicketCard from "../../ui/admin/post/AdminPost";
+import PostTable from "../../ui/admin/post/PostTable";
 import GetTicket from "../../ui/home/GetTicket";
-
 
 const Posts = async () => {
   const data = await GetTicket();
@@ -13,35 +12,30 @@ const Posts = async () => {
 
   const tickets = data.tickets;
 
-  const uniqueCategories = [
-    ...new Set(tickets?.map(({ category }) => category)),
-  ];
-
   return (
     <div className="p-5">
-            <div>
-        {tickets &&
-          uniqueCategories?.map((uniqueCategory, categoryIndex) => (
-            <div
-              key={categoryIndex}
-              className="!z-5 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none w-full p-4 h-full"
-            >
-                <div className="mb-8 w-full">
-                  <h4 className="text-xl font-bold text-navy-700 dark:text-white">
-                    {uniqueCategory}
-                  </h4>
-                </div>
-                {tickets
-                  .filter((ticket) => ticket.category === uniqueCategory)
-                  .map((filteredTicket, _index) => (
-                    <TicketCard
-                      id={_index}
-                      key={_index}
-                      ticket={filteredTicket}
-                    />
+      <div>
+        {tickets && (
+          <div className="!z-5 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none w-full p-4 h-full">
+            <div className="overflow-x-auto">
+              <table className="table">
+                <thead>
+                  <tr>
+                    <th>تیتر</th>
+                    <th>لید</th>
+                    <th>ویرایش</th>
+                    <th>حذف</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {tickets.map((Post, _index) => (
+                    <PostTable id={_index} key={_index} ticket={Post} />
                   ))}
+                </tbody>
+              </table>
             </div>
-          ))}
+          </div>
+        )}
       </div>
     </div>
   );

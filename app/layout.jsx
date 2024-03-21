@@ -26,7 +26,7 @@ const header = (
 
 export default function RootLayout({ children }) {
   return (
-    <html dir={SiteConfig.dir} lang={SiteConfig.lang} data-theme="light">
+    <html dir={SiteConfig.dir} lang={SiteConfig.lang} data-theme="cupcake">
       {header}
       <body className={inter.className}>
         <div className="flex flex-col h-screen max-h-screen">
