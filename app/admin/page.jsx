@@ -16,7 +16,7 @@ const Admin = () => {
   }
   return (
     <div>
-      <button onClick={handleLogout}>Logout</button>
+      <button onClick={handleLogout}>خروج</button>
     </div>
   )
 }

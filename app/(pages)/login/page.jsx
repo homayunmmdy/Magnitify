@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import SiteConfig from "../../config/site";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -24,7 +25,7 @@ const Login = () => {
     <div className="flex h-screen bg-indigo-700">
       <div className="w-full max-w-xs m-auto bg-indigo-100 rounded p-5">
         <header className="text-indigo-500 text-2xl	font-extrabold text-center">
-          Magnitify <span className="text-black font-normal	">Admin</span>
+           <span className="text-black font-normal">ادمین</span> {SiteConfig.name}
         </header>
         <div>
           <label className="block mb-2 text-indigo-500" for="username">

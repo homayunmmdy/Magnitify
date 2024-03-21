@@ -1,5 +1,5 @@
 import React from "react";
-import Dashboard from "./ui/home/Dashboard";
+import Posts from "./ui/home/Posts";
 import Newsletter from "./ui/home/Newsletter";
 const Home = () => {
   return (
@@ -10,7 +10,7 @@ const Home = () => {
         </div>
 
         <div className="col-span-12 md:col-span-8">
-          <Dashboard />
+          <Posts />
           <div id="pos-article-display-94409"></div>
           <div id="pos-article-text-94402"></div>
           <Newsletter />
