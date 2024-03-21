@@ -1,28 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import SiteConfig from "../../config/site";
-
-// const Newsletter = () => {
-
-//   return (
-//     <div>
-//       <form  >
-//         <input
-//           type="email"
-//           placeholder="Enter your email"
-//           value={email}
-//           onChange={(e) => setEmail(e.target.value)}
-//           required
-//         />
-//         <button type="submit">Subscribe</button>
-//       </form>
-//       {message && <p>{message}</p>}
-//     </div>
-//   );
-// };
-
-// export default Newsletter;
-
 const Newsletter = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -55,7 +33,7 @@ const Newsletter = () => {
   return (
     <div>
       <div className="mx-auto">
-        <div className="relative isolate overflow-hidden bg-white dark:bg-gray-900 px-6 py-24   sm:px-24 xl:py-32">
+        <div className="relative isolate overflow-hidden  px-6 py-24   sm:px-24 xl:py-32">
           <h2 className="mx-auto max-w-2xl text-center text-3xl font-bold tracking-tight text-black dark:text-white sm:text-4xl">
              عضویت در خبرنامه
           </h2>

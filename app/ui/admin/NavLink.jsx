@@ -1,4 +1,5 @@
 import { TiHome } from "react-icons/ti";
+import { MdOutlinePostAdd } from "react-icons/md";
 import { PiPhoneCallFill } from "react-icons/pi";
 import { CgFeed } from "react-icons/cg";
 import { usePathname } from "next/navigation";
@@ -7,6 +8,7 @@ import { FaRegNewspaper } from "react-icons/fa";
 const links = [
   { name: " ادمین", href: "/admin", icon: TiHome },
   { name: "پست ها", href: "/admin/posts", icon: CgFeed },
+  { name: "پست جدید", href: "/admin/post/new", icon: MdOutlinePostAdd },
   { name: " تماس باما", href: "/admin/contacts", icon: PiPhoneCallFill },
   { name: "خبرنامه", href: "/admin/newsletter", icon: FaRegNewspaper },
 ];
