@@ -22,7 +22,7 @@ const Posts = async () => {
                 <thead>
                   <tr>
                     <th>تیتر</th>
-                    <th>لید</th>
+                    <th  className="hidden lg:block">لید</th>
                     <th>ویرایش</th>
                     <th>حذف</th>
                   </tr>

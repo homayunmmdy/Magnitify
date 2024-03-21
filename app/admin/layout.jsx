@@ -18,7 +18,7 @@ export default function AdminLayout({ children }) {
             <AdminSidbar />
         </aside>
         <main className="col-span-12  lg:col-span-9">
-          <div className="bg-indigo-800 w-full h-full">
+          <div className=" w-full h-full">
             {children}
           </div>
         </main>
