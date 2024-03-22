@@ -1,5 +1,6 @@
 import React from "react";
 import Posts from "./ui/home/Posts";
+import Slider from "./ui/home/Slider";
 import Newsletter from "./ui/home/Newsletter";
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
         </div>
 
         <div className="col-span-12 md:col-span-8">
+          <Slider />
           <Posts />
           <div id="pos-article-display-94409"></div>
           <div id="pos-article-text-94402"></div>

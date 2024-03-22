@@ -9,8 +9,6 @@ const EditTicketForm = ({ ticket }) => {
   const startingTicketData = {
     title: "",
     description: "",
-    priority: 1,
-    progress: 0,
     body: "",
     category: "همه",
     imgurl: "",
@@ -71,11 +69,11 @@ const EditTicketForm = ({ ticket }) => {
       try {
         const response = await axios.get(`/api/Category`);
         setCategories(response.data.categories);
-      } catch (error) {
+              } catch (error) {
         console.error("Error fetching categories:", error);
       }
     };
-
+    
     fetchCategories();
   }, []);
 
@@ -84,7 +82,7 @@ const EditTicketForm = ({ ticket }) => {
       <form
         onSubmit={handleSubmit}
         method="post"
-        className="flex flex-col gap-3 w-full mdd:w-1/2"
+        className="flex flex-col gap-3 w-full md:w-1/2"
       >
         <h3>{EDITMODE ? "ویرایش پست" : "پست جدید"}</h3>
         <label>لینک عکس</label>

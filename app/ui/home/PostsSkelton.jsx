@@ -4,8 +4,7 @@ const PostsSkelton = () => {
   return (
     <>
       <div className="grid grid-cols-12 gap-4">
-        <div className="col-span-0 md:col-span-2"></div>
-        <div className="col-span-12 md:col-span-8">
+        <div className="col-span-12 md:col-span-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="card  bg-base-100 shadow-xl hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
               <div className="px-5 pt-5">
@@ -86,7 +85,6 @@ const PostsSkelton = () => {
             </div>
           </div>
         </div>
-        <div className="col-span-0 md:col-span-2"></div>
       </div>
     </>
   );

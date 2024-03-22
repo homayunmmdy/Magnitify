@@ -4,11 +4,13 @@ import { PiPhoneCallFill } from "react-icons/pi";
 import { CgFeed } from "react-icons/cg";
 import { usePathname } from "next/navigation";
 import { FaRegNewspaper } from "react-icons/fa";
+import { TbNewSection } from "react-icons/tb";
 
 const links = [
   { name: " ادمین", href: "/admin", icon: TiHome },
   { name: "پست ها", href: "/admin/posts", icon: CgFeed },
   { name: "پست جدید", href: "/admin/post/new", icon: MdOutlinePostAdd },
+  { name: "قسمت ها", href: "/admin/sections", icon: TbNewSection },
   { name: " تماس باما", href: "/admin/contacts", icon: PiPhoneCallFill },
   { name: "خبرنامه", href: "/admin/newsletter", icon: FaRegNewspaper },
 ];
