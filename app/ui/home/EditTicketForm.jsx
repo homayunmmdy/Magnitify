@@ -18,6 +18,7 @@ const EditTicketForm = ({ ticket }) => {
     startingTicketData["title"] = ticket.title;
     startingTicketData["description"] = ticket.description;
     startingTicketData["body"] = ticket.body;
+    startingTicketData["category"] = ticket.category;
     startingTicketData["imgurl"] = ticket.imgurl;
   }
 
@@ -32,10 +33,11 @@ const EditTicketForm = ({ ticket }) => {
       [name]: value,
     }));
   };
+  const [loading , setLoading] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setLoading(true);
     if (EDITMODE) {
       const res = await fetch(`/api/Tickets/${ticket._id}`, {
         method: "PUT",
@@ -69,16 +71,17 @@ const EditTicketForm = ({ ticket }) => {
       try {
         const response = await axios.get(`/api/Category`);
         setCategories(response.data.categories);
-              } catch (error) {
+      } catch (error) {
         console.error("Error fetching categories:", error);
       }
     };
-    
+
     fetchCategories();
   }, []);
 
   return (
     <div className=" flex justify-center">
+      {loading && <p>loading...</p>}
       <form
         onSubmit={handleSubmit}
         method="post"
