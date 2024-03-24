@@ -81,7 +81,7 @@ const EditTicketForm = ({ ticket }) => {
 
   return (
     <div className=" flex justify-center">
-      {loading && <p>loading...</p>}
+      {loading && <span className="absolute loading loading-ring loading-lg"></span>}
       <form
         onSubmit={handleSubmit}
         method="post"

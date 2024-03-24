@@ -1,5 +1,5 @@
 import React from "react";
-import DeleteBlock2 from "../../ui/home/DeleteBlock2";
+import DeleteBlock from "../../ui/home/DeleteBlock";
 
 const getData = async () => {
   const API_URL = process.env.API_URL;
@@ -46,7 +46,7 @@ const ContactsPage = async () => {
                   <td>{data.email}</td>
                   <td>{data.message}</td>
                   <td>
-                    <DeleteBlock2 id={data._id} />
+                    <DeleteBlock path="Contacts" id={data._id} />
                   </td>
                 </tr>
               </tbody>

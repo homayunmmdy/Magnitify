@@ -2,9 +2,9 @@
 
 import { MdDeleteOutline } from "react-icons/md";
 
-const DeleteBlock = ({ id }) => {
+const DeleteBlock = ({path, id }) => {
   const deleteTicket = async () => {
-    const res = await fetch(`/api/Tickets/${id}`, {
+    const res = await fetch(`/api/${path}/${id}`, {
       method: "DELETE",
     });
   };

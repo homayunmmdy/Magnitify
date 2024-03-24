@@ -24,7 +24,7 @@ const PostTable = ({ ticket }) => {
           </Link>
         </td>
         <th>
-            <DeleteBlock id={ticket._id} />
+            <DeleteBlock path="Tickets" id={ticket._id} />
         </th>
       </tr>
     </>
