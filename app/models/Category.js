@@ -10,6 +10,9 @@ const categorySchema = new Schema(
       required: true,
       unique: true
     },
+    secid : {
+      type: Number,
+    },
   },
   {
     timestamps: true,

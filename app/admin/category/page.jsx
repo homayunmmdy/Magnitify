@@ -2,34 +2,43 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import DeleteBlock from "../../ui/home/DeleteBlock";
+import { useRouter } from "next/navigation";
 
 const Category = () => {
-  const [name, setName] = useState("");
-  const [message, setMessage] = useState("");
+  const [formData, setFormData] = useState({ name: '', secid: 0 });
+  const [message, setMessage] = useState('');
+  const router = useRouter();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      const response = await fetch("/api/Category", {
-        method: "POST",
+      const response = await fetch('/api/Category', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name }),
+        body: JSON.stringify({ formData }),
       });
 
-      const data = await response.json();
-
-      if (response.ok) {
-        setMessage(data.message);
-        setName("");
+      if (res.ok) {
+        router.refresh();
       } else {
-        setMessage(data.message);
+        console.error("Error deleting item:", res.statusText);
       }
+
+      const data = await response.json();
+      setMessage(data.message);
     } catch (error) {
-      console.error("Error:", error);
-      setMessage("An error occurred. Please try again later.");
+      console.error('Error:', error);
+      setMessage('Failed to submit data');
     }
   };
   const [data, setData] = useState();
@@ -50,19 +59,33 @@ const Category = () => {
     <div>
       {message && <p>{message}</p>}
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Enter your category"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-        <button type="submit">Subscribe</button>
+        <div>
+          <label>name:</label>
+          <input
+            type="text"
+            name="name"
+            value={formData.title}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label>secid:</label>
+          <input
+          type="number"
+            name="secid"
+            value={formData.content}
+            onChange={handleChange}
+            required
+         />
+        </div>
+        <button type="submit">Submit</button>
       </form>
       <div className="overflow-x-auto">
         <table className="table table-zebra">
           <thead>
             <tr>
+              <th>آیدی</th>
               <th>قسمت</th>
               <th>حذف</th>
             </tr>
@@ -70,6 +93,7 @@ const Category = () => {
           {data?.map((item) => (
             <tbody key={item.id}>
               <tr>
+                <td>{item.secid}</td>
                 <td>{item.name}</td>
                 <td>
                   <DeleteBlock path="Category" id={item._id} />
