@@ -1,5 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import DeleteBlock from "../../ui/home/DeleteBlock";
 
 const Category = () => {
   const [name, setName] = useState("");
@@ -30,8 +32,23 @@ const Category = () => {
       setMessage("An error occurred. Please try again later.");
     }
   };
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`/api/Category`);
+        setData(response.data.categories);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
   return (
     <div>
+      {message && <p>{message}</p>}
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -42,7 +59,26 @@ const Category = () => {
         />
         <button type="submit">Subscribe</button>
       </form>
-      {message && <p>{message}</p>}
+      <div className="overflow-x-auto">
+        <table className="table table-zebra">
+          <thead>
+            <tr>
+              <th>قسمت</th>
+              <th>حذف</th>
+            </tr>
+          </thead>
+          {data?.map((item) => (
+            <tbody key={item.id}>
+              <tr>
+                <td>{item.name}</td>
+                <td>
+                  <DeleteBlock path="Category" id={item._id} />
+                </td>
+              </tr>
+            </tbody>
+          ))}
+        </table>
+      </div>
     </div>
   );
 };
