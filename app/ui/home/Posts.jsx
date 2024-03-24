@@ -24,7 +24,6 @@ const Posts = async () => {
             </div>
           </div>
         )}
-        <div id="pos-article-display-94687"></div>
       </div>
     </div>
   );

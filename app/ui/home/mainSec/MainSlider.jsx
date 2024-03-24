@@ -25,7 +25,7 @@ const MainSlider = () => {
     fetchData();
   }, []);
   return (
-    <div className="p-3">
+    <div className="sm:p-3">
         <Swiper
         modules={[Navigation, EffectFade, Autoplay]}
         effect="fade"

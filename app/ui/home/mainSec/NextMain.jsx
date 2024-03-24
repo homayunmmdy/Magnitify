@@ -4,7 +4,7 @@ const NextMain =  ({ ticket }) => {
   return (
     <div>
          <div className="flex flex-col gap-2 py-2">
-      <div className="relative rounded-xl w-96 bg-base-100 shadow-xl">
+      <div className="relative rounded-xl w-full bg-base-100 shadow-xl">
         <figure>
           <img
              src={ticket.imgurl}
