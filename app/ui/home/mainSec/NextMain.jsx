@@ -1,26 +1,23 @@
-import React from 'react'
+import React from "react";
 
-const NextMain =  ({ ticket }) => {
+const NextMain = ({ ticket }) => {
   return (
-    <div>
-         <div className="flex flex-col gap-2 py-2">
-      <div className="relative rounded-xl w-full bg-base-100 shadow-xl">
-        <figure>
-          <img
-             src={ticket.imgurl}
-             alt={ticket.title}
-             className="w-full h-full aspect-video object-cover rounded-xl"
-          />
-        </figure>
-        <div className="absolute bottom-1  rounded-xl card-body text-white">
-          <h2 className="card-title">{ticket.title}</h2>
-          <p className="truncate">{ticket.description}</p>
+    <div className="h-[50%]">
+      <div className="flex flex-col gap-2 py-2 h-full">
+        <div className="relative rounded-xl w-full bg-base-100 shadow-xl h-full">
+            <img
+              src={ticket.imgurl}
+              alt={ticket.title}
+              className="w-full h-full aspect-video object-cover rounded-xl"
+            />
+          <div className="absolute bottom-1  p-2 w-full  rounded-xl text-white">
+            <h2 className=" truncate text-xl">{ticket.title}</h2>
+            <p className="truncate">{ticket.description}</p>
+          </div>
         </div>
       </div>
-    
     </div>
-    </div>
-  )
-}
+  );
+};
 
-export default NextMain
+export default NextMain;

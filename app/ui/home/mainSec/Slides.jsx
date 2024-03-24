@@ -11,7 +11,7 @@ const Slides = ({ ticket }) => {
             className="w-full h-full aspect-video object-cover rounded-xl"
           />
         </figure>
-        <div className="card-body absolute bottom-2 text-white">
+        <div className="card-body absolute bottom-2 text-white w-full">
           <h2 className="card-title">{ticket.title}</h2>
           <p className="truncate">{ticket.description}</p>
         </div>

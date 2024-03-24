@@ -24,9 +24,9 @@ const PostSec = ({place , title}) => {
           {title}
         </span>
       </div>
-      <div className="flex flex-col gap-2 py-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {data
-          ?.filter((item) => item.category == {place})
+          ?.filter((item) => item.category == `${place}`)
           .map((filteredData, _index) => (
             <TicketCard id={_index} key={_index} ticket={filteredData} />
           ))}

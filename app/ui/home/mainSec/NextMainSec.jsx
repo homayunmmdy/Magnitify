@@ -18,7 +18,7 @@ const NextMainSec = () => {
     fetchData();
   }, []);
   return (
-    <div className="flex flex-col gap-2 py-2">
+    <div className="flex flex-col gap-2 py-2 h-full">
       {data
           ?.filter((item) => item.category == "next main")
           .map((filteredData, _index) => (
