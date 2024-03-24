@@ -134,6 +134,7 @@ const EditTicketForm = ({ ticket }) => {
           name="category"
           value={formData.category}
           onChange={handleChange}
+          multiple
         >
           {categories?.map((category) => (
             <option key={category._id} value={category.name}>

@@ -2,8 +2,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import TicketCard from "../home/TicketCard";
-const PostSec = ({place , title}) => {
-  const [data, setData] = useState();
+import PostsSkelton from "../home/PostsSkelton";
+
+const PostSec = ({ place, title }) => {
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,22 +19,29 @@ const PostSec = ({place , title}) => {
 
     fetchData();
   }, []);
+
+  // Display skeleton while data is loading
+  if (!data) {
+    return <PostsSkelton />;
+  }
+
+  const filteredData = data.filter((item) => item.category === `${place}`);
+
   return (
     <>
-      <div className="flex items-center justify-between py-4 border-t border-b border-gray-200 dark:border-gray-700 not-format">
+      <div className="flex items-center justify-between py-4 border-t border-b border-gray-200 dark:border-gray-700 not-format my-2">
         <span className="text-sm font-bold text-gray-900 lg:mb-0 dark:text-white">
           {title}
         </span>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {data
-          ?.filter((item) => item.category == `${place}`)
-          .map((filteredData, _index) => (
-            <TicketCard id={_index} key={_index} ticket={filteredData} />
-          ))}
+        {filteredData.map((filteredData, _index) => (
+          <TicketCard id={_index} key={_index} ticket={filteredData} />
+        ))}
       </div>
     </>
   );
 };
 
 export default PostSec;
+

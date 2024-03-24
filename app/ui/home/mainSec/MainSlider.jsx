@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import "swiper/css/autoplay"
+import SlidesSeclton from "./SlidesSeclton"
 
 const MainSlider = () => {
   const [data, setData] = useState();
@@ -24,6 +25,11 @@ const MainSlider = () => {
 
     fetchData();
   }, []);
+  if (!data) {
+    return <SlidesSeclton />;
+  }
+  const filteredData = data.filter((item) => item.category === "main slider");
+
   return (
     <div className="sm:p-3">
         <Swiper
@@ -37,9 +43,7 @@ const MainSlider = () => {
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
         >
-          {data
-            ?.filter((item) => item.category == "main slider")
-            .map((filteredData, _index) => (
+          {filteredData.map((filteredData, _index) => (
               <SwiperSlide key={_index}>
                 <Slides id={_index}  ticket={filteredData} />
               </SwiperSlide>

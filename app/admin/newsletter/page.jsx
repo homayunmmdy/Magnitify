@@ -42,8 +42,6 @@ const Newsletter = async () => {
               <tbody key={data._id}>
                 <tr>
                   <td>{data.email}</td>
-                </tr>
-                <tr>
                   <td>
                     <DeleteBlock path="Newsletter" id={data._id} />
                   </td>

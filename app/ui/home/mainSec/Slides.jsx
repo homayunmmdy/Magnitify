@@ -3,7 +3,7 @@
 const Slides = ({ ticket }) => {
   return (
     <>
-      <div className="relative  w-full h-full  lg:h-[450px] bg-base-100 shadow-xl  rounded-xl">
+      <div className="relative  w-full h-full bg-base-100 shadow-xl  rounded-xl">
         <figure  className="w-full h-full">
           <img
             src={ticket.imgurl}

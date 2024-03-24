@@ -18,10 +18,10 @@ const Home = () => {
           </div>
         </div>
         <div className="col-span-12 sm:col-span-6 lg:col-span-0 xl:col-span-2">
+      <div id="pos-article-display-94687"></div>
         </div>
       </div>
-      <div id="pos-article-display-94687"></div>
-      <div className="grid grid-cols-12 gap-4">
+      <div className="grid grid-cols-12 px-5 md:px-10 gap-2">
       <div className="col-span-0 md:col-span-2">
         <div id="pos-article-display-94698"></div>
       </div>

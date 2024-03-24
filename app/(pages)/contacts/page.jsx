@@ -140,7 +140,7 @@ const ContactsPage = () => {
             </div>
           </div>
           <div className="w-full px-4 lg:w-1/2 xl:w-6/12">
-            <div className="mb-12 max-w-[570px] lg:mb-0">
+            <div className="mb-12 px-5 pt-3 sm:max-w-[570px] lg:mb-0">
               <span className="block mb-4 text-base font-semibold text-primary">
                 تماس با ما
               </span>

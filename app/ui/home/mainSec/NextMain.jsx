@@ -3,7 +3,7 @@ import React from "react";
 const NextMain = ({ ticket }) => {
   return (
     <div className="h-[50%]">
-      <div className="flex flex-col gap-2 py-2 h-full">
+      <div className="flex flex-col gap-3 py-1 h-full">
         <div className="relative rounded-xl w-full bg-base-100 shadow-xl h-full">
             <img
               src={ticket.imgurl}
