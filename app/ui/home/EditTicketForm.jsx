@@ -88,7 +88,7 @@ const EditTicketForm = ({ ticket }) => {
         className="flex flex-col gap-3 w-full md:w-1/2"
       >
         <h3>{EDITMODE ? "ویرایش پست" : "پست جدید"}</h3>
-        <label>لینک عکس</label>
+                <label>لینک عکس</label>
         <input
           id="imgurl"
           name="imgurl"
@@ -134,7 +134,6 @@ const EditTicketForm = ({ ticket }) => {
           name="category"
           value={formData.category}
           onChange={handleChange}
-          multiple
         >
           {categories?.map((category) => (
             <option key={category._id} value={category.name}>
