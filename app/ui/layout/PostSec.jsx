@@ -4,7 +4,7 @@ import axios from "axios";
 import TicketCard from "../home/TicketCard";
 import PostsSkelton from "../home/PostsSkelton";
 
-const PostSec = ({ place, title }) => {
+const PostSec = ({ secid, title }) => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const PostSec = ({ place, title }) => {
     return <PostsSkelton />;
   }
 
-  const filteredData = data.filter((item) => item.category === `${place}`);
+  const filteredData = data.filter((item) => item.category === `${secid}`);
 
   return (
     <>

@@ -28,13 +28,14 @@ const Home = () => {
         </div>
 
         <div className="col-span-12 md:col-span-8">
-          <PostSec title="هوش مصنوعی" place="ai" />
+          <PostSec title="پول" secid="3" />
+          <PostSec title="هوش مصنوعی" secid="4" />
           <div id="pos-article-display-94981"></div>
-          <PostSec title="برنامه نویسی" place="programming" />
+          <PostSec title="برنامه نویسی" secid="5" />
           <div id="pos-article-text-94402"></div>
-          <PostSec title="اندرو تیت" place="andrew tate" />
+          <PostSec title="اندرو تیت" secid="6" />
           <div id="pos-article-display-94409"></div>
-          <PostSec title="کتاب" place="books" />
+          <PostSec title="کتاب" secid="7" />
           <div id="pos-article-display-94980"></div>
         </div>
 

@@ -10,7 +10,7 @@ const EditTicketForm = ({ ticket }) => {
     title: "",
     description: "",
     body: "",
-    category: "همه",
+    category: "0",
     imgurl: "",
   };
 

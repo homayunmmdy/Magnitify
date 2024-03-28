@@ -22,7 +22,7 @@ const NextMainSec = () => {
   if (!data) {
     return <NextMainSeclton />;
   }
-  const filteredData = data.filter((item) => item.category === "next main");
+  const filteredData = data.filter((item) => item.category === "2");
 
   return (
     <div className="flex flex-col gap-2 h-full">
