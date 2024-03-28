@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import NextMain from "./NextMain"
-import NextMainSeclton from "./NextMainSeclton"
+import NextMain from "./NextMain";
+import NextMainSeclton from "./NextMainSeclton";
 
 const NextMainSec = () => {
   const [data, setData] = useState();
@@ -24,12 +24,11 @@ const NextMainSec = () => {
   }
   const filteredData = data.filter((item) => item.category === "next main");
 
-
   return (
-    <div className="flex flex-col gap-2 py-2 h-full">
+    <div className="flex flex-col gap-2 h-full">
       {filteredData.map((filteredData, _index) => (
-            <NextMain id={_index} key={_index} ticket={filteredData} />
-          ))}
+        <NextMain id={_index} key={_index} ticket={filteredData} />
+      ))}
     </div>
   );
 };

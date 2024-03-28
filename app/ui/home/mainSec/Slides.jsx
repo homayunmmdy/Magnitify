@@ -11,7 +11,7 @@ const Slides = ({ ticket }) => {
             />
           </figure>
           <div className="card-body absolute bottom-2 text-white w-full">
-            <h2 className="card-title">{ticket.title}</h2>
+            <h2 className="text-lg truncate">{ticket.title}</h2>
             <p className="truncate">{ticket.description}</p>
           </div>
         </div>
