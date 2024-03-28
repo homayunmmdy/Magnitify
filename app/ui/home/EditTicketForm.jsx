@@ -136,7 +136,7 @@ const EditTicketForm = ({ ticket }) => {
           onChange={handleChange}
         >
           {categories?.map((category) => (
-            <option key={category._id} value={category.name}>
+            <option key={category._id} value={category.secid}>
               {category.name}
             </option>
           ))}

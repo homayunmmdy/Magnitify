@@ -2,8 +2,8 @@ import React from "react";
 
 const NextMain = ({ ticket }) => {
   return (
-    <a href={`/Tickets/${ticket._id}`}>
-      <div className="h-[50%]">
+    <div className="h-[50%]">
+      <a href={`/Tickets/${ticket._id}`}>
         <div className="flex flex-col gap-3 py-1 h-full">
           <div className="relative rounded-xl w-full bg-base-100 shadow-xl h-full">
             <img
@@ -17,8 +17,8 @@ const NextMain = ({ ticket }) => {
             </div>
           </div>
         </div>
-      </div>
-    </a>
+      </a>
+    </div>
   );
 };
 
