@@ -3,7 +3,7 @@ const GetTicket = async () => {
   const API_URL = process.env.API_URL;
 
   try {
-    const res = await fetch(`${API_URL}/api/Tickets`, {
+    const res = await fetch(`${API_URL}/api/Posts`, {
       cache: "no-store",
     });
 

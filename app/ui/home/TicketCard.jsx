@@ -2,7 +2,7 @@ const TicketCard = ({ ticket }) => {
   return (
     <>
       <div className="card  bg-base-100 shadow-xl hover:scale-105 rounded-xl transition-transform ease-in-out duration-500">
-        <a href={`/Tickets/${ticket._id}`} >
+        <a href={`/Posts/${ticket._id}`} >
         <figure className="px-5 pt-5">
           <img
             src={ticket.imgurl}

@@ -1,7 +1,7 @@
 const Slides = ({ ticket }) => {
   return (
     <>
-      <a href={`/Tickets/${ticket._id}`}>
+      <a href={`/Posts/${ticket._id}`}>
         <div className="relative  w-full h-full bg-base-100 shadow-xl  rounded-xl">
           <figure className="w-full h-full">
             <img

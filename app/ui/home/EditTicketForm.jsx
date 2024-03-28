@@ -39,7 +39,7 @@ const EditTicketForm = ({ ticket }) => {
     e.preventDefault();
     setLoading(true);
     if (EDITMODE) {
-      const res = await fetch(`/api/Tickets/${ticket._id}`, {
+      const res = await fetch(`/api/Posts/${ticket._id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",
@@ -50,7 +50,7 @@ const EditTicketForm = ({ ticket }) => {
         throw new Error("Failed to update ticket");
       }
     } else {
-      const res = await fetch("/api/Tickets", {
+      const res = await fetch("/api/Posts", {
         method: "POST",
         body: JSON.stringify({ formData }),
         //@ts-ignore
