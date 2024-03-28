@@ -38,13 +38,13 @@ const AdminNavLink = () => {
                   </a>
                 ) : (
                   <a
-                    class="py-2.7 text-sm ease-nav-brand  p-1 my-0 flex items-center whitespace-nowrap px-4 transition-colors hover:bg-white"
+                    className="py-2.7 text-sm ease-nav-brand  p-1 my-0 flex items-center whitespace-nowrap px-4 transition-colors hover:bg-white"
                     href={link.href}
                   >
-                    <div class="shadow-soft-2xl ml-2 flex h-9 w-9 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                    <div className="shadow-soft-2xl ml-2 flex h-9 w-9 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
                       <LinkIcon size={24} color="#333" />
                     </div>
-                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">
+                    <span className="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">
                       {link.name}
                     </span>
                   </a>

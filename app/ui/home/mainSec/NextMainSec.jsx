@@ -11,7 +11,7 @@ const NextMainSec = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`/api/Posts`);
-        setData(response.data.tickets);
+        setData(response.data.posts);
       } catch (error) {
         console.error("Error fetching data:", error);
       }

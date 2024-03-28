@@ -6,19 +6,19 @@ import PostsSkelton from "./PostsSkelton";
 const Posts = async () => {
   const data = await GetTicket();
 
-  if (!data?.tickets) {
+  if (!data?.posts) {
     return <PostsSkelton />;
   }
 
-  const tickets = data.tickets;
+  const posts = data.posts;
 
   return (
     <div className="p-5">
       <div>
-        {tickets && (
+        {posts && (
           <div className="mb-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {tickets.map((Ticket, _index) => (
+              {posts.map((Ticket, _index) => (
                 <TicketCard id={_index} key={_index} ticket={Ticket} />
               ))}
             </div>

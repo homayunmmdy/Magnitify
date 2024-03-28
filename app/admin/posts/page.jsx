@@ -5,17 +5,16 @@ import GetTicket from "../../ui/home/GetTicket";
 const Posts = async () => {
   const data = await GetTicket();
 
-  // Make sure we have tickets needed for production build.
-  if (!data?.tickets) {
-    return <p>No tickets.</p>;
+  if (!data?.posts) {
+    return <p>No posts.</p>;
   }
 
-  const tickets = data.tickets;
+  const posts = data.posts;
 
   return (
     <div className="p-5">
       <div>
-        {tickets && (
+        {posts && (
           <div className="!z-5 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none w-full p-4 h-full">
             <div className="overflow-x-auto">
               <table className="table">
@@ -28,7 +27,7 @@ const Posts = async () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {tickets.map((Post, _index) => (
+                  {posts.map((Post, _index) => (
                     <PostTable id={_index} key={_index} ticket={Post} />
                   ))}
                 </tbody>

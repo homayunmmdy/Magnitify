@@ -14,12 +14,12 @@ const Sidebar = () => {
       <div className="w-full h-full px-4">
         <div className="flex justify-between items-center">
           <a
-            class="block px-4 py-3 m-0 text-lg whitespace-nowrap text-slate-700"
+            className="block px-4 py-3 m-0 text-lg whitespace-nowrap text-slate-700"
             href="/"
             target="_blank"
           >
             ادمین
-            <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand">
+            <span className="ml-1 font-semibold transition-all duration-200 ease-nav-brand">
               {" "}
               {SiteConfig.name}
             </span>
@@ -49,10 +49,10 @@ const Sidebar = () => {
             )}
           </svg>
         </div>
-        <hr class="h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent mb-2" />
+        <hr className="h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent mb-2" />
         {isOpen && <AdminNavLink />}
         <a
-          class="inline-block w-full px-6 py-3 my-4 font-bold text-center text-white uppercase align-middle transition-all ease-in border-0 rounded-lg select-none shadow-soft-md bg-150 bg-x-25 leading-pro text-xs bg-gradient-to-tl from-purple-700 to-pink-500 hover:shadow-soft-2xl hover:scale-102"
+          className="inline-block w-full px-6 py-3 my-4 font-bold text-center text-white uppercase align-middle transition-all ease-in border-0 rounded-lg select-none shadow-soft-md bg-150 bg-x-25 leading-pro text-xs bg-gradient-to-tl from-purple-700 to-pink-500 hover:shadow-soft-2xl hover:scale-102"
           href="/comming_soon"
         >
           Upgrade to pro

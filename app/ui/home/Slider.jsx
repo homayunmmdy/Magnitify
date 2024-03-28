@@ -10,7 +10,7 @@ const Slider = () => {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(`/api/Posts`);
-        setCategories(response.data.tickets);
+        setCategories(response.data.posts);
       } catch (error) {
         console.error("Error fetching categories:", error);
       }
