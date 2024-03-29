@@ -3,7 +3,8 @@ import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import SiteConfig from "./config/site";
-
+import Navbar from "./ui/components/Navbar"
+import Footer from "./ui/components/Footer"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -29,13 +30,11 @@ export default function RootLayout({ children }) {
     <html dir={SiteConfig.dir} lang={SiteConfig.lang} data-theme="cupcake">
       {header}
       <body className={inter.className}>
-        <div className="flex flex-col h-screen max-h-screen">
-          <div className="flex-grow overflow-y-auto ">
-            {children}
-            <Analytics />
-            <SpeedInsights />
-          </div>
-        </div>
+        <Navbar />
+        {children}
+        <Analytics />
+        <SpeedInsights />
+        <Footer />
       </body>
     </html>
   );

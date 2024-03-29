@@ -3,7 +3,24 @@ const SiteConfig = {
     name_en: "Magnitify",
     description: "به روز باشید و زندگی خود را بهبود بخشید",
     lang : "fa",
-    dir: "rtl"
+    dir: "rtl",
+    nav :[
+      {
+        id : 1 ,
+        name : "خانه",
+        link : "/"
+      },
+      {
+        id : 2 ,
+        name : " آرشیو",
+        link : "/archive"
+      },
+      {
+        id : 3 ,
+        name : "تماس با ما",
+        link : "/contacts"
+      }
+    ]
   };
   
   export default SiteConfig;

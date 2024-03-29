@@ -7,7 +7,7 @@ import PostSec from "./ui/layout/PostSec";
 
 const Home = () => {
   return (
-    <div>
+    <div className="pt-20">
       <div className="grid grid-cols-12 md:px-7 gap-2">
         <div className="col-span-12 lg:col-span-9 xl:col-span-10">
           <div className="grid grid-cols-12 px-5 md:px-10 gap-2">

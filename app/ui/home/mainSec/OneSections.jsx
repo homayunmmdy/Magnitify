@@ -25,7 +25,7 @@ const OneSections = () => {
     const filteredData = data.filter((item) => item.category === "8");
 
     return (
-        <div className="p-3">
+        <div className="py-3">
             {filteredData.map((filteredData, _index) => (
                 <OneSec id={_index} key={_index} ticket={filteredData} />
             ))}
