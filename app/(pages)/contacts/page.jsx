@@ -47,13 +47,13 @@ const ContactsPage = () => {
     }
   };
   return (
-    <section className="relative z-10 overflow-hidden bg-white dark:bg-dark py-20 lg:py-[120px]">
+    <section className="relative z-10 overflow-hidden py-20 lg:py-[120px]">
       <div className="container mx-auto">
         <div className="flex flex-wrap -mx-4 lg:justify-between">
           <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
-            <div className="relative p-8 bg-white rounded-lg shadow-lg dark:bg-dark-2 sm:p-12">
+            <div className="relative p-8  rounded-lg shadow-2xl  sm:p-12">
               {notification && (
-                <div role="alert" className="alert alert-success">
+                <div role="alert" className="alert alert-success mb-5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="stroke-current shrink-0 h-6 w-6"
@@ -79,7 +79,7 @@ const ContactsPage = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="border-stroke bg-white text-black dark:border-dark-3 dark:text-dark-6 text-body-color focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none"
+                    className="border-stroke     focus:border-indigo-500 w-full rounded border py-3 px-[14px] text-base outline-none"
                   />
                 </div>
                 <div className="mb-6">
@@ -90,7 +90,7 @@ const ContactsPage = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="border-stroke bg-white text-black dark:border-dark-3 dark:text-dark-6 text-body-color focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none"
+                    className="border-stroke     focus:border-indigo-500 w-full rounded border py-3 px-[14px] text-base outline-none"
                   />
                 </div>
                 <div className="mb-6">
@@ -101,13 +101,13 @@ const ContactsPage = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className="border-stroke bg-white text-black dark:border-dark-3 dark:text-dark-6 text-body-color focus:border-primary w-full resize-none rounded border py-3 px-[14px] text-base outline-none"
+                    className="border-stroke     focus:border-indigo-500 w-full resize-none rounded border py-3 px-[14px] text-base outline-none"
                   ></textarea>
                 </div>
                 <div>
                   <button
                     type="submit"
-                    className="w-full bg-indigo-700 p-3 text-white transition border rounded border-primary bg-primary hover:bg-opacity-90"
+                    className="w-full bg-indigo-500 p-3 text-white transition border rounded border-indigo-500  hover:bg-opacity-90"
                   >
                     ارسال
                   </button>
@@ -126,7 +126,7 @@ const ContactsPage = () => {
                       fill-rule="evenodd"
                       clip-rule="evenodd"
                       d="M0 100C0 44.7715 0 0 0 0C55.2285 0 100 44.7715 100 100C100 100 100 100 0 100Z"
-                      fill="#3056D3"
+                      fill="#6366f1"
                     />
                   </svg>
                 </span>
@@ -141,20 +141,20 @@ const ContactsPage = () => {
           </div>
           <div className="w-full px-4 lg:w-1/2 xl:w-6/12">
             <div className="mb-12 px-5 pt-3 sm:max-w-[570px] lg:mb-0">
-              <span className="block mb-4 text-base font-semibold text-primary">
+              <span className="block mb-4 text-base font-semibold text-indigo-500">
                 تماس با ما
               </span>
-              <h2 className="text-dark dark:text-white mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
+              <h2 className=" mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
                 با ما در تماس باشید
               </h2>
-              <p className="text-base leading-relaxed text-body-color ">
+              <p className="text-base leading-relaxed  ">
                 سوال , نظر های خود را با ما به اشتراک بگذارید
               </p>
-              <p className="text-base leading-relaxed text-body-color dark:text-dark-6 mb-9">
+              <p className="text-base leading-relaxed   mb-9">
                 {SiteConfig.description}
               </p>
-              <div className="mb-8 flex w-full max-w-[370px]">
-                <div className="bg-primary/5 text-primary mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded sm:h-[70px] sm:max-w-[70px]">
+              <div className="mb-8 flex w-full max-w-[370px] gap-2">
+                <div className="bg-primary/5 text-indigo-500 mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded sm:h-[70px] sm:max-w-[70px]">
                   <svg
                     width="32"
                     height="32"
@@ -184,14 +184,14 @@ const ContactsPage = () => {
                   </svg>
                 </div>
                 <div className="w-full">
-                  <h4 className="mb-1 text-xl font-bold text-dark dark:text-white">
+                  <h4 className="mb-1 text-xl font-bold ">
                     شماره تماس
                   </h4>
-                  <p className="text-base text-body-color ">487 4003 0922</p>
+                  <p className="text-base  ">487 4003 0922</p>
                 </div>
               </div>
               <div className="mb-8 flex w-full max-w-[370px]">
-                <div className="bg-primary/5 text-primary mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded sm:h-[70px] sm:max-w-[70px]">
+                <div className="bg-primary/5 text-indigo-500 mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded sm:h-[70px] sm:max-w-[70px]">
                   <svg
                     width="32"
                     height="32"
@@ -206,13 +206,13 @@ const ContactsPage = () => {
                   </svg>
                 </div>
                 <div className="w-full">
-                  <h4 className="mb-1 text-xl font-bold text-dark dark:text-white">
+                  <h4 className="mb-1 text-xl font-bold ">
                     ایمیل آدرس
                   </h4>
-                  <p className="text-base text-body-color dark:text-dark-6">
+                  <p className="text-base  ">
                     homayunmmdy@gmail.com
                   </p>
-                  <p className="text-base text-body-color dark:text-dark-6">
+                  <p className="text-base  ">
                     homayon763@gmail.com
                   </p>
                 </div>

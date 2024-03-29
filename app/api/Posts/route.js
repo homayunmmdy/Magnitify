@@ -19,7 +19,7 @@ export async function POST(req) {
 
     await Post.create(ticketData);
 
-    return NextResponse.json({ message: "Ticket Created" }, { status: 201 });
+    return NextResponse.json({ message: "پست با موفقیت ساخته شد" }, { status: 201 });
   } catch (err) {
     console.log(err);
     return NextResponse.json({ message: "Error", err }, { status: 500 });
