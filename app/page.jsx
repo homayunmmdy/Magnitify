@@ -2,6 +2,7 @@ import React from "react";
 import Newsletter from "./ui/home/Newsletter";
 import MainSlider from "./ui/home/mainSec/MainSlider";
 import NextMainSec from "./ui/home/mainSec/NextMainSec";
+import OneSections from "./ui/home/mainSec/OneSections";
 import PostSec from "./ui/layout/PostSec";
 
 const Home = () => {
@@ -19,7 +20,7 @@ const Home = () => {
           </div>
         </div>
         <div className="col-span-0 hidden lg:grid lg:col-span-2">
-          <div id="pos-article-display-94687"></div>
+         <OneSections />
         </div>
       </div>
       <div className="grid grid-cols-12 px-5 md:px-10 gap-2">
@@ -29,6 +30,7 @@ const Home = () => {
 
         <div className="col-span-12 md:col-span-8">
           <PostSec title="پول" secid="3" />
+          <div id="pos-article-display-94687"></div>
           <PostSec title="هوش مصنوعی" secid="4" />
           <div id="pos-article-display-94981"></div>
           <PostSec title="برنامه نویسی" secid="5" />
