@@ -29,16 +29,17 @@ const PostSec = ({ secid, title }) => {
 
   return (
     <>
-      <div className="flex items-center justify-between py-4 border-t border-b border-gray-200 dark:border-gray-700 not-format my-2">
+      {filteredData.length == "0" ? null : <>  <div className="flex items-center justify-between py-4 border-t border-b border-gray-200 dark:border-gray-700 not-format my-2">
         <span className="text-sm font-bold text-gray-900 lg:mb-0 dark:text-white">
           {title}
         </span>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredData.map((filteredData, _index) => (
-          <TicketCard id={_index} key={_index} ticket={filteredData} />
-        ))}
-      </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredData.map((filteredData, _index) => (
+            <TicketCard id={_index} key={_index} ticket={filteredData} />
+          ))}
+        </div></>}
+
     </>
   );
 };
