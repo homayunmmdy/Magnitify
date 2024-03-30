@@ -1,9 +1,9 @@
 import React from "react";
 import PostTable from "../../ui/admin/post/PostTable";
-import GetTicket from "../../ui/home/GetTicket";
+import AllPost from "../../ui/home/AllPost";
 
 const Posts = async () => {
-  const data = await GetTicket();
+  const data = await AllPost();
 
   if (!data?.posts) {
     return <p>No posts.</p>;

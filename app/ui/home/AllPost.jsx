@@ -1,5 +1,4 @@
-
-const GetTicket = async () => {
+const AllPost = async () => {
   const API_URL = process.env.API_URL;
 
   try {
@@ -17,4 +16,4 @@ const GetTicket = async () => {
   }
 };
 
-export default GetTicket;
+export default AllPost;

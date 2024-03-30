@@ -1,10 +1,10 @@
 import React from "react";
 import TicketCard from "./TicketCard";
-import GetTicket from "./GetTicket";
+import AllPost from "./AllPost";
 import PostsSkelton from "./PostsSkelton";
 
 const Posts = async () => {
-  const data = await GetTicket();
+  const data = await AllPost();
 
   if (!data?.posts) {
     return <PostsSkelton />;
