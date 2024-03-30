@@ -5,7 +5,7 @@ import DeleteBlock from "../../ui/home/DeleteBlock";
 import { useRouter } from "next/navigation";
 
 const Section = () => {
-  const [formData, setFormData] = useState({ name: '', secid: 0 });
+  const [formData, setFormData] = useState({ name: '', secid: 1 });
   const [message, setMessage] = useState('');
   const router = useRouter();
 
@@ -47,7 +47,7 @@ const Section = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`/api/Section`);
-        setData(response.data.categories);
+        setData(response.data.sections);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
