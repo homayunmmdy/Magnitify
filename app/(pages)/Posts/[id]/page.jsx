@@ -2,6 +2,7 @@
 import BreadCrump from "../../../ui/components/BreadCrump";
 import CommentForm from "../../../ui/components/CommentForm";
 import CommentsSec from "../../../ui/components/CommentsSec";
+import NewsletterBox from "../../../ui/components/NewsletterBox";
 import SinglePost from "../../../ui/home/SinglePost";
 import PostSkelton from "./PostSkelton";
 const Ticket = () => {
@@ -13,7 +14,7 @@ const Ticket = () => {
 
   return (
     <>
-      <div className="grid grid-cols-12 gap-4">
+      <div className="grid grid-cols-12 gap-4 p-4 md:p-8">
         <div className="col-span-12 md:col-span-8 lg:col-span-9">
           <img
             className="w-full p-3 aspect-video rounded-3xl"
@@ -25,7 +26,7 @@ const Ticket = () => {
             loading="lazy"
           />
           <BreadCrump />
-          <div className="p-4">
+          <div >
             <h1 className="text-center mb-3">{post.title}</h1>
             <p>
               <div id="pos-article-display-card-94403"></div>
@@ -38,8 +39,9 @@ const Ticket = () => {
             <CommentForm />
           </div>
         </div>
-        <div className="col-span-0 md:col-span-4 lg:col-span-3">
+        <div className="col-span-12 md:col-span-4 lg:col-span-3">
           <div id="pos-article-text-94696"></div>
+          <NewsletterBox />
         </div>
       </div>
     </>

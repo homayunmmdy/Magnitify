@@ -32,12 +32,12 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-             {nav.map((item) => (
-              <li key={item.id} className="mx-1">
-                {pathname === item.link ? <Link href={item.link} className="bg-base-300 rounded-xl">{item.name}</Link> :
-                  <Link href={item.link}>{item.name}</Link>}
-              </li>
-            ))}
+              {nav.map((item) => (
+                <li key={item.id} className="mx-1">
+                  {pathname === item.link ? <Link href={item.link} className="bg-base-300 rounded-xl">{item.name}</Link> :
+                    <Link href={item.link}>{item.name}</Link>}
+                </li>
+              ))}
             </ul>
           </div>
           <Link href="/" className="text-xl font-bold">
@@ -55,7 +55,9 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          {/* */}
+          <div >
+            <a className="rounded-md text-white font-medium flex p-2 bg-indigo-700 hover:opacity-90 lg:transition-all lg:ease-linear lg:duration-200 w-13" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7146597314181193728" target="_blank">سابسکرایب</a>
+          </div>
         </div>
       </div>
     </div>
