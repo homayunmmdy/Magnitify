@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { usePathname } from "next/navigation";
 
-const useBattle = () => {
-    const pathname = usePathname();
-    const id = pathname.slice(7);
+const SinglePost = () => {
+  const pathname = usePathname();
+  const id = pathname.slice(7);
   const [battle, setBattle] = useState();
 
   useEffect(() => {
@@ -24,4 +24,4 @@ const useBattle = () => {
   return battle;
 };
 
-export default useBattle;
+export default SinglePost;

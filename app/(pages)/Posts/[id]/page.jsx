@@ -2,10 +2,10 @@
 import BreadCrump from "../../../ui/components/BreadCrump";
 import CommentForm from "../../../ui/components/CommentForm";
 import CommentsSec from "../../../ui/components/CommentsSec";
-import useBattle from "../../../ui/home/useBattle";
+import SinglePost from "../../../ui/home/SinglePost";
 import PostSkelton from "./PostSkelton";
 const Ticket = () => {
-  const post = useBattle();
+  const post = SinglePost();
 
   if (!post) {
     return <PostSkelton />
