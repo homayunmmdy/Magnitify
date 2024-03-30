@@ -10,7 +10,7 @@ const EditTicketForm = ({ ticket }) => {
     title: "",
     description: "",
     body: "",
-    category: "0",
+    section: "0",
     imgurl: "",
   };
 
@@ -18,7 +18,7 @@ const EditTicketForm = ({ ticket }) => {
     startingTicketData["title"] = ticket.title;
     startingTicketData["description"] = ticket.description;
     startingTicketData["body"] = ticket.body;
-    startingTicketData["category"] = ticket.category;
+    startingTicketData["section"] = ticket.section;
     startingTicketData["imgurl"] = ticket.imgurl;
   }
 
@@ -33,7 +33,7 @@ const EditTicketForm = ({ ticket }) => {
       [name]: value,
     }));
   };
-  const [loading , setLoading] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -64,19 +64,19 @@ const EditTicketForm = ({ ticket }) => {
     router.refresh();
     router.push("/admin/posts");
   };
-  const [categories, setCategories] = useState();
+  const [sections, setSections] = useState();
 
   useEffect(() => {
-    const fetchCategories = async () => {
+    const fetchSections = async () => {
       try {
-        const response = await axios.get(`/api/Category`);
-        setCategories(response.data.categories);
+        const response = await axios.get(`/api/Section`);
+        setSections(response.data.sections);
       } catch (error) {
-        console.error("Error fetching categories:", error);
+        console.error("Error fetching sections:", error);
       }
     };
 
-    fetchCategories();
+    fetchSections();
   }, []);
 
   return (
@@ -88,7 +88,7 @@ const EditTicketForm = ({ ticket }) => {
         className="flex flex-col gap-3 w-full md:w-1/2"
       >
         <h3>{EDITMODE ? "ویرایش پست" : "پست جدید"}</h3>
-                <label>لینک عکس</label>
+        <label>لینک عکس</label>
         <input
           id="imgurl"
           name="imgurl"
@@ -131,13 +131,13 @@ const EditTicketForm = ({ ticket }) => {
         <label>بخش</label>
         <select
           className="select select-primary w-full"
-          name="category"
-          value={formData.category}
+          name="section"
+          value={formData.section}
           onChange={handleChange}
         >
-          {categories?.map((category) => (
-            <option key={category._id} value={category.secid}>
-              {category.name}
+          {sections?.map((section) => (
+            <option key={section._id} value={section.secid}>
+              {section.name}
             </option>
           ))}
         </select>

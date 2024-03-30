@@ -4,7 +4,7 @@ import axios from "axios";
 import DeleteBlock from "../../ui/home/DeleteBlock";
 import { useRouter } from "next/navigation";
 
-const Category = () => {
+const Section = () => {
   const [formData, setFormData] = useState({ name: '', secid: 0 });
   const [message, setMessage] = useState('');
   const router = useRouter();
@@ -20,7 +20,7 @@ const Category = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/Category', {
+      const response = await fetch('/api/Section', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ const Category = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`/api/Category`);
+        const response = await axios.get(`/api/Section`);
         setData(response.data.categories);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -96,7 +96,7 @@ const Category = () => {
                 <td>{item.secid}</td>
                 <td>{item.name}</td>
                 <td>
-                  <DeleteBlock path="Category" id={item._id} />
+                  <DeleteBlock path="Section" id={item._id} />
                 </td>
               </tr>
             </tbody>
@@ -107,4 +107,4 @@ const Category = () => {
   );
 };
 
-export default Category;
+export default Section;

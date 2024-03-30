@@ -25,7 +25,7 @@ const PostSec = ({ secid, title }) => {
     return <PostsSkelton />;
   }
 
-  const filteredData = data.filter((item) => item.category === `${secid}`);
+  const filteredData = data.filter((item) => item.section === `${secid}`);
 
   return (
     <>

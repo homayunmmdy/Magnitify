@@ -8,7 +8,7 @@ const postSchema = new Schema(
     title: String,
     imgurl:String,
     description: String,
-    category: String,
+    section: String,
     body: String,
   },
   {

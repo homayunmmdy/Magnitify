@@ -10,7 +10,7 @@ const links = [
   { name: " ادمین", href: "/admin", icon: TiHome },
   { name: "پست ها", href: "/admin/posts", icon: CgFeed },
   { name: "پست جدید", href: "/admin/post/new", icon: MdOutlinePostAdd },
-  { name: "قسمت ها", href: "/admin/category", icon: TbNewSection },
+  { name: "قسمت ها", href: "/admin/sections", icon: TbNewSection },
   { name: " تماس باما", href: "/admin/contacts", icon: PiPhoneCallFill },
   { name: "خبرنامه", href: "/admin/newsletter", icon: FaRegNewspaper },
 ];

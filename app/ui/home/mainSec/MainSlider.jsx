@@ -28,7 +28,7 @@ const MainSlider = () => {
   if (!data) {
     return <SlidesSeclton />;
   }
-  const filteredData = data.filter((item) => item.category == "1");
+  const filteredData = data.filter((item) => item.section == "1");
 
   return (
     <div className="sm:p-3">

@@ -22,7 +22,7 @@ const OneSections = () => {
     if (!data) {
         return <OneSecSeclton />;
     }
-    const filteredData = data.filter((item) => item.category === "8");
+    const filteredData = data.filter((item) => item.section === "8");
 
     return (
         <div className="py-3">
