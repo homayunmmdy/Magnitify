@@ -1,11 +1,11 @@
-import About from "../../models/About";
+import Users from "../../models/Users";
 import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
-    const about = await About.find();
+    const users = await Users.find();
 
-    return NextResponse.json({ about }, { status: 200 });
+    return NextResponse.json({ users }, { status: 200 });
   } catch (err) {
     console.log(err);
     return NextResponse.json({ message: "Error", err }, { status: 500 });
@@ -15,12 +15,12 @@ export async function GET() {
 export async function POST(req) {
   try {
     const body = await req.json();
-    const aboutData = body.formData;
+    const usersData = body.formData;
 
-    await About.create(aboutData);
+    await Users.create(usersData);
 
     return NextResponse.json(
-      { message: "About Data Created" },
+      { message: "کاربر با موفقیت اضافه شد" },
       { status: 201 }
     );
   } catch (err) {

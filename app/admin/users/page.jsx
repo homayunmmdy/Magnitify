@@ -1,8 +1,9 @@
 'use client'
 import React, { useState } from 'react';
 
+
 const AboutForm = () => {
-  const [formData, setFormData] = useState({ title: '', content: '' });
+  const [formData, setFormData] = useState({ email: '', password: '' });
   const [message, setMessage] = useState('');
 
   const handleChange = (e) => {
@@ -16,7 +17,7 @@ const AboutForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/About', {
+      const response = await fetch('/api/Users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -41,23 +42,24 @@ const AboutForm = () => {
       {message && <p>{message}</p>}
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Title:</label>
+          <label>email:</label>
           <input
-            type="text"
-            name="title"
-            value={formData.title}
+            type="email"
+            name="email"
+            value={formData.email}
             onChange={handleChange}
             required
           />
         </div>
         <div>
-          <label>Content:</label>
-          <textarea
-            name="content"
-            value={formData.content}
+          <label>password:</label>
+          <input
+            type="text"
+            name="password"
+            value={formData.password}
             onChange={handleChange}
             required
-          ></textarea>
+          />
         </div>
         <button type="submit">Submit</button>
       </form>
