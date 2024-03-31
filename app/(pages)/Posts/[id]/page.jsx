@@ -3,6 +3,7 @@ import BreadCrump from "../../../ui/components/BreadCrump";
 import CommentForm from "../../../ui/components/CommentForm";
 import CommentsSec from "../../../ui/components/CommentsSec";
 import NewsletterBox from "../../../ui/components/NewsletterBox";
+import RecentPosts from "../../../ui/sections/RecentPosts";
 import SinglePost from "../../../ui/home/SinglePost";
 import PostSkelton from "./PostSkelton";
 const Ticket = () => {
@@ -40,6 +41,7 @@ const Ticket = () => {
           </div>
         </div>
         <div className="col-span-12 md:col-span-4 lg:col-span-3">
+          {/* <RecentPosts /> */}
           <div id="pos-article-text-94696"></div>
           <NewsletterBox />
         </div>
