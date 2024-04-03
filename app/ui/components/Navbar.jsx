@@ -55,7 +55,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <div >
+          <div className="m-1">
             <a className="rounded-md text-white font-medium flex p-2 bg-indigo-700 hover:opacity-90 lg:transition-all lg:ease-linear lg:duration-200 w-13" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7146597314181193728" target="_blank">سابسکرایب</a>
           </div>
         </div>
