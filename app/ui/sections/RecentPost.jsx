@@ -2,20 +2,20 @@ import React from 'react'
 
 const RecentPost = ({ post }) => {
     return (
-        <div>
-            <a href={`/Posts/${post._id}`} class="group flex gap-6.5">
-                <div class="max-w-[70px] w-full h-17.5 rounded-full">
-                    <img
-                        src={post.imgurl}
-                        alt={post.title} />
+        <>
+            <a href={`/Posts/${post._id}`} class="relative flex flex-col sm:flex-row md:flex-col items-start gap-2">
+                <img
+                    src={post.imgurl}
+                    alt={post.title}
+                    className='mb-3 shadow-md rounded-lg bg-slate-50 w-full sm:w-[17rem] sm:mb-0  xl:w-full'
+                />
+                <div class="order-1 sm:ml-6 xl:ml-0">
+                    <h3 class="mb-1 text-slate-900 dark:text-slate-200"> {post.title}</h3>
                 </div>
-                <div>
-                    <h5 class="font-medium text-sm text-dark duration-200 ease-in mb-1.5 group-hover:text-primary">
-                        {post.title}
-                    </h5>
-                </div>
+
             </a>
-        </div>
+
+        </>
     )
 }
 
