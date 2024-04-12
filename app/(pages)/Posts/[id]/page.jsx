@@ -1,7 +1,5 @@
 "use client";
 import BreadCrump from "../../../ui/components/BreadCrump";
-import CommentForm from "../../../ui/components/CommentForm";
-import CommentsSec from "../../../ui/components/CommentsSec";
 import NewsletterBox from "../../../ui/components/NewsletterBox";
 import RecentPosts from "../../../ui/sections/RecentPosts";
 import SinglePost from "../../../ui/home/SinglePost";
@@ -36,8 +34,6 @@ const Ticket = () => {
             <p>{post.body}</p>
             <div id="pos-article-text-card-94410"></div>
             <div id="pos-article-display-94407"></div>
-            {/* <CommentsSec /> */}
-            <CommentForm />
           </div>
         </div>
         <div className="col-span-12 md:col-span-4 lg:col-span-3">

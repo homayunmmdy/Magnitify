@@ -5,7 +5,6 @@ import { CgFeed } from "react-icons/cg";
 import { usePathname } from "next/navigation";
 import { FaRegNewspaper } from "react-icons/fa";
 import { TbNewSection } from "react-icons/tb";
-import { FaUserGroup } from "react-icons/fa6";
 
 const links = [
   { name: " ادمین", href: "/admin", icon: TiHome },
@@ -14,7 +13,6 @@ const links = [
   { name: "قسمت ها", href: "/admin/sections", icon: TbNewSection },
   { name: " تماس باما", href: "/admin/contacts", icon: PiPhoneCallFill },
   { name: "خبرنامه", href: "/admin/newsletter", icon: FaRegNewspaper },
-  { name: "کاربر ها", href: "/admin/users", icon: FaUserGroup },
 ];
 const AdminNavLink = () => {
   const pathname = usePathname();
