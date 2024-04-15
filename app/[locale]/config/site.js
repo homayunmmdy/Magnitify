@@ -6,7 +6,7 @@ const SiteConfig = {
     {
       id: 1,
       name: "خانه",
-      link: "/",
+      link: "",
     },
     {
       id: 2,
