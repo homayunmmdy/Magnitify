@@ -28,7 +28,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "app/admin/post/[id]/page.jsx"  ],
+, "app/[locale]/admin/post/[id]/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]
