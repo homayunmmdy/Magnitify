@@ -9,7 +9,7 @@ const Slider = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get(`/api/Posts`);
+        const response = await axios.get(`fa/api/Posts`);
         setCategories(response.data.posts);
       } catch (error) {
         console.error("Error fetching categories:", error);

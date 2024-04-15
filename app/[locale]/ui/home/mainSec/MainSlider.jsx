@@ -16,7 +16,7 @@ const MainSlider = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`/api/Posts`);
+        const response = await axios.get(`fa/api/Posts`);
         setData(response.data.posts);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -40,7 +40,6 @@ const MainSlider = () => {
         navigation
         loop={true}
         autoplay={{ delay: 3000 }}
-        onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
         >
           {filteredData.map((filteredData, _index) => (

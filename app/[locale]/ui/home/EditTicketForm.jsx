@@ -39,7 +39,7 @@ const EditTicketForm = ({ ticket }) => {
     e.preventDefault();
     setLoading(true);
     if (EDITMODE) {
-      const res = await fetch(`/api/Posts/${ticket._id}`, {
+      const res = await fetch(`fa/api/Posts/${ticket._id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",
@@ -50,7 +50,7 @@ const EditTicketForm = ({ ticket }) => {
         throw new Error("Failed to update ticket");
       }
     } else {
-      const res = await fetch("/api/Posts", {
+      const res = await fetch("fa/api/Posts", {
         method: "POST",
         body: JSON.stringify({ formData }),
         //@ts-ignore
@@ -69,7 +69,7 @@ const EditTicketForm = ({ ticket }) => {
   useEffect(() => {
     const fetchSections = async () => {
       try {
-        const response = await axios.get(`/api/Section`);
+        const response = await axios.get(`fa/api/Section`);
         setSections(response.data.sections);
       } catch (error) {
         console.error("Error fetching sections:", error);

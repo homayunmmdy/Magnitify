@@ -4,7 +4,7 @@ import DeleteBlock from "../../ui/home/DeleteBlock";
 const getData = async () => {
   const API_URL = process.env.API_URL;
   try {
-    const res = await fetch(`${API_URL}/api/Contacts`, {
+    const res = await fetch(`${API_URL}fa/api/Contacts`, {
       cache: "no-store",
     });
 

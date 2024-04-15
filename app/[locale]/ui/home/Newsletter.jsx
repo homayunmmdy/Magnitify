@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import SiteConfig from "../../config/site";
+
 const Newsletter = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -9,7 +10,7 @@ const Newsletter = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("/api/Newsletter", {
+      const response = await fetch("fa/api/Newsletter", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

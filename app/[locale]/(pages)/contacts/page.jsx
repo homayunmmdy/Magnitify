@@ -22,7 +22,7 @@ const ContactsPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("/api/Contacts", {
+      const response = await fetch("fa/api/Contacts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

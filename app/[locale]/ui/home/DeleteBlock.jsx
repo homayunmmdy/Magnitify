@@ -10,7 +10,7 @@ const DeleteBlock = ({ path, id }) => {
 
   const handleDelete = async () => {
     setloading(false);
-    const res = await fetch(`/api/${path}/${id}`, {
+    const res = await fetch(`fa/api/${path}/${id}`, {
       method: "DELETE",
     });
 

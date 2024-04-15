@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import DeleteBlock from "../../ui/home/DeleteBlock";
+import DeleteBlock from "../../[locale]/ui/home/DeleteBlock";
 import { useRouter } from "next/navigation";
 
 const Section = () => {
@@ -20,7 +20,7 @@ const Section = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/Section', {
+      const response = await fetch('fa/api/Section', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ const Section = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`/api/Section`);
+        const response = await axios.get(`fa/api/Section`);
         setData(response.data.sections);
       } catch (error) {
         console.error("Error fetching data:", error);

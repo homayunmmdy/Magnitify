@@ -5,6 +5,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import SiteConfig from "./config/site";
 import Navbar from "./ui/components/Navbar"
 import Footer from "./ui/components/Footer"
+import { useLocale } from "next-intl";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -25,9 +27,15 @@ const header = (
   </>
 );
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children , params }) {
+  const locale = useLocale();
+ 
+  if (params.locale !== locale) {
+    notFound();
+  }
+
   return (
-    <html dir={SiteConfig.dir} lang={SiteConfig.lang} data-theme="cupcake">
+    <html lang={locale}  dir={locale === 'fa' ? 'rtl' : 'ltr'} data-theme="cupcake">
       {header}
       <body className={inter.className}>
         <Navbar />

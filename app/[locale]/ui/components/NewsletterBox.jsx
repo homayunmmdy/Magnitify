@@ -9,7 +9,7 @@ const NewsletterBox = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch("/api/Newsletter", {
+            const response = await fetch("fa/api/Newsletter", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

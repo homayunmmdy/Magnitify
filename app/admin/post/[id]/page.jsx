@@ -1,10 +1,10 @@
-import EditTicketForm from "../../../ui/home/EditTicketForm"
+import EditTicketForm from "../../../[locale]/ui/home/EditTicketForm"
 
 const getTicketById = async (id) => {
   const API_URL = process.env.API_URL
 
   try {
-    const res = await fetch(`${API_URL}/api/Posts/${id}`, {
+    const res = await fetch(`${API_URL}fa/api/Posts/${id}`, {
       cache: "no-store",
     });
 
