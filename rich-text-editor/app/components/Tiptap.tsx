@@ -12,6 +12,7 @@ import Blockquote from "@tiptap/extension-blockquote";
 import ListItem from "@tiptap/extension-list-item";
 import BulletList from "@tiptap/extension-bullet-list";
 import OrderedList from "@tiptap/extension-ordered-list";
+import Strike from "@tiptap/extension-strike";
 import { useEditor, EditorContent } from "@tiptap/react";
 import { LuUnderline } from "react-icons/lu";
 import { RiMarkPenLine } from "react-icons/ri";
@@ -21,6 +22,7 @@ import { BsTypeBold } from "react-icons/bs";
 import { FaQuoteRight } from "react-icons/fa6";
 import { PiListBulletsFill } from "react-icons/pi";
 import { PiListNumbersFill } from "react-icons/pi";
+import { MdOutlineStrikethroughS } from "react-icons/md";
 
 const Tiptap = () => {
   const editor = useEditor({
@@ -35,6 +37,7 @@ const Tiptap = () => {
       OrderedList,
       ListItem,
       Blockquote,
+      Strike,
       Highlight.configure({ multicolor: true }),
       Heading.configure({
         levels: [1, 2, 3],
@@ -65,6 +68,12 @@ const Tiptap = () => {
           className={`btn ${editor.isActive("bold") ? "is-active" : ""}`}
         >
           <BsTypeBold />
+        </button>
+        <button
+          onClick={() => editor.chain().focus().toggleStrike().run()}
+          className={`btn ${editor.isActive("strike") ? "is-active" : ""}`}
+        >
+          <MdOutlineStrikethroughS />
         </button>
         <button
           onClick={() => editor.chain().focus().toggleBlockquote().run()}
