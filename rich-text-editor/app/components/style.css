@@ -11,6 +11,14 @@ h3 {
   font-weight: bold;
 }
 
+ol li {
+  list-style: decimal;
+}
+
+ul li {
+  list-style: disc;
+}
+
 blockquote {
   font-size: 1.4em;
   margin: 5px auto;
