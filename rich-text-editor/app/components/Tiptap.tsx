@@ -6,9 +6,12 @@ import Underline from "@tiptap/extension-underline";
 import Text from "@tiptap/extension-text";
 import Heading from '@tiptap/extension-heading'
 import Highlight from '@tiptap/extension-highlight'
+import Image from '@tiptap/extension-image'
 import { useEditor, EditorContent } from "@tiptap/react";
 import { LuUnderline } from "react-icons/lu";
 import { RiMarkPenLine } from "react-icons/ri";
+import { useCallback } from "react";
+import { BiSolidImageAdd } from "react-icons/bi";
 
 const Tiptap = () => {
   const editor = useEditor({
@@ -16,6 +19,7 @@ const Tiptap = () => {
       Document,
       Paragraph,
       Text,
+      Image,
       Underline,
       Highlight.configure({ multicolor: true }),
       Heading.configure({
@@ -26,6 +30,14 @@ const Tiptap = () => {
         
       `,
   });
+
+  const addImage = useCallback(() => {
+    const url = window.prompt('URL')
+
+    if (url) {
+      editor.chain().focus().setImage({ src: url }).run()
+    }
+  }, [editor])
 
   if (!editor) {
     return null;
@@ -65,6 +77,7 @@ const Tiptap = () => {
       >
         <RiMarkPenLine />
       </button>
+      <button className="btn" onClick={addImage}><BiSolidImageAdd /></button>
       </div>
       <div className=" p-2">
         <EditorContent editor={editor} />
