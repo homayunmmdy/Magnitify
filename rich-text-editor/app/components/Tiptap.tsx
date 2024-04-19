@@ -6,18 +6,21 @@ import Underline from "@tiptap/extension-underline";
 import Text from "@tiptap/extension-text";
 import Heading from '@tiptap/extension-heading'
 import Highlight from '@tiptap/extension-highlight'
+import Bold from '@tiptap/extension-bold'
 import Image from '@tiptap/extension-image'
 import { useEditor, EditorContent } from "@tiptap/react";
 import { LuUnderline } from "react-icons/lu";
 import { RiMarkPenLine } from "react-icons/ri";
 import { useCallback } from "react";
 import { BiSolidImageAdd } from "react-icons/bi";
+import { BsTypeBold } from "react-icons/bs";
 
 const Tiptap = () => {
   const editor = useEditor({
     extensions: [
       Document,
       Paragraph,
+      Bold,
       Text,
       Image,
       Underline,
@@ -46,6 +49,12 @@ const Tiptap = () => {
   return (
     <>
       <div className="mb-2  flex items-center gap-4">
+      <button
+        onClick={() => editor.chain().focus().toggleBold().run()}
+        className={`btn ${editor.isActive('bold') ? 'is-active' : ''}`}
+      >
+        <BsTypeBold />
+      </button>
         <button
           onClick={() => editor.chain().focus().toggleUnderline().run()}
           className={`btn ${editor.isActive("underline") ? "is-active" : ""}`}
