@@ -5,8 +5,10 @@ import Paragraph from "@tiptap/extension-paragraph";
 import Underline from "@tiptap/extension-underline";
 import Text from "@tiptap/extension-text";
 import Heading from '@tiptap/extension-heading'
+import Highlight from '@tiptap/extension-highlight'
 import { useEditor, EditorContent } from "@tiptap/react";
 import { LuUnderline } from "react-icons/lu";
+import { RiMarkPenLine } from "react-icons/ri";
 
 const Tiptap = () => {
   const editor = useEditor({
@@ -15,6 +17,7 @@ const Tiptap = () => {
       Paragraph,
       Text,
       Underline,
+      Highlight.configure({ multicolor: true }),
       Heading.configure({
         levels: [1, 2, 3],
       }),
@@ -55,6 +58,12 @@ const Tiptap = () => {
         className={`btn ${editor.isActive('heading', { level: 3 }) ? 'is-active' : ''}`}
       >
         H3
+      </button>
+      <button
+        onClick={() => editor.chain().focus().toggleHighlight().run()}
+        className={`btn ${editor.isActive('highlight') ? 'is-active' : ''}`}
+      >
+        <RiMarkPenLine />
       </button>
       </div>
       <div className=" p-2">
