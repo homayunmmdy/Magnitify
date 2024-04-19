@@ -1,0 +1,48 @@
+h1 {
+  font-size: 2.125rem;
+  font-weight: bold;
+}
+h2 {
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+ol li {
+  list-style: decimal;
+}
+
+ul li {
+  list-style: disc;
+}
+
+blockquote {
+  font-size: 1.4em;
+  margin: 5px auto;
+  font-family: Open Sans;
+  font-style: italic;
+  color: #555555;
+  padding: 16px 20px 16px 65px;
+  border-left: 8px solid #78c0a8;
+  line-height: 1.6;
+  position: relative;
+}
+
+blockquote::before {
+  font-family: Arial;
+  content: "\201C";
+  color: #78c0a8;
+  font-size: 4em;
+  position: absolute;
+  left: 10px;
+  bottom: -50%;
+  top: -50%;
+  margin-top: 10px;
+}
+
+blockquote::after {
+  content: "";
+}

@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Tiptap from "../components/Tiptap";
 
 const EditTicketForm = ({ ticket }) => {
   const EDITMODE = ticket._id === "new" ? false : true;
@@ -22,17 +23,20 @@ const EditTicketForm = ({ ticket }) => {
     startingTicketData["imgurl"] = ticket.imgurl;
   }
 
-  const [formData, setFormData] = useState(startingTicketData);
-
-  const handleChange = (e) => {
-    const value = e.target.value;
-    const name = e.target.name;
-
-    setFormData((preState) => ({
-      ...preState,
-      [name]: value,
+  const [formData, setFormData] = useState({
+    title: EDITMODE ? ticket.title : "",
+    description: EDITMODE ? ticket.description : "",
+    body: EDITMODE ? ticket.body : "", // Initialize body with ticket's body if in edit mode
+    section: EDITMODE ? ticket.section : "1",
+    imgurl: EDITMODE ? ticket.imgurl : "",
+  });
+  const handleChange = (field, value) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      [field]: value,
     }));
   };
+
   const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (e) => {
@@ -119,7 +123,8 @@ const EditTicketForm = ({ ticket }) => {
           className="textarea textarea-primary"
         />
         <label>متن</label>
-        <textarea
+        <Tiptap handleChange={handleChange} content={formData.body} />
+        {/* <textarea
           id="body"
           name="body"
           onChange={handleChange}
@@ -127,7 +132,7 @@ const EditTicketForm = ({ ticket }) => {
           value={formData.body}
           rows="10"
           className="textarea textarea-primary"
-        />
+        /> */}
         <label>بخش</label>
         <select
           className="select select-primary w-full"
