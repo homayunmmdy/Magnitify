@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tiptap/extension-blockquote": "^2.3.0",
     "@tiptap/extension-bold": "^2.3.0",
     "@tiptap/extension-color": "^2.3.0",
     "@tiptap/extension-heading": "^2.3.0",

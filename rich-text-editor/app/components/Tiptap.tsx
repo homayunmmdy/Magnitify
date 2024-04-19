@@ -8,12 +8,14 @@ import Heading from '@tiptap/extension-heading'
 import Highlight from '@tiptap/extension-highlight'
 import Bold from '@tiptap/extension-bold'
 import Image from '@tiptap/extension-image'
+import Blockquote from '@tiptap/extension-blockquote'
 import { useEditor, EditorContent } from "@tiptap/react";
 import { LuUnderline } from "react-icons/lu";
 import { RiMarkPenLine } from "react-icons/ri";
 import { useCallback } from "react";
 import { BiSolidImageAdd } from "react-icons/bi";
 import { BsTypeBold } from "react-icons/bs";
+import { FaQuoteRight } from "react-icons/fa6";
 
 const Tiptap = () => {
   const editor = useEditor({
@@ -24,6 +26,7 @@ const Tiptap = () => {
       Text,
       Image,
       Underline,
+      Blockquote,
       Highlight.configure({ multicolor: true }),
       Heading.configure({
         levels: [1, 2, 3],
@@ -54,6 +57,12 @@ const Tiptap = () => {
         className={`btn ${editor.isActive('bold') ? 'is-active' : ''}`}
       >
         <BsTypeBold />
+      </button>
+      <button
+        onClick={() => editor.chain().focus().toggleBlockquote().run()}
+        className={`btn ${editor.isActive('blockquote') ? 'is-active' : ''}`}
+      >
+        <FaQuoteRight />
       </button>
         <button
           onClick={() => editor.chain().focus().toggleUnderline().run()}
