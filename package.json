@@ -1,5 +1,5 @@
 {
-  "name": "monday-tutorial",
+  "name": "magnitify",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,43 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@fortawesome/free-solid-svg-icons": "^6.4.2",
-    "@fortawesome/react-fontawesome": "^0.2.0",
-    "@tiptap/extension-blockquote": "^2.3.0",
-    "@tiptap/extension-bold": "^2.3.0",
-    "@tiptap/extension-bullet-list": "^2.3.0",
-    "@tiptap/extension-document": "^2.3.0",
-    "@tiptap/extension-heading": "^2.3.0",
-    "@tiptap/extension-highlight": "^2.3.0",
-    "@tiptap/extension-image": "^2.3.0",
-    "@tiptap/extension-list-item": "^2.3.0",
-    "@tiptap/extension-ordered-list": "^2.3.0",
-    "@tiptap/extension-paragraph": "^2.3.0",
-    "@tiptap/extension-strike": "^2.3.0",
-    "@tiptap/extension-text": "^2.3.0",
-    "@tiptap/extension-underline": "^2.3.0",
-    "@tiptap/pm": "^2.3.0",
-    "@tiptap/react": "^2.3.0",
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
-    "autoprefixer": "10.4.14",
-    "axios": "^1.6.7",
-    "eslint": "8.46.0",
-    "eslint-config-next": "^14.2.2",
-    "mongodb": "^5.7.0",
-    "mongoose": "^7.4.3",
-    "next": "^14.2.2",
-    "next-cloudinary": "^6.5.0",
+    "axios": "^1.6.8",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.3.0",
+    "next": "14.1.4",
     "next-intl": "^3.11.1",
-    "postcss": "8.4.27",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^5.0.1",
-    "swiper": "^11.0.7",
-    "tailwindcss": "3.3.3"
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^5.0.1"
   },
   "devDependencies": {
-    "@types/react": "18.2.64",
-    "daisyui": "^4.7.3"
+    "autoprefixer": "^10.0.1",
+    "daisyui": "^4.9.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0"
   }
 }

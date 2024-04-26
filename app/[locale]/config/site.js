@@ -10,6 +10,11 @@ const SiteConfig = {
     },
     {
       id: 2,
+      name: " هوش مصنوعی",
+      link: "https://ai-cluby.netlify.app/",
+    },
+    {
+      id: 2,
       name: " آرشیو",
       link: "/archive",
     },

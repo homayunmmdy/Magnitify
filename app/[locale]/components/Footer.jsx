@@ -1,5 +1,5 @@
 import React from "react";
-import SiteConfig from "../../config/site";
+import SiteConfig from "@/app/[locale]/config/site";
 import { useLocale } from "next-intl";
 
 const Footer = () => {
@@ -28,7 +28,7 @@ const Footer = () => {
         <nav>
           <h6 className="footer-title">منابع</h6>
           <a className="link link-hover">پشتیبانی</a>
-          <a className="link link-hover">رویال وب</a>
+          <a className="link link-hover">هوش مصنوعی</a>
         </nav>
       </footer>
     </>

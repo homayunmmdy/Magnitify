@@ -1,10 +1,9 @@
 "use client";
-import BreadCrump from "../../../ui/components/BreadCrump";
-import NewsletterBox from "../../../ui/components/NewsletterBox";
-import RecentPosts from "../../../ui/sections/RecentPosts";
-import SinglePost from "../../../ui/home/SinglePost";
+import RecentPosts from "@/app/[locale]/components/RecentPosts";
+import SinglePost from "@/app/[locale]/components/SinglePost";
 import PostSkelton from "./PostSkelton";
-const Ticket = () => {
+
+const PostPage = () => {
   const post = SinglePost();
 
   if (!post) {
@@ -24,7 +23,6 @@ const Ticket = () => {
             height="450"
             loading="lazy"
           />
-          <BreadCrump />
           <div >
             <h1 className="text-center mb-3">{post.title}</h1>
             <p>
@@ -37,13 +35,12 @@ const Ticket = () => {
           </div>
         </div>
         <div className="col-span-12 md:col-span-4 lg:col-span-3">
-          {/* <RecentPosts /> */}
+          <RecentPosts />
           <div id="pos-article-text-94696"></div>
-          <NewsletterBox />
         </div>
       </div>
     </>
   );
 };
 
-export default Ticket;
+export default PostPage;

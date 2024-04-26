@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import SiteConfig from "../../config/site";
+import SiteConfig from "@/app/[locale]/config/site";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLocale } from "next-intl";
@@ -51,13 +51,13 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal px-1 flex gap-3 items-center">
           {nav.map((item) => {
                 const url = `/${locale}${item.link}`
                 return (
                   <li key={item.id} className="mx-1">
-                    {pathname == url ? <Link href={url} className="bg-base-300 rounded-xl">{item.name}</Link> :
-                      <Link href={url}>{item.name}</Link>}
+                    {pathname == url ? <Link href={url} className="bg-indigo-700 hover:bg-indigo-700 text-white rounded-xl">{item.name}</Link> :
+                      <Link className="hover:bg-base-100 border-2 border-base-100 hover:text-indigo-700 hover:border-blue-700 rounded-xl" href={url}>{item.name}</Link>}
                   </li>
                 )
               })}
@@ -65,7 +65,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <div className="m-1">
-            <a className="rounded-3xl	 text-white font-medium flex p-3 bg-indigo-700 hover:opacity-90 lg:transition-all lg:ease-linear lg:duration-200 w-13" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7146597314181193728" target="_blank">سابسکرایب</a>
+            <a className="border-2 border-blue-700	 rounded-xl	text-indigo-700 hover:text-white font-medium flex p-3 bg-base-100  hover:bg-indigo-700 hover:opacity-90 lg:transition-all lg:ease-linear lg:duration-200 w-13" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7146597314181193728" target="_blank">سابسکرایب</a>
           </div>
         </div>
       </div>

@@ -23,12 +23,12 @@ const RecentPosts =  () => {
 
     return (
         <>
-            <div class=" w-full rounded-[10px] border border-gray-3 p-4 sm:p-7">
-                <h4 class="font-semibold text-custom-4 text-dark mb-3">
+            <div className=" w-full rounded-[10px] border border-gray-3 p-4 sm:p-7">
+                <h4 className="font-semibold text-custom-4 text-dark mb-3">
                     پست های اخیر
                 </h4>
                 {posts && (
-                    <div class="grid grid-cols-1  gap-y-5 gap-x-3 items-start ">
+                    <div className="grid grid-cols-1  gap-y-5 gap-x-3 items-start ">
                         {posts?.map((Post, _index) => (
                             <RecentPost id={_index} key={_index} post={Post} />
                         ))}

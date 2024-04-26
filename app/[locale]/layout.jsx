@@ -3,8 +3,8 @@ import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import SiteConfig from "./config/site";
-import Navbar from "./ui/components/Navbar"
-import Footer from "./ui/components/Footer"
+import Navbar from "@/app/[locale]/components/Navbar"
+import Footer from "@/app/[locale]/components/Footer"
 import { useLocale } from "next-intl";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -39,7 +39,7 @@ export default function RootLayout({ children, params }) {
       }
       <body className={inter.className}>
         <Navbar />
-        <div className="pt-20">
+        <div className="pt-[75px]">
           {children}
         </div>
         <Analytics />
