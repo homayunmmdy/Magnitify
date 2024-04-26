@@ -1,20 +1,12 @@
 import React from 'react'
+import FormattedTimestamp from './FormattedTimestamp';
 
 const PostSec = ({ post }) => {
-    function formatTimestamp(timestamp) {
-        const options = {
-            year: "numeric",
-            month: "2-digit",
-            day: "2-digit",
-        };
-
-        const date = new Date(timestamp);
-        const formattedDate = date.toLocaleString("fa-IR", options);
-
-        return formattedDate;
-    }
-
-    const createdDateTime = formatTimestamp(post.createdAt);
+    const options = {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+    };
     return (
         <>
             <div className="relative w-full flex items-end justify-start text-left bg-cover bg-center h-[450px] rounded-md"
@@ -24,7 +16,7 @@ const PostSec = ({ post }) => {
                 </div>
                 <div className="absolute top-0 right-0 left-0 mx-5 mt-2 flex justify-end items-center">
                     <div className="text-white font-regular flex flex-col justify-end">
-                        <span className="text-2xl leading-0 font-semibold">{createdDateTime}</span>
+                        <span className="text-2xl leading-0 font-semibold"><FormattedTimestamp timestamp={post.createdAt} options={options} /></span>
                     </div>
                 </div>
                 <main className="p-5 z-10">
