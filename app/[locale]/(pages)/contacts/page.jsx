@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import SiteConfig from "../../config/site";
-import Circles from "../../ui/contacts/Circles";
+import Circles from "@/app/[locale]/components/Circle";
 
 const ContactsPage = () => {
   const [formData, setFormData] = useState({
