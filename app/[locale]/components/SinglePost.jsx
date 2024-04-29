@@ -5,13 +5,13 @@ import { usePathname } from "next/navigation";
 
 const SinglePost = () => {
   const pathname = usePathname();
-  const id = pathname.slice(7);
+  const id = pathname.slice(10);
   const [battle, setBattle] = useState();
 
-  useEffect(() => {
+useEffect(() => {
     const fetchBattle = async () => {
       try {
-        const response = await axios.get(`fa/api/Posts/${id}`);
+        const response = await axios.get(`/fa/api/Posts/${id}`);
         setBattle(response.data.foundTicket);
       } catch (error) {
         console.error("Error fetching battle:", error);
