@@ -16,7 +16,7 @@ const SpecialCard = () => {
                     <a href={`/Posts/${post._id}`}>
                         <div className="h-56 bg-cover rounded-lg text-center overflow-hidden"
                             style={{ backgroundImage: `url(${post.imgurl})` }}
-                            title="Woman holding a mug">
+                            title={post.title}>
                         </div>
                     </a>
                     <div
