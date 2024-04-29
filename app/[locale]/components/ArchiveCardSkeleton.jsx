@@ -7,7 +7,6 @@ const ArchiveCardSkeleton = () => {
                 className="relative bg-white border rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 transform transition duration-500 hover:scale-105">
                 <div className="p-2 flex justify-center">
                     <div className="skeleton h-32 w-full"></div>
-\
                 </div>
 
                 <div className="px-4 pb-3">
