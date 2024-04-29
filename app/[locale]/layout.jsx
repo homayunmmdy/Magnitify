@@ -39,7 +39,7 @@ export default function RootLayout({ children, params }) {
       }
       <body className={inter.className}>
         <Navbar />
-        <div className="pt-[75px]">
+        <div className="pt-[75px] bg-white">
           {children}
         </div>
         <Analytics />

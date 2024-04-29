@@ -10,9 +10,9 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <PostsSec />
+      <PostsSec secid={4}/>
       <SepcialSections2 />
-      <PostsSec />
+      <PostsSec secid={7}/>
       <Gallery />
       <SpecialSections />
       <ArchiveSections />
