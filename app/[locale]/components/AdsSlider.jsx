@@ -6,21 +6,8 @@ import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import "swiper/css/autoplay"
 
-const ads = [
-    {
-        id: 1,
-        adsId: "pos-article-display-94697"
-    },
-    {
-        id: 2,
-        adsId: "pos-article-display-94697"
-    },
-    {
-        id: 3,
-        adsId: "pos-article-display-94697"
-    },
-]
-const AdsSlider = () => {
+
+const AdsSlider = ({ads }) => {
     return (
         <div className="sm:p-3">
             <Swiper
