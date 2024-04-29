@@ -5,15 +5,19 @@ import AdsSlider from './AdsSlider'
 const adsData = [
     {
         id: 1,
-        adsId: "pos-article-display-94697"
+        adsId: "pos-article-display-94981"
     },
     {
         id: 2,
-        adsId: "pos-article-display-94697"
+        adsId: "pos-article-display-94407"
     },
     {
         id: 3,
-        adsId: "pos-article-display-94697"
+        adsId: "pos-article-display-94980"
+    },
+    {
+        id: 4,
+        adsId: "pos-article-display-94698"
     },
 ]
 const SepcialSections2 = () => {

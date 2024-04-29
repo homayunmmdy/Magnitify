@@ -21,7 +21,7 @@ const AdsSlider = ({ads }) => {
             >
                 {ads.map((adv) => (
                     <SwiperSlide key={adv.id}>
-                        <div id={adv.adsId}>Test {adv.id}</div>
+                        <div id={adv.adsId}></div>
                     </SwiperSlide>
                 ))}
             </Swiper>

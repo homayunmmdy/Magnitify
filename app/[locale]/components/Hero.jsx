@@ -15,6 +15,7 @@ const Hero = () => {
                 </div>
             </div>
             <SubHero />
+            <div id="pos-article-text-94696"></div>
         </div>
     )
 }

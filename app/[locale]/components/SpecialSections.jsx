@@ -3,16 +3,20 @@ import AdsSlider from './AdsSlider'
 import SpecialSec from './SpecialSec'
 const adsData = [
     {
+        id: 1,
+        adsId: "pos-article-display-94687"
+    },
+    {
+        id: 2,
+        adsId: "pos-article-display-94409"
+    },
+    {
         id: 3,
         adsId: "pos-article-display-94697"
     },
     {
         id: 4,
-        adsId: "pos-article-display-94697"
-    },
-    {
-        id: 5,
-        adsId: "pos-article-display-94697"
+        adsId: "pos-article-display-94970"
     },
 ]
 const SpecialSections = () => {
