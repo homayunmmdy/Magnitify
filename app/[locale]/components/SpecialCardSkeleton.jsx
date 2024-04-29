@@ -13,8 +13,7 @@ const SpecialCardSkeleton = () => {
                 </div>
                 <p className="text-gray-700 text-xs mt-2">
                     <div className="skeleton h-4 w-full mb-3"></div>
-                    <div className="skeleton h-4 w-[60%]">
-                    </div>
+                    <div className="skeleton h-4 w-[60%]"></div>
                 </p>
             </div>
         </>
