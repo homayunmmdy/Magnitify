@@ -12,7 +12,7 @@ const NextMainSec = () => {
 
     return (
         <>
-            {data.map((filteredData, _index) => (
+            {data?.map((filteredData, _index) => (
                 <NextMain id={_index} key={_index} post={filteredData} />
             ))}
         </>

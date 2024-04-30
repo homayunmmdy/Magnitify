@@ -62,7 +62,7 @@ const ArchivePage = () => {
               onChange={(e) => handleFilterChange("section", e.target.value)}
             >
               <option value={0}>All</option>
-              {sections.map((sec) => (
+              {sections?.map((sec) => (
                 <option key={sec._id} value={sec.secid}>
                   {sec.name}
                 </option>

@@ -11,7 +11,7 @@ const MainSec = () => {
     }
     return (
         <>
-            {data.map((filteredData, _index) => (
+            {data?.map((filteredData, _index) => (
                 <Main id={_index} key={_index} post={filteredData} />
             ))}
         </>

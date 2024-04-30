@@ -19,7 +19,7 @@ const AdsSlider = ({ads }) => {
                 loop={true}
                 autoplay={{ delay: 3000 }}
             >
-                {ads.map((adv) => (
+                {ads?.map((adv) => (
                     <SwiperSlide key={adv.id}>
                         <div id={adv.adsId}></div>
                     </SwiperSlide>

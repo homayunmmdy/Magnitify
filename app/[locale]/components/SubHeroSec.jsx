@@ -14,7 +14,7 @@ const SubHeroSec = () => {
         <>
             <hr className="border-b-2 border-gray-300 my-5" />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                {data.map((filteredData, _index) => (
+                {data?.map((filteredData, _index) => (
                     <SubHero id={_index} key={_index} post={filteredData} />
                 ))}
             </div>
