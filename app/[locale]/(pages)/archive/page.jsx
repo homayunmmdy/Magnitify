@@ -82,8 +82,6 @@ const ArchivePage = () => {
                   />
                 ))}
               </div>
-              {console.log("tickets",filteredTickets)}
-
               {filteredTickets?.length < "12" ? null : <div className="flex justify-center mt-4">
                 {Array.from({ length: Math.ceil(tickets.length / pageSize) }, (_, i) => (
                   <button

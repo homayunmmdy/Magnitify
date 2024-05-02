@@ -9,7 +9,7 @@ const SpecialSec = () => {
         return <SpecialSecSkeleton />;
     }
     return (
-        <div>
+        <>
             {data?.map((post) => (
                 <div key={post._id}>
                     <a href={`/Posts/${post._id}`}>
@@ -23,7 +23,7 @@ const SpecialSec = () => {
                         {post.title}</a>
                 </div>
             ))}
-        </div>
+        </>
     )
 }
 

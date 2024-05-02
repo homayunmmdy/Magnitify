@@ -9,7 +9,7 @@ export async function DELETE(req, { params }) {
     await Section.findByIdAndDelete(id);
     return NextResponse.json({ message: "قسمت مورد نظر با موفقیت حذف شد" }, { status: 200 });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return NextResponse.json({ message: "Error", error }, { status: 500 });
   }
 }

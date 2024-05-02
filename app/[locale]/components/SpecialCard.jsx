@@ -12,7 +12,7 @@ const SpecialCard = () => {
     return (
         <div>
             {data?.map((post) => (
-                <>
+                <div key={post._id}>
                     <a href={`/Posts/${post._id}`}>
                         <div className="h-56 bg-cover rounded-lg text-center overflow-hidden"
                             style={{ backgroundImage: `url(${post.imgurl})` }}
@@ -28,7 +28,7 @@ const SpecialCard = () => {
                             <p className="text-gray-700 text-xs mt-2">{post.description}</p>
                         </div>
                     </div>
-                </>
+                </div>
             ))}
 
         </div>
