@@ -1,6 +1,6 @@
 "use client";
-import RecentPosts from "@/app/[locale]/components/RecentPosts";
-import SinglePost from "@/app/[locale]/components/SinglePost";
+import RecentPosts from "@/app/components/RecentPosts";
+import SinglePost from "@/app/components/SinglePost";
 import PostSeclton from "./PostSkelton";
 const Post = () => {
   const post = SinglePost();

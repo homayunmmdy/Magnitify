@@ -4,7 +4,7 @@ import NextMainSkeleton from "./NextMainSkeleton";
 import useDataFetching from "./useDataFetching";
 
 const NextMainSec = () => {
-    const { data, loading } = useDataFetching("fa/api/Posts", -4, 2);
+    const { data, loading } = useDataFetching("/api/Posts", -4, 2);
 
     if (loading) {
         return <NextMainSkeleton />;

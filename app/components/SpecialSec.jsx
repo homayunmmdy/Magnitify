@@ -3,7 +3,7 @@ import SpecialSecSkeleton from "./SpecialSecSkeleton";
 import useDataFetching from "./useDataFetching";
 
 const SpecialSec = () => {
-    const { data, loading } = useDataFetching("fa/api/Posts", -6, 8);
+    const { data, loading } = useDataFetching("/api/Posts", -6, 8);
 
     if (loading) {
         return <SpecialSecSkeleton />;

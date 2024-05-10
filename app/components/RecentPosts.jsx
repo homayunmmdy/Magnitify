@@ -10,7 +10,7 @@ const RecentPosts =  () => {
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const postResponse = await axios.get(`fa/api/Posts`);
+            const postResponse = await axios.get(`/api/Posts`);
             setPosts(postResponse.data.posts.slice(recentSize));    
          
           } catch (error) {

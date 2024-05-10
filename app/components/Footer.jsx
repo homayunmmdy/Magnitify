@@ -1,9 +1,7 @@
 import React from "react";
-import SiteConfig from "@/app/[locale]/config/site";
-import { useLocale } from "next-intl";
+import SiteConfig from "@/app/config/site";
 
 const Footer = () => {
-  const locale = useLocale();
   return (
     <>
       <footer className="footer p-10  text-base-content">
@@ -19,9 +17,8 @@ const Footer = () => {
         <nav>
           <h6 className="footer-title">سرویس ها</h6>
           {SiteConfig.nav.map((item) => {
-            const url = `/${locale}${item.link}`
             return (
-                <a href={url}  key={item.id} className="link link-hover">{item.name}</a>
+                <a href={item.link}  key={item.id} className="link link-hover">{item.name}</a>
             )
           })}
         </nav>

@@ -4,7 +4,7 @@ import MainSecSkeleton from "./MainSecSkeleton";
 import useDataFetching from "./useDataFetching";
 
 const MainSec = () => {
-    const { data, loading } = useDataFetching("fa/api/Posts", -1, 1);
+    const { data, loading } = useDataFetching("/api/Posts", -1, 1);
 
     if (loading) {
         return <MainSecSkeleton />

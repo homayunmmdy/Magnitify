@@ -5,7 +5,7 @@ import FormattedTimestamp from './FormattedTimestamp';
 import SpecialCardsSkeleton from './SpecialCardsSkeleton';
 
 const SpecialCards = () => {
-    const { data, loading } = useDataFetching("fa/api/Posts", -3, 6);
+    const { data, loading } = useDataFetching("/api/Posts", -3, 6);
 
     if (loading) {
         return <SpecialCardsSkeleton />

@@ -4,7 +4,7 @@ import useDataFetching from "./useDataFetching";
 import PostSecSkeleton from "./PostSecSkeleton";
 
 const PostsSec = ({secid}) => {
-    const { data, loading } = useDataFetching("fa/api/Posts", -4, secid);
+    const { data, loading } = useDataFetching("/api/Posts", -4, secid);
 
     if (loading) {
         return <PostSecSkeleton />

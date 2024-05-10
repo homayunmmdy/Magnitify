@@ -4,7 +4,7 @@ import SubHeroSkeleton from "./SubHeroSkeleton";
 import useDataFetching from "./useDataFetching";
 
 const SubHeroSec = () => {
-    const { data, loading } = useDataFetching("fa/api/Posts", -4, 3);
+    const { data, loading } = useDataFetching("/api/Posts", -4, 3);
 
     if (loading) {
         return <SubHeroSkeleton />;

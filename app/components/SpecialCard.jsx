@@ -4,7 +4,7 @@ import useDataFetching from './useDataFetching';
 import SpecialCardSkeleton from './SpecialCardSkeleton';
 
 const SpecialCard = () => {
-    const { data, loading } = useDataFetching("fa/api/Posts", -1, 5);
+    const { data, loading } = useDataFetching("/api/Posts", -1, 5);
 
     if (loading) {
         return <SpecialCardSkeleton />
