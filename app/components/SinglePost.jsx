@@ -5,23 +5,23 @@ import { usePathname } from "next/navigation";
 
 const SinglePost = () => {
   const pathname = usePathname();
-  const id = pathname.slice(10);
-  const [battle, setBattle] = useState();
+  const id = pathname.slice(7);
+  const [post, setPost] = useState();
 
-useEffect(() => {
-    const fetchBattle = async () => {
+  useEffect(() => {
+    const fetchPost = async () => {
       try {
-        const response = await axios.get(`//api/Posts/${id}`);
-        setBattle(response.data.foundTicket);
+        const response = await axios.get(`/api/Posts/${id}`);
+        setPost(response.data.foundTicket);
       } catch (error) {
-        console.error("Error fetching battle:", error);
+        console.error("Error fetching post:", error);
       }
     };
 
-    fetchBattle();
+    fetchPost();
   }, [id]);
 
-  return battle;
+  return post;
 };
 
 export default SinglePost;

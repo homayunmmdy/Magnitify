@@ -5,6 +5,8 @@ import PostSeclton from "./PostSkelton";
 import { SignIn, useUser } from "@clerk/nextjs";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import FormattedTimestamp from "@/app/components/FormattedTimestamp";
+import { readingTime } from 'reading-time-estimator'
 
 const Post = () => {
   const post = SinglePost();
@@ -18,6 +20,14 @@ const Post = () => {
   if (!post) {
     return <PostSeclton />
   }
+  const options = {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  };
+
+  const text = post.body;
+  const result = readingTime(text, 10, 'fa')
 
   return (
     <>
@@ -26,6 +36,7 @@ const Post = () => {
         <div className="bg-base-200 py-8">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl text-center font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">{post.title}</h1>
+            <p className="text-lg  text-center my-3"><FormattedTimestamp timestamp={post.createdAt} options={options} /></p>
           </div>
         </div>
         <div className="bg-white py-8">
@@ -38,6 +49,7 @@ const Post = () => {
                 alt={post.title}
                 loading="lazy"
               />
+              <p>{result}</p>
               <div id="pos-article-text-card-94410"></div>
               <div className="prose max-w-none">
                 <p className="p-3 text-lg leading-9	">

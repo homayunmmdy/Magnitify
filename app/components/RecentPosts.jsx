@@ -2,25 +2,33 @@
 import React, { useEffect, useState } from 'react'
 import RecentPost from './RecentPost';
 import axios from "axios"
+import RecentPostSkeleton from './RecentPostSkeleton';
 
-const RecentPosts =  () => {
+const RecentPosts = () => {
     const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(true);
     const [recentSize] = useState(-3);
 
     useEffect(() => {
         const fetchData = async () => {
-          try {
-            const postResponse = await axios.get(`/api/Posts`);
-            setPosts(postResponse.data.posts.slice(recentSize));    
-         
-          } catch (error) {
-            console.error("Error fetching data:", error);
-          }
+            try {
+                setLoading(true);
+                const postResponse = await axios.get(`/api/Posts`);
+                setPosts(postResponse.data.posts.slice(recentSize));
+                setLoading(false);
+
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                setLoading(false);
+            }
         };
 
-    fetchData();
-}, [recentSize]);
+        fetchData();
+    }, [recentSize]);
 
+    if (loading) {
+        return <RecentPostSkeleton />
+    }
     return (
         <>
             <div className=" w-full rounded-[10px] border border-gray-3 p-4 sm:p-7">
