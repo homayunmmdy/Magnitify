@@ -13,7 +13,7 @@ const AdsSlider = ({ads }) => {
             <Swiper
                 modules={[Navigation, EffectFade, Autoplay]}
                 effect="fade"
-                spaceBetween={5}
+                spaceBetween={4}
                 slidesPerView={1}
                 navigation
                 loop={true}

@@ -30,7 +30,7 @@ const header = (
 export default function RootLayout({ children }) {
   return (
     <html lang={SiteConfig.lang} dir={SiteConfig.dir} data-theme="cupcake">
-      {header}
+    {process.env.NEXT_PUBLIC_STATUS == "PRO" ? header : null}
       <body className={inter.className}>
         <Navbar />
         <div className="pt-[75px] bg-white">

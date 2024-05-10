@@ -2,7 +2,8 @@
 import React from "react";
 import SiteConfig from "@/app/config/site";
 import { usePathname } from "next/navigation";
-
+import Logo from "@/public/static/Image/logo.png"
+import Image from "next/image";
 const Navbar = () => {
   const pathname = usePathname();
   const nav = SiteConfig.nav;
@@ -42,8 +43,11 @@ const Navbar = () => {
               })}
             </ul>
           </div>
-          <a href="/" className="text-xl font-bold">
-            {SiteConfig.name}
+          <a href="/" className="flex items-center gap-2" >
+            <Image src={Logo} width={40} height={40} title={SiteConfig.name} />
+            <span className="text-xl font-bold hover:text-indigo-700">
+              {SiteConfig.name}
+            </span>
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
