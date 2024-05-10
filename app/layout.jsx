@@ -6,6 +6,7 @@ import SiteConfig from "./config/site";
 import Navbar from "@/app/components/Navbar"
 import Footer from "@/app/components/Footer"
 import Script from "next/script";
+import { ClerkProvider } from '@clerk/nextjs'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,17 +30,19 @@ const header = (
 
 export default function RootLayout({ children }) {
   return (
-    <html lang={SiteConfig.lang} dir={SiteConfig.dir} data-theme="cupcake">
-    {process.env.NEXT_PUBLIC_STATUS == "PRO" ? header : null}
-      <body className={inter.className}>
-        <Navbar />
-        <div className="pt-[75px] bg-white">
-          {children}
-        </div>
-        <Analytics />
-        <SpeedInsights />
-        <Footer />
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang={SiteConfig.lang} dir={SiteConfig.dir} data-theme="cupcake">
+        {process.env.NEXT_PUBLIC_STATUS == "PRO" ? header : null}
+        <body className={inter.className}>
+          <Navbar />
+          <div className="pt-[75px] bg-white">
+            {children}
+          </div>
+          <Analytics />
+          <SpeedInsights />
+          <Footer />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

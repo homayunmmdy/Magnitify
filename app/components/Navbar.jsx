@@ -4,9 +4,12 @@ import SiteConfig from "@/app/config/site";
 import { usePathname } from "next/navigation";
 import Logo from "@/public/static/Image/logo.png"
 import Image from "next/image";
+import { useUser } from "@clerk/nextjs";
+
 const Navbar = () => {
   const pathname = usePathname();
   const nav = SiteConfig.nav;
+  const { user } = useUser();
 
   return (
     <>
@@ -31,19 +34,32 @@ const Navbar = () => {
             </button>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-6 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               {nav?.map((item) => {
                 return (
                   <li key={item.id} className="mx-1">
-                    {pathname === item.link ? <a href={item.link} className="bg-base-300 rounded-xl">{item.name}</a> :
+                    {pathname === item.link ? <a href={item.link} className="bg-indigo-700 hover:bg-indigo-700 text-white rounded-xl">{item.name}</a> :
                       <a href={item.link}>{item.name}</a>}
                   </li>
                 )
               })}
+              {!user ? (<>
+                <li className="mb-2">
+                  <Link href="/sign-in">ورود</Link>
+                </li>
+                <li className="mb-2">
+                  <Link href="/sign-up">ثبت نام</Link>
+                </li>
+              </>) : (
+                <> <li className="mb-2">
+                  <Link href="/user-profile">پروفایل</Link>
+                </li></>
+              )
+              }
             </ul>
           </div>
-          <a href="/" className="flex items-center gap-2" >
+          <a href="/" className="flex items-center gap-2 flex-nowrap" >
             <Image src={Logo} width={40} height={40} title={SiteConfig.name} />
             <span className="text-xl font-bold hover:text-indigo-700">
               {SiteConfig.name}
@@ -60,6 +76,19 @@ const Navbar = () => {
                 </li>
               )
             })}
+            {!user ? (<>
+              <li className="mb-2">
+                <Link href="/sign-in" className="hover:bg-base-100 border-2 border-base-100 hover:text-indigo-700 hover:border-blue-700 rounded-xl">ورود</Link>
+              </li>
+              <li className="mb-2">
+                <Link href="/sign-up" className="hover:bg-base-100 border-2 border-base-100 hover:text-indigo-700 hover:border-blue-700 rounded-xl">ثبت نام</Link>
+              </li>
+            </>) : (
+              <> <li className="mb-2">
+                <Link href="/user-profile" className="hover:bg-base-100 border-2 border-base-100 hover:text-indigo-700 hover:border-blue-700 rounded-xl">پروفایل</Link>
+              </li></>
+            )
+            }
           </ul>
         </div>
         <div className="navbar-end">
