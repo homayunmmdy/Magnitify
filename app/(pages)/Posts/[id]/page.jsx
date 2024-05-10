@@ -2,14 +2,26 @@
 import RecentPosts from "@/app/components/RecentPosts";
 import SinglePost from "@/app/components/SinglePost";
 import PostSeclton from "./PostSkelton";
+import { SignIn, useUser } from "@clerk/nextjs";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Post = () => {
   const post = SinglePost();
+  const { user } = useUser();
+
+  if (!user) {
+    toast.info("you must login to see posts");
+    return (<div className="flex justify-center py-5"> <SignIn /></div>)
+  }
+
   if (!post) {
     return <PostSeclton />
   }
 
   return (
     <>
+      <ToastContainer />
       <div className="flex flex-col">
         <div className="bg-base-200 py-8">
           <div className="container mx-auto px-4">
@@ -29,7 +41,7 @@ const Post = () => {
               <div id="pos-article-text-card-94410"></div>
               <div className="prose max-w-none">
                 <p className="p-3 text-lg leading-9	">
-                <div id="pos-article-display-card-94403"></div>
+                  <div id="pos-article-display-card-94403"></div>
                   {post.body}</p>
               </div>
             </div>
