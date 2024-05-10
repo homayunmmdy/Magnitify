@@ -46,14 +46,14 @@ const Navbar = () => {
               })}
               {!user ? (<>
                 <li className="mb-2">
-                  <Link href="/sign-in">ورود</Link>
+                  <a href="/sign-in">ورود</a>
                 </li>
                 <li className="mb-2">
-                  <Link href="/sign-up">ثبت نام</Link>
+                  <a href="/sign-up">ثبت نام</a>
                 </li>
               </>) : (
                 <> <li className="mb-2">
-                  <Link href="/user-profile">پروفایل</Link>
+                  <a href="/user-profile">پروفایل</a>
                 </li></>
               )
               }
@@ -78,14 +78,14 @@ const Navbar = () => {
             })}
             {!user ? (<>
               <li className="mb-2">
-                <Link href="/sign-in" className="hover:bg-base-100 border-2 border-base-100 hover:text-indigo-700 hover:border-blue-700 rounded-xl">ورود</Link>
+                <a href="/sign-in" className="hover:bg-base-100 border-2 border-base-100 hover:text-indigo-700 hover:border-blue-700 rounded-xl">ورود</a>
               </li>
               <li className="mb-2">
-                <Link href="/sign-up" className="hover:bg-base-100 border-2 border-base-100 hover:text-indigo-700 hover:border-blue-700 rounded-xl">ثبت نام</Link>
+                <a href="/sign-up" className="hover:bg-base-100 border-2 border-base-100 hover:text-indigo-700 hover:border-blue-700 rounded-xl">ثبت نام</a>
               </li>
             </>) : (
               <> <li className="mb-2">
-                <Link href="/user-profile" className="hover:bg-base-100 border-2 border-base-100 hover:text-indigo-700 hover:border-blue-700 rounded-xl">پروفایل</Link>
+                <a href="/user-profile" className="hover:bg-base-100 border-2 border-base-100 hover:text-indigo-700 hover:border-blue-700 rounded-xl">پروفایل</a>
               </li></>
             )
             }
