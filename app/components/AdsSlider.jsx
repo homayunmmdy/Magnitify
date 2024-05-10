@@ -7,7 +7,7 @@ import "swiper/css/effect-fade";
 import "swiper/css/autoplay"
 
 
-const AdsSlider = ({ads }) => {
+const AdsSlider = ({ ads }) => {
     return (
         <div className="sm:p-3">
             <Swiper
@@ -21,11 +21,12 @@ const AdsSlider = ({ads }) => {
             >
                 {ads?.map((adv) => (
                     <SwiperSlide key={adv.id}>
-                        <div id={adv.adsId}></div>
+                        <div className="w-full h-full">
+                            <div id={adv.adsId}></div>
+                        </div>
                     </SwiperSlide>
                 ))}
             </Swiper>
-
         </div>
     );
 };
