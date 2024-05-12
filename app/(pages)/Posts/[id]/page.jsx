@@ -6,7 +6,6 @@ import { SignIn, useUser } from "@clerk/nextjs";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import FormattedTimestamp from "@/app/components/FormattedTimestamp";
-import { readingTime } from 'reading-time-estimator'
 
 const Post = () => {
   const post = SinglePost();
@@ -26,8 +25,6 @@ const Post = () => {
     day: "2-digit"
   };
 
-  const text = post.body;
-  const result = readingTime(text, 10, 'fa')
 
   return (
     <>
@@ -49,7 +46,6 @@ const Post = () => {
                 alt={post.title}
                 loading="lazy"
               />
-              <p>{result}</p>
               <div id="pos-article-text-card-94410"></div>
               <div className="prose max-w-none">
                 <p className="p-3 text-lg leading-9	">
