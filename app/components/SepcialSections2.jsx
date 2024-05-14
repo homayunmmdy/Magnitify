@@ -31,7 +31,7 @@ const SepcialSections2 = () => {
                     <div className="sm:col-span-6 lg:col-span-4">
                         <SpecialCards />
                     </div>
-                    <div className="sm:col-span-12 lg:col-span-3"><SpecialCard /></div>
+                    <div className="hidden lg:grid lg:col-span-3"><SpecialCard /></div>
                 </div>
             </div>
         </div>

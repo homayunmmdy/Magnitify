@@ -26,7 +26,7 @@ const SpecialSections = () => {
                 <div className="sm:col-span-5">
                     <AdsSlider ads={adsData} />
                 </div>
-                <div className="sm:col-span-7 grid grid-cols-2 lg:grid-cols-3 gap-5">
+                <div className="sm:col-span-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                     <SpecialSec />
                 </div>
 
