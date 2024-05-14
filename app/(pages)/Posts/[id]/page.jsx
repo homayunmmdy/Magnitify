@@ -44,9 +44,12 @@ const Post = () => {
               />
               <div id="pos-article-text-card-94410"></div>
               <div className="prose max-w-none">
+                <p className="w-full">
+
                 <pre className="p-3 text-lg leading-9	">
                   <div id="pos-article-display-card-94403"></div>
                   {post.body}</pre>
+                </p>
               </div>
             </div>
             <div className="w-full md:w-1/4 px-4">
