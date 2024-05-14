@@ -46,10 +46,10 @@ const ContactsPage = () => {
   return (
     <>
       <ToastContainer />
-      <section className="relative z-10 overflow-hidden py-20 lg:py-[120px]">
+      <section className="relative z-10 overflow-hidden py-12 sm:py-20 lg:py-[120px]">
         <div className="container mx-auto">
-          <div className="flex flex-wrap -mx-4 lg:justify-between">
-            <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
+          <div className="flex flex-wrap mx-4 justify-center lg:justify-between">
+            <div className="w-full px-4 lg:w-1/2 xl:w-5/12 order-2 lg:order-1">
               <div className="relative p-8  rounded-lg shadow-2xl  sm:p-12">
                 <form onSubmit={handleSubmit}>
                   <div className="mb-6">
@@ -120,7 +120,7 @@ const ContactsPage = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full px-4 lg:w-1/2 xl:w-6/12">
+            <div className="w-full px-4 lg:w-1/2 xl:w-6/12 order-1 lg:order-2">
               <div className="mb-12 px-5 pt-3 sm:max-w-[570px] lg:mb-0">
                 <span className="block mb-4 text-base font-semibold text-indigo-500">
                   تماس با ما
@@ -134,7 +134,7 @@ const ContactsPage = () => {
                 <p className="text-base leading-relaxed   mb-9">
                   {SiteConfig.description}
                 </p>
-                <div className="mb-8 flex w-full max-w-[370px] gap-2">
+                <div className="mb-8 flex w-full max-w-[370px] gap-3">
                   <div className="bg-primary/5 text-indigo-500 mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded sm:h-[70px] sm:max-w-[70px]">
                     <svg
                       width="32"
@@ -171,7 +171,7 @@ const ContactsPage = () => {
                     <p className="text-base  ">487 4003 0922</p>
                   </div>
                 </div>
-                <div className="mb-8 flex w-full max-w-[370px]">
+                <div className="mb-8 flex w-full max-w-[370px] gap-3">
                   <div className="bg-primary/5 text-indigo-500 mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded sm:h-[70px] sm:max-w-[70px]">
                     <svg
                       width="32"
