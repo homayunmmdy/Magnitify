@@ -44,11 +44,9 @@ const Post = () => {
               />
               <div id="pos-article-text-card-94410"></div>
               <div className="prose max-w-none">
-                <p className="w-full">
-
-                <pre className="p-3 text-lg leading-9	">
+                <p className="p-3 text-lg leading-9	">
                   <div id="pos-article-display-card-94403"></div>
-                  {post.body}</pre>
+                  {post.body}
                 </p>
               </div>
             </div>
@@ -58,7 +56,7 @@ const Post = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div >
     </>
   );
 };
