@@ -11,7 +11,7 @@ const useDataFetching = (url, lengthItem, secId) => {
             try {
                 setLoading(true);
                 const response = await axios.get(url);
-                setPostData(response.data.posts);
+                setPostData(response.data.data);
                 setLoading(false);
             } catch (error) {
                 console.error("Error fetching postData:", error);

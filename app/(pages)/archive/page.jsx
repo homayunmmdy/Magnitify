@@ -17,11 +17,11 @@ const ArchivePage = () => {
       try {
         setLoading(true)
         const ticketResponse = await axios.get("api/Posts");
-        setTickets(ticketResponse.data.posts);
-        setFilteredTickets(ticketResponse.data.posts.slice(0, pageSize));
+        setTickets(ticketResponse.data.data);
+        setFilteredTickets(ticketResponse.data.data.slice(0, pageSize));
 
         const sectionResponse = await axios.get("api/Section");
-        setSections(sectionResponse.data.sections);
+        setSections(sectionResponse.data.data);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);

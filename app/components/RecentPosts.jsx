@@ -14,7 +14,7 @@ const RecentPosts = () => {
             try {
                 setLoading(true);
                 const postResponse = await axios.get(`/api/Posts`);
-                setPosts(postResponse.data.posts.slice(recentSize));
+                setPosts(postResponse.data.data.slice(recentSize));
                 setLoading(false);
 
             } catch (error) {

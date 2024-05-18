@@ -13,7 +13,7 @@ const ArchiveSections = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`/api/Posts`);
-        setData(response.data.posts.slice(recentSize));
+        setData(response.data.data.slice(recentSize));
       } catch (error) {
         console.error("Error fetching data:", error);
       }
