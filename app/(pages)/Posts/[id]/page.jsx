@@ -22,20 +22,6 @@ const Post = () => {
     day: "2-digit"
   };
 
-  const handleTTS = async () => {
-    try {
-      const response = await axios.post('/api/tts', {
-        title: post.title,
-        body: post.body,
-      });
-
-      const audio = new Audio(response.data.audioUrl);
-      audio.play();
-    } catch (error) {
-      console.error("Error generating TTS:", error);
-    }
-  };
-
   return (
     <>
       <div className="flex flex-col">
@@ -62,12 +48,6 @@ const Post = () => {
                   {post.body}
                 </p>
               </div>
-              <button
-                className="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
-                onClick={handleTTS}
-              >
-                Listen to Post
-              </button>
             </div>
             <div className="w-full md:w-1/4 px-4">
               <RecentPosts />
