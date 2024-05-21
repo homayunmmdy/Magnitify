@@ -16,7 +16,6 @@ const Home = () => {
       <Gallery />
       <SpecialSections />
       <ArchiveSections />
-      <div id="pos-article-display-96176"></div>
     </>
   )
 }

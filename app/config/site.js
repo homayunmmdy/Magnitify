@@ -1,7 +1,6 @@
 const SiteConfig = {
-  name: "مگ نتی فای",
-  name_en: "Magnitify",
-  description: "به روز باشید و زندگی خود را بهبود بخشید",
+  name: "Magnitify",
+  description: "Stay consistently updated on the world of AI and business to enhance your life.",
   lang : "fa",
   dir : "rtl",
   nav: [
