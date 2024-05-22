@@ -3,7 +3,7 @@ import PostSec from './PostSec'
 import useDataFetching from "./useDataFetching";
 import PostSecSkeleton from "./PostSecSkeleton";
 
-const PostsSec = ({secid}) => {
+const PostsSec = ({ secid }) => {
     const { data, loading } = useDataFetching("/api/Posts", -4, secid);
 
     if (loading) {

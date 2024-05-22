@@ -1,22 +1,22 @@
 const SiteConfig = {
   name: "Magnitify",
   description: "Stay consistently updated on the world of AI and business to enhance your life.",
-  lang : "fa",
-  dir : "rtl",
+  lang : "en",
+  dir : "ltr",
   nav: [
     {
       id: 1,
-      name: "خانه",
+      name: "Home",
       link: "/",
     },
     {
       id: 2,
-      name: " آرشیو",
+      name: " Archive",
       link: "/archive",
     },
     {
       id: 3,
-      name: "تماس با ما",
+      name: "Contacts",
       link: "/contacts",
     },
   ],

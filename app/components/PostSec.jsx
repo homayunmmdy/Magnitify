@@ -1,5 +1,6 @@
 import React from 'react'
 import FormattedTimestamp from './FormattedTimestamp';
+import Link from 'next/link';
 
 const PostSec = ({ post }) => {
     const options = {
@@ -20,14 +21,12 @@ const PostSec = ({ post }) => {
                     </div>
                 </div>
                 <main className="p-5 z-10">
-                    <a href={`/Posts/${post._id}`}
-                        className="text-md tracking-tight font-medium leading-7 font-regular text-white hover:underline">Dr.
+                    <Link href={`/Posts/${post._id}`}
+                        className="text-md tracking-tight font-medium leading-7 font-regular text-white hover:underline">
                         {post.title}
-                    </a>
+                    </Link>
                 </main>
-
             </div>
-
         </>
     )
 }

@@ -4,6 +4,7 @@ import SinglePost from "@/app/components/SinglePost";
 import PostSeclton from "./PostSkelton";
 import { SignIn, useUser } from "@clerk/nextjs";
 import FormattedTimestamp from "@/app/components/FormattedTimestamp";
+import Image from "next/image";
 
 const Post = () => {
   const post = SinglePost();
@@ -34,7 +35,7 @@ const Post = () => {
         <div className="bg-white py-8">
           <div className="container mx-auto px-4 flex flex-col md:flex-row">
             <div className="w-full md:w-3/4 px-4">
-              <img
+              <Image
                 className="w-full p-3 aspect-video rounded-3xl"
                 src={post.imgurl}
                 title={post.title}

@@ -40,7 +40,7 @@ const ContactsPage = () => {
       });
     } catch (error) {
       console.error("Error:", error);
-      toast.error("لطفا دوباره امتحان کنید")
+      toast.error("Please Try One more time")
     }
   };
   return (
@@ -56,7 +56,7 @@ const ContactsPage = () => {
                     <input
                       type="text"
                       name="name"
-                      placeholder="اسم"
+                      placeholder="Name"
                       value={formData.name}
                       onChange={handleChange}
                       required
@@ -67,7 +67,7 @@ const ContactsPage = () => {
                     <input
                       type="email"
                       name="email"
-                      placeholder="آدرس ایمیل"
+                      placeholder="Email Address"
                       value={formData.email}
                       onChange={handleChange}
                       required
@@ -78,7 +78,7 @@ const ContactsPage = () => {
                     <textarea
                       rows="6"
                       name="message"
-                      placeholder="پیام"
+                      placeholder="Message"
                       value={formData.message}
                       onChange={handleChange}
                       required
@@ -90,7 +90,7 @@ const ContactsPage = () => {
                       type="submit"
                       className="w-full bg-indigo-500 p-3 text-white transition border rounded border-indigo-500  hover:bg-opacity-90"
                     >
-                      ارسال
+                      Send
                     </button>
                   </div>
                 </form>
@@ -123,13 +123,13 @@ const ContactsPage = () => {
             <div className="w-full px-4 lg:w-1/2 xl:w-6/12 order-1 lg:order-2">
               <div className="mb-12 px-5 pt-3 sm:max-w-[570px] lg:mb-0">
                 <span className="block mb-4 text-base font-semibold text-indigo-500">
-                  تماس با ما
+                  Contacts
                 </span>
                 <h2 className=" mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
-                  با ما در تماس باشید
+                  Contact with us
                 </h2>
                 <p className="text-base leading-relaxed  ">
-                  سوال , نظر های خود را با ما به اشتراک بگذارید
+                If you have any question and feedback contact with us
                 </p>
                 <p className="text-base leading-relaxed   mb-9">
                   {SiteConfig.description}
@@ -166,7 +166,7 @@ const ContactsPage = () => {
                   </div>
                   <div className="w-full">
                     <h4 className="mb-1 text-xl font-bold ">
-                      شماره تماس
+                      Phone Number 
                     </h4>
                     <p className="text-base  ">487 4003 0922</p>
                   </div>
@@ -188,7 +188,7 @@ const ContactsPage = () => {
                   </div>
                   <div className="w-full">
                     <h4 className="mb-1 text-xl font-bold ">
-                      ایمیل آدرس
+                       Email Address
                     </h4>
                     <p className="text-base  ">
                       homayunmmdy@gmail.com

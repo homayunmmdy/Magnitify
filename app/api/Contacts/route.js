@@ -6,5 +6,5 @@ export async function GET() {
 }
 
 export async function POST(req) {
-  return handlePostRequest(req, Contacts, "پیام شما با موفقیت ارسال شد" );
+  return handlePostRequest(req, Contacts, "Message Send successfully" );
 }

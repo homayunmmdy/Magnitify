@@ -1,13 +1,14 @@
+import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const NextMain = ({ post }) => {
     return (
         <>
-            <a href={`/Posts/${post._id}`} className='grid grid-cols-12  gap-4 md:gap-8 items-center mb-4'>
-               
+            <Link href={`/Posts/${post._id}`} className='grid grid-cols-12  gap-4 md:gap-8 items-center mb-4'>
                 <div className='col-span-12 md:col-span-6 xl:col-span-4'>
                     <div>
-                        <img src={post.imgurl}
+                        <Image src={post.imgurl}
                             alt={post.title}
                             className="w-full h-full aspect-video object-cover rounded-md"
                         />
@@ -18,7 +19,7 @@ const NextMain = ({ post }) => {
                         {post.title}
                     </p>
                 </div>
-            </a>
+            </Link>
         </>
     )
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import FormattedTimestamp from './FormattedTimestamp';
+import Link from 'next/link';
 
 const SubHero = ({ post }) => {
     const options = {
@@ -9,10 +10,10 @@ const SubHero = ({ post }) => {
     };
     return (
         <>
-            <a href={`/Posts/${post._id}`} >
+            <Link href={`/Posts/${post._id}`} >
                 <h2 className="py-3" >{post.title}</h2>
                 <p className='flex justify-end'> <FormattedTimestamp timestamp={post.createdAt} options={options} /></p>
-            </a>
+            </Link>
         </>
     )
 }

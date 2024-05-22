@@ -3,6 +3,7 @@ import React from 'react'
 import useDataFetching from './useDataFetching';
 import FormattedTimestamp from './FormattedTimestamp';
 import SpecialCardsSkeleton from './SpecialCardsSkeleton';
+import Link from 'next/link';
 
 const SpecialCards = () => {
     const { data, loading } = useDataFetching("/api/Posts", -3, 6);
@@ -18,16 +19,17 @@ const SpecialCards = () => {
         <div>
             {data?.map((post) => (
                 <div className="flex items-start mb-3 pb-3">
-                    <a href={`/Posts/${post._id}`} className="inline-block mr-3">
+                    <Link href={`/Posts/${post._id}`} className="inline-block mr-3">
                         <div className="w-20 h-20 bg-cover bg-center ml-3 rounded-xl"
                             style={{ backgroundImage: `url(${post.imgurl})` }}
                             title={post.title}>
                         </div>
-                    </a>
+                    </Link>
                     <div className="text-sm">
                         <p className="text-gray-600 text-xs"><FormattedTimestamp timestamp={post.createdAt} options={options} /></p>
-                        <a href={`/Posts/${post._id}`} className="text-gray-900 font-medium hover:text-indigo-600 leading-none">
-                            {post.title}</a>
+                        <Link href={`/Posts/${post._id}`} className="text-gray-900 font-medium hover:text-indigo-600 leading-none">
+                            {post.title}
+                        </Link>
                     </div>
                 </div>
             ))}

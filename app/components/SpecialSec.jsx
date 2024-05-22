@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import SpecialSecSkeleton from "./SpecialSecSkeleton";
 import useDataFetching from "./useDataFetching";
 
@@ -12,15 +13,16 @@ const SpecialSec = () => {
         <>
             {data?.map((post) => (
                 <div key={post._id}>
-                    <a href={`/Posts/${post._id}`}>
+                    <Link href={`/Posts/${post._id}`}>
                         <div className="h-40 bg-cover text-center overflow-hidden rounded-lg"
                             style={{ backgroundImage: `url(${post.imgurl})` }}
                             title={post.title}>
                         </div>
-                    </a>
-                    <a href={`/Posts/${post._id}`}
+                    </Link>
+                    <Link href={`/Posts/${post._id}`}
                         className="text-gray-900 inline-block font-semibold text-md my-2 hover:text-indigo-600 transition duration-500 ease-in-out">
-                        {post.title}</a>
+                        {post.title}
+                    </Link>
                 </div>
             ))}
         </>

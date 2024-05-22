@@ -1,11 +1,13 @@
+import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const Main = ({ post }) => {
     return (
         <>
-            <a href={`/Posts/${post._id}`} className='grid grid-cols-12  gap-4 md:gap-8'>
+            <Link href={`/Posts/${post._id}`} className='grid grid-cols-12  gap-4 md:gap-8'>
                 <div className='col-span-12 xl:col-span-5'>
-                    <img src={post.imgurl}
+                    <Image src={post.imgurl}
                         alt={post.title}
                         className="w-full h-full sm:h-[450px] object-cover rounded-md"
                     />
@@ -20,7 +22,7 @@ const Main = ({ post }) => {
                         </p>
                     </section>
                 </div>
-            </a>
+            </Link>
         </>
     )
 }

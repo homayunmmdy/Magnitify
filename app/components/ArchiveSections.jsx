@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ArchiveCard from './ArchiveCard'
 import ArchiveCardSkeleton from "./ArchiveCardSkeleton";
+import Link from "next/link";
 
 const ArchiveSections = () => {
   const [data, setData] = useState();
@@ -26,7 +27,7 @@ const ArchiveSections = () => {
   }
   return (
     <>
-      <div className="h-full flex w-full justify-center items-center dark:bg-gray-800 p-6">
+      <div className="h-full flex w-full justify-center items-center p-6">
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
           {data?.map((filteredData, _index) => (
             <ArchiveCard id={_index} key={_index} post={filteredData} />
@@ -34,7 +35,7 @@ const ArchiveSections = () => {
         </div>
       </div>
       <div className="m-1 flex justify-center items-center">
-        <a className="border-2 border-blue-700	 rounded-xl	text-indigo-700 hover:text-white font-medium flex p-3 bg-base-100  hover:bg-indigo-700 hover:opacity-90 lg:transition-all lg:ease-linear lg:duration-200 w-13" href="/archive" >بیشتر</a>
+        <Link className="border-2 border-blue-700	 rounded-xl	text-indigo-700 hover:text-white font-medium flex p-3 bg-base-100  hover:bg-indigo-700 hover:opacity-90 lg:transition-all lg:ease-linear lg:duration-200 w-13" href="/archive" >More</Link>
       </div>
     </>
   )
