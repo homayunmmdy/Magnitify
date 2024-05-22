@@ -1,9 +1,9 @@
 "use client";
 import RecentPosts from "@/app/(pages)/Posts/[id]/components/RecentPosts";
-import SinglePost from "@/app/components/SinglePost";
+import SinglePost from "@/app/components/layout/SinglePost";
 import PostSeclton from "./PostSkelton";
 import { SignIn, useUser } from "@clerk/nextjs";
-import FormattedTimestamp from "@/app/components/FormattedTimestamp";
+import FormattedTimestamp from "@/app/components/layout/FormattedTimestamp";
 import Image from "next/image";
 
 const Post = () => {

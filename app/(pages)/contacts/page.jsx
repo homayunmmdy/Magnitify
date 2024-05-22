@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import SiteConfig from "@/app/config/site";
-import Circles from "@/app/components/Circle";
+import Circles from "./components/Circle";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

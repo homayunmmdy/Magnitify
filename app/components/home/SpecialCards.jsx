@@ -1,9 +1,9 @@
 "use client"
 import React from 'react'
-import useDataFetching from './layout/useDataFetching';
-import FormattedTimestamp from './layout/FormattedTimestamp';
+import useDataFetching from '../layout/useDataFetching';
 import SpecialCardsSkeleton from './SpecialCardsSkeleton';
 import Link from 'next/link';
+import FormattedTimestamp from '../layout/FormattedTimestamp';
 
 const SpecialCards = () => {
     const { data, loading } = useDataFetching("/api/Posts", -3, 6);

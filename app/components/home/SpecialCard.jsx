@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import useDataFetching from './layout/useDataFetching';
+import useDataFetching from '../layout/useDataFetching';
 import SpecialCardSkeleton from './SpecialCardSkeleton';
 import Link from 'next/link';
 

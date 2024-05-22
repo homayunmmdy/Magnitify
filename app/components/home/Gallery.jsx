@@ -12,8 +12,10 @@ const Gallery = () => {
                                 alt="Book"
                                 className="block h-full w-full rounded-lg 2xl:rounded-2xl object-cover object-center"
                                 src="/1.jpg"
+                                width={315}
+                                height={210}
                             />
-                            <h3 className='z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl'>کتاب</h3>
+                            <h3 className='z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl'>Book</h3>
                         </div>
 
                         <div className="relative overflow-hidden w-full lg:w-1/2 p-1 md:p-2">
@@ -21,8 +23,10 @@ const Gallery = () => {
                                 alt="Biography"
                                 className="block h-full w-full rounded-lg 2xl:rounded-2xl object-cover object-center"
                                 src="/2.jpg"
+                                width={315}
+                                height={210}
                             />
-                            <h3 className='z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl'>بیوگرافی</h3>
+                            <h3 className='z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl'>Biography</h3>
 
                         </div>
                         <div className="relative overflow-hidden w-full p-1 md:p-2">
@@ -30,8 +34,10 @@ const Gallery = () => {
                                 alt="Coding"
                                 className="block h-full w-full rounded-lg 2xl:rounded-2xl object-cover object-center max-h-none lg:max-h-[1000px]"
                                 src="/3.jpg"
+                                width={645}
+                                height={362}
                             />
-                            <h3 className='z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl'>برنامه نویسی</h3>
+                            <h3 className='z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl'>Coding</h3>
                         </div>
                     </div>
                     <div className="relative overflow-hidden flex w-full sm:w-1/2 flex-wrap">
@@ -40,24 +46,30 @@ const Gallery = () => {
                                 alt="Business"
                                 className="block h-full w-full rounded-lg 2xl:rounded-2xl object-cover object-center"
                                 src="/4.jpg"
+                                width={645}
+                                height={380}
                             />
-                            <h3 className='z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl'> پول و کسب و کار</h3>
+                            <h3 className='z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl'>Business</h3>
                         </div>
                         <div className="relative overflow-hidden sm:w-1/2 p-1 md:p-2">
                             <Image
                                 alt="You"
                                 className="block h-full w-full rounded-lg 2xl:rounded-2xl object-cover object-center"
                                 src="/5.jpg"
+                                width={315}
+                                height={195}
                             />
-                            <h3 className='z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl'>بهبود خود</h3>
+                            <h3 className='z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl'>You</h3>
                         </div>
                         <div className="relative overflow-hidden sm:w-1/2 p-1 md:p-2">
                             <Image
-                                alt="You"
+                                alt="AI"
                                 className="block h-full w-full rounded-lg 2xl:rounded-2xl object-cover object-center"
                                 src="/6.jpg"
+                                width={315}
+                                height={195}
                             />
-                            <h3 className='z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl'>هوش مصنوعی</h3>
+                            <h3 className='z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl'>AI</h3>
                         </div>
                     </div>
                 </div>

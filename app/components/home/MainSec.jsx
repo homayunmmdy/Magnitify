@@ -1,7 +1,7 @@
 "use client";
-import Main from "../section/Main";
-import MainSecSkeleton from "../section/MainSecSkeleton";
-import useDataFetching from "../../layout/useDataFetching";
+import Main from "./Main";
+import MainSecSkeleton from "./MainSecSkeleton";
+import useDataFetching from "../layout/useDataFetching";
 
 const MainSec = () => {
     const { data, loading } = useDataFetching("/api/Posts", -1, 1);

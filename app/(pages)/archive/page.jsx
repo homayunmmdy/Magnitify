@@ -1,8 +1,8 @@
 "use client"
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import ArchiveCard from "@/app/components/home/section/ArchiveCard";
-import ArchiveCardSkeleton from "@/app/components/home/section/ArchiveCardSkeleton";
+import ArchiveCard from "@/app/components/home/ArchiveCard";
+import ArchiveCardSkeleton from "@/app/components/home/ArchiveCardSkeleton";
 
 const ArchivePage = () => {
   const [tickets, setTickets] = useState([]);
