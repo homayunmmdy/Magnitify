@@ -1,21 +1,17 @@
-import mongoose, { Schema } from "mongoose";
-
-mongoose.connect(process.env.MONGODB_URI);
-mongoose.Promise = global.Promise;
+import { Schema } from 'mongoose';
+import baseSchema from './baseSchema';
+import initModel from './initModel';
 
 const postSchema = new Schema(
   {
     title: String,
-    imgurl:String,
+    imgurl: String,
     description: String,
     section: String,
     body: String,
   },
-  {
-    timestamps: true,
-  }
+  baseSchema
 );
 
-const Post = mongoose.models.Post || mongoose.model("Post", postSchema);
-
+const Post = initModel('Post', postSchema);
 export default Post;

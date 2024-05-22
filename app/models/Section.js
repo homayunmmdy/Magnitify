@@ -1,24 +1,20 @@
-import mongoose, { Schema } from "mongoose";
-
-mongoose.connect(process.env.MONGODB_URI);
-mongoose.Promise = global.Promise;
+import { Schema } from 'mongoose';
+import baseSchema from './baseSchema';
+import initModel from './initModel';
 
 const sectionSchema = new Schema(
   {
     name: {
       type: String,
       required: true,
-      unique: true
+      unique: true,
     },
-    secid : {
+    secid: {
       type: Number,
     },
   },
-  {
-    timestamps: true,
-  }
+  baseSchema
 );
 
-const Section = mongoose.models.Section || mongoose.model("Section", sectionSchema);
-
+const Section = initModel('Section', sectionSchema);
 export default Section;
