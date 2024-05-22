@@ -1,7 +1,7 @@
 "use client";
 import SubHero from "./SubHero";
 import SubHeroSkeleton from "./SubHeroSkeleton";
-import useDataFetching from "./useDataFetching";
+import useDataFetching from "../layout/useDataFetching";
 
 const SubHeroSec = () => {
     const { data, loading } = useDataFetching("/api/Posts", -4, 3);

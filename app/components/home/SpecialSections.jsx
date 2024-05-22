@@ -1,5 +1,5 @@
 import React from 'react'
-import SpecialSec from './SpecialSec'
+import SpecialSec from '../SpecialSec'
 
 const SpecialSections = () => {
     return (

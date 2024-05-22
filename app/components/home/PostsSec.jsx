@@ -1,6 +1,6 @@
 "use client";
 import PostSec from './PostSec'
-import useDataFetching from "./useDataFetching";
+import useDataFetching from "../../layout/useDataFetching";
 import PostSecSkeleton from "./PostSecSkeleton";
 
 const PostsSec = ({ secid }) => {

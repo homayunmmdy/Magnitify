@@ -3,8 +3,8 @@ import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import SiteConfig from "./config/site";
-import Navbar from "@/app/components/Navbar"
-import Footer from "@/app/components/Footer"
+import Navbar from "@/app/components/layout/Navbar"
+import Footer from "@/app/components/layout/Footer"
 import { ClerkProvider } from '@clerk/nextjs'
 import { GoogleAnalytics } from '@next/third-parties/google'
 

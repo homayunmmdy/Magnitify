@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
-import useDataFetching from './useDataFetching';
-import FormattedTimestamp from './FormattedTimestamp';
+import useDataFetching from './layout/useDataFetching';
+import FormattedTimestamp from './layout/FormattedTimestamp';
 import SpecialCardsSkeleton from './SpecialCardsSkeleton';
 import Link from 'next/link';
 

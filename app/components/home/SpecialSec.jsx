@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
-import SpecialSecSkeleton from "./SpecialSecSkeleton";
-import useDataFetching from "./useDataFetching";
+import SpecialSecSkeleton from "./home/SpecialSecSkeleton";
+import useDataFetching from "./layout/useDataFetching";
 
 const SpecialSec = () => {
     const { data, loading } = useDataFetching("/api/Posts", -6, 8);

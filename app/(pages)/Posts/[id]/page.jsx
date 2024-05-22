@@ -1,5 +1,5 @@
 "use client";
-import RecentPosts from "@/app/components/RecentPosts";
+import RecentPosts from "@/app/(pages)/Posts/[id]/components/RecentPosts";
 import SinglePost from "@/app/components/SinglePost";
 import PostSeclton from "./PostSkelton";
 import { SignIn, useUser } from "@clerk/nextjs";

@@ -1,7 +1,7 @@
 import React from 'react'
 import MainSec from './MainSec'
-import NextMainSec from './NextMainSec'
-import SubHero from './SubHeroSec'
+import NextMainSec from '../section/NextMainSec'
+import SubHero from '../SubHeroSec'
 
 const Hero = () => {
     return (

@@ -1,5 +1,5 @@
 import React from 'react'
-import FormattedTimestamp from './FormattedTimestamp';
+import FormattedTimestamp from '../layout/FormattedTimestamp';
 import Link from 'next/link';
 
 const SubHero = ({ post }) => {

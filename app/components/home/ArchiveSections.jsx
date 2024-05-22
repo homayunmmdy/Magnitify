@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import ArchiveCard from './ArchiveCard'
-import ArchiveCardSkeleton from "./ArchiveCardSkeleton";
+import ArchiveCard from '../section/ArchiveCard'
+import ArchiveCardSkeleton from "../section/ArchiveCardSkeleton";
 import Link from "next/link";
 
 const ArchiveSections = () => {
