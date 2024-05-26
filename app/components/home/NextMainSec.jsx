@@ -1,7 +1,8 @@
 "use client";
 import NextMain from "./NextMain";
 import NextMainSkeleton from "./NextMainSkeleton";
-import useDataFetching from "../layout/useDataFetching";
+import useDataFetching from "@/app/hooks/useDataFetching";
+
 
 const NextMainSec = () => {
     const { data, loading } = useDataFetching("/api/Posts", -4, 2);

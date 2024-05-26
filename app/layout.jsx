@@ -10,10 +10,6 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: SiteConfig.name,
-  description: SiteConfig.description,
-};
 
 export default function RootLayout({ children }) {
   return (

@@ -5,10 +5,14 @@ import PostSeclton from "./PostSkelton";
 import { SignIn, useUser } from "@clerk/nextjs";
 import FormattedTimestamp from "@/app/components/layout/FormattedTimestamp";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const Post = () => {
   const post = SinglePost();
   const { user } = useUser();
+  const API_URL = process.env.API_URL;
+  const pathname = usePathname();
+  const id = pathname.slice(7);
 
   if (!user) {
     return (<div className="flex justify-center py-5"> <SignIn /></div>)
@@ -23,8 +27,14 @@ const Post = () => {
     day: "2-digit"
   };
 
+  const canonicalUrl = `${API_URL}/Posts/${id}`
   return (
     <>
+      <Meta
+        title={post.title}
+        description={post.description.slice(0, 160)}
+        canonical={canonicalUrl}
+      />
       <div className="flex flex-col">
         <div className="bg-base-200 py-8">
           <div className="container mx-auto px-4">

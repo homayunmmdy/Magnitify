@@ -1,5 +1,5 @@
 import React from 'react'
-import FormattedTimestamp from '../layout/FormattedTimestamp';
+import FormattedTimestamp from '@/app/services/FormattedTimestamp';
 import Link from 'next/link';
 
 const PostSec = ({ post }) => {
