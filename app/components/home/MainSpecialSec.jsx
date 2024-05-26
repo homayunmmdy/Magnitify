@@ -5,9 +5,7 @@ const MainSpecialSec = () => {
     return (
         <div>
             <Link href="#">
-                <div class="bg-cover text-center overflow-hidden min-h-80"
-                    style={{ backgroundImage: url("/1.jpg")}}
-                    title="Woman holding a mug">
+                <div class="bg-cover text-center overflow-hidden min-h-80">
                 </div>
             </Link>
             <div
