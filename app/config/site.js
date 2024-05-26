@@ -1,6 +1,7 @@
 const SiteConfig = {
   name: "Magnitify",
-  description: "Stay consistently updated on the world of AI and business to enhance your life.",
+  description: "Welcome to Magnitify, your source for amazing content!",
+  altImgName : "Logo of the Magnitify",
   lang : "en",
   dir : "ltr",
   nav: [

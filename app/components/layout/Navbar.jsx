@@ -15,38 +15,8 @@ const Navbar = () => {
   return (
     <>
       <div className="fixed top-0 left-0 right-0 navbar bg-base-100 z-[50] transition-all">
-        <div className="navbar-start">
-        <div className="m-1">
-            <Link className="border-2 border-blue-700	 rounded-xl	text-indigo-700 hover:text-white font-medium flex p-3 bg-base-100  hover:bg-indigo-700 hover:opacity-90 lg:transition-all lg:ease-linear lg:duration-200 w-13" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7146597314181193728" target="_blank">Subscribe</Link>
-          </div>
-        </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 flex gap-3 items-center">
-            {nav?.map((item) => {
-              return (
-                <li key={item.id} className="mx-1">
-                  {pathname == item.link ? <Link href={item.link} className="bg-indigo-700 hover:bg-indigo-700 text-white rounded-xl">{item.name}</Link> :
-                    <Link className="hover:bg-base-100 border-2 border-base-100 hover:text-indigo-700 hover:border-blue-700 rounded-xl" href={item.link}>{item.name}</Link>}
-                </li>
-              )
-            })}
-            {!user ? (<>
-              <li className="mb-2">
-                <Link href="/sign-in" className="hover:bg-base-100 border-2 border-base-100 hover:text-indigo-700 hover:border-blue-700 rounded-xl">Login</Link>
-              </li>
-              <li className="mb-2">
-                <Link href="/sign-up" className="hover:bg-base-100 border-2 border-base-100 hover:text-indigo-700 hover:border-blue-700 rounded-xl">Sign Up</Link>
-              </li>
-            </>) : (
-              <> <li className="mb-2">
-                <Link href="/user-profile" className="hover:bg-base-100 border-2 border-base-100 hover:text-indigo-700 hover:border-blue-700 rounded-xl">Profile</Link>
-              </li></>
-            )
-            }
-          </ul>
-        </div>
-        <div className="navbar-end w-[80%] sm:w-2/4">
-        <div className="dropdown">
+        <div className="navbar-start w-[80%] sm:w-2/4">
+          <div className="dropdown">
             <button tabIndex={0} className="px-3 lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -76,14 +46,14 @@ const Navbar = () => {
                 )
               })}
               {!user ? (<>
-                <li className="mb-2">
+                <li className="mx-1">
                   <Link href="/sign-in">Login</Link>
                 </li>
-                <li className="mb-2">
+                <li className="mx-1">
                   <Link href="/sign-up">Sign Up</Link>
                 </li>
               </>) : (
-                <> <li className="mb-2">
+                <> <li className="mx-1">
                   <Link href="/user-profile">Profile</Link>
                 </li></>
               )
@@ -91,11 +61,41 @@ const Navbar = () => {
             </ul>
           </div>
           <Link href="/" className="flex items-center gap-2 flex-nowrap" >
+            <Image src={Logo} width={40} height={40} title={SiteConfig.name} alt={SiteConfig.altImgName}/>
             <span className="text-xl font-bold hover:text-indigo-700">
               {SiteConfig.name}
             </span>
-            <Image src={Logo} width={40} height={40} title={SiteConfig.name} />
           </Link>
+        </div>
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1 flex gap-3 items-center">
+            {nav?.map((item) => {
+              return (
+                <li key={item.id} className="mx-1">
+                  {pathname == item.link ? <Link href={item.link} className="bg-indigo-700 hover:bg-indigo-700 text-white rounded-xl">{item.name}</Link> :
+                    <Link className="hover:bg-base-100 border-2 border-base-100 hover:text-indigo-700 hover:border-blue-700 rounded-xl" href={item.link}>{item.name}</Link>}
+                </li>
+              )
+            })}
+            {!user ? (<>
+              <li className="mx-1">
+                <Link href="/sign-in" className="hover:bg-base-100 border-2 border-base-100 hover:text-indigo-700 hover:border-blue-700 rounded-xl">Login</Link>
+              </li>
+              <li className="mx-1">
+                <Link href="/sign-up" className="hover:bg-base-100 border-2 border-base-100 hover:text-indigo-700 hover:border-blue-700 rounded-xl">Sign Up</Link>
+              </li>
+            </>) : (
+              <> <li className="mx-1">
+                <Link href="/user-profile" className="hover:bg-base-100 border-2 border-base-100 hover:text-indigo-700 hover:border-blue-700 rounded-xl">Profile</Link>
+              </li></>
+            )
+            }
+          </ul>
+        </div>
+        <div className="navbar-end">
+          <div className="m-1">
+            <Link className="border-2 border-blue-700	 rounded-xl	text-indigo-700 hover:text-white font-medium flex p-3 bg-base-100  hover:bg-indigo-700 hover:opacity-90 lg:transition-all lg:ease-linear lg:duration-200 w-13" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7146597314181193728" target="_blank">Subscribe</Link>
+          </div>
         </div>
       </div>
     </>

@@ -3,9 +3,10 @@ import RecentPosts from "@/app/(pages)/Posts/[id]/components/RecentPosts";
 import SinglePost from "@/app/components/layout/SinglePost";
 import PostSeclton from "./PostSkelton";
 import { SignIn, useUser } from "@clerk/nextjs";
-import FormattedTimestamp from "@/app/components/layout/FormattedTimestamp";
+import FormattedTimestamp from "@/app/services/FormattedTimestamp";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import Meta from "@/app/services/Meta";
 
 const Post = () => {
   const post = SinglePost();

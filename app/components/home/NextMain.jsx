@@ -11,6 +11,8 @@ const NextMain = ({ post }) => {
                         <Image src={post.imgurl}
                             alt={post.title}
                             className="w-full h-full aspect-video object-cover rounded-md"
+                            width={270}
+                            height={150}
                         />
                     </div>
                 </div>

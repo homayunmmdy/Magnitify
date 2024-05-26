@@ -10,7 +10,7 @@ const PostSec = ({ post }) => {
     };
     return (
         <>
-            <div className="relative w-full flex items-end justify-start text-left bg-cover bg-center h-[450px] rounded-md"
+            <Link href={`/Posts/${post._id}`} className="relative w-full flex items-end justify-start text-left bg-cover bg-center h-[450px] rounded-md"
                 style={{ backgroundImage: `url(${post.imgurl})` }}
             >
                 <div className="absolute top-0 mt-20 right-0 bottom-0 left-0 bg-gradient-to-b from-transparent to-gray-900">
@@ -26,7 +26,7 @@ const PostSec = ({ post }) => {
                         {post.title}
                     </Link>
                 </main>
-            </div>
+            </Link>
         </>
     )
 }

@@ -5,13 +5,15 @@ import ArchiveSections from './components/home/ArchiveSections'
 import Gallery from './components/home/Gallery'
 import SpecialSections from './components/home/SpecialSections'
 import SepcialSections2 from './components/home/SepcialSections2'
+import Meta from './services/Meta'
+import SiteConfig from './config/site'
 
 const Home = () => {
   return (
     <>
       <Meta
-        title="Magnitify"
-        description="Welcome to Magnitify, your source for amazing content!"
+        title={SiteConfig.name}
+        description={SiteConfig.description}
         canonical="https://magnitify.vercel.app/"
       />
 
