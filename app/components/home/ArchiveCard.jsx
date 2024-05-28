@@ -10,7 +10,7 @@ const ArchiveCard = ({ post }) => {
                 className="relative bg-white border rounded-lg shadow-md transform transition duration-500 hover:scale-105">
                 <div className="p-2 flex justify-center">
                     <Link href={`/Posts/${post._id}`}>
-                        <Image className="rounded-md aspect-video"
+                        <img className="rounded-md aspect-video"
                             src={post.imgurl}
                             alt={post.title}
                             loading="lazy" />

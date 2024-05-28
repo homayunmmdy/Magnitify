@@ -7,7 +7,7 @@ const Main = ({ post }) => {
         <>
             <Link href={`/Posts/${post._id}`} className='grid grid-cols-12  gap-4 md:gap-8 h-full'>
                 <div className='col-span-12 xl:col-span-5 h-full'>
-                    <Image src={post.imgurl}
+                    <img src={post.imgurl}
                         alt={post.title}
                         className="w-full h-full sm:h-[450px] object-cover rounded-md"
                         width={700}

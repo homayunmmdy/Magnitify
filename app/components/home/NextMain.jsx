@@ -8,7 +8,7 @@ const NextMain = ({ post }) => {
             <Link href={`/Posts/${post._id}`} className='grid grid-cols-12  gap-4 md:gap-8 items-center mb-4'>
                 <div className='col-span-12 md:col-span-6 xl:col-span-4'>
                     <div>
-                        <Image src={post.imgurl}
+                        <img src={post.imgurl}
                             alt={post.title}
                             className="w-full h-full aspect-video object-cover rounded-md"
                             width={270}

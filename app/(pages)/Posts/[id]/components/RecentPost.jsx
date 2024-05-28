@@ -6,7 +6,7 @@ const RecentPost = ({ post }) => {
     return (
         <>
             <Link href={`/Posts/${post._id}`} className="relative flex flex-col sm:flex-row md:flex-col items-start gap-2">
-                <Image
+                <img
                     src={post.imgurl}
                     alt={post.title}
                     className='mb-3 shadow-md rounded-lg  bg-slate-50 w-full sm:w-[17rem] sm:mb-0  xl:w-full'
