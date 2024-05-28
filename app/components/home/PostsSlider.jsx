@@ -6,13 +6,11 @@ import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import "swiper/css/autoplay"
 import Link from "next/link";
+import useDataFetching from "@/app/hooks/useDataFetching";
 
 const PostsSlider = () => {
-    const { data, loading } = useDataFetching("/api/Posts", -5, 6);
+    const { data, loading } = useDataFetching("/api/Posts", 3, 6);
 
-    if (loading) {
-        return <SpecialCardsSkeleton />
-    }
     return (
         <div>
             <div className="sm:p-3">

@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <>
       <div className="fixed top-0 left-0 right-0 navbar bg-base-100 z-[50] transition-all">
-        <div className="navbar-start w-[80%] sm:w-2/4">
+        <div className="navbar-start w-[98%] md:w-[92%] mx-auto">
           <div className="dropdown">
             <button tabIndex={0} className="px-3 lg:hidden">
               <svg
