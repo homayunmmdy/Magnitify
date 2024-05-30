@@ -1,20 +1,18 @@
 import React from 'react'
 import SpecialCard from './SpecialCard'
 import SpecialCards from './SpecialCards'
-import PostsSlider from './PostsSlider'
+import InfluncerSec from './InfluncerSec'
+import NextInfluncer from './NextInfluncer'
 
 const SepcialSections2 = () => {
     return (
         <div>
-            <div className=" p-6 relative">
-                <div className="grid grid-cols-1 sm:grid-cols-12 gap-10">
-                    <div className="sm:col-span-6 lg:col-span-5">
-                        {/* <PostsSlider /> */}
+            <div className="dark:bg-gray-100 dark:text-gray-900">
+                <div className="container grid grid-cols-12 mx-auto">
+                    <InfluncerSec />
+                    <div className="flex flex-col col-span-12 p-6 divide-y lg:col-span-6 lg:p-10 dark:divide-gray-300">
+                        <NextInfluncer />
                     </div>
-                    <div className="sm:col-span-6 lg:col-span-4">
-                        <SpecialCards />
-                    </div>
-                    <div className="hidden lg:grid lg:col-span-3"><SpecialCard /></div>
                 </div>
             </div>
         </div>

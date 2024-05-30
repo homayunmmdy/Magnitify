@@ -11,7 +11,7 @@ const Footer = () => {
     return (
         <>
             <footer className="w-full">
-                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto w-[97%] sm:w-[95%] md:w-[92%]">
                     <div className="py-14 grid grid-cols-12 gap-x-5 gap-y-8">
                         <div className="col-span-full xl:col-span-3 relative bg-gradient-to-tr from-indigo-600 to-violet-600 rounded-2xl gap-12 p-6 xl:w-72 h-96 flex flex-col justify-center items-center">
 
@@ -69,7 +69,7 @@ const Footer = () => {
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M1.5 6.88281L14.8333 6.88281M10.6667 11.8828L15.0774 7.47207C15.3552 7.19429 15.4941 7.0554 15.4941 6.88281C15.4941 6.71022 15.3552 6.57133 15.0774 6.29356L10.6667 1.88281"
-                                            stroke="white" stroke-width="2" strokeLinecap="round" strokeLinejoin="round" />
+                                            stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
                                 </button>
                             </div>

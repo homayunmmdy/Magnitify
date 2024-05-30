@@ -1,21 +1,33 @@
+"use client"
+import useDataFetching from '@/app/hooks/useDataFetching';
 import Link from 'next/link'
 import React from 'react'
 
 const MainSpecialSec = () => {
+    const { data } = useDataFetching("/api/Posts", -1, 9);
+
     return (
         <div>
-            <Link href="#">
-                <div class="bg-cover text-center overflow-hidden min-h-80">
+            {data?.map((post, _index) => (
+                <div key={post._id}>
+                    <Link href="#">
+                        <div className="bg-cover text-center overflow-hidden min-h-80"
+                            style={{ backgroundImage: `url(${post.imgurl})` }}
+                        >
+                        </div>
+                    </Link>
+                    <div
+                        className="mt-3 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
+                        <div className="">
+                            <Link href="#"
+                                className="block text-gray-900 font-bold text-2xl mb-2 hover:text-indigo-600 transition duration-500 ease-in-out">{post.title}</Link>
+                            <p className="text-gray-700 text-base mt-2">
+                                {post.description}
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </Link>
-            <div
-                class="mt-3 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
-                <div class="">
-                    <Link href="#"
-                        class="block text-gray-900 font-bold text-2xl mb-2 hover:text-indigo-600 transition duration-500 ease-in-out">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto!</Link>
-                    <p class="text-gray-700 text-base mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus fugiat autem excepturi? Enim assumenda doloremque possimus ut, odit esse?</p>
-                </div>
-            </div>
+            ))}
         </div>
     )
 }

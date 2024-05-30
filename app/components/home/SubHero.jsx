@@ -10,7 +10,7 @@ const SubHero = ({ post }) => {
     };
     return (
         <>
-            <Link href={`/Posts/${post._id}`} >
+            <Link className='flex flex-col' href={`/Posts/${post._id}`} >
                 <h2 className="py-3 h-full">{post.title}</h2>
                 <p className='flex justify-end'> <FormattedTimestamp timestamp={post.createdAt} options={options} /></p>
             </Link>

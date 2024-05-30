@@ -3,8 +3,8 @@ import React from 'react'
 
 const Gallery = () => {
     return (
-        <div className='bg-indigo-500 p-6'>
-            <div className=" mx-auto  flex items-center">
+        <div className='bg-indigo-500 py-6'>
+            <div className=" w-[97%] sm:w-[95%] md:w-[92%] mx-auto  flex items-center">
                 <div className="m-1 flex flex-col sm:flex-row sm:flex-wrap md:-m-2">
                     <div className="flex w-full sm:w-1/2 flex-wrap lg:flex-row flex-row-reverse">
                         <div className="relative overflow-hidden w-full lg:w-1/2 p-1 md:p-2">

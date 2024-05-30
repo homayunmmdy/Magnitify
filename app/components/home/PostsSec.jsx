@@ -10,7 +10,7 @@ const PostsSec = ({ secid }) => {
         return <PostSecSkeleton />
     }
     return (
-        <div className=" mx-auto p-6">
+        <div className=" mx-auto py-6">
             <div className="grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 gap-5">
                 {data?.map((filteredData, _index) => (
                     <PostSec id={_index} key={_index} post={filteredData} />

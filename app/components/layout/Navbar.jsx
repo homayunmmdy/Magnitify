@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 navbar bg-base-100 z-[50] transition-all w-[98%] md:w-[92%] mx-auto">
+      <header className="fixed top-0 left-0 right-0 navbar bg-base-100 z-[50] transition-all w-[97%] sm:w-[95%] md:w-[92%] mx-auto rounded-xl shadow-xl my-4">
         <div className="navbar-start ">
           <div className="dropdown">
             <button tabIndex={0} className="px-3 lg:hidden">
@@ -94,10 +94,10 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <div className="m-1">
-            <Link className="border-2 border-blue-700	 rounded-xl	text-indigo-700 hover:text-white font-medium flex p-3 bg-base-100  hover:bg-indigo-700 hover:opacity-90 lg:transition-all lg:ease-linear lg:duration-200 w-13" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7146597314181193728" target="_blank">Subscribe</Link>
+            <Link title="subscribe" className="border-2 border-blue-700	 rounded-xl	text-indigo-700 hover:text-white font-medium flex p-3 bg-base-100  hover:bg-indigo-700 hover:opacity-90 lg:transition-all lg:ease-linear lg:duration-200 w-13" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7146597314181193728" target="_blank">Subscribe</Link>
           </div>
         </div>
-      </div>
+      </header>
     </>
   );
 };
