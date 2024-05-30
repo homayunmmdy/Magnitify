@@ -14,8 +14,8 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 navbar bg-base-100 z-[50] transition-all">
-        <div className="navbar-start w-[98%] md:w-[92%] mx-auto">
+      <div className="fixed top-0 left-0 right-0 navbar bg-base-100 z-[50] transition-all w-[98%] md:w-[92%] mx-auto">
+        <div className="navbar-start ">
           <div className="dropdown">
             <button tabIndex={0} className="px-3 lg:hidden">
               <svg
@@ -61,7 +61,7 @@ const Navbar = () => {
             </ul>
           </div>
           <Link href="/" className="flex items-center gap-2 flex-nowrap" >
-            <Image src={Logo} width={40} height={40} title={SiteConfig.name} alt={SiteConfig.altImgName}/>
+            <Image src={Logo} width={40} height={40} title={SiteConfig.name} alt={SiteConfig.altImgName} />
             <span className="text-xl font-bold hover:text-indigo-700">
               {SiteConfig.name}
             </span>

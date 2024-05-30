@@ -1,9 +1,14 @@
 import { NextResponse } from "next/server";
+import CashData from "../cash/CashData";
 
 export async function handleGetRequest(Model) {
   try {
-    const data = await Model.find();
-    return NextResponse.json({ data }, { status: 200 });
+    if (process.env.NEXT_PUBLIC_STATUS == "dev") {
+      return NextResponse.json({ data: CashData }, { status: 200 });
+    } else {
+      const data = await Model.find();
+      return NextResponse.json({ data }, { status: 200 });
+    }
   } catch (err) {
     console.error(err);
     return handleErrorResponse(err);
