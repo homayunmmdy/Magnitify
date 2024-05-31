@@ -16,9 +16,9 @@ const Main = ({ post }) => {
                 </div>
                 <div className='col-span-12 xl:col-span-5 grid items-center'>
                     <section className='py-4'>
-                        <h1 className="text-4xl font-light text-black mb-6 sm:text-6xl xl:text-6xl tracking-wide leading-relaxed">
+                        <h2 className="text-4xl font-light text-black mb-6 sm:text-6xl xl:text-6xl tracking-wide leading-relaxed">
                             {post.title}
-                        </h1>
+                        </h2>
                         <p className='leading-10 font-medium hidden md:block max-h-20 overflow-hidden'>
                             {post.description}
                         </p>

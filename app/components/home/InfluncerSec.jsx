@@ -21,7 +21,7 @@ const InfluncerSec = () => {
           key={post._id}
         >
           <div className="flex flex-col items-center p-8 py-12 text-center">
-            <h1 className="py-4 text-5xl font-bold">{post.title}</h1>
+            <h3 className="py-4 text-5xl font-bold">{post.title}</h3>
             <p className="pb-6">{post.description}</p>
             <GrLinkNext className="animate-bounce" size={28} />
           </div>

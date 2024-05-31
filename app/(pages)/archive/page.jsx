@@ -92,7 +92,7 @@ const ArchiveSections = () => {
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   if (loading) {
-    return <ArchiveCardSkeleton />;
+    return <div className="w-[94%] md:w-[92%] mx-auto py-14"><ArchiveCardSkeleton /></div>;
   }
 
   return (
@@ -107,7 +107,7 @@ const ArchiveSections = () => {
             value={filter}
             onChange={handleFilterChange}
           />
-          <select
+          {/* <select
             className="border rounded px-4 py-2"
             value={selectedService}
             onChange={handleServiceChange}
@@ -130,7 +130,7 @@ const ArchiveSections = () => {
                 {section.name}
               </option>
             ))}
-          </select>
+          </select> */}
           <select
             className="border rounded px-4 py-2"
             value={selectedTime}

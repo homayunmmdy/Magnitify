@@ -34,14 +34,14 @@ const Footer = () => {
                         </div>
 
                         <div className="block text-center xl:text-left xl:py-16 col-span-full min-[500px]:col-span-6 md:col-span-4 xl:col-span-3 xl:pl-5">
-                            <h4 className="text-lg text-gray-900 font-bold mb-9">Get In Touch</h4>
+                            <p className="text-lg text-gray-900 font-bold mb-9">Get In Touch</p>
                             <ul className="text-gray-900 transition-all duration-500 grid gap-6">
                                 <li>homayoun763@gmail.com</li>
                                 <li>+922 4003 487</li>
                             </ul>
                         </div>
                         <div className="block xl:py-16 col-span-full min-[500px]:col-span-6 md:col-span-4 xl:col-span-3">
-                            <h4 className="text-lg text-gray-900 font-bold mb-9 text-center xl:text-left">Quick Links</h4>
+                            <p className="text-lg text-gray-900 font-bold mb-9 text-center xl:text-left">Quick Links</p>
                             <div className="flex gap-6 xl:gap-12 max-xl:justify-center">
                                 <ul className="text-gray-600 transition-all duration-500 grid gap-6">
                                     <li><Link className="link link-hover hover:text-indigo-700" href="/">Home</Link></li>
@@ -58,7 +58,7 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="block xl:py-16 col-span-full md:col-span-4 xl:col-span-3">
-                            <h4 className="text-lg text-gray-900 font-bold mb-9 text-center xl:text-left">Newsletter</h4>
+                            <p className="text-lg text-gray-900 font-bold mb-9 text-center xl:text-left">Newsletter</p>
                             <div className="grid gap-7 ">
                                 <input type="text" name="email"
                                     className="py-2 px-4 border border-gray-300 shadow-sm h-14 text-lg text-gray-800 rounded-full w-full  xl:w-64 placeholder:text-gray-400 focus:outline-none"

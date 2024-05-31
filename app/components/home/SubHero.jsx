@@ -11,7 +11,7 @@ const SubHero = ({ post }) => {
     return (
         <>
             <Link className='flex flex-col' href={`/Posts/${post._id}`} >
-                <h2 className="py-3 h-full">{post.title}</h2>
+                <h3 className="py-3 h-full">{post.title}</h3>
                 <p className='flex justify-end'> <FormattedTimestamp timestamp={post.createdAt} options={options} /></p>
             </Link>
         </>

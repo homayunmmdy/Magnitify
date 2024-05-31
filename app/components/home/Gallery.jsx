@@ -15,7 +15,7 @@ const Gallery = () => {
                                 width={315}
                                 height={210}
                             />
-                            <h3 className='z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl'>Book</h3>
+                            <h5 className='z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl'>Book</h5>
                         </div>
 
                         <div className="relative overflow-hidden w-full lg:w-1/2 p-1 md:p-2">
@@ -26,8 +26,7 @@ const Gallery = () => {
                                 width={315}
                                 height={210}
                             />
-                            <h3 className='z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl'>Biography</h3>
-
+                            <h5 className='z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl'>Biography</h5>
                         </div>
                         <div className="relative overflow-hidden w-full p-1 md:p-2">
                             <Image
@@ -37,7 +36,7 @@ const Gallery = () => {
                                 width={645}
                                 height={362}
                             />
-                            <h3 className='z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl'>Coding</h3>
+                            <h5 className='z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl'>Coding</h5>
                         </div>
                     </div>
                     <div className="relative overflow-hidden flex w-full sm:w-1/2 flex-wrap">
@@ -49,7 +48,7 @@ const Gallery = () => {
                                 width={645}
                                 height={380}
                             />
-                            <h3 className='z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl'>Business</h3>
+                            <h5 className='z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl'>Business</h5>
                         </div>
                         <div className="relative overflow-hidden sm:w-1/2 p-1 md:p-2">
                             <Image
@@ -59,7 +58,7 @@ const Gallery = () => {
                                 width={315}
                                 height={195}
                             />
-                            <h3 className='z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl'>You</h3>
+                            <h5 className='z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl'>You</h5>
                         </div>
                         <div className="relative overflow-hidden sm:w-1/2 p-1 md:p-2">
                             <Image
@@ -69,7 +68,7 @@ const Gallery = () => {
                                 width={315}
                                 height={195}
                             />
-                            <h3 className='z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl'>AI</h3>
+                            <h5 className='z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl'>AI</h5>
                         </div>
                     </div>
                 </div>

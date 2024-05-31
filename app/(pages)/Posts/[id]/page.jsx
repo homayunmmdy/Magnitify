@@ -15,9 +15,9 @@ const Post = () => {
   const pathname = usePathname();
   const id = pathname.slice(7);
 
-  // if (!user) {
-  //   return (<div className="flex justify-center py-5 mt-10"> <SignIn /></div>)
-  // }
+  if (!user) {
+    return (<div className="flex justify-center py-5 mt-10"> <SignIn /></div>)
+  }
 
   if (!post) {
     return <PostSeclton />

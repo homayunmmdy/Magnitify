@@ -21,10 +21,9 @@ const PostSec = ({ post }) => {
                     </div>
                 </div>
                 <main className="p-5 z-10">
-                    <Link href={`/Posts/${post._id}`}
-                        className="text-md tracking-tight font-medium leading-7 font-regular text-white hover:underline">
+                    <h4 className="text-md tracking-tight font-medium leading-7 font-regular text-white hover:underline">
                         {post.title}
-                    </Link>
+                    </h4>
                 </main>
             </Link>
         </>

@@ -20,10 +20,10 @@ const SpecialSec = () => {
                             title={post.title}>
                         </div>
                     </Link>
-                    <Link href={`/Posts/${post._id}`}
+                    <h3 href={`/Posts/${post._id}`}
                         className="text-gray-900 inline-block font-semibold text-md my-2 hover:text-indigo-600 transition duration-500 ease-in-out">
                         {post.title}
-                    </Link>
+                    </h3>
                 </div>
             ))}
         </>

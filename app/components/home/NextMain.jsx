@@ -17,9 +17,9 @@ const NextMain = ({ post }) => {
                     </div>
                 </div>
                 <div className='col-span-12 md:col-span-6 xl:col-span-8'>
-                    <p className='font-light my-2 text-lg leading-relaxed'>
+                    <h2 className='font-light my-2 text-lg leading-relaxed'>
                         {post.title}
-                    </p>
+                    </h2>
                 </div>
             </Link>
         </>

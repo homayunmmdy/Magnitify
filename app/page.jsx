@@ -16,7 +16,7 @@ const Home = () => {
         description={SiteConfig.description}
         canonical="https://magnitify.vercel.app/"
       />
-
+      <h1 className='hidden'>{SiteConfig.name}</h1>
       <Hero />
       <div className='w-[94%] md:w-[92%] mx-auto'>
         <PostsSec secid={4} />
@@ -26,7 +26,6 @@ const Home = () => {
       <Gallery />
       <div className='w-[94%] md:w-[92%] mx-auto'>
         <SpecialSections />
-        
         <ArchiveSections />
       </div>
     </>

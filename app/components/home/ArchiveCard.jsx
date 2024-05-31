@@ -18,10 +18,10 @@ const ArchiveCard = ({ post }) => {
                 </div>
                 <div className="px-4 pb-3">
                     <Link href={`/Posts/${post._id}`}>
-                        <h5
+                        <h3
                             className="text-xl font-semibold tracking-tight hover:text-violet-800 text-gray-900">
                             {post.title}
-                        </h5>
+                        </h3>
                     </Link>
                     <p className="antialiased text-gray-600 text-sm break-all truncate">
                         {post.description}
