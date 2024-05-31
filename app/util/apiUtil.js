@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import CashData from "../cash/CashData";
+import CashData from "@/app/cash/CashData";
 
 export async function handleGetRequest(Model) {
   try {
