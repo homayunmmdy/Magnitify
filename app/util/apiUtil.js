@@ -1,10 +1,9 @@
 import { NextResponse } from "next/server";
-import CashData from "@/app/cash/CashData";
 
-export async function handleGetRequest(Model) {
+export async function handleGetRequest(Model , cash) {
   try {
     if (process.env.NEXT_PUBLIC_STATUS == "dev") {
-      return NextResponse.json({ data: CashData }, { status: 200 });
+      return NextResponse.json({ data: cash }, { status: 200 });
     } else {
       const data = await Model.find();
       return NextResponse.json({ data }, { status: 200 });

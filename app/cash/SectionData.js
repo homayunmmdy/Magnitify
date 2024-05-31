@@ -1,0 +1,68 @@
+const SectionData = [
+  {
+    _id: "664dab119ddca5e2184ff315",
+    name: "Main Post",
+    secid: 1,
+    createdAt: "2024-05-22T08:21:37.278Z",
+    updatedAt: "2024-05-22T08:21:37.278Z",
+    __v: 0,
+  },
+  {
+    _id: "664dac840219fb211feab060",
+    name: "Next Main",
+    secid: 2,
+    createdAt: "2024-05-22T08:27:48.949Z",
+    updatedAt: "2024-05-22T08:27:48.949Z",
+    __v: 0,
+  },
+  {
+    _id: "664daf56373932f6a08928b4",
+    name: "under hero",
+    secid: 3,
+    createdAt: "2024-05-22T08:39:50.781Z",
+    updatedAt: "2024-05-22T08:39:50.781Z",
+    __v: 0,
+  },
+  {
+    _id: "664daf67373932f6a08928b7",
+    name: "Business",
+    secid: 4,
+    createdAt: "2024-05-22T08:40:07.862Z",
+    updatedAt: "2024-05-22T08:40:07.862Z",
+    __v: 0,
+  },
+  {
+    _id: "664daf9f373932f6a08928be",
+    name: "Single Post",
+    secid: 5,
+    createdAt: "2024-05-22T08:41:03.975Z",
+    updatedAt: "2024-05-22T08:41:03.975Z",
+    __v: 0,
+  },
+  {
+    _id: "664dafbe373932f6a08928c2",
+    name: "Influncers",
+    secid: 6,
+    createdAt: "2024-05-22T08:41:34.687Z",
+    updatedAt: "2024-05-22T08:41:34.687Z",
+    __v: 0,
+  },
+  {
+    _id: "664db1e065afac6066f6e9e4",
+    name: "Book",
+    secid: 7,
+    createdAt: "2024-05-22T08:50:40.409Z",
+    updatedAt: "2024-05-22T08:50:40.409Z",
+    __v: 0,
+  },
+  {
+    _id: "664db1eb65afac6066f6e9e6",
+    name: "You",
+    secid: 8,
+    createdAt: "2024-05-22T08:50:51.048Z",
+    updatedAt: "2024-05-22T08:50:51.048Z",
+    __v: 0,
+  },
+];
+
+export default SectionData;
