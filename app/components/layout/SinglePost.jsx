@@ -13,7 +13,7 @@ const SinglePost = () => {
     const fetchPost = async () => {
       try {
         const response = await axios.get(`${POST_API_URL}/${id}`);
-        setPost(response.data.foundTicket);
+        setPost(response.data);
       } catch (error) {
         console.error("Error fetching post:", error);
       }
@@ -21,6 +21,8 @@ const SinglePost = () => {
 
     fetchPost();
   }, [id]);
+
+  console.log(post)
 
   return post;
 };

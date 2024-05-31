@@ -1,6 +1,4 @@
-import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 
 const RecentPost = ({ post }) => {
     return (
@@ -9,7 +7,7 @@ const RecentPost = ({ post }) => {
                 <img
                     src={post.imgurl}
                     alt={post.title}
-                    className='mb-3 shadow-md rounded-lg  bg-slate-50 w-full sm:w-[17rem] sm:mb-0  xl:w-full'
+                    className='mb-3 shadow-lg rounded-lg  bg-slate-50 w-full sm:mb-2   xl:w-full'
                 />
                 <div className="order-1 sm:ml-6 xl:ml-0">
                     <h3 className="mb-1 text-slate-900">{post.title}</h3>

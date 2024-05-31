@@ -62,7 +62,7 @@ const Navbar = () => {
           </div>
           <Link href="/" className="flex items-center gap-2 flex-nowrap" >
             <Image src={Logo} width={40} height={40} title={SiteConfig.name} alt={SiteConfig.altImgName} />
-            <span className="text-xl font-bold hover:text-indigo-700">
+            <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 to-fuchsia-500">
               {SiteConfig.name}
             </span>
           </Link>

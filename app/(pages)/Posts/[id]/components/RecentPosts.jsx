@@ -32,8 +32,8 @@ const RecentPosts = () => {
     }
     return (
         <>
-            <div className=" w-full rounded-[10px] border border-gray-3 p-4 sm:p-7">
-                <h4 className="font-semibold text-custom-4 text-dark mb-3">
+            <div className=" w-full rounded-[10px] border border-indigo-100 p-4 sm:p-7">
+                <h4 className="font-semibold text-custom-4 text-dark mb-3 text-xl text-center">
                     Recent Posts
                 </h4>
                 {posts && (
