@@ -18,13 +18,13 @@ const Home = () => {
       />
 
       <Hero />
-      <div className='w-[97%] sm:w-[95%] md:w-[92%] mx-auto'>
+      <div className='w-[94%] md:w-[92%] mx-auto'>
         <PostsSec secid={4} />
         <SepcialSections2 />
         <PostsSec secid={7} />
       </div>
       <Gallery />
-      <div className='w-[97%] sm:w-[95%] md:w-[92%] mx-auto'>
+      <div className='w-[94%] md:w-[92%] mx-auto'>
         <SpecialSections />
         
         <ArchiveSections />

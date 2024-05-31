@@ -38,13 +38,13 @@ const Post = () => {
       />
       <div className="flex flex-col ">
         <div className="bg-indigo-500 pt-10">
-          <div className="w-[97%] sm:w-[95%] md:w-[92%] mx-auto px-4 py-8">
+          <div className="w-[94%] md:w-[92%] mx-auto px-4 py-8">
             <h1 className="text-4xl text-center font-extrabold text-white">{post.title}</h1>
             <p className="text-lg  text-center my-3 text-white"><FormattedTimestamp timestamp={post.createdAt} options={options} /></p>
           </div>
         </div>
         <div className="bg-white py-8">
-          <div className="w-[97%] sm:w-[95%] md:w-[92%] mx-auto flex flex-col md:flex-row gap-8">
+          <div className="w-[94%] md:w-[92%] mx-auto flex flex-col md:flex-row gap-8">
             <div className="w-full md:w-3/4 ">
               <img
                 className="w-full py-3 aspect-video rounded-3xl"

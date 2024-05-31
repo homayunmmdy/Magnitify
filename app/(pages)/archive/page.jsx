@@ -96,7 +96,7 @@ const ArchiveSections = () => {
   }
 
   return (
-    <div className="w-[97%] sm:w-[95%] md:w-[92%] mx-auto mt-14">
+    <div className="w-[94%] md:w-[92%] mx-auto mt-14">
       <div className="flex flex-col sm:flex-row justify-between items-center mb-6">
         <h1 className="text-3xl font-semibold mb-4 sm:mb-0">Archive</h1>
         <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">

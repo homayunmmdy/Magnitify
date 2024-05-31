@@ -3,7 +3,7 @@ import Link from 'next/link'
 const RecentPost = ({ post }) => {
     return (
         <>
-            <Link href={`/Posts/${post._id}`} className="relative flex flex-col sm:flex-row md:flex-col items-start gap-2">
+            <Link href={`/Posts/${post._id}`} className="relative flex flex-col items-start gap-2">
                 <img
                     src={post.imgurl}
                     alt={post.title}

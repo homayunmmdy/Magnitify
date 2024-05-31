@@ -11,7 +11,7 @@ const Footer = () => {
     return (
         <>
             <footer className="w-full">
-                <div className="mx-auto w-[97%] sm:w-[95%] md:w-[92%]">
+                <div className="mx-auto w-[94%] md:w-[92%]">
                     <div className="py-14 grid grid-cols-12 gap-x-5 gap-y-8">
                         <div className="col-span-full xl:col-span-3 relative bg-gradient-to-tr from-indigo-600 to-violet-600 rounded-2xl gap-12 p-6 xl:w-72 h-96 flex flex-col justify-center items-center">
 

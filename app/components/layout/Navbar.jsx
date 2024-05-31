@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 navbar bg-base-100 z-[50] transition-all w-[97%] sm:w-[95%] md:w-[92%] mx-auto rounded-xl shadow-xl my-4">
+      <header className="fixed top-0 left-0 right-0 navbar bg-base-100 z-[50] transition-all w-[94%] md:w-[92%] mx-auto rounded-xl shadow-xl my-4">
         <div className="navbar-start ">
           <div className="dropdown">
             <button tabIndex={0} className="px-3 lg:hidden">
