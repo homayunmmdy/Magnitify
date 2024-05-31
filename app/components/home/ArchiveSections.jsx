@@ -34,7 +34,7 @@ const ArchiveSections = () => {
           ))}
         </div>
       </div>
-      <div className="m-1 flex justify-center items-center">
+      <div className="m-1 flex justify-center items-center mt-2">
         <Link className="border-2 border-blue-700	 rounded-xl	text-indigo-700 hover:text-white font-medium flex p-3 bg-base-100  hover:bg-indigo-700 hover:opacity-90 lg:transition-all lg:ease-linear lg:duration-200 w-13" href="/archive" >More</Link>
       </div>
     </>
