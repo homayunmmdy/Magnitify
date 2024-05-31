@@ -16,7 +16,7 @@ const Post = () => {
   const id = pathname.slice(7);
 
   if (!user) {
-    return (<div className="flex justify-center py-5"> <SignIn /></div>)
+    return (<div className="flex justify-center py-5 mt-10"> <SignIn /></div>)
   }
 
   if (!post) {
@@ -36,7 +36,7 @@ const Post = () => {
         description={post.description.slice(0, 160)}
         canonical={canonicalUrl}
       />
-      <div className="flex flex-col">
+      <div className="flex flex-col mt-10">
         <div className="bg-base-200 py-8">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl text-center font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">{post.title}</h1>
