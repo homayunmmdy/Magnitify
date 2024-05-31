@@ -4,10 +4,15 @@ import useDataFetching from '@/app/hooks/useDataFetching';
 import Link from 'next/link';
 import React from 'react'
 import { GrLinkNext } from "react-icons/gr";
+import InfluncerSecSkeleton from './InfluncerSecSkeleton';
 
 const InfluncerSec = () => {
-  const { data } = useDataFetching(POST_API_URL, -1, 5);
+  const { data, loading } = useDataFetching(POST_API_URL, -1, 5);
 
+  if (loading) {
+    return <InfluncerSecSkeleton />
+  }
+  
   return (
     <>
       {data?.map((post, _index) => (

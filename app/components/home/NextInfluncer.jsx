@@ -3,10 +3,14 @@ import { POST_API_URL } from '@/app/config/constants';
 import useDataFetching from '@/app/hooks/useDataFetching';
 import Link from 'next/link';
 import { GrLinkNext } from "react-icons/gr";
+import NextInfluncerSkeleton from './NextInfluncerSkeleton';
 
 const NextInfluncer = () => {
-    const { data } = useDataFetching(POST_API_URL, -3, 6);
+    const { data, loading } = useDataFetching(POST_API_URL, -3, 6);
 
+    if (loading) {
+        return <NextInfluncerSkeleton />
+    }
     return (
         <>
             {data?.map((post, _index) => (
@@ -17,7 +21,7 @@ const NextInfluncer = () => {
                     <p>{post.description}</p>
                     <Link rel="noopener noreferrer" href="/archive" className="animate-bounce  inline-flex items-center py-2 space-x-2 text-sm">
                         <span>Read more</span>
-                       <GrLinkNext size={16} />
+                        <GrLinkNext size={16} />
                     </Link>
                 </Link>
             ))}
