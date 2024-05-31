@@ -1,3 +1,3 @@
-export const POST_API_URL = "/api/Posts";
-export const SERVICES_API_URL = "/api/Services";
-export const CONTACTS_API_URL = "/api/Contacts";
+export const POST_API_URL = "/api/posts";
+export const SERVICES_API_URL = "/api/services";
+export const CONTACTS_API_URL = "/api/contacts";
