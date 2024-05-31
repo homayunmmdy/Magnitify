@@ -1,10 +1,11 @@
 "use client"
+import { POST_API_URL } from '@/app/config/constants';
 import useDataFetching from '@/app/hooks/useDataFetching';
 import Link from 'next/link'
 import React from 'react'
 
 const MainSpecialSec = () => {
-    const { data } = useDataFetching("/api/Posts", -1, 9);
+    const { data } = useDataFetching(POST_API_URL, -1, 9);
 
     return (
         <div>

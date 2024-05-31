@@ -4,9 +4,10 @@ import useDataFetching from '@/app/hooks/useDataFetching';
 import SpecialCardsSkeleton from './SpecialCardsSkeleton';
 import Link from 'next/link';
 import FormattedTimestamp from '@/app/services/FormattedTimestamp';
+import { POST_API_URL } from '@/app/config/constants';
 
 const SpecialCards = () => {
-    const { data, loading } = useDataFetching("/api/Posts", -3, 6);
+    const { data, loading } = useDataFetching(POST_API_URL, -3, 6);
 
     if (loading) {
         return <SpecialCardsSkeleton />

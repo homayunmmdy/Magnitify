@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import RecentPost from './RecentPost';
 import axios from "axios"
 import RecentPostSkeleton from './RecentPostSkeleton';
+import { POST_API_URL } from '@/app/config/constants';
 
 const RecentPosts = () => {
     const [posts, setPosts] = useState([]);
@@ -13,7 +14,7 @@ const RecentPosts = () => {
         const fetchData = async () => {
             try {
                 setLoading(true);
-                const postResponse = await axios.get(`/api/Posts`);
+                const postResponse = await axios.get(POST_API_URL);
                 setPosts(postResponse.data.data.slice(recentSize));
                 setLoading(false);
 

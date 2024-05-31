@@ -1,11 +1,12 @@
 "use client"
+import { POST_API_URL } from '@/app/config/constants';
 import useDataFetching from '@/app/hooks/useDataFetching';
 import Link from 'next/link';
 import React from 'react'
 import { GrLinkNext } from "react-icons/gr";
 
 const InfluncerSec = () => {
-  const { data } = useDataFetching("/api/Posts", -1, 5);
+  const { data } = useDataFetching(POST_API_URL, -1, 5);
 
   return (
     <>

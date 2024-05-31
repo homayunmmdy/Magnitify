@@ -1,10 +1,11 @@
 "use client"
+import { POST_API_URL } from '@/app/config/constants';
 import useDataFetching from '@/app/hooks/useDataFetching';
 import Link from 'next/link';
 import { GrLinkNext } from "react-icons/gr";
 
 const NextInfluncer = () => {
-    const { data } = useDataFetching("/api/Posts", -3, 6);
+    const { data } = useDataFetching(POST_API_URL, -3, 6);
 
     return (
         <>

@@ -1,10 +1,11 @@
 "use client";
+import { POST_API_URL } from "@/app/config/constants";
 import Main from "./Main";
 import MainSecSkeleton from "./MainSecSkeleton";
 import useDataFetching from "@/app/hooks/useDataFetching";
 
 const MainSec = () => {
-    const { data, loading } = useDataFetching("/api/Posts", -1, 1);
+    const { data, loading } = useDataFetching(POST_API_URL, -1, 1);
 
     if (loading) {
         return <MainSecSkeleton />

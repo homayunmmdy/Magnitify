@@ -1,6 +1,7 @@
 "use client"
 import LoadingPage from "@/app/components/layout/LoadingPage";
 import ServiceTitle from "@/app/components/layout/ServiceTitle";
+import { SERVICES_API_URL } from "@/app/config/constants";
 import axios from "axios";
 import { notFound, usePathname } from "next/navigation";
 import { useEffect, useState } from 'react';
@@ -12,7 +13,7 @@ const ServicesPage = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`/api/Services`);
+                const response = await axios.get(SERVICES_API_URL);
                 setData(response.data.data);
             } catch (error) {
                 console.error("Error fetching data:", error);

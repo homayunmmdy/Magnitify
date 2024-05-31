@@ -3,9 +3,10 @@ import React from 'react'
 import useDataFetching from '@/app/hooks/useDataFetching';
 import SpecialCardSkeleton from './SpecialCardSkeleton';
 import Link from 'next/link';
+import { POST_API_URL } from '@/app/config/constants';
 
 const SpecialCard = () => {
-    const { data, loading } = useDataFetching("/api/Posts", -1, 5);
+    const { data, loading } = useDataFetching(POST_API_URL, -1, 5);
 
     if (loading) {
         return <SpecialCardSkeleton />

@@ -4,6 +4,7 @@ import axios from "axios";
 import ArchiveCard from './ArchiveCard'
 import ArchiveCardSkeleton from "./ArchiveCardSkeleton";
 import Link from "next/link";
+import { POST_API_URL } from "@/app/config/constants";
 
 const ArchiveSections = () => {
   const [data, setData] = useState();
@@ -13,7 +14,7 @@ const ArchiveSections = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`/api/Posts`);
+        const response = await axios.get(POST_API_URL);
         setData(response.data.data.slice(recentSize));
       } catch (error) {
         console.error("Error fetching data:", error);

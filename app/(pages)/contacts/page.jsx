@@ -4,6 +4,7 @@ import SiteConfig from "@/app/config/site";
 import Circles from "./components/Circle";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { CONTACTS_API_URL } from "@/app/config/constants";
 
 const ContactsPage = () => {
   const [formData, setFormData] = useState({
@@ -23,7 +24,7 @@ const ContactsPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("/api/Contacts", {
+      const response = await fetch(CONTACTS_API_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

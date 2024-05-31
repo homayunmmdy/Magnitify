@@ -2,9 +2,10 @@
 import PostSec from './PostSec'
 import useDataFetching from '@/app/hooks/useDataFetching';
 import PostSecSkeleton from "./PostSecSkeleton";
+import { POST_API_URL } from '@/app/config/constants';
 
 const PostsSec = ({ secid }) => {
-    const { data, loading } = useDataFetching("/api/Posts", -4, secid);
+    const { data, loading } = useDataFetching(POST_API_URL, -4, secid);
 
     if (loading) {
         return <PostSecSkeleton />
