@@ -7,6 +7,7 @@ import FormattedTimestamp from "@/app/services/FormattedTimestamp";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Meta from "@/app/services/Meta";
+import { readingTime } from 'reading-time-estimator'
 
 const Post = () => {
   const post = SinglePost();
@@ -15,9 +16,11 @@ const Post = () => {
   const pathname = usePathname();
   const id = pathname.slice(7);
 
-  if (!user) {
-    return (<div className="flex justify-center py-5 mt-10"> <SignIn /></div>)
-  }
+
+
+  // if (!user) {
+  //   return (<div className="flex justify-center py-5 mt-10"> <SignIn /></div>)
+  // }
 
   if (!post) {
     return <PostSeclton />
@@ -27,7 +30,8 @@ const Post = () => {
     month: "2-digit",
     day: "2-digit"
   };
-
+  const text = post?.body
+  const readingTimeEstimate = readingTime(text, 100, "en")
   const canonicalUrl = `${API_URL}/Posts/${id}`
   return (
     <>
@@ -53,6 +57,7 @@ const Post = () => {
                 alt={post.title}
                 loading="lazy"
               />
+              <p className="text-center">{readingTimeEstimate.text}</p>
               <div className="prose max-w-none">
                 <p className="p-3 text-lg leading-9	">
                   {post.body}
