@@ -44,7 +44,7 @@ export async function handleGetSingleRequest(Model, id, cash) {
       return NextResponse.json(document, { status: 200 });
     }
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return handleErrorResponse(err);
   }
 }

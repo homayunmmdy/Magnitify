@@ -8,6 +8,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Meta from "@/app/services/Meta";
 import { readingTime } from 'reading-time-estimator'
+import { useState } from "react";
 
 const Post = () => {
   const post = SinglePost();
@@ -15,12 +16,13 @@ const Post = () => {
   const API_URL = process.env.API_URL;
   const pathname = usePathname();
   const id = pathname.slice(7);
+  const [isSpeaking, setIsSpeaking] = useState(false);
 
 
 
-  // if (!user) {
-  //   return (<div className="flex justify-center py-5 mt-10"> <SignIn /></div>)
-  // }
+  if (!user) {
+    return (<div className="flex justify-center py-5 mt-10"> <SignIn /></div>)
+  }
 
   if (!post) {
     return <PostSeclton />
@@ -30,9 +32,24 @@ const Post = () => {
     month: "2-digit",
     day: "2-digit"
   };
-  const text = post?.body
+  const text = `${post?.title}. ${post?.body}`
   const readingTimeEstimate = readingTime(text, 100, "en")
   const canonicalUrl = `${API_URL}/Posts/${id}`
+
+  const handleReadText = () => {
+    const utterance = new SpeechSynthesisUtterance(text);
+    window.speechSynthesis.speak(utterance);
+    setIsSpeaking(true);
+
+    utterance.onend = () => {
+      setIsSpeaking(false);
+    };
+  };
+
+  const handleStopReading = () => {
+    window.speechSynthesis.cancel();
+    setIsSpeaking(false);
+  };
   return (
     <>
       <Meta
@@ -57,7 +74,26 @@ const Post = () => {
                 alt={post.title}
                 loading="lazy"
               />
-              <p className="text-center">{readingTimeEstimate.text}</p>
+              <div className="flex gap-3 items-center justify-between px-3">
+                <p className="text-center">{readingTimeEstimate.text}</p>
+                <div>
+                  {!isSpeaking ? (
+                    <button
+                      onClick={handleReadText}
+                      className="px-4 py-2 btn btn-outline btn-secondary rounded-full"
+                    >
+                      Read
+                    </button>
+                  ) : (
+                    <button
+                      onClick={handleStopReading}
+                      className="px-4 py-2 btn btn-outline btn-secondary rounded-full"
+                    >
+                      Stop
+                    </button>
+                  )}
+                </div>
+              </div>
               <div className="prose max-w-none">
                 <p className="p-3 text-lg leading-9	">
                   {post.body}
