@@ -1,12 +1,12 @@
 "use client";
-import { POST_API_URL } from "@/app/config/constants";
+import { POST_API_URL } from "@/app/config/apiConstants";
 import NextMain from "./NextMain";
 import NextMainSkeleton from "./NextMainSkeleton";
-import useDataFetching from "@/app/hooks/useDataFetching";
+import useGetSection from "@/app/hooks/useGetSection";
 
 
 const NextMainSec = () => {
-    const { data, loading } = useDataFetching(POST_API_URL, -4, 2);
+    const { data, loading } = useGetSection(POST_API_URL, -4, 2);
 
     if (loading) {
         return <NextMainSkeleton />;

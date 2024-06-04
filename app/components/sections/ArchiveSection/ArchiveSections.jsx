@@ -2,9 +2,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ArchiveCard from './ArchiveCard'
-import ArchiveCardSkeleton from "./ArchiveCardSkeleton";
+import ArchiveSectionsSkelton from "./ArchiveSectionsSkelton";
 import Link from "next/link";
-import { POST_API_URL } from "@/app/config/constants";
+import { POST_API_URL } from "@/app/config/apiConstants";
 
 const ArchiveSections = () => {
   const [data, setData] = useState();
@@ -24,7 +24,7 @@ const ArchiveSections = () => {
     fetchData();
   }, []);
   if (!data) {
-    return <ArchiveCardSkeleton />;
+    return <ArchiveSectionsSkelton />;
   }
   return (
     <>

@@ -1,11 +1,11 @@
 "use client"
-import { POST_API_URL } from '@/app/config/constants';
-import useDataFetching from '@/app/hooks/useDataFetching';
+import { POST_API_URL } from '@/app/config/apiConstants';
+import useGetSection from '@/app/hooks/useGetSection';
 import Link from 'next/link'
 import React from 'react'
 
-const MainSpecialSec = () => {
-    const { data } = useDataFetching(POST_API_URL, -1, 9);
+const MainSelfHelp = () => {
+    const { data } = useGetSection(POST_API_URL, -1, 9);
 
     return (
         <div>
@@ -33,4 +33,4 @@ const MainSpecialSec = () => {
     )
 }
 
-export default MainSpecialSec
+export default MainSelfHelp

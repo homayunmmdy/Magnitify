@@ -1,14 +1,14 @@
 "use client";
 import Link from "next/link";
-import SpecialSecSkeleton from "@/app/components/home/SpecialSecSkeleton";
-import useDataFetching from '@/app/hooks/useDataFetching';
-import { POST_API_URL } from "@/app/config/constants";
+import NextSelfHelpSkeleton from "./NextSelfHelpSkeleton";
+import { POST_API_URL } from "@/app/config/apiConstants";
+import useGetSection from "@/app/hooks/useGetSection";
 
-const SpecialSec = () => {
-    const { data, loading } = useDataFetching(POST_API_URL, -6, 8);
+const NextSelfHelp = () => {
+    const { data, loading } = useGetSection(POST_API_URL, -6, 8);
 
     if (loading) {
-        return <SpecialSecSkeleton />;
+        return <NextSelfHelpSkeleton />;
     }
     return (
         <>
@@ -30,4 +30,4 @@ const SpecialSec = () => {
     )
 }
 
-export default SpecialSec
+export default NextSelfHelp

@@ -1,13 +1,13 @@
 "use client"
-import { POST_API_URL } from '@/app/config/constants';
-import useDataFetching from '@/app/hooks/useDataFetching';
+import { POST_API_URL } from '@/app/config/apiConstants';
 import Link from 'next/link';
 import React from 'react'
 import { GrLinkNext } from "react-icons/gr";
 import InfluncerSecSkeleton from './InfluncerSecSkeleton';
+import useGetSection from '@/app/hooks/useGetSection';
 
 const InfluncerSec = () => {
-  const { data, loading } = useDataFetching(POST_API_URL, -1, 5);
+  const { data, loading } = useGetSection(POST_API_URL, -1, 5);
 
   if (loading) {
     return <InfluncerSecSkeleton />

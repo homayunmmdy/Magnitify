@@ -1,12 +1,12 @@
 "use client"
-import { POST_API_URL } from '@/app/config/constants';
-import useDataFetching from '@/app/hooks/useDataFetching';
+import { POST_API_URL } from '@/app/config/apiConstants';
 import Link from 'next/link';
 import { GrLinkNext } from "react-icons/gr";
 import NextInfluncerSkeleton from './NextInfluncerSkeleton';
+import useGetSection from '@/app/hooks/useGetSection';
 
 const NextInfluncer = () => {
-    const { data, loading } = useDataFetching(POST_API_URL, -3, 6);
+    const { data, loading } = useGetSection(POST_API_URL, -3, 6);
 
     if (loading) {
         return <NextInfluncerSkeleton />

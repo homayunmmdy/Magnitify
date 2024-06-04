@@ -1,7 +1,7 @@
 import InfluncerSec from './InfluncerSec'
 import NextInfluncer from './NextInfluncer'
 
-const SepcialSections2 = () => {
+const Influncer = () => {
     return (
         <div className="grid grid-cols-12 mx-auto">
             <InfluncerSec />
@@ -12,4 +12,4 @@ const SepcialSections2 = () => {
     )
 }
 
-export default SepcialSections2
+export default Influncer

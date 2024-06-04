@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FormattedTimestamp = ({ timestamp, options }) => {
+const FormatTime = ({ timestamp, options }) => {
     const formatDate = (timestamp, options) => {
         const date = new Date(timestamp);
         return date.toLocaleString("en-GB", options);
@@ -10,4 +10,4 @@ const FormattedTimestamp = ({ timestamp, options }) => {
 };
 
 
-export default FormattedTimestamp
+export default FormatTime

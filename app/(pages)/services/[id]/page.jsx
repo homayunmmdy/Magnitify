@@ -1,7 +1,7 @@
 "use client"
 import LoadingPage from "@/app/components/layout/LoadingPage";
 import ServiceTitle from "@/app/components/layout/ServiceTitle";
-import { SERVICES_API_URL } from "@/app/config/constants";
+import { SERVICES_API_URL } from "@/app/config/apiConstants";
 import axios from "axios";
 import { notFound, usePathname } from "next/navigation";
 import { useEffect, useState } from 'react';

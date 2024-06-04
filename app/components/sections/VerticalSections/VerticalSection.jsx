@@ -1,8 +1,8 @@
 import React from 'react'
-import FormattedTimestamp from '@/app/services/FormattedTimestamp';
 import Link from 'next/link';
+import { FormatTime } from '../../layout';
 
-const PostSec = ({ post }) => {
+const VerticalSection = ({ post }) => {
     const options = {
         year: "numeric",
         month: "2-digit",
@@ -17,7 +17,7 @@ const PostSec = ({ post }) => {
                 </div>
                 <div className="absolute top-0 right-0 left-0 mx-5 mt-2 flex justify-end items-center">
                     <div className="text-white font-regular flex flex-col justify-end">
-                        <span className="text-2xl leading-0 font-semibold"><FormattedTimestamp timestamp={post.createdAt} options={options} /></span>
+                        <span className="text-2xl leading-0 font-semibold"><FormatTime timestamp={post.createdAt} options={options} /></span>
                     </div>
                 </div>
                 <main className="p-5 z-10">
@@ -30,4 +30,4 @@ const PostSec = ({ post }) => {
     )
 }
 
-export default PostSec
+export default VerticalSection

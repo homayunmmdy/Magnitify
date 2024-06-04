@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import RecentPost from './RecentPost';
 import axios from "axios"
 import RecentPostSkeleton from './RecentPostSkeleton';
-import { POST_API_URL } from '@/app/config/constants';
+import { POST_API_URL } from '@/app/config/apiConstants';
 
 const RecentPosts = () => {
     const [posts, setPosts] = useState([]);

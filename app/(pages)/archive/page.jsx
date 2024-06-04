@@ -2,10 +2,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
-import { POST_API_URL } from "@/app/config/constants";
-import ArchiveCard from "@/app/components/home/ArchiveCard";
-import ArchiveCardSkeleton from "@/app/components/home/ArchiveCardSkeleton";
+import { POST_API_URL } from "@/app/config/apiConstants";
 import Pagination from "./components/Pagination";
+import { ArchiveCard, ArchiveSectionsSkeleton } from "@/app/components/sections";
 
 const ArchiveSections = () => {
   const [data, setData] = useState([]);
@@ -92,7 +91,7 @@ const ArchiveSections = () => {
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   if (loading) {
-    return <div className="w-[94%] md:w-[92%] mx-auto py-14"><ArchiveCardSkeleton /></div>;
+    return <div className="w-[94%] md:w-[92%] mx-auto py-14"><ArchiveSectionsSkeleton /></div>;
   }
 
   return (

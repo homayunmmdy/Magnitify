@@ -1,12 +1,12 @@
 "use client";
-import { POST_API_URL } from "@/app/config/constants";
+import { POST_API_URL } from "@/app/config/apiConstants";
 import SubHero from "./SubHero";
 import SubHeroSkeleton from "./SubHeroSkeleton";
-import useDataFetching from "@/app/hooks/useDataFetching";
+import useGetSection from "@/app/hooks/useGetSection";
 
 
 const SubHeroSec = () => {
-    const { data, loading } = useDataFetching(POST_API_URL, -4, 3);
+    const { data, loading } = useGetSection(POST_API_URL, -4, 3);
 
     if (loading) {
         return <SubHeroSkeleton />;

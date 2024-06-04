@@ -1,12 +1,6 @@
-import React from 'react'
-import Hero from './components/home/Hero'
-import PostsSec from './components/home/PostsSec'
-import ArchiveSections from './components/home/ArchiveSections'
-import Gallery from './components/home/Gallery'
-import SpecialSections from './components/home/SpecialSections'
-import SepcialSections2 from './components/home/SepcialSections2'
-import Meta from './services/Meta'
 import SiteConfig from './config/site'
+import { Hero, Verticla, Influncer, Gallery, SelfHelp, ArchiveSections } from './components/sections'
+import { Meta } from './components/layout'
 
 const Home = () => {
   return (
@@ -19,13 +13,13 @@ const Home = () => {
       <h1 className='hidden'>{SiteConfig.name}</h1>
       <Hero />
       <div className='w-[94%] md:w-[92%] mx-auto'>
-        <PostsSec secid={4} />
-        <SepcialSections2 />
-        <PostsSec secid={7} />
+        <Verticla secid={4} />
+        <Influncer />
+        <Verticla secid={7} />
       </div>
       <Gallery />
       <div className='w-[94%] md:w-[92%] mx-auto'>
-        <SpecialSections />
+        <SelfHelp />
         <ArchiveSections />
       </div>
     </>

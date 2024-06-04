@@ -4,7 +4,7 @@ import SiteConfig from "@/app/config/site";
 import Circles from "./components/Circle";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { CONTACTS_API_URL } from "@/app/config/constants";
+import { CONTACTS_API_URL } from "@/app/config/apiConstants";
 
 const ContactsPage = () => {
   const [formData, setFormData] = useState({

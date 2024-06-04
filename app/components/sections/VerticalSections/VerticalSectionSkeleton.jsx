@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PostSecSkeleton = () => {
+const VerticalSectionSkeleton = () => {
     return (
         <div className=" mx-auto py-6">
             <div className="grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 gap-5">
@@ -13,4 +13,4 @@ const PostSecSkeleton = () => {
     )
 }
 
-export default PostSecSkeleton
+export default VerticalSectionSkeleton

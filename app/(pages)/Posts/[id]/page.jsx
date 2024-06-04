@@ -3,12 +3,11 @@ import RecentPosts from "@/app/(pages)/Posts/[id]/components/RecentPosts";
 import SinglePost from "@/app/components/layout/SinglePost";
 import PostSeclton from "./PostSkelton";
 import { SignIn, useUser } from "@clerk/nextjs";
-import FormattedTimestamp from "@/app/services/FormattedTimestamp";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import Meta from "@/app/services/Meta";
 import { readingTime } from 'reading-time-estimator'
 import { useState } from "react";
+import { FormatTime, Meta } from "@/app/components/layout";
 
 const Post = () => {
   const post = SinglePost();
@@ -61,7 +60,7 @@ const Post = () => {
         <div className="bg-indigo-500 pt-10">
           <div className="w-[94%] md:w-[92%] mx-auto px-4 py-8">
             <h1 className="text-4xl text-center font-extrabold text-white">{post.title}</h1>
-            <p className="text-lg  text-center my-3 text-white"><FormattedTimestamp timestamp={post.createdAt} options={options} /></p>
+            <p className="text-lg  text-center my-3 text-white"><FormatTime timestamp={post.createdAt} options={options} /></p>
           </div>
         </div>
         <div className="bg-white py-8">
