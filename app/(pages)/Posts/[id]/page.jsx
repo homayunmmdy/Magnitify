@@ -1,6 +1,5 @@
 "use client";
 import RecentPosts from "@/app/(pages)/Posts/[id]/components/RecentPosts";
-import SinglePost from "@/app/components/layout/SinglePost";
 import PostSeclton from "./PostSkelton";
 import { SignIn, useUser } from "@clerk/nextjs";
 import Image from "next/image";
@@ -8,9 +7,10 @@ import { usePathname } from "next/navigation";
 import { readingTime } from 'reading-time-estimator'
 import { useState } from "react";
 import { FormatTime, Meta } from "@/app/components/layout";
+import useSinglePost from "@/app/hooks/useSinglePost";
 
 const Post = () => {
-  const post = SinglePost();
+  const post = useSinglePost();
   const { user } = useUser();
   const API_URL = process.env.API_URL;
   const pathname = usePathname();
