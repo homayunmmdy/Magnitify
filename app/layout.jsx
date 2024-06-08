@@ -11,9 +11,9 @@ export default function RootLayout({ children }) {
       <html lang={SiteConfig.lang} dir={SiteConfig.dir} data-theme="cupcake">
         <body className={`${roboto.className} font-normal	`}>
           <Navbar />
-          <div className="pt-[56px] bg-white">
+          <main className="pt-[56px] bg-white">
             {children}
-          </div>
+          </main>
           <Dependencies />
           <Footer />
         </body>

@@ -45,8 +45,8 @@ const Footer = () => {
                             <div className="flex gap-6 xl:gap-12 max-xl:justify-center">
                                 <ul className="text-gray-600 transition-all duration-500 grid gap-6">
                                     <li><Link className="link link-hover hover:text-indigo-700" href="/">Home</Link></li>
-                                    <li><Link className="link link-hover hover:text-indigo-700" href="#">FAQs</Link></li>
-                                    <li><Link className="link link-hover hover:text-indigo-700" href="#">Price Plan</Link></li>
+                                    <li><Link className="link link-hover hover:text-indigo-700" href="/FAQs">FAQs</Link></li>
+                                    <li><Link className="link link-hover hover:text-indigo-700" href="/privacy_policy">Privacy Policy</Link></li>
                                     <li><Link className="link link-hover hover:text-indigo-700" href="#">Features</Link></li>
                                 </ul>
                                 <ul className="text-gray-600 transition-all duration-500 grid gap-6">
