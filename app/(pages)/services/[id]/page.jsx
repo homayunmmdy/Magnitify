@@ -1,5 +1,4 @@
 "use client"
-import LoadingPage from "@/app/components/layout/LoadingPage";
 import ServiceTitle from "@/app/components/layout/ServiceTitle";
 import { SERVICES_API_URL } from "@/app/config/apiConstants";
 import axios from "axios";
@@ -22,10 +21,6 @@ const ServicesPage = () => {
 
         fetchData();
     }, []);
-
-    if (!data) {
-        return <LoadingPage />;
-    }
     const secids = data.map((item) => item.secid);
     if (secids.includes(parseInt(id))) {
         return (
