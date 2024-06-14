@@ -11,6 +11,7 @@ const Meta = ({ title, description, canonical }) => (
     <meta property="og:description" content={description} />
     <meta property="og:image" content={LogoImg} />
     {canonical && <link rel="canonical" href={canonical} />}
+    <meta name="google-site-verification" content="KEW2K6gHlUqeWRDxOY39arw_0ZD47OKapZN1bBZI1Go" />
   </Head>
 );
 
