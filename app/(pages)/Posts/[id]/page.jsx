@@ -8,6 +8,7 @@ import { readingTime } from 'reading-time-estimator'
 import { useState } from "react";
 import { FormatTime, Meta } from "@/app/components/layout";
 import useSinglePost from "@/app/hooks/useSinglePost";
+import SiteConfig from "@/app/config/site";
 
 const Post = () => {
   const post = useSinglePost();
@@ -53,6 +54,7 @@ const Post = () => {
     <>
       <Meta
         title={post.title}
+        keywords={SiteConfig.keywords}
         description={post.description.slice(0, 160)}
         canonical={canonicalUrl}
       />

@@ -7,8 +7,9 @@ const Home = () => {
     <>
       <Meta
         title={SiteConfig.name}
+        keywords={SiteConfig.keywords}
         description={SiteConfig.description}
-        canonical="https://magnitify.vercel.app/"
+        canonical={SiteConfig.siteUrl}
       />
       <h1 className='hidden'>{SiteConfig.name}</h1>
       <Hero />

@@ -1,9 +1,11 @@
 const SiteConfig = {
   name: "Magnitify",
   description: "Welcome to Magnitify, your source for amazing content!",
-  altImgName : "Logo of the Magnitify",
-  lang : "en",
-  dir : "ltr",
+  altImgName: "Logo of the Magnitify",
+  lang: "en",
+  dir: "ltr",
+  keywords: "magnitify , business , homayoun mohammadi , ai , blog , article",
+  siteUrl: "https://magnitify.vercel.app/",
   nav: [
     {
       id: 1,
