@@ -1,6 +1,6 @@
 import { Schema } from "mongoose";
-import baseSchema from "./baseSchema";
-import initModel from "./initModel";
+import initModel from "../initModel";
+import baseSchema from "../baseSchema";
 
 const serviceSchema = new Schema(
   {
