@@ -1,5 +1,6 @@
 import Head from "next/head";
 import LogoImg from "@/public/static/Image/Magnitify.png"
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const Meta = ({ title, description, canonical }) => (
   <Head>
@@ -12,6 +13,7 @@ const Meta = ({ title, description, canonical }) => (
     <meta property="og:image" content={LogoImg} />
     {canonical && <link rel="canonical" href={canonical} />}
     <meta name="google-site-verification" content="KEW2K6gHlUqeWRDxOY39arw_0ZD47OKapZN1bBZI1Go" />
+    <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICES} />
   </Head>
 );
 
