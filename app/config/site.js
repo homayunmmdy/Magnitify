@@ -5,7 +5,13 @@ const SiteConfig = {
   lang: "en",
   dir: "ltr",
   keywords: "magnitify , business , homayoun mohammadi , ai , blog , article",
-  siteUrl: "https://magnitify.vercel.app/",
+  siteURL: "https://magnitify.vercel.app/",
+  robots: "index , follow",
+  author: "Magnitify Team",
+  authorID: "magnitify_Team",
+  authors: [
+    { name: "Magnitify Team", url: "https://magnitify.vercel.app/" },
+  ],
   nav: [
     {
       id: 1,

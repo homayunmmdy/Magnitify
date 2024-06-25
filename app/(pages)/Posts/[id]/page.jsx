@@ -6,7 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { readingTime } from 'reading-time-estimator'
 import { useState } from "react";
-import { FormatTime, Meta } from "@/app/components/layout";
+import { FormatTime } from "@/app/components/layout";
 import useSinglePost from "@/app/hooks/useSinglePost";
 import SiteConfig from "@/app/config/site";
 
@@ -52,12 +52,6 @@ const Post = () => {
   };
   return (
     <>
-      <Meta
-        title={post.title}
-        keywords={SiteConfig.keywords}
-        description={post.description.slice(0, 160)}
-        canonical={canonicalUrl}
-      />
       <div className="flex flex-col ">
         <div className="bg-indigo-500 pt-10">
           <div className="w-[94%] md:w-[92%] mx-auto px-4 py-8">
