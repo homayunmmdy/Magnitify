@@ -11,7 +11,8 @@ const useGetServices = (secId) => {
         const fetchPostData = async () => {
             try {
                 setLoading(true);
-                const response = await apiClient.get('/posts'); setPostData(response.data.data);
+                const response = await apiClient.get('/posts');
+                setPostData(response.data.data);
                 setLoading(false);
             } catch (error) {
                 console.error("Error fetching postData:", error);
