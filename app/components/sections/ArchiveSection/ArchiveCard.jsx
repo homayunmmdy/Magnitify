@@ -7,7 +7,7 @@ const ArchiveCard = ({ post }) => {
         <>
             <Link
                 href={`/Posts/${post._id}`}
-                className="relative bg-white border rounded-lg shadow-md transform transition duration-500 hover:scale-105">
+                className="group relative bg-white border rounded-lg shadow-md transition duration-300 delay-100 transform hover:scale-105">
                 <div className="p-2 flex justify-center">
                     <Link href={`/Posts/${post._id}`}>
                         <img className="rounded-md aspect-video"
@@ -19,7 +19,7 @@ const ArchiveCard = ({ post }) => {
                 <div className="px-4 pb-3">
                     <Link href={`/Posts/${post._id}`}>
                         <h3
-                            className="text-xl font-semibold tracking-tight hover:text-violet-800 text-gray-900">
+                            className="text-xl font-semibold transition duration-300 delay-100 tracking-tight group-hover:text-violet-800 text-gray-900">
                             {post.title}
                         </h3>
                     </Link>
