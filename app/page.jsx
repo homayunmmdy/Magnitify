@@ -1,5 +1,5 @@
 import SiteConfig from './config/site'
-import { Hero, Verticla, Influncer, Gallery, SelfHelp, ArchiveSections, Publications, CTA } from './components/sections'
+import { Hero, Verticla, Influncer, Gallery, SelfHelp, ArchiveSections, Publications, CTA, Heading } from './components/sections'
 
 const Home = () => {
   return (
@@ -7,15 +7,20 @@ const Home = () => {
       <h1 className='hidden'>{SiteConfig.name}</h1>
       <Hero />
       <div className='w-[94%] md:w-[92%] mx-auto'>
+        <Heading title="Business" />
         <Verticla secid={4} />
+        <Heading title="Companies & Influncers" />
         <Influncer />
-        <Publications />
+        <Heading title="AI" />
+        {/* <Publications /> */}
         <Verticla secid={7} />
       </div>
-      <Gallery />
+      {/* <Gallery /> */}
       <div className='w-[94%] md:w-[92%] mx-auto'>
-        <SelfHelp />
         <CTA />
+        <Heading title="Self Help" />
+        <SelfHelp />
+        <Heading title="Articles" />
         <ArchiveSections />
       </div>
     </>

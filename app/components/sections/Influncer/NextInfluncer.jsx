@@ -19,7 +19,7 @@ const NextInfluncer = () => {
                     className="pt-6 pb-4 space-y-2">
                     <h3 className="text-3xl font-bold">{post.title}</h3>
                     <p>{post.description}</p>
-                    <Link rel="noopener noreferrer" href="/archive" className="animate-bounce  inline-flex items-center py-2 space-x-2 text-sm">
+                    <Link rel="noopener noreferrer" title='read more' aria-label='read more link' href="/archive" className="animate-bounce  inline-flex items-center py-2 space-x-2 text-sm">
                         <span>Read more</span>
                         <GrLinkNext size={16} />
                     </Link>

@@ -8,6 +8,9 @@ export { default as ArchiveSections } from "./ArchiveSection/ArchiveSections";
 export { default as Publications } from "./publications/Publications";
 export { default as CTA } from "./CTA/CTA";
 
-//Reusable Sections for other parts
+// Reusable Sections for other parts
 export { default as ArchiveCard } from "./ArchiveSection/ArchiveCard";
 export { default as ArchiveSectionsSkeleton } from "./ArchiveSection/ArchiveSectionsSkelton";
+
+// Elements
+export { default as Heading } from "../elements/Heading";
