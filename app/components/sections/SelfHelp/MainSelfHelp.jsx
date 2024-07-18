@@ -1,8 +1,7 @@
 "use client"
 import { POST_API_URL } from '@/app/config/apiConstants';
 import useGetSection from '@/app/hooks/useGetSection';
-import Link from 'next/link'
-import React from 'react'
+import Link from 'next/link';
 
 const MainSelfHelp = () => {
     const { data } = useGetSection(POST_API_URL, -1, 9);
@@ -14,6 +13,7 @@ const MainSelfHelp = () => {
                     <Link href={`/Posts/${post._id}`}>
                         <div className="bg-cover text-center overflow-hidden min-h-80"
                             style={{ backgroundImage: `url(${post.imgurl})` }}
+                            title={post.title}
                         >
                         </div>
                     </Link>

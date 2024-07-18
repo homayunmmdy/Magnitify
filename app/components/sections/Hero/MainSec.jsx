@@ -1,8 +1,8 @@
 "use client";
 import { POST_API_URL } from "@/app/config/apiConstants";
+import useGetSection from "@/app/hooks/useGetSection";
 import Main from "./Main";
 import MainSecSkeleton from "./MainSecSkeleton";
-import useGetSection from "@/app/hooks/useGetSection";
 
 const MainSec = () => {
     const { data, loading } = useGetSection(POST_API_URL, -1, 1);
@@ -12,8 +12,8 @@ const MainSec = () => {
     }
     return (
         <>
-            {data?.map((filteredData, _index) => (
-                <Main id={_index} key={_index} post={filteredData} />
+            {data?.map((post, _index) => (
+                <Main id={_index} key={_index} post={post} />
             ))}
         </>
     )

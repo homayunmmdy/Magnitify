@@ -1,9 +1,7 @@
 "use client";
-import { useState, useEffect } from "react";
-import APIClient from "../util/apiClient";
+import { useEffect, useState } from "react";
 
-const apiClient = new APIClient('/api');
-const useGetServices = (secId) => {
+const useGetServices = (url, lengthItem, secId) => {
     const [postData, setPostData] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -11,8 +9,12 @@ const useGetServices = (secId) => {
         const fetchPostData = async () => {
             try {
                 setLoading(true);
-                const response = await apiClient.get('/posts');
-                setPostData(response.data.data);
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                setPostData(data.data);
                 setLoading(false);
             } catch (error) {
                 console.error("Error fetching postData:", error);
@@ -21,11 +23,12 @@ const useGetServices = (secId) => {
         };
 
         fetchPostData();
-    }, []);
+    }, [url]);
 
-    // const filteredData = postData?.filter((item) => item.service === `${secId}`);
+    const filteredData = postData?.filter((item) => item.service === `${secId}`);
+    const data = filteredData?.slice(lengthItem);
 
-    return { postData, loading };
+    return { data, loading };
 };
 
 export default useGetServices;

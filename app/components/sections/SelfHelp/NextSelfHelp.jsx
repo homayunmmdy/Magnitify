@@ -1,8 +1,8 @@
 "use client";
-import Link from "next/link";
-import NextSelfHelpSkeleton from "./NextSelfHelpSkeleton";
 import { POST_API_URL } from "@/app/config/apiConstants";
 import useGetSection from "@/app/hooks/useGetSection";
+import Link from "next/link";
+import NextSelfHelpSkeleton from "./NextSelfHelpSkeleton";
 
 const NextSelfHelp = () => {
     const { data, loading } = useGetSection(POST_API_URL, -6, 8);

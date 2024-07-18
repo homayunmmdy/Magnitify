@@ -1,8 +1,8 @@
 "use client";
 import { POST_API_URL } from "@/app/config/apiConstants";
+import useGetSection from "@/app/hooks/useGetSection";
 import NextMain from "./NextMain";
 import NextMainSkeleton from "./NextMainSkeleton";
-import useGetSection from "@/app/hooks/useGetSection";
 
 
 const NextMainSec = () => {
@@ -14,8 +14,8 @@ const NextMainSec = () => {
 
     return (
         <>
-            {data?.map((filteredData, _index) => (
-                <NextMain id={_index} key={_index} post={filteredData} />
+            {data?.map((post, _index) => (
+                <NextMain id={_index} key={_index} post={post} />
             ))}
         </>
     )

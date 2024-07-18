@@ -1,8 +1,8 @@
 "use client";
-import VerticalSection from './VerticalSection'
-import VerticalSectionSkeleton from "./VerticalSectionSkeleton";
 import { POST_API_URL } from '@/app/config/apiConstants';
 import useGetSection from '@/app/hooks/useGetSection';
+import VerticalSection from './VerticalSection';
+import VerticalSectionSkeleton from "./VerticalSectionSkeleton";
 
 const VerticalSections = ({ secid }) => {
     const { data, loading } = useGetSection(POST_API_URL, -4, secid);

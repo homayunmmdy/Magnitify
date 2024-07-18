@@ -1,6 +1,5 @@
-"use client"
-import { useState, useEffect } from "react";
-import axios from "axios";
+"use client";
+import { useEffect, useState } from "react";
 
 const useGetSection = (url, lengthItem, secId) => {
     const [postData, setPostData] = useState(null);
@@ -10,8 +9,12 @@ const useGetSection = (url, lengthItem, secId) => {
         const fetchPostData = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get(url);
-                setPostData(response.data.data);
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                setPostData(data.data);
                 setLoading(false);
             } catch (error) {
                 console.error("Error fetching postData:", error);
@@ -22,8 +25,8 @@ const useGetSection = (url, lengthItem, secId) => {
         fetchPostData();
     }, [url]);
 
-    const filteredData = postData?.filter((item) => item.section === `${secId}`)
-    const data = filteredData?.slice(lengthItem)
+    const filteredData = postData?.filter((item) => item.section === `${secId}`);
+    const data = filteredData?.slice(lengthItem);
 
     return { data, loading };
 };

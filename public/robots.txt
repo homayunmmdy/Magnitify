@@ -1,8 +1,6 @@
-Sitemap: https://magnitify.vercel.app//sitemap.xml
+Sitemap: https://magnitify.vercel.app/sitemap.xml
 
 User-agent: *
 Disallow: /private/
 Disallow: /no-index/
 Allow: /
-
-Disallow: /archive

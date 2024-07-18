@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
 import { POST_API_URL } from "@/app/config/apiConstants";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import APIClient from "../util/apiClient";
 
 const useSinglePost = () => {

@@ -4,6 +4,7 @@ import { FormatTime } from "@/app/components/layout";
 import useReadText from "@/app/hooks/useReadText";
 import useSinglePost from "@/app/hooks/useSinglePost";
 import { SignIn, useUser } from "@clerk/nextjs";
+import Image from "next/image";
 import Link from "next/link";
 import { FaPlay } from "react-icons/fa";
 import { FaStop } from "react-icons/fa6";
@@ -42,11 +43,16 @@ const Post = () => {
         <div className="bg-white py-8">
           <div className="w-[94%] md:w-[92%] mx-auto flex flex-col md:flex-row gap-8">
             <div className="w-full md:w-3/4 ">
-              <img
+              <Image
                 className="w-full py-3 aspect-video rounded-3xl"
                 src={post.imgurl}
+                width={880}
+                height={500}
                 title={post.title}
                 alt={post.title}
+                blurDataURL={post.imgurl}
+                placeholder="blur"
+                layout="responsive"
                 loading="lazy"
               />
               <div className="flex gap-3 items-center justify-between px-3">
