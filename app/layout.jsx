@@ -38,13 +38,18 @@ export const metadata = {
     },
   },
 };
-
+const headerAds = (
+  <>
+    <script type='text/javascript' src='//pl23679724.highrevenuenetwork.com/11/3e/74/113e74dd53bf78e561c72b5ef68b384a.js'></script>
+  </>
+);
 
 export default function RootLayout({ children }) {
   return (
     <Provider>
       <html lang={SiteConfig.lang} dir={SiteConfig.dir} data-theme="cupcake">
         <body className={`${roboto.className} font-normal	`}>
+          {headerAds}
           <Navbar />
           <main className="pt-[56px] bg-white">
             {children}

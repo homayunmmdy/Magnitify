@@ -1,24 +1,20 @@
 "use client";
 import RecentPosts from "@/app/(pages)/Posts/[id]/components/RecentPosts";
-import PostSeclton from "./PostSkelton";
-import { SignIn, useUser } from "@clerk/nextjs";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { readingTime } from 'reading-time-estimator'
-import { useState } from "react";
 import { FormatTime } from "@/app/components/layout";
+import useReadText from "@/app/hooks/useReadText";
 import useSinglePost from "@/app/hooks/useSinglePost";
-import SiteConfig from "@/app/config/site";
+import { SignIn, useUser } from "@clerk/nextjs";
+import Link from "next/link";
+import { FaPlay } from "react-icons/fa";
+import { FaStop } from "react-icons/fa6";
+import { readingTime } from 'reading-time-estimator';
+import PostSeclton from "./PostSkelton";
 
 const Post = () => {
   const post = useSinglePost();
+  const text = `${post?.title}. ${post?.body}`
+  const { isSpeaking, handleReadText, handleStopReading } = useReadText(text);
   const { user } = useUser();
-  const API_URL = process.env.API_URL;
-  const pathname = usePathname();
-  const id = pathname.slice(7);
-  const [isSpeaking, setIsSpeaking] = useState(false);
-
-
 
   if (!user) {
     return (<div className="flex justify-center py-5 mt-10"> <SignIn /></div>)
@@ -32,24 +28,8 @@ const Post = () => {
     month: "2-digit",
     day: "2-digit"
   };
-  const text = `${post?.title}. ${post?.body}`
   const readingTimeEstimate = readingTime(text, 100, "en")
-  const canonicalUrl = `${API_URL}/Posts/${id}`
 
-  const handleReadText = () => {
-    const utterance = new SpeechSynthesisUtterance(text);
-    window.speechSynthesis.speak(utterance);
-    setIsSpeaking(true);
-
-    utterance.onend = () => {
-      setIsSpeaking(false);
-    };
-  };
-
-  const handleStopReading = () => {
-    window.speechSynthesis.cancel();
-    setIsSpeaking(false);
-  };
   return (
     <>
       <div className="flex flex-col ">
@@ -70,21 +50,22 @@ const Post = () => {
                 loading="lazy"
               />
               <div className="flex gap-3 items-center justify-between px-3">
-                <p className="text-center">{readingTimeEstimate.text}</p>
+                <p className="text-center hover:underline hover:text-indigo-600">{readingTimeEstimate.text}</p>
+                <Link href="/" className="btn btn-outline btn-primary rounded-full">Back Home</Link>
                 <div>
                   {!isSpeaking ? (
                     <button
                       onClick={handleReadText}
-                      className="px-4 py-2 btn btn-outline btn-secondary rounded-full"
+                      className="px-4 py-2 btn text-white btn-primary rounded-full"
                     >
-                      Read
+                      <FaPlay />
                     </button>
                   ) : (
                     <button
                       onClick={handleStopReading}
-                      className="px-4 py-2 btn btn-outline btn-secondary rounded-full"
+                      className="px-4 py-2 btn text-white btn-primary rounded-full"
                     >
-                      Stop
+                      <FaStop />
                     </button>
                   )}
                 </div>
