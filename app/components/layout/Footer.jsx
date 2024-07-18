@@ -1,15 +1,52 @@
-import React from "react";
+"use client"
 import SiteConfig from "@/app/config/site";
-import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import Logo from "@/public/static/Image/logo.png";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { IoLogoYoutube } from "react-icons/io";
 import { LuGithub } from "react-icons/lu";
-import Link from "next/link";
-import Logo from "@/public/static/Image/logo.png"
-import Image from "next/image";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Footer = () => {
+    const [formData, setFormData] = useState({
+        emails: "",
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await fetch("/api/emails", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ formData }),
+            });
+
+            const data = await response.json();
+            toast.success(data.message);
+            setFormData({
+                emails: "",
+            });
+        } catch (error) {
+            console.error("Error:", error);
+            toast.error("Please Try One more time")
+        }
+    };
     return (
         <>
+            <ToastContainer />
             <footer className="w-full">
                 <div className="mx-auto w-[94%] md:w-[92%]">
                     <div className="py-14 grid grid-cols-12 gap-x-5 gap-y-8">
@@ -58,9 +95,10 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="block xl:py-16 col-span-full md:col-span-4 xl:col-span-3">
-                            <p className="text-lg text-gray-900 font-bold mb-9 text-center xl:text-left">Newsletter</p>
-                            <div className="grid gap-7 ">
-                                <input type="text" name="email"
+                            <p className="text-lg text-gray-900 font-bold mb-9 text-center xl:text-left">Email List</p>
+                            <form onSubmit={handleSubmit} className="grid gap-7 ">
+                                <input value={formData.emails}
+                                    onChange={handleChange} type="emails" id="emails" name="emails"
                                     className="py-2 px-4 border border-gray-300 shadow-sm h-14 text-lg text-gray-800 rounded-full w-full  xl:w-64 placeholder:text-gray-400 focus:outline-none"
                                     placeholder="Enter email.." />
                                 <button type="submit"
@@ -72,7 +110,7 @@ const Footer = () => {
                                             stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
                                 </button>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
