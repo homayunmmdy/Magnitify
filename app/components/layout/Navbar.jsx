@@ -87,7 +87,7 @@ const Navbar = () => {
         </div>
       </header>
       {isOpen && (
-        <ul className="flex gap-4 items-center justify-center flex-col my-3 p-2 shadow lg:hidden bg-inherit pt-[56px]">
+        <ul className="flex gap-4 items-center justify-center flex-col my-3 p-2 shadow lg:hidden bg-inherit mt-[56px]">
           {nav?.map((item) => {
             return (
               <li key={item.id} className="mx-1 w-3/4">
