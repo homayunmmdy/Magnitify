@@ -89,7 +89,7 @@ const Post = () => {
         <FaRegMessage size={120} color="1D4ED8" />
 
         <div class="space-y-2">
-          <p class="text-slate-800">Hi, my name is Homayoun. I am the founder of Magnitify. At Magnitify, we write articles about AI, business, and self-improvement. We share insights from books, document our experiences, and explore what we learn about these three topics. I hope you enjoy our content!</p>
+          <p class="text-slate-800 leading-6">Hi, my name is Homayoun. I am the founder of Magnitify. At Magnitify, we write articles about AI, business, and self-improvement. We share insights from books, document our experiences, and explore what we learn about these three topics. I hope you enjoy our content!</p>
         </div>
       </div>
     </div>
