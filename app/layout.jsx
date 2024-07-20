@@ -42,13 +42,19 @@ const headerAds = (
   <>
     <script type='text/javascript' src='//pl23679724.highrevenuenetwork.com/11/3e/74/113e74dd53bf78e561c72b5ef68b384a.js'></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JM76EX41FK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
+     <Script dangerouslySetInnerHTML={{
+      __html: `
+window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-JM76EX41FK');
-</script>
+  gtag('config', 'G-JM76EX41FK');        `}} />
+    <link
+      rel="preload"
+      href="IRANSansWeb.woff2"
+      as="font"
+      crossOrigin=""
+    />
   </>
 );
 
