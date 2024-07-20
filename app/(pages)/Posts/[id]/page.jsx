@@ -4,7 +4,6 @@ import { FormatTime } from "@/app/components/layout";
 import useReadText from "@/app/hooks/useReadText";
 import useSinglePost from "@/app/hooks/useSinglePost";
 import { useEffect } from 'react';
-import { SignIn, useUser } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import { FaPlay } from "react-icons/fa";
@@ -28,11 +27,7 @@ const Post = () => {
       document.body.removeChild(script);
     };
   }, []);
-  const { user } = useUser();
 
-  if (!user) {
-    return (<div className="flex justify-center py-5 mt-10"> <SignIn /></div>)
-  }
 
   if (!post) {
     return <PostSeclton />
