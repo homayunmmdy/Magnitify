@@ -2,6 +2,7 @@ import { Roboto } from "next/font/google";
 import { Dependencies, Footer, Navbar, Provider } from "./components/layout";
 import SiteConfig from "./config/site";
 import "./globals.css";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const roboto = Roboto({ subsets: ["latin"], weight: "400" });
 
@@ -41,14 +42,7 @@ export const metadata = {
 const headerAds = (
   <>
     <script type='text/javascript' src='//pl23679724.highrevenuenetwork.com/11/3e/74/113e74dd53bf78e561c72b5ef68b384a.js'></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JM76EX41FK"></script>
-     <Script dangerouslySetInnerHTML={{
-      __html: `
-window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-JM76EX41FK');        `}} />
+    
     <link
       rel="preload"
       href="IRANSansWeb.woff2"
@@ -68,6 +62,7 @@ export default function RootLayout({ children }) {
           <main className="pt-[56px] bg-white">
             {children}
           </main>
+          <GoogleAnalytics gaId="G-JM76EX41FK" />
           <Dependencies />
           <Footer />
         </body>
