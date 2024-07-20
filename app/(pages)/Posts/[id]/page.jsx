@@ -82,11 +82,11 @@ const Post = () => {
                   {post.body}
                 </p>
               </div>
-                <div class="w-full mx-auto">
+                <div class="w-full p-3">
     <div class="relative group">
       <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
       <div class="relative px-7 py-6 bg-white ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-6">
-        <FaRegMessage size={24}/>
+        <FaRegMessage size={120} color="1D4ED8" />
 
         <div class="space-y-2">
           <p class="text-slate-800">Hi, my name is Homayoun. I am the founder of Magnitify. At Magnitify, we write articles about AI, business, and self-improvement. We share insights from books, document our experiences, and explore what we learn about these three topics. I hope you enjoy our content!</p>
