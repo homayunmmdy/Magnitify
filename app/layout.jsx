@@ -51,7 +51,11 @@ const headerAds = (
     />
   </>
 );
-
+const underBodyAds = (
+  <>
+  <script type='text/javascript' src='//pl23823706.highrevenuenetwork.com/74/14/40/74144023aa53db2c5389c966c415e1c8.js'></script>
+  </>
+);
 export default function RootLayout({ children }) {
   return (
     <Provider>
@@ -66,6 +70,7 @@ export default function RootLayout({ children }) {
           <Dependencies />
           <Footer />
         </body>
+        {underBodyAds}
       </html>
     </Provider>
   );
