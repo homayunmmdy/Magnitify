@@ -71,6 +71,7 @@ const Post = () => {
                   {!isSpeaking ? (
                     <button
                       onClick={handleReadText}
+                      aria-label="play sound button"
                       className="px-4 py-2 btn text-white btn-primary rounded-full"
                     >
                       <FaPlay />
@@ -78,6 +79,7 @@ const Post = () => {
                   ) : (
                     <button
                       onClick={handleStopReading}
+                      aria-label="stop sound button"
                       className="px-4 py-2 btn text-white btn-primary rounded-full"
                     >
                       <FaStop />
