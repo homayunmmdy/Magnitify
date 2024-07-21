@@ -3,6 +3,7 @@ import { Dependencies, Footer, Navbar, Provider } from "./components/layout";
 import SiteConfig from "./config/site";
 import "./globals.css";
 import { GoogleAnalytics } from '@next/third-parties/google'
+import Head from 'next/head'
 
 const roboto = Roboto({ subsets: ["latin"], weight: "400" });
 
@@ -40,7 +41,7 @@ export const metadata = {
   },
 };
 const headerAds = (
-  <>
+ <Head>
     <script type='text/javascript' src='//pl23679724.highrevenuenetwork.com/11/3e/74/113e74dd53bf78e561c72b5ef68b384a.js'></script>
     
     <link
@@ -49,7 +50,7 @@ const headerAds = (
       as="font"
       crossOrigin=""
     />
-  </>
+  </Head>
 );
 const underBodyAds = (
   <>
