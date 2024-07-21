@@ -6,7 +6,7 @@ import SubHeroSkeleton from "./SubHeroSkeleton";
 
 
 const SubHeroSec = () => {
-    const [recentSize] = useState(-5);
+    const [recentSize] = useState(-4);
     const { posts, loading } = useGetLatestPosts(recentSize);
 
     if (loading) {
