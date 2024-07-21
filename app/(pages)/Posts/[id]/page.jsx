@@ -3,8 +3,8 @@ import RecentPosts from "@/app/(pages)/Posts/[id]/components/RecentPosts";
 import { FormatTime } from "@/app/components/layout";
 import useReadText from "@/app/hooks/useReadText";
 import useSinglePost from "@/app/hooks/useSinglePost";
-import { useEffect } from 'react';
 import Image from "next/image";
+import Head from 'next/head'
 import Link from "next/link";
 import { FaPlay } from "react-icons/fa";
 import { FaStop } from "react-icons/fa6";
@@ -16,17 +16,7 @@ const Post = () => {
   const post = useSinglePost();
   const text = `${post?.title}. ${post?.body}`
   const { isSpeaking, handleReadText, handleStopReading } = useReadText(text);
-    useEffect(() => {
-    const script = document.createElement('script');
-    script.src = "//pl23822967.highrevenuenetwork.com/e8bfa9a57e9e57a1c63d4f90b5f9c69a/invoke.js";
-    script.async = true;
-    script.setAttribute('data-cfasync', 'false');
-    document.body.appendChild(script);
 
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
 
 
   if (!post) {
@@ -41,6 +31,9 @@ const Post = () => {
 
   return (
     <>
+<Head>
+        <script async="async" data-cfasync="false" src="//pl23822967.highrevenuenetwork.com/e8bfa9a57e9e57a1c63d4f90b5f9c69a/invoke.js"></script>
+      </Head>
       <div className="flex flex-col ">
         <div className="bg-indigo-500 pt-10">
           <div className="w-[94%] md:w-[92%] mx-auto px-4 py-8">
@@ -63,7 +56,7 @@ const Post = () => {
                 layout="responsive"
                 loading="lazy"
               />
-             <div id="container-e8bfa9a57e9e57a1c63d4f90b5f9c69a"></div>
+            <div id="container-e8bfa9a57e9e57a1c63d4f90b5f9c69a"></div>
               <div className="flex gap-3 items-center justify-between p-3">
                 <p className="text-center hover:underline hover:text-indigo-600">{readingTimeEstimate.text}</p>
                 <Link href="/" className="btn btn-outline btn-primary rounded-full">Back Home</Link>
