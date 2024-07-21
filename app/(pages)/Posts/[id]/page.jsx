@@ -52,7 +52,7 @@ const Post = () => {
           <div className="w-[94%] md:w-[92%] mx-auto flex flex-col md:flex-row gap-8">
             <div className="w-full md:w-3/4 ">
               <Image
-                className="w-full py-3 aspect-video rounded-3xl"
+                className="w-full aspect-video rounded-3xl"
                 src={post.imgurl}
                 width={880}
                 height={500}
@@ -64,7 +64,7 @@ const Post = () => {
                 loading="lazy"
               />
              <div id="container-e8bfa9a57e9e57a1c63d4f90b5f9c69a"></div>
-              <div className="flex gap-3 items-center justify-between px-3">
+              <div className="flex gap-3 items-center justify-between p-3">
                 <p className="text-center hover:underline hover:text-indigo-600">{readingTimeEstimate.text}</p>
                 <Link href="/" className="btn btn-outline btn-primary rounded-full">Back Home</Link>
                 <div>
