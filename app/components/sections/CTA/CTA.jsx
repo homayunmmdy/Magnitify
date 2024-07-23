@@ -11,7 +11,7 @@ const CTA = () => {
                 <p className="mx-auto mt-2 max-w-xl text-center text-lg leading-8 text-gray-200">
                     {SiteConfig.description}</p>
                 <div className="mt-10 flex items-center justify-center gap-x-6">
-                    <Link className="rounded-md bg-green-500 px-5 py-3 text-lg font-semibold text-white shadow-md hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
+                    <Link className="rounded-md bg-green-500 px-5 py-3 text-lg font-semibold text-black shadow-md hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
                         href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7146597314181193728">Subscribe Now</Link>
                 </div>
                 <svg viewBox="0 0 1024 1024" className="absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-x-1/2"
