@@ -32,6 +32,9 @@ const Post = () => {
   return (
     <>
 <Head>
+   <title>
+     {post?.title}
+        </title>
         <script async="async" data-cfasync="false" src="//pl23822967.highrevenuenetwork.com/e8bfa9a57e9e57a1c63d4f90b5f9c69a/invoke.js"></script>
       </Head>
       <div className="flex flex-col ">
