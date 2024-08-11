@@ -11,9 +11,22 @@ import { FaStop } from "react-icons/fa6";
 import { readingTime } from 'reading-time-estimator';
 import PostSeclton from "./PostSkelton";
 import { FaRegMessage } from "react-icons/fa6";
+import SiteConfig from "@/app/config/site";
+
+
+
+const post = useSinglePost();
+
+export const metadata = {
+  title: post?.title,
+  description: post?.description,
+  alternates: {
+    canonical: SiteConfig.siteURL + "/" + post?._id,
+  },
+
+};
 
 const Post = () => {
-  const post = useSinglePost();
   const text = `${post?.title}. ${post?.body}`
   const { isSpeaking, handleReadText, handleStopReading } = useReadText(text);
 
