@@ -8,7 +8,7 @@ import Head from 'next/head'
 const roboto = Roboto({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
-  title: SiteConfig.name,
+  title: SiteConfig.title,
   description: SiteConfig.description.slice(0, 160),
   keywords: SiteConfig.keywords,
   robots: SiteConfig.robots,
