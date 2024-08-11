@@ -1,5 +1,6 @@
 const SiteConfig = {
-  name: "Magnitify Master AI, Wealth, and Self-Improvement to Unlock Your Superpowers",
+  name: "Magnitify",
+  title: "Magnitify Master AI, Wealth, and Self-Improvement to Unlock Your Superpowers",
   description: "Magnitify offers cutting-edge articles on AI, self-improvement, business, and wealth. Empower yourself with knowledge and transform into a superhuman force",
   altImgName: "Logo of the Magnitify",
   lang: "en",
