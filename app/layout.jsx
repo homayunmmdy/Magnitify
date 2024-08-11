@@ -16,6 +16,9 @@ export const metadata = {
   verification: {
     google: "KEW2K6gHlUqeWRDxOY39arw_0ZD47OKapZN1bBZI1Go",
   },
+  alternates: {
+    canonical: SiteConfig.siteURL,
+  },
   openGraph: {
     title: SiteConfig.name,
     description: SiteConfig.description.slice(0, 160),
