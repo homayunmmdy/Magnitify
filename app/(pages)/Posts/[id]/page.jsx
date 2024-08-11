@@ -15,18 +15,9 @@ import SiteConfig from "@/app/config/site";
 
 
 
-const post = useSinglePost();
-
-export const metadata = {
-  title: post?.title,
-  description: post?.description,
-  alternates: {
-    canonical: SiteConfig.siteURL + "/" + post?._id,
-  },
-
-};
 
 const Post = () => {
+    const post = useSinglePost();
   const text = `${post?.title}. ${post?.body}`
   const { isSpeaking, handleReadText, handleStopReading } = useReadText(text);
 
@@ -45,10 +36,9 @@ const Post = () => {
   return (
     <>
 <Head>
-   <title>
-     {post?.title}
-        </title>
-        <script async="async" data-cfasync="false" src="//pl23822967.highrevenuenetwork.com/e8bfa9a57e9e57a1c63d4f90b5f9c69a/invoke.js"></script>
+        <title>{post?.title}</title>
+        <meta name="description" content={post?.description} />
+        <link rel="canonical" href={`${SiteConfig.siteURL}/${post?._id}`} />
       </Head>
       <div className="flex flex-col ">
         <div className="bg-indigo-500 pt-10">
