@@ -6,7 +6,7 @@ import { GrLinkNext } from "react-icons/gr";
 import NextInfluncerSkeleton from './NextInfluncerSkeleton';
 
 const NextInfluncer = () => {
-    const { data, loading } = useGetSection(POST_API_URL, -3, 6);
+    const { data, loading } = useGetSection(POST_API_URL, -3, 5);
 
     if (loading) {
         return <NextInfluncerSkeleton />
