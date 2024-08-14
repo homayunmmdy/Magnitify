@@ -4,7 +4,7 @@ import useGetSection from '@/app/hooks/useGetSection';
 import Link from 'next/link';
 
 const MainSelfHelp = () => {
-    const { data } = useGetSection(POST_API_URL, -1, 9);
+    const { data } = useGetSection(POST_API_URL, -1, 7);
 
     return (
         <div>
