@@ -8,12 +8,12 @@ const Home = () => {
       <Hero />
       <div className='w-[94%] md:w-[92%] mx-auto'>
         <Heading title="Business" />
-        <Verticla secid={4} />
+        <Verticla secid={3} />
         <Heading title="Companies & Influncers" />
         <Influncer />
         <Heading title="AI" />
         {/* <Publications /> */}
-        <Verticla secid={7} />
+        <Verticla secid={6} />
       </div>
       <div className='w-[94%] md:w-[92%] mx-auto'>
         <CTA />
