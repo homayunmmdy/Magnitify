@@ -6,7 +6,7 @@ import { GrLinkNext } from "react-icons/gr";
 import InfluncerSecSkeleton from './InfluncerSecSkeleton';
 
 const InfluncerSec = () => {
-  const { data, loading } = useGetSection(POST_API_URL, -1, 5);
+  const { data, loading } = useGetSection(POST_API_URL, -1, 4);
 
   if (loading) {
     return <InfluncerSecSkeleton />
