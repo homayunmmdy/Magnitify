@@ -10,7 +10,7 @@ class APIClient {
   async get(endpoint) {
     try {
       const response = await this.client.get(endpoint);
-      return response.data;
+      return response.data.document;
     } catch (error) {
       console.error(`Error fetching data from ${endpoint}:`, error);
       throw error;
