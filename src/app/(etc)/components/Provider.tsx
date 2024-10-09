@@ -1,4 +1,4 @@
-import Loading from "@/app/(etc)/loading";
+import Loading from "@/app/loading";
 import { ReactQueryProvider } from "@/components";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Suspense } from "react";

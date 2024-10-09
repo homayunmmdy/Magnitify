@@ -30,7 +30,7 @@ const socialMedia = [
 ]
 
 const ScoialMediaSidebar = () => {
-  return (
+  return (                                             
     <>
       <ul className='fixed left-0 m-3 top-1/3 py-4 bg-white rounded-lg flex flex-col gap-2 p-3 border-2 border-indigo-700 z-50 shadow-lg'>
         {socialMedia?.map(item => {
