@@ -6,13 +6,14 @@ import useReadText from "@/hooks/useReadText";
 import useSinglePost from "@/hooks/useSinglePost";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import { FaPlay } from "react-icons/fa";
 import { FaStop } from "react-icons/fa6";
 import FormatTime from "../components/FormatTime";
 import PostSeclton from "./PostSkelton";
+import React from 'react'
+import RenderTags from "./components/RenderTags";
 
-const SinglePostPage: React.FC = () => {
+const Post: React.FC = () => {
   //@ts-ignore
   const post = useSinglePost();
   //@ts-ignore
@@ -60,6 +61,7 @@ const SinglePostPage: React.FC = () => {
                 loading="lazy"
               />
               <div className="flex gap-3 items-center justify-between px-3">
+                {/* <p className="text-center">{readingTimeEstimate.text}</p> */}
                 {!isSpeaking ? (
                   <Button
                     title={<FaPlay />}
@@ -88,6 +90,7 @@ const SinglePostPage: React.FC = () => {
                   {post.body}
                 </p>
               </div>
+              <RenderTags post={post}/>
               <MorePostsSec />
             </div>
             <div className="w-full md:w-1/4 py-3">
@@ -100,4 +103,4 @@ const SinglePostPage: React.FC = () => {
   );
 };
 
-export default SinglePostPage;
+export default Post;

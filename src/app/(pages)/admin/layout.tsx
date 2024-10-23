@@ -1,8 +1,9 @@
 "use client";
 import useCheckLogin from "@/hooks/useCheckLogin";
 import { Sidebar } from "./components/sections";
- {/* @ts-ignore */}
-export default function AdminLayout({ children }) {
+import React from 'react'
+
+export default function AdminLayout({ children }:{ children: React.ReactNode }) {
   useCheckLogin()
   return (
     <>

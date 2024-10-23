@@ -4,8 +4,9 @@ import useGetLatestPosts from "@/hooks/useGetLatestPosts";
 import { useState } from "react";
 import RecentPost from "./RecentPost";
 import RecentPostSkeleton from "./RecentPostSkeleton";
+import React from 'react'
 
-const RecentPosts = () => {
+const RecentPosts: React.FC = () => {
   const [recentSize] = useState(-3);
   const { posts, loading } = useGetLatestPosts(recentSize, LATEST_POSTS_KEY);
 

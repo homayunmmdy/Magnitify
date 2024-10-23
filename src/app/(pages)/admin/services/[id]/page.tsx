@@ -1,6 +1,6 @@
 import { SERVICES_API_URL } from "@/etc/config/apiConstants";
-import EditServicesForm from "../../components/elements/EditServicesForm";
-import { getById } from "@/util/getById";
+import { getById } from "@/util/ServerUtil";
+import { EditServicesForm } from "../../components";
 
 let updateservicesData = {};
 {/* @ts-ignore */}
@@ -9,7 +9,7 @@ const EditServicesPage = async ({ params }) => {
 
   if (EDITMODE) {
     updateservicesData = await getById(SERVICES_API_URL,params.id);
-  {/* @ts-ignore */}
+    {/* @ts-ignore */}
     updateservicesData = updateservicesData.document;
   } else {
     updateservicesData = {

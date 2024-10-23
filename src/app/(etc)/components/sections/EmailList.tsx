@@ -37,7 +37,7 @@ const EmailList = () => {
               <input type="hidden" name="tags" value="earlyaccess" />
               <div className="flex flex-col sm:flex-row">
                 <Input
-                  type="emails"
+                  type="email"
                   value={formData.emails}
                   placeholder="Enter your email address"
                   required={true}

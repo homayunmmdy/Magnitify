@@ -2,11 +2,11 @@
 import { Button, Input } from "@/components";
 import { MASTER_KEY } from "@/etc/config/Constants";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const MasterEditorPage = () => {
+const MasterEditorPage: React.FC = () => {
   const [password, setPassword] = useState("");
   const router = useRouter();
 

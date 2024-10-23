@@ -3,9 +3,14 @@ import { useState, useEffect } from "react";
 import { MdDeleteOutline } from "react-icons/md";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components";
+import React from 'react'
 
-//@ts-ignore
-const DeleteBlock = ({ path, id }) => {
+interface Props {
+  path: string;
+  id : string | number;
+}
+
+const DeleteBlock: React.FC<Props> = ({ path, id }: Props) => {
   const [isConfirmOpen, setIsConfirmOpen] = useState(false);
   const router = useRouter();
 

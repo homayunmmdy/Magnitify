@@ -2,10 +2,10 @@
 import { Button } from "@/components";
 import SiteConfig from "@/etc/config/stie";
 import Link from "next/link";
-import { useState } from "react";
+import React,{ useState } from "react";
 import NavLink from "./NavLink";
 
-const Sidebar = () => {
+const Sidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(true);
 
   const toggleMenu = () => {

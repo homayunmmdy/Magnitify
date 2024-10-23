@@ -9,7 +9,6 @@ const Collapse = ({ data }: { data: CollapseType }) => {
           id={`nexca-question-${data.id}`}
           type="radio"
           name="my-accordion-4"
-          color={null}
           defaultChecked={true}
         />
         <label

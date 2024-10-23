@@ -5,7 +5,7 @@ import { ALL_POSTS_QUERY_KEY } from "@/etc/config/Constants";
 import useFetch from "@/hooks/useFetch";
 import { useEffect, useState } from "react";
 import { FiSearch } from "react-icons/fi";
-import { Pagination, PostTable } from "../components/elements";
+import { Pagination, ItemsTable } from "../components/elements";
 
 const Posts = () => {
   const data = useFetch(ALL_POSTS_QUERY_KEY, POST_API_URL);
@@ -21,8 +21,12 @@ const Posts = () => {
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
+   // @ts-ignore
+   const sortedByTime = posts?.sort((a, b) => {
+    return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+  });
   //@ts-ignore
-  const filteredPosts = posts.filter((post) =>
+  const filteredPosts = sortedByTime.filter((post) =>
     //@ts-ignore
     post.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -74,7 +78,7 @@ const Posts = () => {
                 <tbody>
                   {/* @ts-ignore */}
                   {currentPosts.map((Post, _index) => (
-                    <PostTable post={Post} />
+                    <ItemsTable post={Post} baseURL="posts"/>
                   ))}
                 </tbody>
               </table>
@@ -87,7 +91,7 @@ const Posts = () => {
             </div>
           </div>
         ) : (
-          <p>No posts found.</p>
+          <p className="text-red-600 font-bold">No posts found.</p>
         )}
       </div>
     </div>

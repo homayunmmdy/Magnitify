@@ -4,6 +4,7 @@ export const MASTER_KEY = "masterEditor";
 
 // query keys
 export const ALL_POSTS_QUERY_KEY = "all_posts";
+export const ALL_PUBLICATIONS_QUERY_KEY = "all_publications";
 export const ALL_TEXTADV_QUERY_KEY = "all_textadv";
 export const SERVICES_QUERY_KEY = "services";
 export const SECTIONS_QUERY_KEY = "sections";
@@ -12,6 +13,8 @@ export const EMAIL_QUERY_KEY = "emails";
 export const LATEST_POSTS_KEY = "latest_posts";
 export const TICKETS_QUERY_KEY = "tickets";
 export const SERVICES_IMG_KEY = "services_img";
+export const TIMELINE_KEY = "timeLine";
+export const CONTRIBUTION_KEY = "contribution";
 
 //sections query key
 export const POSTS_QUERY_KEY = "posts";

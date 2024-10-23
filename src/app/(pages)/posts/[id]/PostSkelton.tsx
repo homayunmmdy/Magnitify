@@ -1,6 +1,6 @@
 import React from "react";
 
-const PostSkelton = () => {
+const PostSkelton: React.FC = () => {
   return (
     <>
       <div className="flex flex-col ">

@@ -1,4 +1,9 @@
-const StatusDisplay = ({ status }: {status: string}) => {
+import React from 'react'
+
+interface Props {
+  status: string
+}
+const StatusDisplay: React.FC<Props> = ({ status }: Props) => {
     const getColor = (status: string) => {
       let color;
       switch (status) {

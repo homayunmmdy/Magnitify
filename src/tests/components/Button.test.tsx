@@ -32,7 +32,7 @@ describe("button components", () => {
     expect(screen.getByLabelText("Click Button")).toBeInTheDocument();
   });
 
-  it("should remove default btn style if user set removeDefaultStyle to true", () => {
+  it("should remove default style if user set removeDefaultStyle to true", () => {
     render(<Button {...defaultProps} removeDefaultStyle={true} color={null} />);
 
     expect(screen.queryByText("Click Here")).not.toHaveClass("btn");

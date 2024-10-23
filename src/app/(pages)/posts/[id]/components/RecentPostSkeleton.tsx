@@ -1,6 +1,6 @@
 import React from 'react'
 
-const RecentPostSkeleton = () => {
+const RecentPostSkeleton: React.FC = () => {
     return (
         <>
             <div className=" w-full rounded-[10px] border border-indigo-100 p-4 sm:p-7">

@@ -1,6 +1,6 @@
 import { TEXTADV_API_URL } from "@/etc/config/apiConstants";
-import EditTextAdvForm from "../../components/elements/EditTextAdvForm";
-import { getById } from "@/util/getById";
+import { getById } from "@/util/ServerUtil";
+import { EditTextAdvForm } from "../../components";
 
 let updatetextadvData = {};
 {/* @ts-ignore */}

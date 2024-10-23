@@ -32,7 +32,7 @@ const TicketsCash: TicketsCashType[] = [
     __v: 0,
   },
   {
-    _id: "664db351373932f6a08928dd",
+    _id: "644db351373932f6a08928dd",
     title: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, nam aspernatur tenetur dolorum doloremque cumque ullam culpa quidem voluptates pariatur repellendus repudiandae fugit, aliquam temporibus velit quam, itaque magni deserunt. Iste est amet excepturi laboriosam. Minima nihil doloribus atque laboriosam laudantium odio facilis commodi impedit dolorum iusto. Quaerat itaque esse laudantium repellendus iure ipsam similique quae corrupti cumque harum, ratione illo dicta soluta maxime, officiis repudiandae mollitia dolore, quidem quibusdam. Explicabo voluptatibus sunt nemo! Cumque sint ea earum molestias! Doloremque.",
@@ -47,7 +47,7 @@ const TicketsCash: TicketsCashType[] = [
     __v: 0,
   },
   {
-    _id: "664db351373932f6a08928dd",
+    _id: "664db551373932f6a08928dd",
     title: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, nam aspernatur tenetur dolorum doloremque cumque ullam culpa quidem voluptates pariatur repellendus repudiandae fugit, aliquam temporibus velit quam, itaque magni deserunt. Iste est amet excepturi laboriosam. Minima nihil doloribus atque laboriosam laudantium odio facilis commodi impedit dolorum iusto. Quaerat itaque esse laudantium repellendus iure ipsam similique quae corrupti cumque harum, ratione illo dicta soluta maxime, officiis repudiandae mollitia dolore, quidem quibusdam. Explicabo voluptatibus sunt nemo! Cumque sint ea earum molestias! Doloremque.",

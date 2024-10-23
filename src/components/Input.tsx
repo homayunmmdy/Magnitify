@@ -14,10 +14,12 @@ const Input: React.FC<InputType> = ({
   icon,
   label,
   defaultChecked,
+  checked,
+  removeDefaultStyle,
+  min ,
+  max
 }: InputType) => {
-  const classes = `input input-bordered ${icon ? "" : style} ${
-    color ? color : ""
-  }`;
+  const classes = removeDefaultStyle ? style :`input input-bordered ${icon ? "" : style} ${color}`;
   return (
     <>
       {icon ? (
@@ -35,12 +37,15 @@ const Input: React.FC<InputType> = ({
             id={id}
             required={required}
             className={style}
+            checked={checked}
+            min={min}
+            max={max}
             defaultChecked={defaultChecked}
           />
         </label>
       ) : label ? (
         <>
-          <label htmlFor={id}>{label}</label>
+          <label data-testid="label" htmlFor={id}>{label}</label>
           <input
             type={type}
             value={value}
@@ -49,6 +54,9 @@ const Input: React.FC<InputType> = ({
             onChange={onChange}
             name={name}
             id={id}
+            min={min}
+            max={max}
+            checked={checked}
             required={required}
           />
         </>
@@ -61,6 +69,9 @@ const Input: React.FC<InputType> = ({
           onChange={onChange}
           name={name}
           id={id}
+          min={min}
+          max={max}
+          checked={checked}
           required={required}
         />
       )}

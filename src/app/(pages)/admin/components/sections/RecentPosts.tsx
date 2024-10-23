@@ -3,8 +3,9 @@ import { LATEST_POSTS_KEY } from "@/etc/config/Constants";
 import useGetLatestPosts from "@/hooks/useGetLatestPosts";
 import { useState } from "react";
 import RecentPost from "./RecentPost";
+import React from 'react'
 
-const RecentPosts = () => {
+const RecentPosts: React.FC = () => {
   const [recentSize] = useState(-3);
   const { posts } = useGetLatestPosts(recentSize, LATEST_POSTS_KEY);
   return (

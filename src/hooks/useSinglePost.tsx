@@ -1,12 +1,11 @@
 "use client";
 import APIClient from "@/util/apiClient";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { POST_API_URL } from "../etc/config/apiConstants";
+import { getParameterId } from "@/util/Util";
 
 const useSinglePost = () => {
-  const pathname = usePathname();
-  const id = pathname.slice(7);
+  const id = getParameterId(7);
   const [post, setPost] = useState();
   const apiClient = new APIClient(POST_API_URL);
 

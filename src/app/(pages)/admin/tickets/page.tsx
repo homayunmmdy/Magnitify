@@ -3,9 +3,10 @@ import { TicketCard } from "@/components";
 import { TICKETS_API_URL } from "@/etc/config/apiConstants";
 import { TICKETS_QUERY_KEY } from "@/etc/config/Constants";
 import useFetch from "@/hooks/useFetch";
-import { checkMaster } from "@/util/checkMaster";
+import { checkMaster } from "@/util/Util";
+import React from 'react'
 
-const AdminTicketsPage = () => {
+const AdminTicketsPage: React.FC = () => {
   const { data: tickets } = useFetch(TICKETS_QUERY_KEY, TICKETS_API_URL);
   let master = checkMaster();
   return (

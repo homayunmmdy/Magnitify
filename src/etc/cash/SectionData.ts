@@ -26,7 +26,7 @@ const SectionData: SectionCashType[] = [
     __v: 0,
   },
   {
-    _id: "664daf56373932f6a08928b4",
+    _id: "664daf56373932f6a01928b4",
     name: "Vertical Posts",
     secid: 4,
     createdAt: "2024-05-22T08:39:50.781Z",

@@ -2,11 +2,11 @@
 import { SERVICES_API_URL } from "@/etc/config/apiConstants";
 import { SERVICES_IMG_KEY } from "@/etc/config/Constants";
 import useFetch from "@/hooks/useFetch";
-import { usePathname } from "next/navigation";
+import { getParameterId } from "@/util/Util";
+import React from "react";
 
-const ServicesImg = () => {
-  const pathname = usePathname();
-  const id = pathname.slice(10);
+const ServicesImg: React.FC = () => {
+  const id = getParameterId(10);
   const { data: services, loading } = useFetch(
     SERVICES_IMG_KEY,
     SERVICES_API_URL
