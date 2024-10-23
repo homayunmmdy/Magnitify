@@ -19,8 +19,6 @@ const DemoPage = () => {
             <LinearAds />
           </div>
         </div>
-        <SingleCardSec />
-        <VerticalPostsSec />
       </div>
     </>
   );

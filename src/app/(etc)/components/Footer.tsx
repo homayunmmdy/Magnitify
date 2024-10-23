@@ -48,36 +48,36 @@ const Footer = () => {
                         </div>
 
                         <div className="block text-center xl:text-left xl:py-16 col-span-full min-[500px]:col-span-6 md:col-span-4 xl:col-span-3 xl:pl-5">
-                            <p className="text-lg text-gray-900 font-bold mb-9">Get In Touch</p>
+                            <p className="text-lg text-gray-900 font-bold mb-9">تماس بگیرید</p>
                             <ul className="text-gray-900 transition-all duration-500 grid gap-6">
                                 <li>homayoun763@gmail.com</li>
                                 <li>+922 4003 487</li>
                             </ul>
                         </div>
                         <div className="block xl:py-16 col-span-full min-[500px]:col-span-6 md:col-span-4 xl:col-span-3">
-                            <p className="text-lg text-gray-900 font-bold mb-9 text-center xl:text-left">Quick Links</p>
+                            <p className="text-lg text-gray-900 font-bold mb-9 text-center xl:text-left">لینک های سریع</p>
                             <div className="flex gap-6 xl:gap-12 max-xl:justify-center">
                                 <ul className="text-gray-600 transition-all duration-500 grid gap-6">
-                                    <li><Link className="link link-hover hover:text-indigo-700" href="/">Home</Link></li>
-                                    <li><Link className="link link-hover hover:text-indigo-700" href="/FAQs">FAQs</Link></li>
-                                    <li><Link className="link link-hover hover:text-indigo-700" href="/privacy_policy">Privacy Policy</Link></li>
-                                    <li><Link className="link link-hover hover:text-indigo-700" href="#">Features</Link></li>
+                                    <li><Link className="link link-hover hover:text-indigo-700" href="/">خانه</Link></li>
+                                    <li><Link className="link link-hover hover:text-indigo-700" href="/FAQs">سوالات متدوال</Link></li>
+                                    <li><Link className="link link-hover hover:text-indigo-700" href="/privacy_policy">سیاست حفظ حریم خصوصی</Link></li>
+                                    <li><Link className="link link-hover hover:text-indigo-700" href="/tickets/new">تیکت جدید</Link></li>
                                 </ul>
                                 <ul className="text-gray-600 transition-all duration-500 grid gap-6">
-                                    <li><Link className="link link-hover hover:text-indigo-700" href="#">Careers</Link></li>
-                                    <li><Link className="link link-hover hover:text-indigo-700" href="#">About </Link></li>
-                                    <li><Link className="link link-hover hover:text-indigo-700" href="/contacts">Contact</Link></li>
-                                    <li><Link className="link link-hover hover:text-indigo-700" href="#">Products</Link></li>
+                                    <li><Link className="link link-hover hover:text-indigo-700" href="/contribution">مشارکت ها</Link></li>
+                                    <li><Link className="link link-hover hover:text-indigo-700" href="/about">درباره ما </Link></li>
+                                    <li><Link className="link link-hover hover:text-indigo-700" href="/contacts">تماس باما</Link></li>
+                                    <li><Link className="link link-hover hover:text-indigo-700" href="/time">وقت</Link></li>
                                 </ul>
                             </div>
                         </div>
                         <div className="block xl:py-16 col-span-full md:col-span-4 xl:col-span-3">
-                            <p className="text-lg text-gray-900 font-bold mb-9 text-center xl:text-left">Email List</p>
+                            <p className="text-lg text-gray-900 font-bold mb-9 text-center xl:text-left">لیست ایمیل</p>
                             <form onSubmit={handleSubmit} className="grid gap-7 ">
                                 <input value={formData.emails}
                                     onChange={handler.trakeChange} type="emails" id="emails" name="emails"
                                     className="py-2 px-4 border border-gray-300 shadow-sm h-14 text-lg text-gray-800 rounded-full w-full  xl:w-64 placeholder:text-gray-400 focus:outline-none"
-                                    placeholder="Enter email.." />
+                                    placeholder="ایمیل را وارد کنید.." />
                                 <button type="submit"
                                     className="flex gap-2 justify-center items-center py-3.5 px-7 rounded-full text-white bg-indigo-600 shadow-md w-fit transition-all duration-500 mx-auto xl:mx-0 hover:bg-indigo-700">Subscribe<svg
                                         width="17" height="13" viewBox="0 0 17 13" fill="none"
@@ -93,7 +93,7 @@ const Footer = () => {
                 </div>
                 <div className="py-4 bg-indigo-50">
                     <div className="flex items-center justify-center">
-                        <span className="text-sm text-gray-800 ">Copyright@{new Date().getFullYear()} All Right Reserved  by <Link href="/">{SiteConfig.name}</Link></span>
+                        <span className="text-sm text-gray-800 ">کپی رایت@{new Date().getFullYear()} تمام حقوق محفوظ است <Link href="/">{SiteConfig.name}</Link></span>
                     </div>
                 </div>
 

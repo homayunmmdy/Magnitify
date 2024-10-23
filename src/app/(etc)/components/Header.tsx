@@ -84,7 +84,7 @@ const Header = () => {
           <div className="navbar-end">
             <Link
               href={SiteConfig.github}
-              title="GitHub"
+              title="گیت هاب"
               rel="nofollow"
               aria-label="GitHub"
               target="_blank"

@@ -11,7 +11,7 @@ const SiteConfig = {
   dir: "rtl",
   // media
   email: "homayoun763@gmail.com",
-  github: "https://github.com/homayunmmdy/Nexca",
+  github: "https://github.com/homayunmmdy",
   phoneNumber: "0922 4003 487",
   linkedin: "https://www.linkedin.com/in/homayunmmdy/",
   robots: "index , follow",

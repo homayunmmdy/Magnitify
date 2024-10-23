@@ -25,7 +25,7 @@ const LinearAds = () => {
 
   return (
     <>
-      <Titr title="Ads Demo Page" item="text-center" />
+      <Titr title="لینک های مفید" item="text-center" />
       <ul className="flex flex-col gap-4 mb-3">
         {/* @ts-ignore */}
         {ads.map((adv) => (
