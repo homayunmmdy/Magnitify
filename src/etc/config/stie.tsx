@@ -1,47 +1,47 @@
 const API_URL = process.env.API_URL;
 const SiteConfig = {
-  name: "Magnitify",
-  title: "Magnitify Master AI, Wealth, and Self-Improvement to Unlock Your Superpowers",
+  name: "مگنتی فای",
+  title: " مگنتی فای بر هوش مصنوعی، ثروت و خودسازی مسلط شوید تا قدرت های فوق العاده خود را باز کنید",
   description:
-    "Magnitify offers cutting-edge articles on AI, self-improvement, business, and wealth. Empower yourself with knowledge and transform into a superhuman force",
-  keywords: "magnitify , business , homayoun mohammadi , ai , blog , article",
-  authors: [{ name: "Magnitify Team", url: API_URL }],
+    "مگنتی فای مقالات پیشرفته ای در مورد هوش مصنوعی، خودسازی، کسب و کار و ثروت ارائه می دهد. خود را با دانش توانمند کنید و به یک نیروی مافوق بشری تبدیل شوید",
+  keywords: "مگنتی فای , کسب و کار , هوش مصنوعی , خودسازی , ثروت , پول",
+  authors: [{ name: " تیم مگنتی فای", url: API_URL }],
   siteURL: `${API_URL}`,
-  lang: "en",
-  dir: "ltr",
+  lang: "fa",
+  dir: "rtl",
   // media
   email: "homayoun763@gmail.com",
   github: "https://github.com/homayunmmdy/Nexca",
   phoneNumber: "0922 4003 487",
   linkedin: "https://www.linkedin.com/in/homayunmmdy/",
   robots: "index , follow",
-  author: "Magnitify Team",
+  author: " تیم مگنتی فای",
   authorID: "magnitify_Team",
   // Navbar
   nav: [
     {
       id: 1,
-      name: "Home",
+      name: "خانه",
       link: "/",
     },
     {
       id: 2,
-      name: " Archive",
+      name: " آرشیو",
       link: "/archive",
     },
     {
       id: 3,
-      name: " Login",
+      name: " ورود",
       link: "/sign-in",
     },
     {
       id: 4,
-      name: " Sign Up",
+      name: " ثبت نام",
       link: "/sign-up",
     },
     {
       id: 5,
-      name: "Contacts",
+      name: "تماس باما",
       link: "/contacts",
     },
   ],
