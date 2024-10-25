@@ -11,12 +11,6 @@ const LinearAdsLoading = () => {
         <div className="skeleton w-full h-11"></div>
         <div className="skeleton w-full h-11"></div>
         <div className="skeleton w-full h-11"></div>
-        <div className="skeleton w-full h-11"></div>
-        <div className="skeleton w-full h-11"></div>
-        <div className="skeleton w-full h-11"></div>
-        <div className="skeleton w-full h-11"></div>
-        <div className="skeleton w-full h-11"></div>
-        <div className="skeleton w-full h-11"></div>
       </div>
     </>
   );

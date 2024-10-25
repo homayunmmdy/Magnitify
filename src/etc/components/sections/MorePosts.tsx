@@ -7,7 +7,7 @@ import { PostsSkeleton } from "../skelton";
 import PostCard from "./PostCard";
 
 const MorePosts = () => {
-  const { data, loading } = useGetSection(MORE_POSTS_QUERY_KEY, -3, 5);
+  const { data, loading } = useGetSection(MORE_POSTS_QUERY_KEY, -3, 7);
 
   if (loading) {
     return <PostsSkeleton />;
