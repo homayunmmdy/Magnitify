@@ -86,11 +86,13 @@ const Post: React.FC = () => {
               </div>
               <div className="prose max-w-none mb-3">
                 <p className="p-3 text-lg leading-9	">
+                  <div id="pos-article-display-card-101796"></div>
                   {/* @ts-ignore */}
                   {post.body}
                 </p>
               </div>
               <RenderTags post={post}/>
+              <div id="pos-article-display-101797"></div>
               <MorePostsSec />
             </div>
             <div className="w-full md:w-1/4 py-3">
