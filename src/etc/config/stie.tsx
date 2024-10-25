@@ -26,21 +26,16 @@ const SiteConfig = {
     },
     {
       id: 2,
-      name: " آرشیو",
-      link: "/archive",
-    },
-    {
-      id: 3,
       name: " ورود",
       link: "/sign-in",
     },
     {
-      id: 4,
+      id: 3,
       name: " ثبت نام",
       link: "/sign-up",
     },
     {
-      id: 5,
+      id: 4,
       name: "تماس باما",
       link: "/contacts",
     },

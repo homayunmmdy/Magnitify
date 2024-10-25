@@ -78,10 +78,10 @@ const Post: React.FC = () => {
                   />
                 )}
                 <Link
-                  href="/demo"
+                  href="/"
                   className="btn btn-outline btn-primary rounded-full"
                 >
-                  Back Home
+                  برگشت به خانه
                 </Link>
               </div>
               <div className="prose max-w-none mb-3">

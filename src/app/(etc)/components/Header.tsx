@@ -90,7 +90,7 @@ const Header = () => {
               target="_blank"
             >
               <Button
-                title="GitHub"
+                title="گیت هاب"
                 color="btn-neutral"
                 icon={<FaGithub color="white" size={20} />}
               />

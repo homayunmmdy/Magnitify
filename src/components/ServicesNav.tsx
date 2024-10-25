@@ -17,7 +17,7 @@ const ServicesNav: React.FC = () => {
     return (
       <>
         <h1 className="text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl my-3 md:my-4 lg:my-5 xl:my-6">
-          {pathname.includes("services") ? "Services" : "Home"}
+          {pathname.includes("services") ? "سرویس ها" : "خانه"}
         </h1>
         <div className="w-[94%] md:w-[92%] mx-auto skeleton h-16"></div>
       </>

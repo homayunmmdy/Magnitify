@@ -16,7 +16,7 @@ const MorePosts = () => {
   return (
     <>
       <div className="mx-auto pb-6">
-        <Titr title="More Posts" item="text-left" />
+        <Titr title="پست های بیشتر" item="text-right" />
         <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-5">
           {data?.map((post: PostsCashType) => (
             <PostCard key={post._id} post={post} />
