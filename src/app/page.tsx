@@ -13,12 +13,14 @@ const DemoPage = () => {
         <MainSec />
         <div className="grid grid-cols-12 md:gap-9">
           <div className="col-span-12 md:col-span-9">
-            <PostsSec />
+            <PostsSec amount={3} id={2} title="هوش مصنوعی"/>
           </div>
           <div className="col-span-12 md:col-span-3">
             <LinearAds />
           </div>
         </div>
+        <PostsSec amount={4} id={3} title="کسب و کار"/>
+
       </div>
     </>
   );

@@ -5,9 +5,15 @@ import useGetSection from "@/hooks/useGetSection";
 import { PostsCashType } from "@/types/CashTypes";
 import { PostsSecSkeleton } from "../skelton";
 import PostCard from "./PostCard";
+import React from "react";
 
-const Posts = () => {
-  const { data, loading } = useGetSection(POSTS_QUERY_KEY, -6, 2);
+interface Props {
+  amount : number ,
+  id : number,
+  title : string
+}
+const Posts: React.FC<Props> = ({amount , id, title}: Props) => {
+  const { data, loading } = useGetSection(POSTS_QUERY_KEY, amount, id);
 
   if (loading) {
     return <PostsSecSkeleton />;
@@ -16,7 +22,7 @@ const Posts = () => {
   return (
     <>
       <div className="mx-auto pb-6">
-        <Titr title="پست ها" item="text-left" />
+        <Titr title={title} item="text-right" />
         <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-5">
           {data?.map((post: PostsCashType) => (
             <PostCard key={post._id} post={post} />
