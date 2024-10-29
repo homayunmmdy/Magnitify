@@ -9,8 +9,8 @@ import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: SiteConfig.title,
-  description: SiteConfig.description.slice(0, 160),
+  title: SiteConfig.title.slice(0, 60),
+  description: SiteConfig.description.slice(0, 155),
   keywords: SiteConfig.keywords,
   robots: SiteConfig.robots,
   authors: SiteConfig.authors,
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: SiteConfig.name,
-    description: SiteConfig.description.slice(0, 160),
+    description: SiteConfig.description.slice(0, 155),
     siteName: SiteConfig.name,
     authors: SiteConfig.author,
     images: {
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: `@${SiteConfig.name}`,
-    description: SiteConfig.description.slice(0, 160),
+    description: SiteConfig.description.slice(0, 155),
     creator: `@${SiteConfig.authorID}`,
     images: {
       url: `${SiteConfig.siteURL}/static/Image/logo.png`,

@@ -17,15 +17,15 @@ const DemoPage = () => {
       </div>
       <div className="bg-indigo-600 p-3 sm:p-4 md:p-6 lg:p-9">
         <div className="w-[94%] md:w-[92%] mx-auto mt-5'">
-          <PostsSec amount={-4} id={3} title="تجربه من" />
+          <PostsSec amount={-3} id={3} title="تجربه من" />
         </div>
       </div>
       <div className="w-[94%] md:w-[92%] mx-auto pt-2">
-        <PostsSec amount={-4} id={4} title="کسب و کار" />
+        <PostsSec amount={-6} id={4} title="کسب و کار" />
       </div>
       <div className="bg-indigo-600 p-3 sm:p-4 md:p-6 lg:p-9">
         <div className="w-[94%] md:w-[92%] mx-auto mt-5'">
-          <PostsSec amount={-4} id={5} title="بیوگرافی" />
+          <PostsSec amount={-3} id={5} title="بیوگرافی" />
         </div>
       </div>
       <div className="w-[94%] md:w-[92%] mx-auto pt-2">
