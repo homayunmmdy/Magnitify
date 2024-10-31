@@ -79,7 +79,7 @@ const Footer = () => {
                                     className="py-2 px-4 border border-gray-300 shadow-sm h-14 text-lg text-gray-800 rounded-full w-full  xl:w-64 placeholder:text-gray-400 focus:outline-none"
                                     placeholder="ایمیل را وارد کنید.." />
                                 <button type="submit"
-                                    className="flex gap-2 justify-center items-center py-3.5 px-7 rounded-full text-white bg-indigo-600 shadow-md w-fit transition-all duration-500 mx-auto xl:mx-0 hover:bg-indigo-700">Subscribe<svg
+                                    className="flex gap-2 justify-center items-center py-3.5 px-7 rounded-full text-white bg-indigo-600 shadow-md w-fit transition-all duration-500 mx-auto xl:mx-0 hover:bg-indigo-700">سابسکرایب<svg
                                         width="17" height="13" viewBox="0 0 17 13" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path

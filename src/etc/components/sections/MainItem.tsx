@@ -23,13 +23,13 @@ const MainItem = ({ post }) => {
         </div>
         <div className="">
           <div>
-            <h2 className="text-lg font-semibold leading-snug tracking-tight mt-4  ">
+            <h2 className="text-lg font-semibold leading- tracking-tight mt-4  ">
               <a
                 href={`/posts/${post._id}`}
-                title={post.title.slice(0,60)}
+                title={post.title.slice(0,120)}
               >
                 <span className="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px]">
-                  {post.title.slice(0,60)}
+                  {post.title.slice(0,120)}
                 </span>
               </a>
             </h2>
