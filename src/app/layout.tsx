@@ -1,12 +1,12 @@
 import SiteConfig from "@/etc/config/stie";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { Dependencies, Footer, Provider } from "./(etc)/components";
 import Header from "./(etc)/components/Header";
 import "./globals.css";
 import Script from "next/script";
+import localFont from 'next/font/local'
 
-const inter = Inter({ subsets: ["latin"] });
+const IRANSANS = localFont({ src: './IRANSansX.woff2' })
 
 export const metadata: Metadata = {
   title: SiteConfig.title.slice(0, 60),
@@ -66,7 +66,7 @@ export default function RootLayout({
     <Provider>
       <html lang="en">
         {process.env.NEXT_PUBLIC_STATUS == "PRO" ? ads : null}
-        <body className={inter.className}>
+        <body className={IRANSANS.className}>
           <Header />
           <main className="mt-[120px]">
             {children}
