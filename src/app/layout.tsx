@@ -64,7 +64,7 @@ export default function RootLayout({
 }>) {
   return (
     <Provider>
-      <html lang="en">
+      <html lang="en" dir={SiteConfig.dir}>
         {process.env.NEXT_PUBLIC_STATUS == "PRO" ? ads : null}
         <body className={IRANSANS.className}>
           <Header />
