@@ -1,12 +1,12 @@
 import SiteConfig from "@/etc/config/stie";
 import type { Metadata } from "next";
-import { Dependencies, Footer, Provider } from "./(etc)/components";
-import Header from "./(etc)/components/Header";
-import "./globals.css";
+import localFont from "next/font/local";
 import Script from "next/script";
-import localFont from 'next/font/local'
+import { Dependencies, Footer, Provider } from "./(etc)/components";
+import Header from "./(etc)/components/Header/Header";
+import "./globals.css";
 
-const IRANSANS = localFont({ src: './IRANSansX.woff2' })
+const IRANSANS = localFont({ src: "./IRANSansX.woff2" });
 
 export const metadata: Metadata = {
   title: SiteConfig.title.slice(0, 60),
