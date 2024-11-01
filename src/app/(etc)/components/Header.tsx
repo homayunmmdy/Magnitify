@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "@/components";
+import { Button, ThemeToggle } from "@/components";
 import SiteConfig from "@/etc/config/stie";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -81,7 +81,8 @@ const Header = () => {
               })}
             </ul>
           </div>
-          <div className="navbar-end">
+          <div className="navbar-end gap-3">
+            <ThemeToggle />
             <Link
               href="/sign-up"
               title="ورود"

@@ -7,6 +7,9 @@ const config: Config = {
     "./src/etc/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  daisyui: {
+    themes: ["light", "dark"],
+  },
   theme: {
     extend: {
       backgroundImage: {
