@@ -24,7 +24,7 @@ const Header = () => {
         <div className="navbar">
           <div className="navbar-start">
             <HamburgerIcon isOpen={isOpen} toggleMenu={toggleMenu} />
-            <LogoSec siteName={SiteConfig.name} />
+            <LogoSec siteName={SiteConfig.name} LogoOnlyInDesktop={true}/>
           </div>
           <div className="navbar-center hidden lg:flex">
             <HeaderMenu pathname={pathname} nav={nav} />
