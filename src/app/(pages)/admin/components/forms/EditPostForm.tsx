@@ -13,9 +13,10 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { MdDeleteOutline } from "react-icons/md";
 import { SelectField } from "../elements";
+import TiptapEditor from "../TiptapEditor";
 
 //@ts-ignore
-const EditPostForm = ({  post }) => {
+const EditPostForm = ({ post }) => {
   const EDITMODE = post._id !== "new";
   const router = useRouter();
   const startingTicketData = {
@@ -40,14 +41,14 @@ const EditPostForm = ({  post }) => {
   return (
     <div className="flex justify-center">
       {handler.isLoading && (
-        <span className="absolute loading loading-ring loading-lg"></span>
+        <span className="loading loading-ring loading-lg absolute"></span>
       )}
       <form
         onSubmit={handleSubmit}
         method="post"
-        className="flex flex-col gap-3 w-full md:w-1/2 mb-3"
+        className="mb-3 flex w-full flex-col gap-3 md:w-1/2"
       >
-        <h3 className="text-center font-semibold text-2xl">
+        <h3 className="text-center text-2xl font-semibold">
           {EDITMODE ? "Edit Post" : "New Post"}
         </h3>
         <div>
@@ -57,7 +58,7 @@ const EditPostForm = ({  post }) => {
             alt={formData.title}
             height={390.938}
             width={695}
-            className="w-full rounded-xl border border-indigo-500 aspect-video"
+            className="aspect-video w-full rounded-xl border border-indigo-500"
           />
         </div>
         <Input
@@ -87,17 +88,17 @@ const EditPostForm = ({  post }) => {
           value={formData.description}
           onChange={handler.trakeChange}
         />
-        <Textarea
-          id="body"
-          name="body"
-          label="Body"
-          color="textarea-primary"
-          value={formData.body}
-          onChange={handler.trakeChange}
-          required
-        />
+        <div id="tiptap-style">
+          <label htmlFor="body" className="label">
+            Body
+          </label>
+          <TiptapEditor
+            content={formData.body}
+            onChange={handler.trakeBodyChanges}
+          />
+        </div>
         {/* Add New Category */}
-        <div className="flex w-full gap-2 mt-2">
+        <div className="mt-2 flex w-full gap-2">
           <Input
             type="text"
             value={categoryInput}
@@ -109,7 +110,7 @@ const EditPostForm = ({  post }) => {
           <Button
             title="Add Category"
             type="button"
-            onClick={() => handler.addCategory(categoryInput,setCategoryInput)}
+            onClick={() => handler.addCategory(categoryInput, setCategoryInput)}
             color="btn-primary"
           />
         </div>

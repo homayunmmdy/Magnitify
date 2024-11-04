@@ -1,0 +1,50 @@
+#tiptap-style h1 {
+  font-size: 2.125rem;
+  font-weight: bold;
+}
+#tiptap-style h2 {
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+#tiptap-style h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#tiptap-style ol li {
+  list-style: decimal;
+}
+
+#tiptap-style ul li {
+  list-style: disc;
+}
+
+#tiptap-style blockquote {
+  font-size: 1.4em;
+  margin: 5px auto;
+  font-style: italic;
+  color: #555555;
+  padding: 6px 10px 6px 35px;
+  border-right: 8px solid #4a00ff;
+  line-height: 1.6;
+  position: relative;
+}
+
+#tiptap-style blockquote::before {
+  content: "\201C";
+  color: #4a00ff;
+  font-size: 2em;
+  position: absolute;
+  right: 10px;
+  bottom: -50%;
+  top: -50%;
+  margin-top: 10px;
+}
+
+#tiptap-style blockquote::after {
+  content: "";
+}
+
+#tiptap-style .ProseMirror {
+  padding: 30px;
+}

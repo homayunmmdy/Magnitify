@@ -1,24 +1,21 @@
 "use client";
 import RecentPosts from "@/app/(pages)/posts/[id]/components/RecentPosts";
-import { Button } from "@/components";
 import { MorePostsSec } from "@/etc/components/sections";
-import useReadText from "@/hooks/useReadText";
 import useSinglePost from "@/hooks/useSinglePost";
+import DOMPurify from "isomorphic-dompurify";
 import Image from "next/image";
 import Link from "next/link";
-import { FaPlay } from "react-icons/fa";
-import { FaStop } from "react-icons/fa6";
+import React from "react";
 import FormatTime from "../components/FormatTime";
-import PostSeclton from "./PostSkelton";
-import React from 'react'
 import RenderTags from "./components/RenderTags";
+import PostSeclton from "./PostSkelton";
+import "@/app/tiptap.css";
 
 const Post: React.FC = () => {
   //@ts-ignore
   const post = useSinglePost();
   //@ts-ignore
   const text = `${post?.title}. ${post?.body}`;
-  const { isSpeaking, handleReadText, handleStopReading } = useReadText(text);
 
   if (!post) {
     return <PostSeclton />;
@@ -29,27 +26,28 @@ const Post: React.FC = () => {
     month: "2-digit",
     day: "2-digit",
   };
-
+  // @ts-ignore
+  const PostBody = DOMPurify.sanitize(post.body);
   return (
     <>
-      <div className="flex flex-col">
+      <div className="flex flex-col" id="tiptap-style">
         <div className="bg-indigo-500">
-          <div className="w-[94%] md:w-[92%] mx-auto px-4 py-8">
-            <h1 className="text-4xl text-center font-extrabold text-white">
+          <div className="mx-auto w-[94%] px-4 py-8 md:w-[92%]">
+            <h1 className="text-center text-4xl font-extrabold text-white">
               {/* @ts-ignore */}
               {post.title}
             </h1>
-            <p className="text-lg  text-center my-3 text-white">
+            <p className="my-3 text-center text-lg text-white">
               {/* @ts-ignore */}
               <FormatTime timestamp={post.createdAt} options={options} />
             </p>
           </div>
         </div>
         <div className="py-8">
-          <div className="w-[94%] md:w-[92%] mx-auto flex flex-col md:flex-row gap-8">
-            <div className="w-full md:w-3/4 ">
+          <div className="mx-auto flex w-[94%] flex-col gap-8 md:w-[92%] md:flex-row">
+            <div className="w-full md:w-3/4">
               <Image
-                className="w-full py-3 aspect-video rounded-3xl"
+                className="aspect-video w-full rounded-3xl py-3"
                 //@ts-ignore
                 src={post.imgurl}
                 //@ts-ignore
@@ -60,23 +58,7 @@ const Post: React.FC = () => {
                 height={372.469}
                 loading="lazy"
               />
-              <div className="flex gap-3 items-center justify-between px-3">
-                {/* <p className="text-center">{readingTimeEstimate.text}</p> */}
-                {!isSpeaking ? (
-                  <Button
-                    title={<FaPlay />}
-                    style="text-white rounded-full"
-                    onClick={handleReadText}
-                    color="btn-primary"
-                  />
-                ) : (
-                  <Button
-                    title={<FaStop />}
-                    style="text-white rounded-full"
-                    onClick={handleStopReading}
-                    color="btn-primary"
-                  />
-                )}
+              <div className="flex items-center justify-between gap-3 px-3">
                 <Link
                   href="/"
                   className="btn btn-outline btn-primary rounded-full"
@@ -84,18 +66,15 @@ const Post: React.FC = () => {
                   برگشت به خانه
                 </Link>
               </div>
-              <div className="prose max-w-none mb-3">
-                <p className="p-3 text-lg leading-9	">
-                  <div id="pos-article-display-card-101796"></div>
-                  {/* @ts-ignore */}
-                  {post.body}
-                </p>
-              </div>
-              <RenderTags post={post}/>
+              <div
+                className="prose mb-3 max-w-none text-lg leading-9"
+                dangerouslySetInnerHTML={{ __html: PostBody }}
+              />
+              <RenderTags post={post} />
               <div id="pos-article-display-101797"></div>
               <MorePostsSec />
             </div>
-            <div className="w-full md:w-1/4 py-3">
+            <div className="w-full py-3 md:w-1/4">
               <RecentPosts />
               <div id="pos-article-display-101800"></div>
             </div>

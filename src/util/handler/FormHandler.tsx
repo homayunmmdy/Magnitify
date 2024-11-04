@@ -17,6 +17,13 @@ class FormHandler {
     }));
   };
 
+  trakeBodyChanges = (content: string) => {
+    this.setForm((prevState: any) => ({
+      ...prevState,
+      body: content,
+    }));
+  };
+
   async submit(
     e: React.FormEvent<HTMLFormElement>,
     formData: any,
@@ -44,7 +51,10 @@ class FormHandler {
     this.router.push("/admin");
   }
 
-  addCategory = (categoryInput: string,setCategoryInput: Dispatch<SetStateAction<string>>) => {
+  addCategory = (
+    categoryInput: string,
+    setCategoryInput: Dispatch<SetStateAction<string>>
+  ) => {
     const newCategory = {
       id: Date.now(),
       name: categoryInput,
@@ -57,10 +67,7 @@ class FormHandler {
     setCategoryInput(""); // Clear the input field
   };
 
-  CategoryChanges = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    id: number
-  ) => {
+  CategoryChanges = (e: React.ChangeEvent<HTMLInputElement>, id: number) => {
     const { value } = e.target;
     // @ts-ignore
     this.setForm((prevState) => ({
