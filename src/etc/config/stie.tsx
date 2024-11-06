@@ -26,16 +26,26 @@ const SiteConfig = {
     },
     {
       id: 2,
-      name: " ورود",
-      link: "/sign-in",
+      name: "هوش مصنوعی",
+      link: "/services/1",
     },
     {
       id: 3,
-      name: " ثبت نام",
-      link: "/sign-up",
+      name: "کسب و کار",
+      link: "/services/3",
     },
     {
       id: 4,
+      name: "بیوگرافی",
+      link: "/services/3",
+    },
+    {
+      id: 5,
+      name: "پست های بیشتر",
+      link: "/services/3",
+    },
+    {
+      id: 6,
       name: "تماس باما",
       link: "/contacts",
     },
