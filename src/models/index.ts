@@ -1,5 +1,4 @@
 export { default as ContactsModel } from "./Contacts";
-export { default as ContributionModel } from "./Contribution";
 export { default as EmailsModel } from "./Emails";
 export { default as PostModel } from "./Post";
 export { default as PublicationsModel } from "./Publications";

@@ -50,14 +50,6 @@ const FooterLinks = () => {
             <li>
               <Link
                 className="link-hover link hover:text-indigo-700"
-                href="/contribution"
-              >
-                مشارکت ها
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="link-hover link hover:text-indigo-700"
                 href="/about"
               >
                 درباره ما{" "}
