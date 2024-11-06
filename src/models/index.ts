@@ -6,4 +6,3 @@ export { default as SectionModel } from "./Section";
 export { default as ServiceModel } from "./Services";
 export { default as TextAdvModel } from "./TextAdv";
 export { default as TicketModel } from "./Ticket";
-export { default as TimeLineModel } from "./TimeLine";

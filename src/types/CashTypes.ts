@@ -20,11 +20,6 @@ export type PostsCashType = {
   categories?: Category[];
 } & BaseType;
 
-export type TimeLIneCashType = {
-  title: string;
-  date: string;
-  description: string;
-} & Omit<BaseType, "body">;
 
 export type PublicationsCashType = {
   title: string;
@@ -76,10 +71,3 @@ export type TextAdvCashType = {
   body: string;
   link: string;
 } & BaseType;
-
-export type ContributeCashType = {
-  title: string;
-  description: string;
-  link: string;
-  date: string;
-} & Omit<BaseType, "body">;

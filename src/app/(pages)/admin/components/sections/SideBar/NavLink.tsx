@@ -12,8 +12,6 @@ import { SiCloudflarepages } from "react-icons/si";
 import { TbNewSection } from "react-icons/tb";
 import { TiHome } from "react-icons/ti";
 import { LogoutButton } from "../../elements";
-import { FaTimeline } from "react-icons/fa6";
-import { VscGraphScatter } from "react-icons/vsc";
 
 const links = [
   { name: "Admin", href: "/admin", icon: TiHome },
@@ -25,8 +23,6 @@ const links = [
   { name: "New book", href: "/admin/publications/new", icon: LuBookPlus},
   { name: "books", href: "/admin/publications", icon: LuBookCopy},
   { name: "Emails", href: "/admin/emails", icon: MdOutlineMail },
-  { name: "Contributions", href: "/admin/contribution/new", icon: VscGraphScatter },
-  { name: "TimeLine", href: "/admin/time/new", icon: FaTimeline },
   { name: "Tickets", href: "/admin/tickets", icon: GiTicket },
   { name: "Contacts", href: "/admin/contacts", icon: PiPhoneCallFill },
 ];
@@ -34,33 +30,33 @@ const NavLink: React.FC = () => {
   const pathname = usePathname();
   return (
     <>
-      <div className="items-center block w-auto h-full overflow-auto grow basis-full">
-        <ul className="flex flex-col pl-0 mb-0 gap-2">
+      <div className="block h-full w-auto grow basis-full items-center overflow-auto">
+        <ul className="mb-0 flex flex-col gap-2 pl-0">
           {links.map((link, index) => {
             const LinkIcon = link.icon;
             return (
               <li className="mt-0.5 w-full" key={index}>
                 {pathname === link.href ? (
                   <Link
-                    className="py-2.7 shadow-soft-xl p-1 text-sm ease-nav-brand my-0 flex items-center whitespace-nowrap rounded-xl bg-indigo-700 hover:bg-indigo-600 text-white px-4 font-semibold  transition-colors"
+                    className="py-2.7 shadow-soft-xl ease-nav-brand my-0 flex items-center whitespace-nowrap rounded-xl bg-indigo-700 p-1 px-4 text-sm font-semibold text-white transition-colors hover:bg-indigo-600"
                     href={link.href}
                   >
-                    <div className="bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl ml-2 flex h-9 w-9 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                    <div className="shadow-soft-2xl ml-2 flex h-9 w-9 items-center justify-center rounded-lg bg-white bg-gradient-to-tl from-purple-700 to-pink-500 bg-center stroke-0 text-center xl:p-2.5">
                       <LinkIcon size={24} color="#FFF" />
                     </div>
-                    <span className="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">
+                    <span className="ease-soft pointer-events-none ml-1 opacity-100 duration-300">
                       {link.name}
                     </span>
                   </Link>
                 ) : (
                   <Link
-                    className="py-2.7 text-sm ease-nav-brand  p-1 my-0 flex items-center whitespace-nowrap px-4 hover:text-white hover:bg-indigo-500 transition-colors rounded-xl"
+                    className="py-2.7 ease-nav-brand my-0 flex items-center whitespace-nowrap rounded-xl p-1 px-4 text-sm transition-colors hover:bg-indigo-500 hover:text-white"
                     href={link.href}
                   >
                     <div className="shadow-soft-2xl ml-2 flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-700 bg-center stroke-0 text-center xl:p-2.5">
                       <LinkIcon size={24} color="#FFF" />
                     </div>
-                    <span className="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">
+                    <span className="ease-soft pointer-events-none ml-1 opacity-100 duration-300">
                       {link.name}
                     </span>
                   </Link>
@@ -69,10 +65,10 @@ const NavLink: React.FC = () => {
             );
           })}
         </ul>
-        <div className="max-w-full my-4">
+        <div className="my-4 max-w-full">
           <LogoutButton />
         </div>
-        <Link href="/admin/master" className="max-w-full my-4">
+        <Link href="/admin/master" className="my-4 max-w-full">
           <Button
             type="button"
             removeDefaultStyle={true}
