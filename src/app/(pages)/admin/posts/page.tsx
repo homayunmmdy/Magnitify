@@ -64,13 +64,12 @@ const Posts = () => {
           color="input-primary"
         />
         {currentPosts.length > 0 ? (
-          <div className="!z-5 relative flex flex-col rounded-[20px] bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:shadow-none w-full p-4 h-full">
+          <div className="!z-5 shadow-3xl shadow-shadow-500 dark:!bg-navy-800 relative flex h-full w-full flex-col rounded-[20px] bg-clip-border p-4 dark:text-white dark:shadow-none">
             <div className="overflow-x-auto">
               <table className="table">
                 <thead>
                   <tr>
                     <th>Title</th>
-                    <th className="hidden lg:block">Lead</th>
                     <th>Edit</th>
                     <th>Delete</th>
                   </tr>
@@ -91,7 +90,7 @@ const Posts = () => {
             </div>
           </div>
         ) : (
-          <p className="text-red-600 font-bold">No posts found.</p>
+          <p className="font-bold text-red-600">No posts found.</p>
         )}
       </div>
     </div>
