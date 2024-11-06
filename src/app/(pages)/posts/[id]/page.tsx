@@ -30,7 +30,7 @@ const Post: React.FC = () => {
   const PostBody = DOMPurify.sanitize(post.body);
   return (
     <>
-      <div className="flex flex-col" id="tiptap-style">
+      <div className="flex flex-col">
         <div className="bg-indigo-500">
           <div className="mx-auto w-[94%] px-4 py-8 md:w-[92%]">
             <h1 className="text-center text-4xl font-extrabold text-white">
@@ -68,6 +68,7 @@ const Post: React.FC = () => {
               </div>
               <div
                 className="prose mb-3 max-w-none text-lg leading-9"
+                id="tiptap-style"
                 dangerouslySetInnerHTML={{ __html: PostBody }}
               />
               <RenderTags post={post} />

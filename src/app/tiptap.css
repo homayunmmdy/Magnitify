@@ -1,14 +1,17 @@
 #tiptap-style h1 {
   font-size: 2.125rem;
   font-weight: bold;
+  padding-block: 2%;
 }
 #tiptap-style h2 {
   font-size: 1.875rem;
   font-weight: bold;
+  padding-block: 2%;
 }
 #tiptap-style h3 {
   font-size: 1.5rem;
   font-weight: bold;
+  padding-block: 2%;
 }
 
 #tiptap-style ol li {
@@ -38,7 +41,7 @@
   right: 10px;
   bottom: -50%;
   top: -50%;
-  margin-top: 10px;
+  margin-top: 25px;
 }
 
 #tiptap-style blockquote::after {
