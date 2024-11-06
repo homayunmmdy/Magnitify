@@ -13,14 +13,14 @@ const Sidebar: React.FC = () => {
   };
   return (
     <>
-      <div className="w-full h-full p-4">
-        <div className="flex justify-between items-center">
+      <div className="h-full w-full p-4">
+        <div className="flex items-center justify-between">
           <Link
-            className="block px-4 py-3 m-0 text-lg space-nowrap "
+            className="space-nowrap m-0 block px-4 py-3 text-lg"
             href="/admin"
           >
-            Admin
-            <span className="ml-1 font-semibold transition-all duration-200 ease-nav-brand">
+            ادمین
+            <span className="ease-nav-brand ml-1 font-semibold transition-all duration-200">
               {" "}
               {SiteConfig.name}
             </span>
@@ -57,7 +57,7 @@ const Sidebar: React.FC = () => {
             ariaLabel="close and open menu"
           />
         </div>
-        <hr className="h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent mb-2" />
+        <hr className="mb-2 mt-0 h-px bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent" />
         {isOpen && <NavLink />}
       </div>
     </>

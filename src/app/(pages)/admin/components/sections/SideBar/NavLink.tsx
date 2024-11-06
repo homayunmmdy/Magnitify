@@ -2,37 +2,18 @@ import { Button } from "@/components";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
-import { CgFeed } from "react-icons/cg";
-import { GiTicket } from "react-icons/gi";
-import { LuBookCopy, LuBookPlus } from "react-icons/lu";
-import { MdOutlineMail, MdOutlinePostAdd } from "react-icons/md";
-import { PiPhoneCallFill } from "react-icons/pi";
-import { RiAdvertisementLine } from "react-icons/ri";
-import { SiCloudflarepages } from "react-icons/si";
-import { TbNewSection } from "react-icons/tb";
-import { TiHome } from "react-icons/ti";
-import { LogoutButton } from "../../elements";
 
-const links = [
-  { name: "Admin", href: "/admin", icon: TiHome },
-  { name: "Posts", href: "/admin/posts", icon: CgFeed },
-  { name: "New Post", href: "/admin/posts/new", icon: MdOutlinePostAdd },
-  { name: "Text Adv", href: "/admin/textadv", icon: RiAdvertisementLine },
-  { name: "Services", href: "/admin/services", icon: SiCloudflarepages },
-  { name: "Sections", href: "/admin/sections", icon: TbNewSection },
-  { name: "New book", href: "/admin/publications/new", icon: LuBookPlus},
-  { name: "books", href: "/admin/publications", icon: LuBookCopy},
-  { name: "Emails", href: "/admin/emails", icon: MdOutlineMail },
-  { name: "Tickets", href: "/admin/tickets", icon: GiTicket },
-  { name: "Contacts", href: "/admin/contacts", icon: PiPhoneCallFill },
-];
+import { LogoutButton } from "../../elements";
+import { adminPages } from "@/etc/config/stie";
+
+
 const NavLink: React.FC = () => {
   const pathname = usePathname();
   return (
     <>
       <div className="block h-full w-auto grow basis-full items-center overflow-auto">
         <ul className="mb-0 flex flex-col gap-2 pl-0">
-          {links.map((link, index) => {
+          {adminPages.map((link, index) => {
             const LinkIcon = link.icon;
             return (
               <li className="mt-0.5 w-full" key={index}>

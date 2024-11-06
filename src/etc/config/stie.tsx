@@ -1,7 +1,8 @@
 const API_URL = process.env.API_URL;
 const SiteConfig = {
   name: "مگنتی فای",
-  title: " مگنتی فای بر هوش مصنوعی، ثروت و خودسازی مسلط شوید تا قدرت های فوق العاده خود را باز کنید",
+  title:
+    " مگنتی فای بر هوش مصنوعی، ثروت و خودسازی مسلط شوید تا قدرت های فوق العاده خود را باز کنید",
   description:
     "مگنتی فای مقالات پیشرفته ای در مورد هوش مصنوعی، خودسازی، کسب و کار و ثروت ارائه می دهد. خود را با دانش توانمند کنید و به یک نیروی مافوق بشری تبدیل شوید",
   keywords: "مگنتی فای , کسب و کار , هوش مصنوعی , خودسازی , ثروت , پول",
@@ -53,3 +54,26 @@ const SiteConfig = {
 };
 
 export default SiteConfig;
+
+import {
+  MdAdminPanelSettings,
+  MdLocalPhone,
+  MdOutlineFeed,
+  MdOutlineMail,
+  MdOutlinePostAdd,
+} from "react-icons/md";
+import { RiAdvertisementLine, RiTicketLine } from "react-icons/ri";
+import { SiCloudflarepages } from "react-icons/si";
+import { TbNewSection } from "react-icons/tb";
+
+export const adminPages = [
+  { name: "ادمین", href: "/admin", icon: MdAdminPanelSettings },
+  { name: "پست ها", href: "/admin/posts", icon: MdOutlineFeed },
+  { name: "پست جدید", href: "/admin/posts/new", icon: MdOutlinePostAdd },
+  { name: "تبلیغات متنی", href: "/admin/textadv", icon: RiAdvertisementLine },
+  { name: "سرویس ها", href: "/admin/services", icon: SiCloudflarepages },
+  { name: "قسمت ها", href: "/admin/sections", icon: TbNewSection },
+  { name: "ایمیل", href: "/admin/emails", icon: MdOutlineMail },
+  { name: "تیکت", href: "/admin/tickets", icon: RiTicketLine },
+  { name: "تماس باما", href: "/admin/contacts", icon: MdLocalPhone },
+];
