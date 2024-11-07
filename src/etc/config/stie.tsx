@@ -38,12 +38,12 @@ const SiteConfig = {
     {
       id: 4,
       name: "بیوگرافی",
-      link: "/services/3",
+      link: "/services/5",
     },
     {
       id: 5,
       name: "پست های بیشتر",
-      link: "/services/3",
+      link: "/services/4",
     },
     {
       id: 6,
