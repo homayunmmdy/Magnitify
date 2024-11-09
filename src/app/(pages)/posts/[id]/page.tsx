@@ -71,6 +71,7 @@ const Post: React.FC = () => {
                 id="tiptap-style"
                 dangerouslySetInnerHTML={{ __html: PostBody }}
               />
+              <div id="pos-article-display-card-101796"></div>
               <RenderTags post={post} />
               <div id="pos-article-display-101797"></div>
               <MorePostsSec />
