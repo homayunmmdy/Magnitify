@@ -44,7 +44,7 @@ const Post: React.FC = () => {
             <div className="w-full py-3 md:w-1/4">
               <div className="flex flex-col gap-2 divide-y-4">
                 {post.categories?.length > 0 && (
-                  <div className="my-3 flex items-center gap-3">
+                  <div className="my-3 flex flex-wrap items-center gap-3">
                     <span className="font-bold">برچسب ها:</span>
                     <RenderTags post={post} />
                   </div>

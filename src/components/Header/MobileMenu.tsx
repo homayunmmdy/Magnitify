@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const MobileMenu = ({ pathname, nav }: MenuTypes) => {
   return (
-    <nav className="fixed left-0 right-0 top-[120px] z-[50] mx-auto w-[94%] rounded-xl border-2 border-amber-700 shadow-xl backdrop-blur-md md:w-[92%]">
+    <nav className="fixed left-0 right-0 top-[90px] z-[50] mx-auto w-[94%] rounded-xl border-2 border-amber-700 shadow-xl backdrop-blur-md md:w-[92%]">
       <ul className="my-3 flex flex-col items-center gap-4 bg-inherit p-2 shadow lg:hidden">
         {nav?.map((item) => {
           return (

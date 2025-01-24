@@ -9,6 +9,16 @@
  */
 
 /* Heading styles for the editor */
+#tiptap-style h1,
+#tiptap-style h2,
+#tiptap-style h3,
+#tiptap-style h4,
+#tiptap-style h5,
+#tiptap-style h6{
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+}
+
 #tiptap-style h1 {
   font-size: 2.125rem;
   font-weight: bold;

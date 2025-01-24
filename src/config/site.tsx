@@ -29,7 +29,7 @@ const SiteConfig = {
     },
     {
       id: 2,
-      name: " هوش مصنوعی",
+      name: "هوش مصنوعی",
       link: "/services/1",
     },
     {
@@ -50,7 +50,7 @@ const SiteConfig = {
     {
       id: 6,
       name: "پست های بیشتر",
-      link: "/services/5",
+      link: "/services/4",
     },
   ],
 };
