@@ -1,50 +1,50 @@
 const API_URL = process.env.API_URL || 'https://nexca.vercel.app/';
 const SiteConfig = {
-  name: "Nexca",
-  title: "The Ultimate Admin Panel for Agencies and Individuals",
+  name: "کافی بلاگ",
+  title: "کافی بلاگ یک وب‌سایت اطلاعات عمومی است که در آن داستان‌های جالب و آموزنده درباره کسب‌وکارها، تاریخ، اخبار، و موضوعات متنوع دیگر به اشتراک گذاشته می‌شود. این وب‌سایت مکانی است برای افزایش آگاهی و یادگیری چیزهای جدید از دنیای اطراف ما. اگر به دنبال مطالب جذاب و مفید هستید، کافی بلاگ را دنبال کنید!",
   description:
-    "Nexca offers a robust admin panel for agencies and individuals, enabling seamless data management, content sharing, and audience engagement.",
+    "کافی بلاگ یک وب‌سایت اطلاعات عمومی است که در آن داستان‌های جالب و آموزنده درباره کسب‌وکارها، تاریخ، اخبار، و موضوعات متنوع دیگر به اشتراک گذاشته می‌شود. این وب‌سایت مکانی است برای افزایش آگاهی و یادگیری چیزهای جدید از دنیای اطراف ما. اگر به دنبال مطالب جذاب و مفید هستید، کافی بلاگ را دنبال کنید!",
   keywords: "Admin panel , Dashboard , Custom panel, Data Ma Data management",
-  authors: [{ name: "Nexca Team", url: API_URL }],
+  authors: [{ name: "تیم کافی بلاگ", url: API_URL }],
   siteURL: API_URL,
-  lang: "en",
-  dir: "ltr",
+  lang: "fa",
+  dir: "rtl",
   slogan:
-    "Experience the power of an open-source CMS built with Next.js. Effortlessly manage content, streamline workflows, and connect with your audience—perfect for agencies, bloggers, and creators.",
+    "کافی بلاگ مرجع داستان‌های جالب و آموزنده درباره کسب‌وکارها، تاریخ، اخبار، و موضوعات متنوع دیگر. با ما همراه شوید و از مطالب مفید و جذاب لذت ببرید!",
   // media
   email: "homayoun763@gmail.com",
   github: "https://github.com/homayunmmdy/Nexca",
   phoneNumber: "0922 4003 487",
   linkedin: "https://www.linkedin.com/in/homayunmmdy/",
   robots: "index , follow",
-  author: "Magnitify Team",
-  authorID: "magnitify_Team",
+  author: "CoffeBlog Team",
+  authorID: "CoffeBlog_Team",
   // Navbar
   nav: [
     {
       id: 1,
-      name: "Home",
+      name: "خانه",
       link: "/",
     },
     {
       id: 2,
-      name: " Admin",
-      link: "/admin",
+      name: " هوش مصنوعی",
+      link: "/services/1",
     },
     {
       id: 3,
-      name: " Demo",
-      link: "/demo",
-    },
-    {
-      id: 4,
-      name: "Services",
+      name: "کسب و کار",
       link: "/services/3",
     },
     {
+      id: 4,
+      name: "بیوگرافی",
+      link: "/services/5",
+    },
+    {
       id: 5,
-      name: "Contacts",
-      link: "/contacts",
+      name: "پست های بیشتر",
+      link: "/services/5",
     },
   ],
 };

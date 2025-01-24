@@ -31,7 +31,7 @@ const MasterEditorPage: React.FC = () => {
     <>
       <Toaster />
       <div className="container mx-auto max-w-xl p-6">
-        <div className="rounded-lg border-2 border-indigo-400 p-6 shadow-xl">
+        <div className="rounded-lg border-2 border-amber-400 p-6 shadow-xl">
           <h1 className="mb-4 text-2xl font-semibold">
             Enter Your Master Key and Enjoy it!
           </h1>

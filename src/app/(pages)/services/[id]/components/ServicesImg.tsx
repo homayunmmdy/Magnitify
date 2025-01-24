@@ -23,7 +23,7 @@ const ServicesImg: React.FC = () => {
     <>
       {filteredData?.map((service: ServicesCashType) => (
         <div
-          className="hero mb-5 aspect-video rounded-xl bg-indigo-600"
+          className="hero mb-5 aspect-video rounded-xl bg-amber-600"
           key={service._id}
           style={{
             backgroundImage: `url(${

@@ -10,8 +10,8 @@ const CopyRight: React.FC<Props> = ({ siteName }: Props) => {
     <div className="py-4">
       <div className="flex items-center justify-center">
         <span className="text-sm" data-testid='copyrightText'>
-          Copyright@{new Date().getFullYear()} All Right Reserved by{" "}
-          <Link href="/" title={siteName}>{siteName}</Link>
+        حق نشر © {new Date().getFullYear()} - تمامی حقوق برای <Link href="/" title={siteName}>{siteName}</Link> محفوظ است
+          
         </span>
       </div>
     </div>

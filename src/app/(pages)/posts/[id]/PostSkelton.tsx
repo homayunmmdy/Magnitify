@@ -4,7 +4,7 @@ const PostSkelton: React.FC = () => {
   return (
     <>
       <div className="flex flex-col ">
-        <div className="bg-indigo-500 pt-10">
+        <div className="bg-amber-500 pt-10">
           <div className="w-[94%] md:w-[92%] mx-auto px-4 py-8 flex justify-center items-center flex-col">
             <div className="skeleton h-6 w-full mb-6"></div>
             <div className="skeleton h-4 w-32 mb-4"></div>

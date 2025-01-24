@@ -7,11 +7,10 @@ import ErrorBoundaryProvider from "@/util/ErrorBoundaryProvider";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Link from "next/link";
-import React from "react";
 import { FaCircleDot } from "react-icons/fa6";
 import LinearAdsLoading from "./LinearAdsLoading";
 
-const LinearAds = ({id} : {id : number}) => {
+const LinearAds = ({ id }: { id: number }) => {
   const {
     data: mainData,
     isLoading,
@@ -47,13 +46,13 @@ const LinearAds = ({id} : {id : number}) => {
             >
               <div className="h-7 w-7 flex-shrink-0">
                 <FaCircleDot
-                  className="h-full w-full text-indigo-700"
+                  className="h-full w-full text-amber-700"
                   size={28}
                   color="#4338CA"
                 />
               </div>
               <Link
-                className="line-clamp-2 font-semibold group-hover:text-indigo-600"
+                className="line-clamp-2 font-semibold group-hover:text-amber-600"
                 href={adv.link}
               >
                 {adv.body}
@@ -66,8 +65,8 @@ const LinearAds = ({id} : {id : number}) => {
   );
 };
 
-export default ({id} : {id : number}) => (
+export default ({ id }: { id: number }) => (
   <ErrorBoundaryProvider>
-    <LinearAds id={id}/>
+    <LinearAds id={id} />
   </ErrorBoundaryProvider>
 );

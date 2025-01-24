@@ -1,9 +1,21 @@
 "use client";
 import { Button, Input, Spinner } from "@/components";
-import { POST_API_URL, SECTIONS_API_URL, SERVICES_API_URL } from "@/config/apiConstants";
-import { ALL_POSTS_QUERY_KEY, SECTIONS_QUERY_KEY, SERVICES_QUERY_KEY } from "@/config/Constants";
+import {
+  POST_API_URL,
+  SECTIONS_API_URL,
+  SERVICES_API_URL,
+} from "@/config/apiConstants";
+import {
+  ALL_POSTS_QUERY_KEY,
+  SECTIONS_QUERY_KEY,
+  SERVICES_QUERY_KEY,
+} from "@/config/Constants";
 import useFetch from "@/hooks/useFetch";
-import { PostsCashType, SectionCashType, ServicesCashType } from "@/types/CashTypes";
+import {
+  PostsCashType,
+  SectionCashType,
+  ServicesCashType,
+} from "@/types/CashTypes";
 import { checkMaster } from "@/util/Util";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -146,7 +158,7 @@ const Posts = () => {
         </div>
 
         {isFilterOpen && (
-          <div className="rounded-md border border-indigo-600 p-4 shadow-sm">
+          <div className="rounded-md border border-amber-600 p-4 shadow-sm">
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div>
                 <label className="mb-1 block text-sm font-medium">

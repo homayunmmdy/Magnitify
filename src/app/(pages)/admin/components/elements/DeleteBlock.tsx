@@ -41,7 +41,7 @@ const DeleteBlock: React.FC<Props> = ({ path, id, masterEditor }: Props) => {
         });
         setIsConfirmOpen(false);
         if (res.ok) {
-          toast.success('Item Deleted successfully')
+          toast.success("Item Deleted successfully");
           router.refresh();
         } else {
           toast.error("Something went wrong try one more time please");
@@ -68,7 +68,7 @@ const DeleteBlock: React.FC<Props> = ({ path, id, masterEditor }: Props) => {
 
       {isConfirmOpen && (
         <div className="fixed inset-0 z-10 mt-[120px] overflow-y-auto p-4 md:p-8">
-          <div className="mx-auto w-full max-w-sm rounded-lg border border-indigo-700 shadow-xl backdrop-blur-md">
+          <div className="mx-auto w-full max-w-sm rounded-lg border border-amber-700 shadow-xl backdrop-blur-md">
             <div className="flex items-center justify-between border-b p-5">
               <h5 className="text-xl font-medium">Delete</h5>
               <Button

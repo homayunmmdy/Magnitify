@@ -50,7 +50,7 @@ const DemoPage: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="bg-indigo-600 p-3 sm:p-4 md:p-6 lg:p-9">
+      <div className="bg-amber-600 p-3 sm:p-4 md:p-6 lg:p-9">
         <div className="mt-5' mx-auto w-[94%] md:w-[92%]">
           <SliderSec />
         </div>

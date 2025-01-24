@@ -1,80 +1,123 @@
-import {
-  Banner,
-  Companies,
-  EmailList,
-  FAQs,
-  Features,
-  Hero,
-  PriceList,
-  StatcsSect,
-} from "@/components";
+"use client";
+import React, { useEffect, useRef } from "react";
+import { useInfiniteQuery } from "@tanstack/react-query";
+import { Spinner } from "@/components";
+import PostCard from "@/components/sections/PostCard";
+import { PostsCashType } from "@/types/CashTypes";
 import SiteConfig from "@/config/site";
-import { Metadata } from "next";
-import React from "react";
 
-/**
- * Metadata configuration for the landing page.
- * This includes SEO-friendly tags for search engines and social media platforms.
- */
-export const metadata: Metadata = {
-  title: SiteConfig.title.slice(0, 60),
-  description: SiteConfig.description,
-  keywords: SiteConfig.keywords,
-  authors: SiteConfig.authors,
-  robots: SiteConfig.robots,
 
-  alternates: {
-    canonical: SiteConfig.siteURL,
-  },
-  openGraph: {
-    title: SiteConfig.name,
-    description: SiteConfig.description.slice(0, 150),
-    siteName: SiteConfig.name,
-    authors: SiteConfig.author,
-    images: {
-      url: `${SiteConfig.siteURL}/static/Image/logo.jpg`,
-      secureUrl: `${SiteConfig.siteURL}/static/Image/logo.jpg`,
-      width: 1200,
-      height: 630,
-      alt: `Preview image for ${SiteConfig.name}`,
-    },
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: `@${SiteConfig.name}`,
-    description: SiteConfig.description.slice(0, 150),
-    creator: `@${SiteConfig.authorID}`,
-    images: {
-      url: `${SiteConfig.siteURL}/static/Image/logo.jpg`,
-      alt: `Preview image for ${SiteConfig.name}`,
-    },
-  },
+// Define the structure of the paginated response
+interface PaginatedPosts {
+  data: PostsCashType[];
+  meta: {
+    total: number;
+    page: number;
+    limit: number;
+    totalPages: number;
+  };
+}
+
+// fetch posts from the backend with pagination
+const fetchPosts = async ({ pageParam = 1 }: { pageParam?: number }): Promise<PaginatedPosts> => {
+  const res = await fetch(`/api/posts?page=${pageParam}&limit=10`);
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch posts");
+  }
+
+  const data = await res.json();
+  return data;
 };
 
-/**
- * LandingPage Component
- *
- * This is the main landing page of the website. It includes various sections such as Hero, Features, Companies, etc.
- * The page is designed to be SEO-friendly and optimized for user engagement.
- *
- * @returns {React.FC} - Returns a React Functional Component representing the landing page.
- */
+const Feed: React.FC = () => {
+  // useInfiniteQuery to manage infinite scroll data
+  const {
+    data, // All fetched data
+    fetchNextPage, // Fetch the next page
+    hasNextPage, // If there are more pages to load
+    isFetchingNextPage, // If the next page is being fetched
+    error,
+    isLoading,
+  } = useInfiniteQuery<PaginatedPosts>({
+    queryKey: ["posts"],
+    queryFn: fetchPosts,
+    getNextPageParam: (lastPage) => {
+      // Determine the next page
+      const nextPage = lastPage.meta.page + 1; // Calculate the next page number
+      return nextPage <= lastPage.meta.totalPages ? nextPage : undefined; // Return nextPage if it exists, otherwise undefined
+    },
+  });
 
-const LandingPage: React.FC = () => {
+  const observerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    // No setup observer if there are no more pages or already fetching
+    if (!hasNextPage || isFetchingNextPage) return;
+
+    // Set up an IntersectionObserver to trigger fetchNextPage when the element becomes visible
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          fetchNextPage(); // Fetch the next page when the element is visible
+        }
+      },
+      { threshold: 1.0 } // Trigger only when 100% of the element is visible
+    );
+
+    if (observerRef.current) {
+      observer.observe(observerRef.current);
+    }
+
+    return () => {
+      if (observerRef.current) {
+        observer.unobserve(observerRef.current); // Clean up the observer when the component unmounts
+      }
+    };
+  }, [hasNextPage, isFetchingNextPage, fetchNextPage]);
+
+  if (isLoading)
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <Spinner />
+      </div>
+    );
+
+  if (error)
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <p className="text-lg font-medium text-red-600">
+          Error loading posts. Please try again later.
+        </p>
+      </div>
+    );
+
   return (
-    <>
-      {/* Hidden h1 tag for SEO purposes to include the title in the DOM */}
-      <h1 className="hidden">{SiteConfig.title}</h1>
-      <Hero />
-      <Features />
-      <Companies />
-      <StatcsSect />
-      <FAQs />
-      <Banner />
-      <PriceList />
-      <EmailList />
-    </>
+    <div className="p-4 md:p-10">
+      <p className="mb-8 font-bold text-gray-800">{SiteConfig.slogan}</p>
+      {data?.pages[0]?.data.length === 0 ? (
+        <div className="flex flex-col items-center justify-center">
+          <p className="text-lg font-medium">No posts available!</p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-4">
+          {data?.pages.map((page, i) => (
+            <React.Fragment key={i}>
+              {page.data.map((post: PostsCashType) => (
+                <PostCard key={post._id} post={post} />
+              ))}
+            </React.Fragment>
+          ))}
+        </div>
+      )}
+      <div ref={observerRef} className="h-10"></div>
+      {isFetchingNextPage && (
+        <div className="mt-4 flex justify-center">
+          <Spinner />
+        </div>
+      )}
+    </div>
   );
 };
 
-export default LandingPage;
+export default Feed;

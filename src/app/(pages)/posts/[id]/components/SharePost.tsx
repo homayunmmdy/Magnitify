@@ -50,7 +50,7 @@ const SharePost = ({ POSTURL, title, description }: SharePostType) => {
           {socialMedia.map((media: SocialMediaType) => (
             <li className="flex items-center gap-2" key={media.id}>
               <Link
-                className="rounded-full border border-indigo-600 p-2 text-indigo-600 transition-all ease-in-out hover:bg-indigo-600 hover:text-white"
+                className="rounded-full border border-amber-600 p-2 text-amber-600 transition-all ease-in-out hover:bg-amber-600 hover:text-white"
                 target="_blank"
                 rel="nofollow"
                 href={media.link}

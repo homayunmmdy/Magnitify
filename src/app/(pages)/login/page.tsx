@@ -4,7 +4,7 @@ import { Button, Input } from "@/components";
 import { AUTH_KEY } from "@/config/Constants";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import Toast from "./components/Toast";
 
@@ -60,7 +60,7 @@ const Login: React.FC = () => {
       <div className="font-poppins flex items-center justify-center">
         <div className="flex h-screen w-screen items-center justify-center dark:bg-gray-900">
           <div className="grid gap-8 p-2">
-            <div className="m-2 rounded-[26px] bg-gradient-to-r from-blue-500 to-purple-500">
+            <div className="m-2 rounded-[26px] bg-gradient-to-r from-amber-500 to-purple-500">
               <div className="m-2 rounded-[20px] border-[20px] border-transparent bg-white shadow-lg sm:p-2 md:p-6 dark:bg-gray-900">
                 <h1 className="cursor-default py-4 text-center text-5xl font-bold dark:text-gray-400">
                   Log in
@@ -114,11 +114,11 @@ const Login: React.FC = () => {
                   <p className="cursor-default">
                     By signing in, you agree to our{" "}
                     <Link
-                      className="group text-blue-400 transition-all duration-100 ease-in-out"
+                      className="group text-amber-400 transition-all duration-100 ease-in-out"
                       href="/privacy_policy"
                       title="Privacy Policy"
                     >
-                      <span className="cursor-pointer bg-gradient-to-r from-blue-400 to-blue-400 bg-[length:0%_2px] bg-left-bottom bg-no-repeat px-1 transition-all duration-500 ease-out group-hover:bg-[length:100%_2px]">
+                      <span className="cursor-pointer bg-gradient-to-r from-amber-400 to-amber-400 bg-[length:0%_2px] bg-left-bottom bg-no-repeat px-1 transition-all duration-500 ease-out group-hover:bg-[length:100%_2px]">
                         Privacy Policy
                       </span>
                     </Link>

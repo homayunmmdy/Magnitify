@@ -55,7 +55,11 @@ const NewsBody = ({ post }: { post: any }) => {
           source : <span className="font-bold">{post.source}</span>
         </p>
       )}
-      <SharePost title={post.title} description={post.description} POSTURL={`/posts/${post._id}`} />
+      <SharePost
+        title={post.title}
+        description={post.description}
+        POSTURL={`/posts/${post._id}`}
+      />
       {post.categories?.length > 0 && (
         <div className="my-3 flex items-center gap-3">
           <span className="font-bold">Categories:</span>
@@ -68,7 +72,7 @@ const NewsBody = ({ post }: { post: any }) => {
         API={COMMENTS_API_URL}
       />
       {comments?.length > 0 && (
-        <div className="my-5 rounded-xl bg-indigo-600 p-5 pt-10">
+        <div className="my-5 rounded-xl bg-amber-600 p-5 pt-10">
           <Titr
             resetStyle={true}
             style="bg-green-400 text-center p-5 flex justify-center items-center rounded-xl mb-5 font-bold text-xl text-white"

@@ -74,14 +74,14 @@ const Hero: React.FC = () => {
                 variants={decorativeVariants}
                 initial="hidden"
                 animate="visible"
-                className="absolute bottom-12 right-4 h-24 w-24 rounded-3xl bg-blue-600 opacity-80 blur-xl"
+                className="absolute bottom-12 right-4 h-24 w-24 rounded-3xl bg-amber-600 opacity-80 blur-xl"
               />
             </div>
             <motion.span
               variants={decorativeVariants}
               initial="hidden"
               animate="visible"
-              className="absolute -top-5 aspect-square w-4/12 rotate-90 skew-x-12 skew-y-12 rounded-full bg-gradient-to-tr from-blue-600 to-green-400 opacity-40 blur-2xl lg:left-0 lg:w-2/12"
+              className="absolute -top-5 aspect-square w-4/12 rotate-90 skew-x-12 skew-y-12 rounded-full bg-gradient-to-tr from-amber-600 to-green-400 opacity-40 blur-2xl lg:left-0 lg:w-2/12"
             />
 
             {/* Content */}
@@ -110,7 +110,7 @@ const Hero: React.FC = () => {
                   <Button
                     removeDefaultStyle={true}
                     color="btn-null"
-                    className="group relative isolation-auto z-10 mx-auto flex items-center justify-center gap-2 overflow-hidden rounded-full border-2 border-indigo-500 px-3 py-1 text-lg shadow-xl backdrop-blur-md before:absolute before:-left-full before:-z-10 before:aspect-square before:w-full before:rounded-full before:bg-indigo-500 before:transition-all before:duration-700 hover:text-gray-50 before:hover:left-0 before:hover:w-full before:hover:scale-150 before:hover:duration-700 lg:font-semibold"
+                    className="group relative isolation-auto z-10 mx-auto flex items-center justify-center gap-2 overflow-hidden rounded-full border-2 border-amber-500 px-3 py-1 text-lg shadow-xl backdrop-blur-md before:absolute before:-left-full before:-z-10 before:aspect-square before:w-full before:rounded-full before:bg-amber-500 before:transition-all before:duration-700 hover:text-gray-50 before:hover:left-0 before:hover:w-full before:hover:scale-150 before:hover:duration-700 lg:font-semibold"
                   >
                     <IoArrowUpCircleSharp
                       size={40}

@@ -33,9 +33,9 @@ const questions: CollapseType[] = [
 const FQAs: React.FC = () => {
   return (
     <>
-      <section className="overflow-hidden bg-indigo-800 text-white sm:py-10">
+      <section className="overflow-hidden bg-amber-800 text-white sm:py-10">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="bg-indigo relative overflow-hidden rounded-3xl px-8 py-16">
+          <div className="bg-amber relative overflow-hidden rounded-3xl px-8 py-16">
             <div className="relative z-10 mx-auto md:max-w-7xl">
               <div className="mb-10">
                 <span className="text-md text-mygray mb-5 inline-block font-bold uppercase tracking-widest">
@@ -48,7 +48,7 @@ const FQAs: React.FC = () => {
               <div className="-m-3 flex flex-wrap">
                 <div className="join join-vertical my-10 w-full">
                   {questions.map((question) => (
-                    <Collapse data={question} key={question.id}/>
+                    <Collapse data={question} key={question.id} />
                   ))}
                 </div>
               </div>

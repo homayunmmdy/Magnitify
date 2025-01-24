@@ -18,7 +18,7 @@ const NavLink: React.FC = () => {
               <li className="mt-0.5 w-full" key={index}>
                 {pathname === link.href ? (
                   <Link
-                    className="py-2.7 shadow-soft-xl ease-nav-brand my-0 flex items-center whitespace-nowrap rounded-xl bg-indigo-700 p-1 px-4 text-sm font-semibold text-white transition-colors hover:bg-indigo-600"
+                    className="py-2.7 shadow-soft-xl ease-nav-brand my-0 flex items-center whitespace-nowrap rounded-xl bg-amber-700 p-1 px-4 text-sm font-semibold text-white transition-colors hover:bg-amber-600"
                     href={link.href}
                   >
                     <div className="shadow-soft-2xl ml-2 flex h-9 w-9 items-center justify-center rounded-lg bg-white bg-gradient-to-tl from-purple-700 to-pink-500 bg-center stroke-0 text-center xl:p-2.5">
@@ -30,10 +30,10 @@ const NavLink: React.FC = () => {
                   </Link>
                 ) : (
                   <Link
-                    className="py-2.7 ease-nav-brand my-0 flex items-center whitespace-nowrap rounded-xl p-1 px-4 text-sm transition-colors hover:bg-indigo-500 hover:text-white"
+                    className="py-2.7 ease-nav-brand my-0 flex items-center whitespace-nowrap rounded-xl p-1 px-4 text-sm transition-colors hover:bg-amber-500 hover:text-white"
                     href={link.href}
                   >
-                    <div className="shadow-soft-2xl ml-2 flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-700 bg-center stroke-0 text-center xl:p-2.5">
+                    <div className="shadow-soft-2xl ml-2 flex h-9 w-9 items-center justify-center rounded-lg bg-amber-700 bg-center stroke-0 text-center xl:p-2.5">
                       <LinkIcon size={24} color="#FFF" />
                     </div>
                     <span className="ease-soft pointer-events-none ml-1 opacity-100 duration-300">

@@ -17,7 +17,7 @@ const ImagePreview = ({
       title={title}
       height={390.938}
       width={695}
-      className="mb-2 aspect-video w-full rounded-xl border border-indigo-500"
+      className="mb-2 aspect-video w-full rounded-xl border border-amber-500"
     />
     <Input
       id="imgurl"

@@ -14,7 +14,7 @@ const FormLayout = ({
       <span className="loading loading-ring loading-lg absolute"></span>
     )}
     <div className="mb-4 w-full text-center md:w-6/12">
-      <h3 className="rounded-lg bg-indigo-700 p-2 text-2xl font-semibold text-white">
+      <h3 className="rounded-lg bg-amber-700 p-2 text-2xl font-semibold text-white">
         {title}
       </h3>
     </div>

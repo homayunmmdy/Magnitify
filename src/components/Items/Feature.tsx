@@ -10,7 +10,7 @@ const Feature: React.FC<Props> = ({ data }: Props) => {
     <>
       <div className="relative pl-16" key={data.id}>
         <div className="text-base font-semibold leading-7 ">
-          <div className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-700">
+          <div className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center rounded-lg bg-amber-700">
             {data.icon}
           </div>
           {data.title}

@@ -23,8 +23,8 @@ const Pagination = ({
           <li
             key={number}
             className={`mx-1 px-3 py-1 border ${
-              currentPage === number ? "bg-indigo-600 text-white" : ""
-            } rounded-xl border-indigo-600 border-1rounded cursor-pointer`}
+              currentPage === number ? "bg-amber-600 text-white" : ""
+            } rounded-xl border-amber-600 border-1rounded cursor-pointer`}
             onClick={() => paginate(number)}
           >
             {number}

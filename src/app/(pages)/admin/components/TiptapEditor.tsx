@@ -97,7 +97,7 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange }) => {
   }
 
   return (
-    <div className="rounded-md border border-indigo-500 p-2" id="tiptap-style">
+    <div className="rounded-md border border-amber-500 p-2" id="tiptap-style">
       <div className="mb-2 flex flex-wrap gap-2 px-3">
         <Button
           type="button"
@@ -105,7 +105,9 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange }) => {
           onClick={() =>
             editor.chain().focus().toggleHeading({ level: 2 }).run()
           }
-          className={editor.isActive("heading", { level: 2 }) ? "is-active" : ""}
+          className={
+            editor.isActive("heading", { level: 2 }) ? "is-active" : ""
+          }
         >
           H1
         </Button>
@@ -115,7 +117,9 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange }) => {
           onClick={() =>
             editor.chain().focus().toggleHeading({ level: 2 }).run()
           }
-          className={editor.isActive("heading", { level: 2 }) ? "is-active" : ""}
+          className={
+            editor.isActive("heading", { level: 2 }) ? "is-active" : ""
+          }
         >
           H2
         </Button>
@@ -126,7 +130,9 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange }) => {
           onClick={() =>
             editor.chain().focus().toggleHeading({ level: 3 }).run()
           }
-          className={editor.isActive("heading", { level: 3 }) ? "is-active" : ""}
+          className={
+            editor.isActive("heading", { level: 3 }) ? "is-active" : ""
+          }
         >
           H3
         </Button>
@@ -238,7 +244,11 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange }) => {
           <MdOutlineHorizontalRule size={20} />
         </Button>
       </div>
-      <EditorContent editor={editor} className="prose max-w-none" id="news_body"/>
+      <EditorContent
+        editor={editor}
+        className="prose max-w-none"
+        id="news_body"
+      />
 
       <div
         className={`character-count${

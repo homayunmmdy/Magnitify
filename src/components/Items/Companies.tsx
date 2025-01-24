@@ -1,9 +1,9 @@
-"use client"
+"use client";
+import { motion } from "framer-motion";
+import React from "react";
 import { FaReact } from "react-icons/fa";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiClerk, SiMongodb, SiVercel } from "react-icons/si";
-import { motion } from "framer-motion";
-import React from 'react';
 
 const Companies: React.FC = () => {
   const container = {
@@ -11,29 +11,29 @@ const Companies: React.FC = () => {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const item = {
-    hidden: { 
+    hidden: {
       opacity: 0,
-      y: 20
+      y: 20,
     },
     show: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.8,
-        ease: [0.04, 0.62, 0.23, 0.98]
-      }
-    }
+        ease: [0.04, 0.62, 0.23, 0.98],
+      },
+    },
   };
 
   return (
     <>
-      <section className="mx-auto max-w-7xl px-4 rounded-xl shadow-xl py-8 md:py-12 lg:py-28 m-4 border-2 border-indigo-400 hover:border-indigo-700">
+      <section className="mx-auto max-w-7xl px-4 rounded-xl shadow-xl py-8 md:py-12 lg:py-28 m-4 border-2 border-amber-400 hover:border-amber-700">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -61,38 +61,42 @@ const Companies: React.FC = () => {
             {
               Icon: RiNextjsFill,
               title: "Next.js",
-              description: "App dir, Routing, Layouts, Loading UI and API routes."
+              description:
+                "App dir, Routing, Layouts, Loading UI and API routes.",
             },
             {
               Icon: FaReact,
               title: "React",
-              description: "Server and Client Components. Use hook."
+              description: "Server and Client Components. Use hook.",
             },
             {
               Icon: SiMongodb,
               title: "Database",
-              description: "We Use mongodb to save your data"
+              description: "We Use mongodb to save your data",
             },
             {
               Icon: RiTailwindCssFill,
               title: "Style",
-              description: "we are using the tailwind css and daisyui to give you website nice look for each components and themes"
+              description:
+                "we are using the tailwind css and daisyui to give you website nice look for each components and themes",
             },
             {
               Icon: SiClerk,
               title: "Authentication",
-              description: "Authentication using Clerk to have safe and beautiful style"
+              description:
+                "Authentication using Clerk to have safe and beautiful style",
             },
             {
               Icon: SiVercel,
               title: "Hosting",
-              description: "For hosting we handle you hosting with free hobby plan of the vercel but If you want more you must pay based on vercel"
-            }
+              description:
+                "For hosting we handle you hosting with free hobby plan of the vercel but If you want more you must pay based on vercel",
+            },
           ].map((company, index) => (
             <motion.div
               key={index}
               variants={item}
-              className="relative overflow-hidden rounded-lg border select-none hover:shadow hover:shadow-indigo-800 p-2"
+              className="relative overflow-hidden rounded-lg border select-none hover:shadow hover:shadow-amber-800 p-2"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >

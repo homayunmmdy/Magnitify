@@ -11,13 +11,13 @@ const HeaderMenu = ({ pathname, nav }: MenuTypes) => {
               <Link
                 href={item.link}
                 title={item.name}
-                className="rounded-xl bg-indigo-700 text-white hover:bg-indigo-700"
+                className="rounded-xl bg-amber-700 text-white hover:bg-amber-700"
               >
                 {item.name}
               </Link>
             ) : (
               <Link
-                className="rounded-xl border-2 border-base-100 hover:border-blue-700 hover:bg-base-100 hover:text-indigo-700"
+                className="rounded-xl border-2 border-base-100 hover:border-amber-700 hover:bg-base-100 hover:text-amber-700"
                 href={item.link}
                 title={item.name}
               >

@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import localFont from 'next/font/local';
+import SiteConfig from "@/config/site";
 
 const IRANSANS = localFont({ src: "./IRANSansX.woff2" });
 
@@ -18,8 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <ReactQueryProvider>
-      <html lang="en" data-theme="light">
-        <body className={inter.className}>
+      <html lang={SiteConfig.lang} dir={SiteConfig.dir}  data-theme="light">
+        <body className={IRANSANS.className}>
           <Header />
           <main className="mt-[120px]">{children}</main>
           <Footer />

@@ -7,7 +7,7 @@ const PriceItem = ({ item }: { item: PriceItemType }) => {
   return (
     <div
       className={`mx-auto flex max-w-lg flex-col items-start space-y-8 rounded-3xl border ${
-        item.special ? "border-indigo-700 border-2 shadow-xl" : "border-gray-200"
+        item.special ? "border-amber-700 border-2 shadow-xl" : "border-gray-200"
       }  p-6  xl:p-8`}
     >
       <h3 className="text-lg font-normal">{item.titr}</h3>

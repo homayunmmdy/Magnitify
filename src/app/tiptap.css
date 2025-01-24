@@ -70,7 +70,7 @@
 
 /* Link styles */
 #tiptap-style a {
-  color: blue;
+  color: amber;
   text-decoration: underline;
 }
 
@@ -126,17 +126,17 @@
 
 /* Scrollbar track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
+  box-shadow: inset 0 0 5px grey;
   border-radius: 10px;
 }
- 
+
 /* Scrollbar handle */
 ::-webkit-scrollbar-thumb {
-  background: blue; 
+  background: amber;
   border-radius: 10px;
 }
 
 /* Scrollbar handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #3F00E7; 
+  background: #3f00e7;
 }
