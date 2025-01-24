@@ -30,7 +30,7 @@ const Posts = () => {
 
   const [posts, setPosts] = useState(data?.data || []);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(10);
+  const [postsPerPage] = useState(5);
 
   // Get initial search params from URL
   const initialSearchQuery = searchParams.get("query") || "";
@@ -133,7 +133,7 @@ const Posts = () => {
           <div className="flex-1">
             <Input
               type="text"
-              placeholder="Search posts"
+              placeholder="جستجو پست ها"
               value={searchQuery}
               onChange={handleSearch}
               icon={
@@ -153,7 +153,7 @@ const Posts = () => {
             className="btn-outline"
           >
             <FiFilter className="h-4 w-4" />
-            Filters
+            فیلتر
           </Button>
         </div>
 
@@ -162,14 +162,14 @@ const Posts = () => {
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div>
                 <label className="mb-1 block text-sm font-medium">
-                  Service
+                  سرویس
                 </label>
                 <select
                   value={selectedService}
                   onChange={handleServiceChange}
                   className="select select-primary mb-2 w-full"
                 >
-                  <option value="">All Services</option>
+                  <option value="">همه سرویس ها</option>
                   {services.map((service: ServicesCashType) => (
                     <option key={service._id} value={service.secid}>
                       {service.name}
@@ -179,14 +179,14 @@ const Posts = () => {
               </div>
               <div>
                 <label className="mb-1 block text-sm font-medium">
-                  Section
+                  قسمت
                 </label>
                 <select
                   value={selectedSection}
                   onChange={handleSectionChange}
                   className="select select-primary mb-2 w-full"
                 >
-                  <option value="">All Sections</option>
+                  <option value="">همه قسمت ها</option>
                   {sections.map((section: SectionCashType) => (
                     <option key={section.__v} value={section.secid}>
                       {section.name}
@@ -197,7 +197,7 @@ const Posts = () => {
             </div>
             <div className="mt-4 flex justify-end">
               <Button onClick={clearFilters} color="btn-primary">
-                Clear Filters
+                حذف فلیتر
               </Button>
             </div>
           </div>
@@ -209,11 +209,9 @@ const Posts = () => {
               <table className="table">
                 <thead>
                   <tr>
-                    <th>Title</th>
-                    <th>Service</th>
-                    <th>Section</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th>پست ها</th>
+                    <th>ویرایش</th>
+                    <th>حذف</th>
                   </tr>
                 </thead>
                 <tbody>

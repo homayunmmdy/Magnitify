@@ -50,7 +50,7 @@ const EditPostForm = ({ post }: { post: PostsCashType }) => {
 
   return (
     <FormLayout
-      title={EDITMODE ? "Edit Post" : "New Post"}
+      title={EDITMODE ? "ویرایش پست" : "پست جدید"}
       isLoading={handler.isLoading}
     >
       <form
@@ -65,32 +65,21 @@ const EditPostForm = ({ post }: { post: PostsCashType }) => {
             <SelectField
               id="services"
               name="services"
-              label="Services"
+              label="سرویس"
               value={formData.services}
               onChange={handler.trakeChange}
               options={services}
             />
           )}
-          {sectionLoading ? (
-            <SelectFiledSkeleton label="Section" />
-          ) : (
-            <SelectField
-              id="section"
-              name="section"
-              label="Section"
-              value={formData.section}
-              onChange={handler.trakeChange}
-              options={sections}
-            />
-          )}
+
 
           <Input
             type="text"
             id="title"
             name="title"
-            label="Title"
+            label="تیتر"
             style="w-full mb-2"
-            color="input-primary"
+            color="input-neutral"
             value={formData.title}
             onChange={handler.trakeChange}
             required
@@ -99,8 +88,8 @@ const EditPostForm = ({ post }: { post: PostsCashType }) => {
             id="description"
             name="description"
             style="w-full mb-2"
-            color="textarea-primary"
-            label="description"
+            color="textarea-neutral"
+            label="توضیحات"
             value={formData.description}
             onChange={handler.trakeChange}
           />
@@ -109,9 +98,9 @@ const EditPostForm = ({ post }: { post: PostsCashType }) => {
             <Input
               type="text"
               value={categoryInput}
-              color="input-primary"
+              color="input-neutral"
               onChange={(e) => setCategoryInput(e.target.value)}
-              placeholder="New Category"
+              placeholder="برچسب جدید"
               style="w-full"
             />
             <Button
@@ -119,9 +108,9 @@ const EditPostForm = ({ post }: { post: PostsCashType }) => {
               onClick={() =>
                 handler.addCategory(categoryInput, setCategoryInput)
               }
-              color="btn-primary"
+              color="btn-neutral"
             >
-              Add Category
+              اضافه کردن برچسب
             </Button>
           </div>
 
@@ -139,47 +128,43 @@ const EditPostForm = ({ post }: { post: PostsCashType }) => {
               ))}
             </div>
           ) : null}
-          <Input
-            type="text"
-            id="source"
-            name="source"
-            label="source"
-            style="w-full mb-2"
-            color="input-primary"
-            value={formData.source}
-            onChange={handler.trakeChange}
-          />
+         
           <Button
             type="submit"
-            color="btn-primary"
-            aria-label={EDITMODE ? "Save" : "Post"}
+            color="btn-neutral"
+            aria-label={EDITMODE ? "ذحیره" : "پست"}
             className="btn-active mt-3 hidden w-full md:block"
           >
-            {EDITMODE ? "Save" : "Post"}
+            {EDITMODE ? "ذحیره" : "پست"}
           </Button>
         </div>
         <div className="w-full md:w-1/2">
-          <ImagePreview
-            imgurl={formData.imgurl}
-            title={formData.title}
-            onChange={handler.trakeChange}
-          />
           <div id="tiptap-style">
             <label htmlFor="body" className="label">
-              Body
+              متن پست
             </label>
             <TiptapEditor
               content={formData.body}
               onChange={handler.trakeBodyChanges}
             />
           </div>
+          <Input
+            type="text"
+            id="source"
+            name="source"
+            label="منبع"
+            style="w-full mt-2"
+            color="input-neutral"
+            value={formData.source}
+            onChange={handler.trakeChange}
+          />
           <Button
             type="submit"
-            color="btn-primary"
-            aria-label={EDITMODE ? "Save" : "Post"}
+            color="btn-neutral"
+            aria-label={EDITMODE ? "ذحیره" : "پست"}
             className="btn-active mt-3 block w-full md:hidden"
           >
-            {EDITMODE ? "Save" : "Post"}
+            {EDITMODE ? "ذحیره" : "پست"}
           </Button>
         </div>
       </form>

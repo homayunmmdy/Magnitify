@@ -19,7 +19,7 @@ const Sidebar: React.FC = () => {
             className="space-nowrap m-0 block px-4 py-3 text-lg"
             href="/admin"
           >
-            Admin
+            ادمین
             <span className="ease-nav-brand ml-1 font-semibold transition-all duration-200">
               {" "}
               {SiteConfig.name}

@@ -6,7 +6,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import Toast from "./components/Toast";
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState("");
@@ -56,29 +55,25 @@ const Login: React.FC = () => {
   return (
     <>
       <Toaster />
-      <Toast />
       <div className="font-poppins flex items-center justify-center">
-        <div className="flex h-screen w-screen items-center justify-center dark:bg-gray-900">
+        <div className="flex h-screen w-screen items-center justify-center">
           <div className="grid gap-8 p-2">
             <div className="m-2 rounded-[26px] bg-gradient-to-r from-amber-500 to-purple-500">
-              <div className="m-2 rounded-[20px] border-[20px] border-transparent bg-white shadow-lg sm:p-2 md:p-6 dark:bg-gray-900">
-                <h1 className="cursor-default py-4 text-center text-5xl font-bold dark:text-gray-400">
-                  Log in
+              <div className="m-2 rounded-[20px] border-[20px] border-transparent bg-white shadow-lg sm:p-2 md:p-6">
+                <h1 className="cursor-default py-4 text-center text-3xl font-bold">
+                  ورود به ادمین
                 </h1>
                 <form onSubmit={handleLogin} className="space-y-4">
                   <div className="flex flex-col gap-2">
-                    <label
-                      htmlFor="username"
-                      className="mb-2 text-lg dark:text-gray-400"
-                    >
-                      Username
+                    <label htmlFor="username" className="mb-2 text-lg">
+                      نام کاربری
                     </label>
                     <Input
                       type="text"
-                      name="username"
-                      aria-label="Enter username"
+                      name="نام کاربری"
+                      aria-label="نام کاربری"
                       value={username}
-                      color="input-primary"
+                      color="input-neutral"
                       onChange={(e) => setUsername(e.target.value)}
                       className="w-full rounded-lg p-3 duration-300 ease-in-out focus:scale-105"
                       required
@@ -87,15 +82,15 @@ const Login: React.FC = () => {
                   <div className="flex flex-col gap-2">
                     <label
                       htmlFor="password"
-                      className="mb-2 text-lg dark:text-gray-400"
+                      className="mb-2 text-lg"
                     >
-                      Password
+                      رمز
                     </label>
                     <Input
                       type="password"
-                      name="password"
-                      aria-label="Enter password"
-                      color="input-primary"
+                      name="رمز"
+                      aria-label="رمز"
+                      color="input-neutral"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       className="w-full rounded-lg p-3 duration-300 ease-in-out focus:scale-105"
@@ -104,25 +99,26 @@ const Login: React.FC = () => {
                   </div>
                   <Button
                     type="submit"
-                    color="btn-primary"
+                    color="btn-neutral"
                     className="mt-6 w-full text-white"
                   >
-                    LOG IN
+                    ورود
                   </Button>
                 </form>
                 <div className="mt-4 flex flex-col items-center text-center text-sm text-gray-500">
                   <p className="cursor-default">
-                    By signing in, you agree to our{" "}
-                    <Link
-                      className="group text-amber-400 transition-all duration-100 ease-in-out"
+                  با ورود به سیستم، با ما موافقت می کنید{" "}
+                    
+                  </p>
+                  <Link
+                      className="group mt-2 text-amber-400 transition-all duration-100 ease-in-out"
                       href="/privacy_policy"
-                      title="Privacy Policy"
+                      title="سیاست حفظ حریم خصوصی"
                     >
                       <span className="cursor-pointer bg-gradient-to-r from-amber-400 to-amber-400 bg-[length:0%_2px] bg-left-bottom bg-no-repeat px-1 transition-all duration-500 ease-out group-hover:bg-[length:100%_2px]">
-                        Privacy Policy
+                        سیاست حفظ حریم خصوصی
                       </span>
                     </Link>
-                  </p>
                 </div>
               </div>
             </div>
