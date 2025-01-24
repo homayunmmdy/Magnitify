@@ -1,12 +1,13 @@
 "use client";
-import RecentPosts from "@/app/(pages)/posts/[id]/components/RecentPosts";
 import "@/app/tiptap.css";
 import useSinglePost from "@/hooks/useSinglePost";
+import Link from "next/link";
 import React from "react";
 import NotFound from "../../[...not_found]/not-found";
 import NewsBody from "./components/NewsBody";
 import NewsHead from "./components/NewsHead";
 import PostMeta from "./components/PostMeta";
+import RenderTags from "./components/RenderTags";
 import PostSeclton from "./PostSkelton";
 
 type PostsCashType = {
@@ -41,7 +42,21 @@ const Post: React.FC = () => {
               <NewsBody post={post} />
             </div>
             <div className="w-full py-3 md:w-1/4">
-              <RecentPosts />
+              <div className="flex flex-col gap-2 divide-y-4">
+                {post.categories?.length > 0 && (
+                  <div className="my-3 flex items-center gap-3">
+                    <span className="font-bold">برچسب ها:</span>
+                    <RenderTags post={post} />
+                  </div>
+                )}
+                  <Link
+                    href="/"
+                    title="برگشت به خانه"
+                    className="flex justify-center gap-2 py-3"
+                  >
+                    برگشت به خانه
+                  </Link>
+              </div>
             </div>
           </div>
         </div>

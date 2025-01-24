@@ -11,12 +11,12 @@ const NewsHead = ({ title, createdAt }: Props) => {
   };
   return (
     <>
-      <div className="bg-amber-700">
         <div className="mx-auto w-[94%] px-4 py-8 md:w-[92%]">
-          <h1 className="text-center text-4xl font-extrabold text-white">
+      <div className="border-b-2 border-amber-400 bg-base-100">
+          <h1 className="text-center text-4xl font-extrabold">
             {title}
           </h1>
-          <p className="my-3 text-center text-lg text-white">
+          <p className="my-3 text-center text-lg">
             <FormatTime
               timestamp={createdAt}
               options={options as Intl.DateTimeFormatOptions}

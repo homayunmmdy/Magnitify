@@ -20,12 +20,14 @@ const Comment = ({ comment }: { comment: Props }) => {
           <span className="font-bold">{comment.name}</span>
           <span>{comment.email}</span>
         </header>
-        <p className="flex gap-3 pt-2">
+        <p className="flex items-center gap-3 pt-2">
+          <div className="h-[32px] w-[29.825px]">
           <FaRegComment
-            color="#6366F1"
+            color="#B5560E"
             size={32}
             className="rounded-full bg-white p-2"
-          />{" "}
+          />
+          </div>
           {comment.message}
           {master && <DeleteBlock path="comments" id={comment._id} />}
         </p>

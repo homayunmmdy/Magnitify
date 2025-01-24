@@ -36,14 +36,14 @@ const Form = ({ buttonText, initalData, API }: ShareFormType) => {
       {handler.isLoading && (
         <span className="loading loading-ring loading-lg absolute"></span>
       )}
-      <form className="rounded-xl bg-gray-100 p-5" onSubmit={handleSubmit}>
+      <form className="rounded-xl border-2 border-amber-600 p-5" onSubmit={handleSubmit}>
         <div className="mb-6">
           <Input
             type="text"
-            name="name"
-            placeholder="Name"
+            name="نام"
+            placeholder="نام"
             value={formData.name}
-            color="input-primary"
+            color="input-neutral"
             onChange={handler.trakeChange}
             required={true}
             style="w-full"
@@ -53,9 +53,9 @@ const Form = ({ buttonText, initalData, API }: ShareFormType) => {
         <div className="mb-6">
           <Input
             type="email"
-            name="email"
-            color="input-primary"
-            placeholder="Email Address"
+            name="ایمیل"
+            color="input-neutral"
+            placeholder="ایمیل"
             value={formData.email}
             onChange={handler.trakeChange}
             required={true}
@@ -66,10 +66,10 @@ const Form = ({ buttonText, initalData, API }: ShareFormType) => {
         <div className="mb-6">
           <Textarea
             rows={6}
-            name="message"
-            placeholder="Message"
+            name="لطفا نظر خود را در این قسمت بنویسید ..."
+            placeholder="لطفا نظر خود را در این قسمت بنویسید ..."
             value={formData.message}
-            color="textarea-primary"
+            color="textarea-neutral"
             onChange={handler.trakeChange}
             required={true}
             style="w-full"
@@ -77,7 +77,7 @@ const Form = ({ buttonText, initalData, API }: ShareFormType) => {
           />
         </div>
         <div>
-          <Button type="submit" color="btn-primary" className="w-full p-3">
+          <Button type="submit" color="btn-neutral" className="w-full p-3">
             {buttonText}
           </Button>
         </div>
