@@ -22,22 +22,9 @@ const ServicesImg: React.FC = () => {
   return (
     <>
       {filteredData?.map((service: ServicesCashType) => (
-        <div
-          className="hero mb-5 aspect-video rounded-xl bg-amber-600"
-          key={service._id}
-          style={{
-            backgroundImage: `url(${
-              !service?.imgurl ? "/static/Image/logo.jpg" : service?.imgurl
-            })`,
-          }}
-        >
-          <div className="hero-overlay rounded-xl bg-opacity-60"></div>
-          <div className="hero-content text-center text-neutral-content">
-            <div className="max-w-md">
-              <h1 className="mb-5 text-5xl font-bold">{service?.name}</h1>
-              <p className="mb-5">{service?.description.slice(0, 90)}</p>
-            </div>
-          </div>
+        <div>
+          <h1 className="mb-2 border-b-2 border-amber-600 py-2 text-center font-bold">{service.name}</h1>
+          <p className="font-medium">{service.description.slice(0,350)}</p>
         </div>
       ))}
     </>

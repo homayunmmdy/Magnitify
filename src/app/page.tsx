@@ -1,11 +1,10 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-import { useInfiniteQuery } from "@tanstack/react-query";
 import { Spinner } from "@/components";
 import PostCard from "@/components/sections/PostCard";
-import { PostsCashType } from "@/types/CashTypes";
 import SiteConfig from "@/config/site";
-
+import { PostsCashType } from "@/types/CashTypes";
+import { useInfiniteQuery } from "@tanstack/react-query";
+import React, { useEffect, useRef } from "react";
 
 // Define the structure of the paginated response
 interface PaginatedPosts {
@@ -19,7 +18,11 @@ interface PaginatedPosts {
 }
 
 // fetch posts from the backend with pagination
-const fetchPosts = async ({ pageParam = 1 }: { pageParam?: number }): Promise<PaginatedPosts> => {
+const fetchPosts = async ({
+  pageParam = 1,
+}: {
+  pageParam?: number;
+}): Promise<PaginatedPosts> => {
   const res = await fetch(`/api/posts?page=${pageParam}&limit=10`);
 
   if (!res.ok) {
@@ -93,7 +96,7 @@ const Feed: React.FC = () => {
     );
 
   return (
-    <div className="p-4 md:p-10">
+    <div className="mx-auto mt-2 max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
       <p className="mb-8 font-bold">{SiteConfig.slogan}</p>
       {data?.pages[0]?.data.length === 0 ? (
         <div className="flex flex-col items-center justify-center">
