@@ -12,7 +12,7 @@ const PostCard = ({ post }: { post: PostsCashType }) => {
     <>
       <Link
         href={`/posts/${post._id}`}
-        className="md:hover:scale-102 group flex flex-row-reverse py-10 transition-transform duration-500 ease-in-out md:flex-row"
+        className="md:hover:scale-102 group flex flex-wrap-reverse py-10 transition-transform duration-500 ease-in-out md:flex-nowrap"
       >
         <div className="w-full px-5 pt-5 md:w-[20%]">
           <FormatTime

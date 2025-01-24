@@ -40,7 +40,7 @@ const Form = ({ buttonText, initalData, API }: ShareFormType) => {
         <div className="mb-6">
           <Input
             type="text"
-            name="نام"
+            name="name"
             placeholder="نام"
             value={formData.name}
             color="input-neutral"
@@ -53,7 +53,7 @@ const Form = ({ buttonText, initalData, API }: ShareFormType) => {
         <div className="mb-6">
           <Input
             type="email"
-            name="ایمیل"
+            name="email"
             color="input-neutral"
             placeholder="ایمیل"
             value={formData.email}
@@ -66,7 +66,7 @@ const Form = ({ buttonText, initalData, API }: ShareFormType) => {
         <div className="mb-6">
           <Textarea
             rows={6}
-            name="لطفا نظر خود را در این قسمت بنویسید ..."
+            name="message"
             placeholder="لطفا نظر خود را در این قسمت بنویسید ..."
             value={formData.message}
             color="textarea-neutral"
