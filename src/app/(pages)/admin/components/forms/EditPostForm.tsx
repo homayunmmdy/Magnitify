@@ -4,21 +4,23 @@ import {
   POST_API_URL,
   SECTIONS_API_URL,
   SERVICES_API_URL,
-} from "@/etc/config/apiConstants";
-import { SECTIONS_QUERY_KEY, SERVICES_QUERY_KEY } from "@/etc/config/Constants";
+} from "@/config/apiConstants";
+import { SECTIONS_QUERY_KEY, SERVICES_QUERY_KEY } from "@/config/Constants";
 import useFetch from "@/hooks/useFetch";
+import { PostsCashType } from "@/types/CashTypes";
 import FormHandler from "@/util/handler/FormHandler";
-import Image from "next/image";
+import { checkMaster } from "@/util/Util";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { MdDeleteOutline } from "react-icons/md";
-import { SelectField } from "../elements";
+import { CategoryList, SelectField, SelectFiledSkeleton } from "../elements";
+import { FormLayout, ImagePreview } from "../shared";
 import TiptapEditor from "../TiptapEditor";
 
-//@ts-ignore
-const EditPostForm = ({ post }) => {
+const EditPostForm = ({ post }: { post: PostsCashType }) => {
   const EDITMODE = post._id !== "new";
   const router = useRouter();
+  let master = checkMaster();
+
   const startingTicketData = {
     title: EDITMODE ? post.title : "",
     description: EDITMODE ? post.description : "",
@@ -26,7 +28,9 @@ const EditPostForm = ({ post }) => {
     section: EDITMODE ? post.section : "1",
     services: EDITMODE ? post.services : "1",
     imgurl: EDITMODE ? post.imgurl : "",
-    categories: EDITMODE ? post.categories : [],
+    categories: EDITMODE ? post.categories ?? [] : [],
+    masterEditor: master ? true : false,
+    source: EDITMODE ? post.source : "",
   };
 
   const [formData, setFormData] = useState(startingTicketData);
@@ -35,135 +39,151 @@ const EditPostForm = ({ post }) => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) =>
     handler.submit(e, formData, post._id);
 
-  const { data: services } = useFetch(SERVICES_QUERY_KEY, SERVICES_API_URL);
-  const { data: sections } = useFetch(SECTIONS_QUERY_KEY, SECTIONS_API_URL);
+  const { data: services, loading: serviceLoading } = useFetch(
+    SERVICES_QUERY_KEY,
+    SERVICES_API_URL
+  );
+  const { data: sections, loading: sectionLoading } = useFetch(
+    SECTIONS_QUERY_KEY,
+    SECTIONS_API_URL
+  );
 
   return (
-    <div className="flex justify-center">
-      {handler.isLoading && (
-        <span className="loading loading-ring loading-lg absolute"></span>
-      )}
+    <FormLayout
+      title={EDITMODE ? "Edit Post" : "New Post"}
+      isLoading={handler.isLoading}
+    >
       <form
         onSubmit={handleSubmit}
         method="post"
-        className="mb-3 flex w-full flex-col gap-3 md:w-1/2"
+        className="mb-3 flex w-full flex-col gap-3 md:flex-row"
       >
-        <h3 className="text-center text-2xl font-semibold">
-          {EDITMODE ? "Edit Post" : "New Post"}
-        </h3>
-        <div>
-          <Image
-            src={formData.imgurl}
-            title={formData.title}
-            alt={formData.title}
-            height={390.938}
-            width={695}
-            className="aspect-video w-full rounded-xl border border-indigo-500"
-          />
-        </div>
-        <Input
-          id="imgurl"
-          type="text"
-          name="imgurl"
-          label="Image Link"
-          color="input-primary"
-          value={formData.imgurl}
-          onChange={handler.trakeChange}
-        />
-        <Input
-          type="text"
-          id="title"
-          name="title"
-          label="Title"
-          color="input-primary"
-          value={formData.title}
-          onChange={handler.trakeChange}
-          required
-        />
-        <Textarea
-          id="description"
-          name="description"
-          color="textarea-primary"
-          label="description"
-          value={formData.description}
-          onChange={handler.trakeChange}
-        />
-        <div id="tiptap-style">
-          <label htmlFor="body" className="label">
-            Body
-          </label>
-          <TiptapEditor
-            content={formData.body}
-            onChange={handler.trakeBodyChanges}
-          />
-        </div>
-        {/* Add New Category */}
-        <div className="mt-2 flex w-full gap-2">
+        <div className="w-full md:w-1/2">
+          {serviceLoading ? (
+            <SelectFiledSkeleton label="Services" />
+          ) : (
+            <SelectField
+              id="services"
+              name="services"
+              label="Services"
+              value={formData.services}
+              onChange={handler.trakeChange}
+              options={services}
+            />
+          )}
+          {sectionLoading ? (
+            <SelectFiledSkeleton label="Section" />
+          ) : (
+            <SelectField
+              id="section"
+              name="section"
+              label="Section"
+              value={formData.section}
+              onChange={handler.trakeChange}
+              options={sections}
+            />
+          )}
+
           <Input
             type="text"
-            value={categoryInput}
+            id="title"
+            name="title"
+            label="Title"
+            style="w-full mb-2"
             color="input-primary"
-            onChange={(e) => setCategoryInput(e.target.value)}
-            placeholder="New Category"
-            style="w-full"
+            value={formData.title}
+            onChange={handler.trakeChange}
+            required
+          />
+          <Textarea
+            id="description"
+            name="description"
+            style="w-full mb-2"
+            color="textarea-primary"
+            label="description"
+            value={formData.description}
+            onChange={handler.trakeChange}
+          />
+          {/* Add New Category */}
+          <div className="mt-2 flex w-full gap-2">
+            <Input
+              type="text"
+              value={categoryInput}
+              color="input-primary"
+              onChange={(e) => setCategoryInput(e.target.value)}
+              placeholder="New Category"
+              style="w-full"
+            />
+            <Button
+              type="button"
+              onClick={() =>
+                handler.addCategory(categoryInput, setCategoryInput)
+              }
+              color="btn-primary"
+            >
+              Add Category
+            </Button>
+          </div>
+
+          {/* Categories List */}
+          {formData.categories.length > 0 ? (
+            <div className="flex flex-col gap-2">
+              <h4>Categories</h4>
+              {formData.categories.map((category) => (
+                <CategoryList
+                  key={category.id}
+                  category={category}
+                  onChange={handler.trakeChange}
+                  onRemove={handler.removeCategory}
+                />
+              ))}
+            </div>
+          ) : null}
+          <Input
+            type="text"
+            id="source"
+            name="source"
+            label="source"
+            style="w-full mb-2"
+            color="input-primary"
+            value={formData.source}
+            onChange={handler.trakeChange}
           />
           <Button
-            title="Add Category"
-            type="button"
-            onClick={() => handler.addCategory(categoryInput, setCategoryInput)}
+            type="submit"
             color="btn-primary"
-          />
+            aria-label={EDITMODE ? "Save" : "Post"}
+            className="btn-active mt-3 hidden w-full md:block"
+          >
+            {EDITMODE ? "Save" : "Post"}
+          </Button>
         </div>
-
-        {/* Categories List */}
-        <div className="flex flex-col gap-2">
-          <h4>Categories</h4>
-          {/* @ts-ignore */}
-          {formData.categories.map((category) => (
-            <div key={category.id} className="flex w-full items-center gap-2">
-              <Input
-                type="text"
-                value={category.name}
-                color="input-primary"
-                onChange={(e) => handler.CategoryChanges(e, category.id)}
-                style="w-full"
-              />
-              <Button
-                type="button"
-                onClick={() => handler.removeCategory(category.id)}
-                color="btn-error"
-                title={<MdDeleteOutline />}
-              />
-            </div>
-          ))}
+        <div className="w-full md:w-1/2">
+          <ImagePreview
+            imgurl={formData.imgurl}
+            title={formData.title}
+            onChange={handler.trakeChange}
+          />
+          <div id="tiptap-style">
+            <label htmlFor="body" className="label">
+              Body
+            </label>
+            <TiptapEditor
+              content={formData.body}
+              onChange={handler.trakeBodyChanges}
+            />
+          </div>
+          <Button
+            type="submit"
+            color="btn-primary"
+            aria-label={EDITMODE ? "Save" : "Post"}
+            className="btn-active mt-3 block w-full md:hidden"
+          >
+            {EDITMODE ? "Save" : "Post"}
+          </Button>
         </div>
-        {services && (
-          <SelectField
-            id="services"
-            name="services"
-            label="Services"
-            value={formData.services}
-            onChange={handler.trakeChange}
-            options={services}
-          />
-        )}
-        {sections && (
-          <SelectField
-            id="section"
-            name="section"
-            label="Section"
-            value={formData.section}
-            onChange={handler.trakeChange}
-            options={sections}
-          />
-        )}
-        <Input
-          type="submit"
-          style="btn btn-active btn-primary"
-          value={EDITMODE ? "Save" : "Post"}
-        />
       </form>
-    </div>
+    </FormLayout>
   );
 };
 

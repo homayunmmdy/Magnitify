@@ -1,5 +1,5 @@
-"use client"
-import { MASTER_KEY } from "@/etc/config/Constants";
+"use client";
+import { MASTER_KEY } from "@/config/Constants";
 import { usePathname } from "next/navigation";
 
 export const getParameterId = (sliceCharacter: number) => {

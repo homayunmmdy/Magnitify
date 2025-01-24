@@ -14,9 +14,7 @@ const Textarea: React.FC<TextareaType> = ({
   label,
   icon,
 }: TextareaType) => {
-  const classes = `textarea textarea-bordered ${icon ? "" : style} ${
-    color ? color : ""
-  }`;
+  const classes = `textarea textarea-bordered ${icon ? "" : style} ${color}`;
   return (
     <>
       {icon ? (

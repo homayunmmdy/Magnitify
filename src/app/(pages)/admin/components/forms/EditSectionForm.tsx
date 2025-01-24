@@ -1,12 +1,13 @@
 "use client";
-import { Input } from "@/components";
-import { SECTIONS_API_URL } from "@/etc/config/apiConstants";
+import { Button, Input } from "@/components";
+import { SECTIONS_API_URL } from "@/config/apiConstants";
+import { SectionCashType } from "@/types/CashTypes";
 import FormHandler from "@/util/handler/FormHandler";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { FormLayout } from "../shared";
 
-//@ts-ignore
-const EditSectionForm = ({ data }) => {
+const EditSectionForm = ({ data }: { data: SectionCashType }) => {
   const EDITMODE = data._id !== "new";
   const router = useRouter();
 
@@ -22,18 +23,15 @@ const EditSectionForm = ({ data }) => {
 
   return (
     <>
-      <div className="flex justify-center">
-        {handler.isLoading && (
-          <span className="absolute loading loading-ring loading-lg"></span>
-        )}
+      <FormLayout
+        title={EDITMODE ? "Edit Section" : "New Section"}
+        isLoading={handler.isLoading}
+      >
         <form
           onSubmit={handleSubmit}
           method="post"
-          className="flex flex-col gap-3 w-full md:w-1/2 mb-3"
+          className="mb-3 flex w-full flex-col gap-3 md:w-1/2"
         >
-          <h3 className="text-center font-semibold text-2xl">
-            {EDITMODE ? "Edit Section" : "New Section"}
-          </h3>
           <Input
             id="name"
             type="text"
@@ -53,13 +51,11 @@ const EditSectionForm = ({ data }) => {
             onChange={handler.trakeChange}
             required
           />
-          <Input
-            type="submit"
-            style="btn btn-active btn-primary"
-            value={EDITMODE ? "Save" : "Post"}
-          />
+          <Button type="submit" color="btn-primary">
+          {EDITMODE ? "Save" : "create"}
+        </Button>
         </form>
-      </div>
+      </FormLayout>
     </>
   );
 };

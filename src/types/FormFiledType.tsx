@@ -1,23 +1,19 @@
-import { InputHTMLAttributes } from "react";
+import { ButtonHTMLAttributes, InputHTMLAttributes } from "react";
 import { AllowedColors, AllowedInputType } from "./AllowedOptions";
 
 type BaseType = {
   id?: string;
   style?: string;
   ariaLabel?: string;
-  icon?: JSX.Element;
   required?: boolean;
 };
 
 export type ButtonType = {
-  title: string | JSX.Element;
   color: `btn-${AllowedColors}` | null;
-  type?: "submit" | "reset" | "button" | undefined;
-  disabled?: boolean;
-  onClick?: () => void;
-  onClickEvent?: (e: any) => void;
+  children: React.ReactNode;
+  ariaLabel?: string;
   removeDefaultStyle?: boolean;
-} & Omit<BaseType, "required">;
+}& ButtonHTMLAttributes<HTMLButtonElement> ;
 
 export type InputType = {
   color?: `input-${AllowedColors}` ;
@@ -27,6 +23,7 @@ export type InputType = {
   defaultChecked?: boolean;
   label?: string;
   checked?:boolean;
+  icon?: JSX.Element;
   removeDefaultStyle?:boolean;
 } & BaseType & InputHTMLAttributes<HTMLInputElement>;
 
@@ -38,4 +35,5 @@ export type TextareaType = {
   placeholder?: string;
   onChange?: (e: any) => void;
   label?: string;
+  icon?: JSX.Element;
 } & BaseType;

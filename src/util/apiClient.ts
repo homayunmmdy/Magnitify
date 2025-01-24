@@ -1,18 +1,15 @@
 import axios from "axios";
 
 class APIClient {
-  //@ts-ignore
-  constructor(baseURL) {
-    //@ts-ignore
+  client: any;
+  constructor(baseURL: string) {
     this.client = axios.create({
       baseURL: baseURL,
     });
   }
 
-  //@ts-ignore
-  async get(endpoint) {
+  async get(endpoint: string) {
     try {
-      //@ts-ignore
       const response = await this.client.get(endpoint);
       return response.data.document;
     } catch (error) {
@@ -21,7 +18,6 @@ class APIClient {
     }
   }
 
-  // You can add more methods for POST, PUT, DELETE etc. as needed
 }
 
 export default APIClient;

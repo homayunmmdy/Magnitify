@@ -1,22 +1,16 @@
-import { SERVICES_API_URL } from "@/etc/config/apiConstants";
-import { getById } from "@/util/ServerUtil";
+import { SERVICES_API_URL } from "@/config/apiConstants";
+import { SinglePagepParamsType } from "@/types/entities";
 import { EditServicesForm } from "../../components";
+import { FetchDataForEditPage } from "@/util/ServerUtil";
 
-let updateservicesData = {};
-{/* @ts-ignore */}
-const EditServicesPage = async ({ params }) => {
-  const EDITMODE = params.id === "new" ? false : true;
+const EditAdminServices = async ({
+  params,
+}: {
+  params: SinglePagepParamsType;
+}) => {
+  const updateData = await FetchDataForEditPage(SERVICES_API_URL, params.id);
 
-  if (EDITMODE) {
-    updateservicesData = await getById(SERVICES_API_URL,params.id);
-    {/* @ts-ignore */}
-    updateservicesData = updateservicesData.document;
-  } else {
-    updateservicesData = {
-      _id: "new",
-    };
-  }
-  return <EditServicesForm data={updateservicesData} />;
+  return <EditServicesForm data={updateData} />;
 };
 
-export default EditServicesPage;
+export default EditAdminServices;

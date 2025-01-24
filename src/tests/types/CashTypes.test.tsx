@@ -1,4 +1,4 @@
-import { PostsCashType, TimeLIneCashType, PublicationsCashType, ServicesCashType, SectionCashType, ContactsCashType, EmailCashType, TicketsCashType, TextAdvCashType } from "@/types/CashTypes";
+import { PostsCashType, TimeLIneCashType, ServicesCashType, SectionCashType, ContactsCashType, EmailCashType, TicketsCashType, TextAdvCashType } from "@/types/CashTypes";
 
 describe('Custom Types', () => {
     describe('PostsCashType', () => {
@@ -51,42 +51,6 @@ describe('Custom Types', () => {
         expect(timeline).toHaveProperty('date');
         expect(timeline).toHaveProperty('description');
         expect(timeline).not.toHaveProperty('body');
-      });
-    });
-  
-    describe('PublicationsCashType', () => {
-      it('should have all required properties and optional properties', () => {
-        const publication: PublicationsCashType = {
-          _id: '1',
-          body: 'Test body',
-          createdAt: '2023-01-01',
-          updatedAt: '2023-01-02',
-          __v: 1,
-          title: 'Test Publication',
-          imgurl: 'https://example.com/image.jpg',
-          description: 'Test description',
-          author: 'Test Author',
-          page_amount: 100,
-          publisher: 'Test Publisher',
-          publication_date: '2023-01-03',
-          pdf_link: 'https://example.com/pdf',
-          categories: [{ id: 1, name: 'Category 1' }]
-        };
-  
-        expect(publication).toHaveProperty('_id');
-        expect(publication).toHaveProperty('body');
-        expect(publication).toHaveProperty('createdAt');
-        expect(publication).toHaveProperty('updatedAt');
-        expect(publication).toHaveProperty('__v');
-        expect(publication).toHaveProperty('title');
-        expect(publication).toHaveProperty('imgurl');
-        expect(publication).toHaveProperty('description');
-        expect(publication).toHaveProperty('author');
-        expect(publication).toHaveProperty('page_amount');
-        expect(publication).toHaveProperty('publisher');
-        expect(publication).toHaveProperty('publication_date');
-        expect(publication).toHaveProperty('pdf_link');
-        expect(publication).toHaveProperty('categories');
       });
     });
   

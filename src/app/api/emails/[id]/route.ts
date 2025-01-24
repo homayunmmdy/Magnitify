@@ -1,10 +1,12 @@
-import EmailData from "@/etc/cash/EmailData";
+import EmailCash from "@/cash/EmailCash";
 import { EmailsModel } from "@/models";
 import RequestHandler from "@/util/handler/RequestHandler";
 
-//@ts-ignore
-export async function DELETE(req, { params }) {
+export async function DELETE(
+  req: Request,
+  { params }: { params: { id: string } }
+) {
   const { id } = params;
-  const handler = new RequestHandler(EmailsModel, EmailData);
+  const handler = new RequestHandler(EmailsModel, EmailCash);
   return handler.DELETE(id, "Email Deleted successfully");
 }

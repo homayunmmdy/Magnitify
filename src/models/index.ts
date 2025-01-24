@@ -1,8 +1,12 @@
-export { default as ContactsModel } from "./Contacts";
-export { default as EmailsModel } from "./Emails";
-export { default as PostModel } from "./Post";
-export { default as PublicationsModel } from "./Publications";
-export { default as SectionModel } from "./Section";
-export { default as ServiceModel } from "./Services";
-export { default as TextAdvModel } from "./TextAdv";
-export { default as TicketModel } from "./Ticket";
+/**
+ * @file Index file for exporting all models from the models directory.
+ * @module models
+ */
+
+export { default as CommentsModel } from "./model/Comments";
+export { default as ContactsModel } from "./model/Contacts";
+export { default as EmailsModel } from "./model/Emails";
+export { default as PostModel } from "./model/Post";
+export { default as SectionModel } from "./model/Section";
+export { default as ServiceModel } from "./model/Services";
+export { default as TextAdvModel } from "./model/TextAdv";

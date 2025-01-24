@@ -6,7 +6,7 @@ type BaseType = {
   __v: number;
 };
 
-type Category = {
+export type CategoryType = {
   id: number;
   name: string;
 };
@@ -17,21 +17,16 @@ export type PostsCashType = {
   description: string;
   services: string;
   section: string;
-  categories?: Category[];
+  categories?: CategoryType[];
+  masterEditor?: boolean;
+  source?: string;
 } & BaseType;
 
-
-export type PublicationsCashType = {
+export type TimeLIneCashType = {
   title: string;
-  imgurl: string;
+  date: string;
   description: string;
-  author: string;
-  page_amount: number;
-  publisher: string;
-  publication_date?: string;
-  pdf_link?: string;
-  categories?: Category[];
-} & BaseType;
+} & Omit<BaseType, "body">;
 
 export type ServicesCashType = {
   name: string;
@@ -71,3 +66,17 @@ export type TextAdvCashType = {
   body: string;
   link: string;
 } & BaseType;
+
+export type ContributeCashType = {
+  title: string;
+  description: string;
+  link: string;
+  date: string;
+} & Omit<BaseType, "body">;
+
+export type CommentsCashType = {
+  postId: string;
+  name: string;
+  email: string;
+  message: string;
+} & Omit<BaseType, "body">;

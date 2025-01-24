@@ -3,14 +3,15 @@ import { ButtonType } from "@/types/FormFiledType";
 
 const Button: React.FC<ButtonType> = ({
   id,
-  title,
-  icon,
+  children,
   color,
-  style,
+  className,
   onClick,
   disabled,
   type,
   ariaLabel,
+  value,
+  form,
   removeDefaultStyle,
 }: ButtonType) => {
   return (
@@ -19,11 +20,12 @@ const Button: React.FC<ButtonType> = ({
       disabled={disabled}
       type={type}
       id={id}
-      className={removeDefaultStyle ? style : `btn ${color} ${style}`}
+      value={value}
+      form={form}
+      className={removeDefaultStyle ? ` ${className}` : `btn ${color === 'btn-null' ? '' : color} ${className}`}
       aria-label={ariaLabel}
     >
-      {icon}
-      {title}
+      {children}
     </button>
   );
 };

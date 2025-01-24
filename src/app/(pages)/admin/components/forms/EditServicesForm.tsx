@@ -1,13 +1,16 @@
 "use client";
-import { Input, Textarea } from "@/components";
-import { SERVICES_API_URL } from "@/etc/config/apiConstants";
+import { Button, Input, Textarea } from "@/components";
+import { SERVICES_API_URL } from "@/config/apiConstants";
+import { SERVICES_QUERY_KEY } from "@/config/Constants";
+import useFetch from "@/hooks/useFetch";
+import { ServicesCashType } from "@/types/CashTypes";
 import FormHandler from "@/util/handler/FormHandler";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
+import { FormLayout, ImagePreview } from "../shared";
 
-//@ts-ignore
-const EditServicesForm = ({ data }) => {
+const EditServicesForm = ({ data }: { data: ServicesCashType }) => {
   const EDITMODE = data._id !== "new";
   const router = useRouter();
 
@@ -19,40 +22,33 @@ const EditServicesForm = ({ data }) => {
   };
 
   const [formData, setFormData] = useState(startingData);
+  const { data: services } = useFetch(SERVICES_QUERY_KEY, SERVICES_API_URL);
+
   const handler = new FormHandler(setFormData, SERVICES_API_URL, router);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) =>
-    handler.submit(e, formData, data._id);
+    services.map((service: ServicesCashType) => {
+      if (service.secid === formData.secid) {
+        toast.error("Service id already exist try another");
+        e.preventDefault();
+      } else {
+        handler.submit(e, formData, data._id);
+      }
+    });
+
   return (
     <>
-      <div className="flex justify-center">
-        {handler.isLoading && (
-          <span className="absolute loading loading-ring loading-lg"></span>
-        )}
+      <FormLayout
+        title={EDITMODE ? "Edit Services" : "New Services"}
+        isLoading={handler.isLoading}
+      >
         <form
           onSubmit={handleSubmit}
           method="post"
-          className="flex flex-col gap-3 w-full md:w-1/2 mb-3"
+          className="mb-3 flex w-full flex-col gap-3 md:w-1/2"
         >
-          <h3 className="text-center font-semibold text-2xl">
-            {EDITMODE ? "Edit Services" : "New Services"}
-          </h3>
-          <div>
-            <Image
-              src={formData.imgurl}
-              title={formData.name}
-              alt={formData.name}
-              height={390.938}
-              width={695}
-              className="w-full rounded-xl border border-indigo-500 aspect-video"
-            />
-          </div>
-          <Input
-            id="imgurl"
-            type="text"
-            name="imgurl"
-            label="Image Link"
-            color="input-primary"
-            value={formData.imgurl}
+          <ImagePreview
+            imgurl={formData.imgurl}
+            title={formData.name}
             onChange={handler.trakeChange}
           />
           <Input
@@ -82,13 +78,11 @@ const EditServicesForm = ({ data }) => {
             value={formData.description}
             onChange={handler.trakeChange}
           />
-          <Input
-            type="submit"
-            style="btn btn-active btn-primary"
-            value={EDITMODE ? "Save" : "Post"}
-          />
+          <Button type="submit" color="btn-primary">
+          {EDITMODE ? "Save" : "create"}
+        </Button>
         </form>
-      </div>
+      </FormLayout>
     </>
   );
 };

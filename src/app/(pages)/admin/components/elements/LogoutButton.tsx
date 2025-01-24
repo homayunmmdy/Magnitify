@@ -1,9 +1,9 @@
 "use client";
 import { Button } from "@/components";
-import { AUTH_KEY } from "@/etc/config/Constants";
+import { AUTH_KEY } from "@/config/Constants";
 import useCheckLogin from "@/hooks/useCheckLogin";
 import { useRouter } from "next/navigation";
-import React from 'react';
+import React from "react";
 
 const LogoutButton: React.FC = () => {
   const router = useRouter();
@@ -17,12 +17,9 @@ const LogoutButton: React.FC = () => {
 
   return (
     <>
-      <Button
-        title="Logout"
-        color="btn-error"
-        onClick={handleLogout}
-        style="w-full"
-      />
+      <Button color="btn-error" onClick={handleLogout} className="w-full">
+        Logout
+      </Button>
     </>
   );
 };

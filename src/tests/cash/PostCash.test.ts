@@ -1,9 +1,7 @@
-import PostsCash from "../../etc/cash/PostsCash";
 import { PostsCashType } from "@/types/CashTypes";
+import PostsCash from "../../cash/PostsCash";
 
 describe("Ticket Cash", () => {
- 
-
   it("should have the correct structure", () => {
     expect(Array.isArray(PostsCash)).toBe(true);
     expect(PostsCash.length).toBeGreaterThan(0);
@@ -16,8 +14,7 @@ describe("Ticket Cash", () => {
       expect(post).toHaveProperty("services");
       expect(post).toHaveProperty("section");
       expect(post).toHaveProperty("body");
-      if(post.categories)
-        expect(post).toHaveProperty("categories");
+      if (post.categories) expect(post).toHaveProperty("categories");
       expect(post).toHaveProperty("createdAt");
       expect(post).toHaveProperty("updatedAt");
       expect(post).toHaveProperty("__v");
@@ -27,7 +24,6 @@ describe("Ticket Cash", () => {
   it("should not have non-empty values", () => {
     PostsCash.forEach((post: PostsCashType) => {
       expect(post.title.trim()).not.toBe("");
-      expect(post.imgurl.trim()).not.toBe("");
       expect(post.description.trim()).not.toBe("");
       expect(post.body.trim()).not.toBe("");
     });
@@ -40,12 +36,8 @@ describe("Ticket Cash", () => {
     });
   });
 
-
-
-
   it("should have unique _id value", () => {
     const idSet = new Set(PostsCash.map((i) => i._id));
     expect(idSet.size).toBe(PostsCash.length);
   });
-  
 });

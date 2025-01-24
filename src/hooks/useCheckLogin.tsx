@@ -1,5 +1,5 @@
 "use client";
-import { AUTH_KEY } from "@/etc/config/Constants";
+import { AUTH_KEY } from "@/config/Constants";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 

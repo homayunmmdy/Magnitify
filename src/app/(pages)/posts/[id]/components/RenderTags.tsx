@@ -1,11 +1,11 @@
-// @ts-ignore
-const RenderTags = ({ post }) => {
+import { PostsCashType } from "@/types/CashTypes";
+
+const RenderTags = ({ post }: { post: PostsCashType }) => {
   return (
     <>
-      <ul className="flex gap-2 flex-wrap my-2">
-        {/* @ts-ignore */}
+      <ul className="flex flex-wrap gap-2">
         {post.categories?.map((category) => (
-          <li key={category._id} className="badge badge-primary badge-outline p-4">
+          <li key={category.id} className="badge badge-primary badge-outline p-4">
             {category.name}
           </li>
         ))}

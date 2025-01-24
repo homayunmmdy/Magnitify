@@ -1,23 +1,16 @@
-import { POST_API_URL } from "@/etc/config/apiConstants";
-import { getById } from "@/util/ServerUtil";
+import { POST_API_URL } from "@/config/apiConstants";
+import { SinglePagepParamsType } from "@/types/entities";
 import { EditPostForm } from "../../components";
+import { FetchDataForEditPage } from "@/util/ServerUtil";
 
-let updateTicketData = {};
-{/* @ts-ignore */}
-const SinglePostsPage = async ({ params }) => {
-  const EDITMODE = params.id === "new" ? false : true;
+const EditAdminPosts = async ({
+  params,
+}: {
+  params: SinglePagepParamsType;
+}) => {
+  const updateData = await FetchDataForEditPage(POST_API_URL, params.id);
 
-  if (EDITMODE) {
-    updateTicketData = await getById(POST_API_URL,params.id);
-    {/* @ts-ignore */}
-    updateTicketData = updateTicketData.document;
-  } else {
-    updateTicketData = {
-      _id: "new",
-    };
-  }
-
-  return <EditPostForm post={updateTicketData} />;
+  return <EditPostForm post={updateData} />;
 };
 
-export default SinglePostsPage;
+export default EditAdminPosts;

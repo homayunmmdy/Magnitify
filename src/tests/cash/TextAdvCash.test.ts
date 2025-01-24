@@ -1,5 +1,5 @@
-import TextAdvCash from "../../etc/cash/TextAdvCash";
 import { TextAdvCashType } from "@/types/CashTypes";
+import TextAdvCash from "../../cash/TextAdvCash";
 
 describe("TextAdvCash", () => {
   it("should have the correct structure", () => {

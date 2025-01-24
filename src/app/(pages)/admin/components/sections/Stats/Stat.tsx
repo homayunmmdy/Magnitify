@@ -9,10 +9,10 @@ interface Props {
 const Stat: React.FC<Props> = ({ title, number, icon }: Props) => {
   return (
     <>
-      <div className="btn h-full w-full shadow-lg px-2 py-7">
+      <div className="btn h-full w-full px-2 py-7 shadow-lg">
         <span>{icon}</span>
         {title}
-        <div className="badge badge-secondary">+{number}</div>
+        <div className="badge badge-primary text-white">+{number}</div>
       </div>
     </>
   );

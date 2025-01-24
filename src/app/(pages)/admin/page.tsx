@@ -7,6 +7,7 @@ const Admin = () => {
   useCheckLogin()
   return (
     <div>
+       <title>The Ultimate Admin Panel Nexca Good for Agencies and Individuals</title>
       <Stats />
       <RecentPosts />
     </div>
