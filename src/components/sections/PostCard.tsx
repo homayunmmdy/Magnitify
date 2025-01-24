@@ -1,29 +1,30 @@
+import FormatTime from "@/app/(pages)/posts/components/FormatTime";
 import { PostsCashType } from "@/types/CashTypes";
-import Image from "next/image";
 import Link from "next/link";
 
 const PostCard = ({ post }: { post: PostsCashType }) => {
+  const options = {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  };
   return (
     <>
-      <article className="card h-full rounded-xl bg-base-100 shadow-xl transition-transform duration-500 ease-in-out md:hover:scale-105">
-        <Link href={`/posts/${post._id}`}>
-          <figure className="px-5 pt-5">
-            <Image
-              src={!post.imgurl ? "/static/Image/logo.jpg" : post.imgurl}
-              alt=""
-              width={662.172}
-              height={372.469}
-              className="aspect-video rounded-xl bg-gray-600 object-cover"
-            />
-          </figure>
-          <section className="card-body items-center p-5 text-center">
-            <h2 className="card-title">
-              {post.title.slice(0, 70).slice(0, 100)}
-            </h2>
-            <p>{post.description.slice(0, 60)}</p>
-          </section>
-        </Link>
-      </article>
+      <Link
+        href={`/posts/${post._id}`}
+        className="md:hover:scale-102 group flex py-10 transition-transform duration-500 ease-in-out"
+      >
+        <div className="w-[20%] px-5 pt-5">
+          <FormatTime
+            timestamp={post.createdAt}
+            options={options as Intl.DateTimeFormatOptions}
+          />
+        </div>
+        <section className="w-[80%]">
+          <h2 className="font-2xl mb-3 font-bold group-hover:text-amber-700">{post.title.slice(0, 120)}</h2>
+          <p>{post.description.slice(0, 300)}</p>
+        </section>
+      </Link>
     </>
   );
 };

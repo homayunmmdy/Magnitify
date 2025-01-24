@@ -7,7 +7,7 @@ interface FormatTimeProps {
 const FormatTime = ({ timestamp, options }: FormatTimeProps) => {
     const formatDate = (timestamp: string, options: Intl.DateTimeFormatOptions) => {
         const date = new Date(timestamp);
-        return date.toLocaleString("en-GB", options);
+        return date.toLocaleString("fa-IR", options);
     };
 
     return <>{formatDate(timestamp, options)}</>;

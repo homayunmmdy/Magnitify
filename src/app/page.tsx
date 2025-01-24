@@ -94,13 +94,13 @@ const Feed: React.FC = () => {
 
   return (
     <div className="p-4 md:p-10">
-      <p className="mb-8 font-bold text-gray-800">{SiteConfig.slogan}</p>
+      <p className="mb-8 font-bold">{SiteConfig.slogan}</p>
       {data?.pages[0]?.data.length === 0 ? (
         <div className="flex flex-col items-center justify-center">
           <p className="text-lg font-medium">No posts available!</p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-4">
+        <div className="flex flex-col gap-4 divide-y-4">
           {data?.pages.map((page, i) => (
             <React.Fragment key={i}>
               {page.data.map((post: PostsCashType) => (
