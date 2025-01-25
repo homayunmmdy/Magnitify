@@ -1,16 +1,11 @@
 import "@/app/tiptap.css";
 import { Form, Titr } from "@/components";
-import NexcaMark from "@/components/NexcaMark";
-import { MorePostsSec } from "@/components/sections";
 import { COMMENTS_API_URL } from "@/config/apiConstants";
 import { COMMENTS_KEY } from "@/config/Constants";
 import useFetch from "@/hooks/useFetch";
 import { CommentsCashType } from "@/types/CashTypes";
 import DOMPurify from "isomorphic-dompurify";
-import Image from "next/image";
-import Link from "next/link";
 import Comment from "./Comment";
-import RenderTags from "./RenderTags";
 import SharePost from "./SharePost";
 
 const NewsBody = ({ post }: { post: any }) => {
@@ -42,13 +37,10 @@ const NewsBody = ({ post }: { post: any }) => {
         description={post.description}
         POSTURL={`/posts/${post._id}`}
       />
-      
-    
+
       {comments?.length > 0 && (
         <div className="my-5 rounded-xl border-2 border-amber-600 p-5">
           <Titr
-            // resetStyle={true}
-            // style="bg-green-400 text-center p-5 flex justify-center items-center rounded-xl mb-5 font-bold text-xl text-white"
             title="نظرات"
             item="text-right"
           />
@@ -58,7 +50,7 @@ const NewsBody = ({ post }: { post: any }) => {
           ))}
         </div>
       )}
-        <Form
+      <Form
         buttonText="ارسال نظر"
         initalData={initalData}
         API={COMMENTS_API_URL}

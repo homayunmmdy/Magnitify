@@ -32,6 +32,9 @@ interface TiptapEditorProps {
 const limit = 9999;
 
 const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange }) => {
+  const [height, setHeight] = React.useState(480)
+  const [width, setWidth] = React.useState(640)
+  
   const editor = useEditor({
     extensions: [
       StarterKit,
@@ -55,6 +58,7 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange }) => {
     },
   });
 
+  
   const setLink = useCallback(() => {
     const previousUrl = editor?.getAttributes("link").href;
     const url = window.prompt("URL", previousUrl);
