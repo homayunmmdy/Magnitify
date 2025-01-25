@@ -51,6 +51,11 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange }) => {
       Youtube.configure({
         controls: false,
         nocookie: true,
+        allowFullscreen: true,
+        autoplay: true,
+        ccLanguage: 'fa',
+        loop: true,
+        interfaceLanguage: 'fa'
       }),
       Link.configure({
         openOnClick: false,
@@ -59,7 +64,11 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange }) => {
       }),
     ],
     content,
-    
+    editorProps: {
+      attributes: {
+        spellcheck: 'false',
+      },
+    },
     onUpdate: ({ editor }) => {
       onChange(editor.getHTML());
       
