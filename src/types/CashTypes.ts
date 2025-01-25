@@ -16,7 +16,6 @@ export type PostsCashType = {
   imgurl: string;
   description: string;
   services: string;
-  section: string;
   categories?: CategoryType[];
   masterEditor?: boolean;
   source?: string;

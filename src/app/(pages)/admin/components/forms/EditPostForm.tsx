@@ -2,10 +2,9 @@
 import { Button, Input, Textarea } from "@/components";
 import {
   POST_API_URL,
-  SECTIONS_API_URL,
   SERVICES_API_URL,
 } from "@/config/apiConstants";
-import { SECTIONS_QUERY_KEY, SERVICES_QUERY_KEY } from "@/config/Constants";
+import {  SERVICES_QUERY_KEY } from "@/config/Constants";
 import useFetch from "@/hooks/useFetch";
 import { PostsCashType } from "@/types/CashTypes";
 import FormHandler from "@/util/handler/FormHandler";
@@ -13,7 +12,7 @@ import { checkMaster } from "@/util/Util";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { CategoryList, SelectField, SelectFiledSkeleton } from "../elements";
-import { FormLayout, ImagePreview } from "../shared";
+import { FormLayout } from "../shared";
 import TiptapEditor from "../TiptapEditor";
 
 const EditPostForm = ({ post }: { post: PostsCashType }) => {
@@ -25,7 +24,6 @@ const EditPostForm = ({ post }: { post: PostsCashType }) => {
     title: EDITMODE ? post.title : "",
     description: EDITMODE ? post.description : "",
     body: EDITMODE ? post.body : "",
-    section: EDITMODE ? post.section : "1",
     services: EDITMODE ? post.services : "1",
     imgurl: EDITMODE ? post.imgurl : "",
     categories: EDITMODE ? post.categories ?? [] : [],
@@ -42,10 +40,6 @@ const EditPostForm = ({ post }: { post: PostsCashType }) => {
   const { data: services, loading: serviceLoading } = useFetch(
     SERVICES_QUERY_KEY,
     SERVICES_API_URL
-  );
-  const { data: sections, loading: sectionLoading } = useFetch(
-    SECTIONS_QUERY_KEY,
-    SECTIONS_API_URL
   );
 
   return (

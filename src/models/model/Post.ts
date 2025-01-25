@@ -35,10 +35,6 @@ const postSchema = new Schema(
       type: String,
       trim: true,
     },
-    section: {
-      type: String,
-      trim: true,
-    },
     services: {
       type: String,
       trim: true,

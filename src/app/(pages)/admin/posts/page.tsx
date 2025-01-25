@@ -13,7 +13,6 @@ import {
 import useFetch from "@/hooks/useFetch";
 import {
   PostsCashType,
-  SectionCashType,
   ServicesCashType,
 } from "@/types/CashTypes";
 import { checkMaster } from "@/util/Util";
@@ -47,13 +46,7 @@ const Posts = () => {
     SERVICES_QUERY_KEY,
     SERVICES_API_URL
   );
-  // const sections = Array.from(
-  //   new Set(posts.map((post: PostsCashType) => post.section).filter(Boolean))
-  // );
-  const { data: sections, loading: sectionLoading } = useFetch(
-    SECTIONS_QUERY_KEY,
-    SECTIONS_API_URL
-  );
+
 
   useEffect(() => {
     setPosts(data?.data || []);
@@ -88,12 +81,9 @@ const Posts = () => {
         .includes(searchQuery.toLowerCase());
       const matchesService =
         !selectedService || post.services === selectedService;
-      const matchesSection =
-        !selectedSection || post.section === selectedSection;
-      const matchesMasterEditor = isMaster || !post.masterEditor;
 
       return (
-        matchesSearch && matchesService && matchesSection && matchesMasterEditor
+        matchesSearch && matchesService  
       );
     });
 
@@ -159,7 +149,6 @@ const Posts = () => {
 
         {isFilterOpen && (
           <div className="rounded-md border border-amber-600 p-4 shadow-sm">
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div>
                 <label className="mb-1 block text-sm font-medium">
                   سرویس
@@ -167,7 +156,7 @@ const Posts = () => {
                 <select
                   value={selectedService}
                   onChange={handleServiceChange}
-                  className="select select-primary mb-2 w-full"
+                  className="select select-bordered mb-2 w-full"
                 >
                   <option value="">همه سرویس ها</option>
                   {services.map((service: ServicesCashType) => (
@@ -177,24 +166,6 @@ const Posts = () => {
                   ))}
                 </select>
               </div>
-              <div>
-                <label className="mb-1 block text-sm font-medium">
-                  قسمت
-                </label>
-                <select
-                  value={selectedSection}
-                  onChange={handleSectionChange}
-                  className="select select-primary mb-2 w-full"
-                >
-                  <option value="">همه قسمت ها</option>
-                  {sections.map((section: SectionCashType) => (
-                    <option key={section.__v} value={section.secid}>
-                      {section.name}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
             <div className="mt-4 flex justify-end">
               <Button onClick={clearFilters} color="btn-primary">
                 حذف فلیتر

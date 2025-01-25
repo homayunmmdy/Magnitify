@@ -12,7 +12,6 @@ describe("Ticket Cash", () => {
       expect(post).toHaveProperty("imgurl");
       expect(post).toHaveProperty("description");
       expect(post).toHaveProperty("services");
-      expect(post).toHaveProperty("section");
       expect(post).toHaveProperty("body");
       if (post.categories) expect(post).toHaveProperty("categories");
       expect(post).toHaveProperty("createdAt");
