@@ -12,6 +12,7 @@ import StarterKit from "@tiptap/starter-kit";
 import React, { useCallback } from "react";
 import { GrOrderedList } from "react-icons/gr";
 import { IoMdCode, IoMdLink } from "react-icons/io";
+import Youtube from '@tiptap/extension-youtube'
 import {
   MdFormatItalic,
   MdFormatListBulleted,
@@ -24,6 +25,8 @@ import {
   MdStrikethroughS,
 } from "react-icons/md";
 import { PiHighlighterFill } from "react-icons/pi";
+import { YoutubeBtn } from "./YoutubeBtn";
+
 
 interface TiptapEditorProps {
   content: string;
@@ -32,8 +35,7 @@ interface TiptapEditorProps {
 const limit = 9999;
 
 const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange }) => {
-  const [height, setHeight] = React.useState(480)
-  const [width, setWidth] = React.useState(640)
+  
   
   const editor = useEditor({
     extensions: [
@@ -46,6 +48,10 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange }) => {
       CharacterCount.configure({
         limit,
       }),
+      Youtube.configure({
+        controls: false,
+        nocookie: true,
+      }),
       Link.configure({
         openOnClick: false,
         autolink: true,
@@ -53,8 +59,10 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange }) => {
       }),
     ],
     content,
+    
     onUpdate: ({ editor }) => {
       onChange(editor.getHTML());
+      
     },
   });
 
@@ -253,7 +261,7 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange }) => {
         className="prose max-w-none"
         id="news_body"
       />
-
+      <YoutubeBtn editor={editor}/>
       <div
         className={`character-count${
           editor.storage.characterCount.characters() === limit
