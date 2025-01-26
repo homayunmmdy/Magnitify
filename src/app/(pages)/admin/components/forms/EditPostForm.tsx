@@ -25,7 +25,7 @@ const EditPostForm = ({ post }: { post: PostsCashType }) => {
     description: EDITMODE ? post.description : "",
     body: EDITMODE ? post.body : "",
     services: EDITMODE ? post.services : "1",
-    imgurl: EDITMODE ? post.imgurl : "",
+    imgurl:  "",
     categories: EDITMODE ? post.categories ?? [] : [],
     masterEditor: master ? true : false,
     source: EDITMODE ? post.source : "",

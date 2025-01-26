@@ -13,7 +13,7 @@ export type CategoryType = {
 
 export type PostsCashType = {
   title: string;
-  imgurl: string;
+  imgurl?: string;
   description: string;
   services: string;
   categories?: CategoryType[];

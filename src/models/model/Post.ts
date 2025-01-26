@@ -29,7 +29,6 @@ const postSchema = new Schema(
     },
     imgurl: {
       type: String,
-      required: true,
     },
     description: {
       type: String,
