@@ -16,7 +16,7 @@ const Comment = ({ comment }: { comment: Props }) => {
   return (
     <>
       <section className="my-5 rounded-xl bg-gray-100 p-6">
-        <header className="flex gap-4">
+        <header className="flex flex-wrap gap-4 overflow-hidden">
           <span className="font-bold">{comment.name}</span>
           <span>{comment.email}</span>
         </header>
