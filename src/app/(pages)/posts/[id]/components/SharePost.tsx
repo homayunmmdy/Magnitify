@@ -33,7 +33,7 @@ const SharePost = ({ POSTURL, title, description }: SharePostType) => {
       id: 4,
       name: "Telegram",
       icon: <FaTelegramPlane size={20} />,
-      link: `https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`,
+      link: `https://t.me/share/url?url=${encodedUrl}&text=${encodedUrl}%0A%0A${encodedTitle}%0A%0A@wikifarsii`,
     },
     {
       id: 5,
