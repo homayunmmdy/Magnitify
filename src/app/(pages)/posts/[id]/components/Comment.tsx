@@ -1,6 +1,5 @@
 "use client";
 import { DeleteBlock } from "@/app/(pages)/admin/components/elements";
-import { checkMaster } from "@/util/Util";
 import { FaRegComment } from "react-icons/fa6";
 
 interface Props {
@@ -11,7 +10,6 @@ interface Props {
 }
 
 const Comment = ({ comment }: { comment: Props }) => {
-  let master = checkMaster();
 
   return (
     <>
@@ -29,7 +27,6 @@ const Comment = ({ comment }: { comment: Props }) => {
           />
           </div>
           {comment.message}
-          {master && <DeleteBlock path="comments" id={comment._id} />}
         </p>
       </section>
     </>

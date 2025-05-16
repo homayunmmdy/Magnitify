@@ -7,15 +7,13 @@ import ErrorText from "./ErrorText";
 interface Props {
   data: any;
   path: string;
-  editor?: boolean;
 }
-const DataTable = ({ data, path, editor }: Props) => {
+const DataTable = ({ data, path }: Props) => {
   // Sort data by `secid` in ascending order
   const sortedData = data ? [...data].sort((a, b) => a.secid - b.secid) : [];
 
   return (
     <div className="overflow-x-auto">
-      {editor ? (
         <div className="flex w-full justify-center">
           <Link href={`/admin/${path}/new`}>
             <Button
@@ -24,7 +22,6 @@ const DataTable = ({ data, path, editor }: Props) => {
             >{`New ${path}`}</Button>
           </Link>
         </div>
-      ) : null}
       {sortedData?.length === 0 ? (
         <ErrorText>There are currently no services created.</ErrorText>
       ) : (
@@ -34,7 +31,7 @@ const DataTable = ({ data, path, editor }: Props) => {
               <th>id</th>
               <th>sec</th>
               <th>edit</th>
-              {editor ? <th>delete</th> : null}
+              <th>delete</th>
             </tr>
           </thead>
           <tbody>
@@ -49,11 +46,9 @@ const DataTable = ({ data, path, editor }: Props) => {
                     </Button>
                   </Link>
                 </td>
-                {editor ? (
                   <td>
                     <DeleteBlock path={path} id={item._id} />
                   </td>
-                ) : null}
               </tr>
             ))}
           </tbody>

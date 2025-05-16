@@ -3,7 +3,6 @@ import { Spinner } from "@/components";
 import { SECTIONS_API_URL } from "@/config/apiConstants";
 import { SECTIONS_QUERY_KEY } from "@/config/Constants";
 import useFetch from "@/hooks/useFetch";
-import { checkMaster } from "@/util/Util";
 import React from "react";
 import { DataTable } from "../components/elements";
 
@@ -16,11 +15,10 @@ const AdminSectionPage: React.FC = () => {
     return <Spinner />;
   }
 
-  let master = checkMaster();
 
   return (
     <>
-      <DataTable editor={master} data={sections} path="sections" />
+      <DataTable  data={sections} path="sections" />
     </>
   );
 };

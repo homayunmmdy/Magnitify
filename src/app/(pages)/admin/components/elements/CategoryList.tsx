@@ -14,7 +14,7 @@ const CategoryList = ({ category, onChange, onRemove }: Props) => (
     <Input
       type="text"
       value={category.name}
-      color="input-primary"
+      color="input-warning"
       onChange={(e) => onChange(e, category.id)}
       className="w-full"
       style="w-full"

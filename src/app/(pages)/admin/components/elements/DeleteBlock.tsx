@@ -1,6 +1,5 @@
 "use client";
 import { Button } from "@/components";
-import { checkMaster } from "@/util/Util";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
@@ -27,14 +26,9 @@ const DeleteBlock: React.FC<Props> = ({ path, id, masterEditor }: Props) => {
     }
     return () => clearTimeout(timer);
   }, [isConfirmOpen]);
-  let isMaster = checkMaster();
 
   const handleDelete = async () => {
-    if (masterEditor && !isMaster) {
-      toast.error("You can not delete masterEditor content");
-      setIsConfirmOpen(false);
-      return;
-    } else {
+
       try {
         const res = await fetch(`/api/${path}/${id}`, {
           method: "DELETE",
@@ -51,7 +45,7 @@ const DeleteBlock: React.FC<Props> = ({ path, id, masterEditor }: Props) => {
         toast.error("Something went wrong try one more time please");
         console.error("Error deleting item:", error);
       }
-    }
+
   };
 
   return (

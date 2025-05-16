@@ -8,7 +8,6 @@ import {  SERVICES_QUERY_KEY } from "@/config/Constants";
 import useFetch from "@/hooks/useFetch";
 import { PostsCashType } from "@/types/CashTypes";
 import FormHandler from "@/util/handler/FormHandler";
-import { checkMaster } from "@/util/Util";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { CategoryList, SelectField, SelectFiledSkeleton } from "../elements";
@@ -18,7 +17,6 @@ import TiptapEditor from "../TiptapEditor";
 const EditPostForm = ({ post }: { post: PostsCashType }) => {
   const EDITMODE = post._id !== "new";
   const router = useRouter();
-  let master = checkMaster();
 
   const startingTicketData = {
     title: EDITMODE ? post.title : "",
@@ -27,7 +25,6 @@ const EditPostForm = ({ post }: { post: PostsCashType }) => {
     services: EDITMODE ? post.services : "1",
     imgurl:  "",
     categories: EDITMODE ? post.categories ?? [] : [],
-    masterEditor: master ? true : false,
     source: EDITMODE ? post.source : "",
   };
 
@@ -54,7 +51,7 @@ const EditPostForm = ({ post }: { post: PostsCashType }) => {
       >
         <div className="w-full md:w-1/2">
           {serviceLoading ? (
-            <SelectFiledSkeleton label="Services" />
+            <SelectFiledSkeleton label="سرویس" />
           ) : (
             <SelectField
               id="services"
@@ -92,7 +89,7 @@ const EditPostForm = ({ post }: { post: PostsCashType }) => {
             <Input
               type="text"
               value={categoryInput}
-              color="input-neutral"
+              color="input-warning"
               onChange={(e) => setCategoryInput(e.target.value)}
               placeholder="برچسب جدید"
               style="w-full"
@@ -102,7 +99,7 @@ const EditPostForm = ({ post }: { post: PostsCashType }) => {
               onClick={() =>
                 handler.addCategory(categoryInput, setCategoryInput)
               }
-              color="btn-neutral"
+              color="btn-warning"
             >
               اضافه کردن برچسب
             </Button>
@@ -110,8 +107,8 @@ const EditPostForm = ({ post }: { post: PostsCashType }) => {
 
           {/* Categories List */}
           {formData.categories.length > 0 ? (
-            <div className="flex flex-col gap-2">
-              <h4>Categories</h4>
+            <div className="flex flex-col gap-2 mt-4">
+              <h4>برچسب ها</h4>
               {formData.categories.map((category) => (
                 <CategoryList
                   key={category.id}

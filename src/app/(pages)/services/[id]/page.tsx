@@ -1,6 +1,5 @@
 "use client";
 import PostCard from "@/components/sections/PostCard";
-import { PostsSkeleton } from "@/components/skelton";
 import { POST_API_URL } from "@/config/apiConstants";
 import { ALL_POSTS_QUERY_KEY } from "@/config/Constants";
 import useFetch from "@/hooks/useFetch";
@@ -10,6 +9,7 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import NotFound from "../../[...not_found]/not-found";
 import ServicesImg from "./components/ServicesImg";
+import PostsSkeleton from "@/app/(pages)/services/[id]/components/PostsSkeleton";
 
 const ServicesPage: React.FC = () => {
   const id = getParameterId(10);
