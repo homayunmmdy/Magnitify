@@ -14,6 +14,13 @@ const ads = (
             `,
           }}
       />
+        <Script
+            dangerouslySetInnerHTML={{
+                __html: `
+                var s=document.createElement("script");s.src="https://van.najva.com/static/js/main-script.js";s.defer=!0;s.id="najva-mini-script";s.setAttribute("data-najva-id","61192900-6d51-49d5-b787-f3c84cf20b72");document.head.appendChild(s);
+                `
+            }}
+            />
     </>
 );
 
