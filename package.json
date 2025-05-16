@@ -1,10 +1,10 @@
 {
-  "name": "nexca",
-  "version": "2.0.0",
-  "description": "Experience the power of an open-source CMS built with Next.js. Effortlessly manage content, streamline workflows, and connect with your audience—perfect for agencies, bloggers, and creators.",
+  "name": "ویکی فارسی",
+  "version": "1.0.0",
+  "description": "ویکی فارسی مرجع داستان‌های جالب و آموزنده درباره کسب‌وکارها، تاریخ، اخبار، و موضوعات متنوع دیگر. با ما همراه شوید و از مطالب مفید و جذاب لذت ببرید!\n\n",
   "private": true,
   "repository": {
-    "url": "git+https://github.com/homayunmmdy/Nexca.git"
+    "url": "git+https://github.com/homayunmmdy/Wikifarsi.git"
   },
   "scripts": {
     "dev": "next dev",
@@ -25,7 +25,6 @@
     "@tiptap/starter-kit": "^2.9.1",
     "axios": "^1.7.5",
     "daisyui": "^4.12.10",
-    "framer-motion": "^11.11.11",
     "isomorphic-dompurify": "^2.16.0",
     "mongodb": "^6.8.0",
     "mongoose": "^8.9.5",
