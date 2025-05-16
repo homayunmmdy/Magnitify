@@ -11,25 +11,6 @@ export type TitrType = {
   resetStyle?: boolean;
 };
 
-export type FeaturesType = {
-  id: number;
-  title: string;
-  icon: JSX.Element;
-  description: string;
-};
-
-export type CollapseType = {
-  id: number;
-  label: string;
-  body: string;
-};
-
-export type FormData = {
-  name: string;
-  email: string;
-  message: string;
-};
-
 export type SinglePagepParamsType = {
   id: string;
 };
@@ -49,13 +30,6 @@ export type FooterLinkType = {
   icon: JSX.Element;
 };
 
-export type PriceItemType = {
-  id: number;
-  titr: string;
-  special: boolean;
-  description: string;
-  features: { id: number; name: string; mark: boolean }[];
-};
 
 export type SharePostType = {
   POSTURL: string;

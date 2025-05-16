@@ -11,19 +11,22 @@ import SiteConfig from "@/config/site";
 export default function sitemap() {
   return [
     {
-      url: SiteConfig.siteURL, // Homepage URL
+      url: SiteConfig.siteURL,
     },
     {
-      url: `${SiteConfig.siteURL}/demo`, // URL for the demo page
+      url: `${SiteConfig.siteURL}/services/1`,
     },
     {
-      url: `${SiteConfig.siteURL}/services/1`, // URL for a specific service page
+      url: `${SiteConfig.siteURL}/services/2`,
     },
     {
-      url: `${SiteConfig.siteURL}/about`, // URL for the about page
+      url: `${SiteConfig.siteURL}/services/3`,
     },
     {
-      url: `${SiteConfig.siteURL}/contacts`, // URL for the contact page
+      url: `${SiteConfig.siteURL}/services/4`,
+    },
+    {
+      url: `${SiteConfig.siteURL}/services/5`,
     },
   ];
 }

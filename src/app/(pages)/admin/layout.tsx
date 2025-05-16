@@ -2,7 +2,7 @@
 import useCheckLogin from "@/hooks/useCheckLogin";
 import React from "react";
 import { Toaster } from "react-hot-toast";
-import { Sidebar } from "./components/sections";
+import Sidebar from "@/app/(pages)/admin/components/sections/Sidebar";
 
 export default function AdminLayout({
   children,

@@ -14,12 +14,12 @@ const SiteConfig = {
     "ویکی فارسی مرجع داستان‌های جالب و آموزنده درباره کسب‌وکارها، تاریخ، اخبار، و موضوعات متنوع دیگر. با ما همراه شوید و از مطالب مفید و جذاب لذت ببرید!",
   // media
   email: "homayoun763@gmail.com",
-  github: "https://github.com/homayunmmdy/Nexca",
+  github: "https://github.com/homayunmmdy/Wikifarsi",
   phoneNumber: "0922 4003 487",
   linkedin: "https://www.linkedin.com/in/homayunmmdy/",
   robots: "index , follow",
-  author: "CoffeBlog Team",
-  authorID: "CoffeBlog_Team",
+  author: "WIKIFARSI Team",
+  authorID: "WIKIFARSI_Team",
   // Navbar
   nav: [
     {

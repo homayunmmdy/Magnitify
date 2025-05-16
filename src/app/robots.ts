@@ -22,7 +22,7 @@ export default function robots() {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: "/private/",
+      disallow: "/admin/",
     },
     // Location of the sitemap file
     sitemap: `${SiteConfig.siteURL}/sitemap.xml`,
