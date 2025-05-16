@@ -9,17 +9,16 @@ export default function NotFound() {
             404
           </h1>
           <p className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
-            Something Went Wrong
+            مشکلی پیش آمد
           </p>
           <p className="mb-4 text-lg font-light text-gray-500">
-            Sorray we can&apos;t find this page but have very amazing articles
-            in the home page
+            متاسفم که نمی‌توانیم این صفحه را پیدا کنیم، اما مقالات بسیار شگفت‌انگیزی در صفحه اصلی وجود دارد.
           </p>
           <Link
             href="/"
             className="bg-primary-600 hover:bg-primary-800 focus:ring-primary-300 my-4 inline-flex rounded-lg bg-amber-700 px-5 py-2.5 text-center text-sm font-medium text-white focus:outline-none focus:ring-4"
           >
-            Come Back to Home
+            بازگشت به صفحه نخست
           </Link>
         </div>
       </div>
