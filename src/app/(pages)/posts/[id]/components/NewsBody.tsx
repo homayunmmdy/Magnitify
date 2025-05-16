@@ -27,6 +27,7 @@ const NewsBody = ({ post }: { post: any }) => {
         id="tiptap-style"
         dangerouslySetInnerHTML={{ __html: PostBody }}
       />
+        <div id="pos-article-text-card-106988"></div>
       {post.source && (
         <p>
           منبع : <span className="font-bold">{post.source}</span>
@@ -37,7 +38,7 @@ const NewsBody = ({ post }: { post: any }) => {
         description={post.description}
         POSTURL={`/posts/${post._id}`}
       />
-
+        <div id="pos-article-text-106986"></div>
       {comments?.length > 0 && (
         <div className="my-5 rounded-xl border-2 border-amber-600 p-5">
           <Titr
