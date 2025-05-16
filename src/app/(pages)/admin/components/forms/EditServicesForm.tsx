@@ -17,7 +17,6 @@ const EditServicesForm = ({ data }: { data: ServicesCashType }) => {
   const startingData = {
     name: EDITMODE ? data.name : "",
     secid: EDITMODE ? data.secid : 1,
-    imgurl: EDITMODE ? data.imgurl : "",
     description: EDITMODE ? data.description : "",
   };
 
@@ -38,7 +37,7 @@ const EditServicesForm = ({ data }: { data: ServicesCashType }) => {
   return (
     <>
       <FormLayout
-        title={EDITMODE ? "Edit Services" : "New Services"}
+        title={EDITMODE ? "ویرایش سرویس" : "سرویس جدید"}
         isLoading={handler.isLoading}
       >
         <form
@@ -46,17 +45,13 @@ const EditServicesForm = ({ data }: { data: ServicesCashType }) => {
           method="post"
           className="mb-3 flex w-full flex-col gap-3 md:w-1/2"
         >
-          <ImagePreview
-            imgurl={formData.imgurl}
-            title={formData.name}
-            onChange={handler.trakeChange}
-          />
+
           <Input
             id="name"
             type="text"
             name="name"
-            label="Name"
-            color="input-primary"
+            label="اسم"
+            color="input-warning"
             value={formData.name}
             onChange={handler.trakeChange}
           />
@@ -64,22 +59,22 @@ const EditServicesForm = ({ data }: { data: ServicesCashType }) => {
             id="secid"
             type="number"
             name="secid"
-            label="secid"
+            label="آیدی"
             value={formData.secid}
-            color="input-primary"
+            color="input-warning"
             onChange={handler.trakeChange}
             required
           />
           <Textarea
             id="description"
             name="description"
-            label="description"
-            color="textarea-primary"
+            label="توضیحات"
+            color="textarea-warning"
             value={formData.description}
             onChange={handler.trakeChange}
           />
-          <Button type="submit" color="btn-primary">
-          {EDITMODE ? "Save" : "create"}
+          <Button type="submit" color="btn-warning">
+          {EDITMODE ? "ذخیره" : "ساختن"}
         </Button>
         </form>
       </FormLayout>

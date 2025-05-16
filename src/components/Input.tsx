@@ -25,7 +25,7 @@ const Input: React.FC<InputType> = ({
       {icon ? (
         <label
           data-testid="label"
-          className={`${classes} flex items-center gap-2 mt-2`}
+          className={`${classes} flex items-center gap-2`}
         >
           {icon}
           <input
@@ -45,7 +45,7 @@ const Input: React.FC<InputType> = ({
         </label>
       ) : label ? (
         <>
-          <label data-testid="label" className='mt-2' htmlFor={id}>{label}</label>
+          <label data-testid="label"  htmlFor={id}>{label}</label>
           <input
             type={type}
             value={value}

@@ -28,10 +28,10 @@ const DataTable = ({ data, path }: Props) => {
         <table className="table table-zebra my-2">
           <thead>
             <tr>
-              <th>id</th>
-              <th>sec</th>
-              <th>edit</th>
-              <th>delete</th>
+              <th>آیدی</th>
+              <th>اسم</th>
+              <th>ویرایش</th>
+              <th>حذف</th>
             </tr>
           </thead>
           <tbody>

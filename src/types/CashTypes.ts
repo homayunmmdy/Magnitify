@@ -25,7 +25,6 @@ export type ServicesCashType = {
   name: string;
   secid: number;
   description: string;
-  imgurl: string;
 } & Omit<BaseType, "body">;
 
 export type CommentsCashType = {

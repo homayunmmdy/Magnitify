@@ -12,7 +12,6 @@ const servicesSchema = new Schema(
     secid: {
       type: Number,
     },
-    imgurl: String,
     description: String,
   },
   defaultSchemaOptions

@@ -163,7 +163,7 @@ const Posts = () => {
                             </select>
                         </div>
                         <div className="mt-4 flex justify-end">
-                            <Button onClick={clearFilters} color="btn-primary">
+                            <Button onClick={clearFilters} color="btn-warning">
                                 حذف فلیتر
                             </Button>
                         </div>

@@ -43,7 +43,7 @@ const Form = ({ buttonText, initalData, API }: ShareFormType) => {
             name="name"
             placeholder="نام"
             value={formData.name}
-            color="input-neutral"
+            color="input-warning"
             onChange={handler.trakeChange}
             required={true}
             style="w-full"
@@ -54,7 +54,7 @@ const Form = ({ buttonText, initalData, API }: ShareFormType) => {
           <Input
             type="email"
             name="email"
-            color="input-neutral"
+            color="input-warning"
             placeholder="ایمیل"
             value={formData.email}
             onChange={handler.trakeChange}
@@ -69,7 +69,7 @@ const Form = ({ buttonText, initalData, API }: ShareFormType) => {
             name="message"
             placeholder="لطفا نظر خود را در این قسمت بنویسید ..."
             value={formData.message}
-            color="textarea-neutral"
+            color="textarea-warning"
             onChange={handler.trakeChange}
             required={true}
             style="w-full"
@@ -77,7 +77,7 @@ const Form = ({ buttonText, initalData, API }: ShareFormType) => {
           />
         </div>
         <div>
-          <Button type="submit" color="btn-neutral" className="w-full p-3">
+          <Button type="submit" color="btn-warning" className="w-full p-3">
             {buttonText}
           </Button>
         </div>

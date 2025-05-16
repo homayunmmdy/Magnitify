@@ -39,12 +39,12 @@ const SiteConfig = {
     },
     {
       id: 4,
-      name: "تاریخ و بیوگرافی",
+      name: "تاریخ",
       link: "/services/5",
     },
     {
       id: 5,
-      name: "تجربه من",
+      name: "سیاسی",
       link: "/services/6",
     },
     {
