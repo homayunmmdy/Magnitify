@@ -49,6 +49,7 @@ const Post: React.FC = () => {
                     <RenderTags post={post} />
                   </div>
                 )}
+                <div id="pos-article-display-106987"></div>
                   <Link
                     href="/"
                     title="برگشت به خانه"
