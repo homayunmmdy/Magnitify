@@ -21,7 +21,7 @@ const IRANSANS = localFont({ src: "./IRANSansX.woff2" });
 
 export const metadata: Metadata = {
   verification: {
-    google: "gTVvXWgVqXKU6AfSRkuQa4O39VGzRS9zcA4y9eT3uUo",
+    google: "KEW2K6gHlUqeWRDxOY39arw_0ZD47OKapZN1bBZI1Go",
   },
 };
 export default function RootLayout({

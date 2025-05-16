@@ -1,10 +1,8 @@
-import { Button } from "@/components";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
-
 import { adminPages } from "@/config/adminPage";
-import { LogoutButton } from "../../elements";
+import LogoutBtn from "@/app/(pages)/admin/components/LogoutBtn";
 
 const NavLink: React.FC = () => {
   const pathname = usePathname();
@@ -46,7 +44,7 @@ const NavLink: React.FC = () => {
           })}
         </ul>
         <div className="my-4 max-w-full">
-          <LogoutButton />
+          <LogoutBtn />
         </div>
       </div>
     </>
