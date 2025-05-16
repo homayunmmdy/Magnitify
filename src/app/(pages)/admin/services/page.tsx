@@ -16,7 +16,7 @@ const Services: React.FC = () => {
   }
   return (
     <>
-      <DataTable editor={true} data={services} path="services" />
+      <DataTable data={services} path="services" />
     </>
   );
 };
