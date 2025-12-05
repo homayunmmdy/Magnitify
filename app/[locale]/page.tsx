@@ -2,6 +2,9 @@ import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { use } from "react";
 import HomePageHead from "./components/HomePageHead";
+import './components/home.css'
+import CentralFeatured from "./components/CentralFeatured";
+
 const Home = ({ params }: { params: Promise<{ locale: string }> }) => {
   const { locale } = use(params);
 
@@ -13,6 +16,7 @@ const Home = ({ params }: { params: Promise<{ locale: string }> }) => {
   return (
     <main>
       <HomePageHead params={params}/>
+      <CentralFeatured />
     </main>
   );
 };

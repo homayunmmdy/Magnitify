@@ -8,4 +8,10 @@
       /* Persian/Arabic fonts */ "Scheherazade New", "Lateef", "Amiri",
       /* Fallback */ serif;
   }
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+  .link {
+    @apply text-[#36c] hover:underline;
+  }
 }

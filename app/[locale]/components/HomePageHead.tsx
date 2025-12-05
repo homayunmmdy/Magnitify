@@ -10,7 +10,7 @@ const HomePageHead = ({ params }: { params: Promise<{ locale: string }> }) => {
 
   const t = useTranslations("home");
   return (
-    <div className="flex justify-center w-full flex-col items-center pt-10">
+    <div className="flex-center w-full flex-col pb-1.5 pt-[40px]">
       <h1 className="font-libertine text-3xl">{t("name")}</h1>
       <p className="font-libertine text-lg">{t("description")}</p>
     </div>

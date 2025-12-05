@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .central-featured {
+    @apply mx-auto text-center;
+    @media (min-width: 767px) {
+      @apply relative h-[352px] max-w-[546px];
+    }
+    @media (max-width : 768px) {
+        @apply grid grid-cols-3 gap-4
+    }
+  }
+
+  .central-featured-lang {
+    @media (min-width: 767px) {
+      @apply absolute w-[15.6rem];
+    }
+  }
+
+  .link-box {
+    @apply flex flex-col rounded-xs hover:bg-[#eaecf0] transition-all ease-in-out;
+  }
+
+  .central-featured-logo {
+    @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10;
+    @media (max-width: 767px) {
+      @apply hidden;
+    }
+  }
+}
