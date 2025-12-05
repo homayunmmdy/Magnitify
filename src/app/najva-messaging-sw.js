@@ -1,1 +1,0 @@
-importScripts('https://van.najva.com/static/js/service-worker.js');
