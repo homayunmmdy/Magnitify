@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@layer utilities {
+  .font-libertine {
+    font-family: 
+        /* Latin fonts first */ "Linux Libertine",
+      "Hoefler Text", Georgia, "Times New Roman", Times,
+      /* Persian/Arabic fonts */ "Scheherazade New", "Lateef", "Amiri",
+      /* Fallback */ serif;
+  }
+}
