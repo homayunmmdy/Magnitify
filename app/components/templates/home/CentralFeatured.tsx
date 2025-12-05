@@ -3,37 +3,35 @@ import Link from "next/link";
 
 const CentralFeatured = () => {
   return (
-    <>
-      <div className="central-featured" aria-label="Top languages">
-        <Image
-          className="central-featured-logo"
-          src="/images/central-featured-logo.png"
-          width="300"
-          height="283"
-          alt=""
-        ></Image>
-        {topLanguages.map((item) => (
-          <div
-            className={`central-featured-lang ${item.position}`}
-            lang={item.code}
-            dir={item.direction}
-            key={item.title}
+    <div className="central-featured" aria-label="Top languages">
+      <Image
+        className="central-featured-logo"
+        src="/images/central-featured-logo.png"
+        width="300"
+        height="283"
+        alt=""
+      />
+      {topLanguages.map((item) => (
+        <div
+          className={`central-featured-lang ${item.position}`}
+          lang={item.code}
+          dir={item.direction}
+          key={item.title}
+        >
+          <Link
+            href={`/${item.code}/MainPage`}
+            title={`${item.title} — AfghanWiki — The Free Encyclopedia`}
+            className="link-box"
+            data-slogan="The Free Encyclopedia"
           >
-            <Link
-              href={`/${item.code}/MainPage`}
-              title={`${item.title} — AfghanWiki — The Free Encyclopedia`}
-              className="link-box"
-              data-slogan="The Free Encyclopedia"
-            >
-              <strong className="link ">{item.title}</strong>
-              <small className="font-[13px]">
-                {item.articles}+ <span>articles</span>
-              </small>
-            </Link>
-          </div>
-        ))}
-      </div>
-    </>
+            <strong className="link ">{item.title}</strong>
+            <small className="font-[13px]">
+              {item.articles}+ <span>articles</span>
+            </small>
+          </Link>
+        </div>
+      ))}
+    </div>
   );
 };
 

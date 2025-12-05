@@ -14,13 +14,18 @@ const WelcomeMessage = ({
   // Enable static rendering for this page
   setRequestLocale(locale);
 
-
   const t = useTranslations("main");
   return (
     <div className="flex-center flex-col p-7 mt-4 bg-[#f9f9f9] border border-[#ddd]">
       {locale === "fa" ? (
         <Link title="به افغان پدیا خوش آمدید" href="/">
-          <Image className="pt-1.5 pb-3.5" src="/images/fa_greeting.png" width={250} height={96} alt="" />
+          <Image
+            className="pt-1.5 pb-3.5"
+            src="/images/fa_greeting.png"
+            width={250}
+            height={96}
+            alt=""
+          />
         </Link>
       ) : (
         <h2 className="font-[22.68px]">
@@ -31,7 +36,7 @@ const WelcomeMessage = ({
         </h2>
       )}
 
-      <p className="text-[13.3px]">{t("description")}</p>
+      <p className="text-[13.3px]">{t("slog")}</p>
     </div>
   );
 };
