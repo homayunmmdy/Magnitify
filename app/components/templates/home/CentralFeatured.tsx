@@ -20,7 +20,7 @@ const CentralFeatured = () => {
             key={item.title}
           >
             <Link
-              href={`/{${item.code}}`}
+              href={`/${item.code}/MainPage`}
               title={`${item.title} — AfghanWiki — The Free Encyclopedia`}
               className="link-box"
               data-slogan="The Free Encyclopedia"

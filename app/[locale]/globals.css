@@ -12,6 +12,6 @@
     @apply flex justify-center items-center;
   }
   .link {
-    @apply text-[#36c] hover:underline;
+    @apply text-[#36c] hover:underline visited:text-[#6a60b0];
   }
 }
