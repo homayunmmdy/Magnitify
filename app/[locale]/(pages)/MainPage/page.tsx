@@ -5,7 +5,7 @@ import WelcomeMessage from "@/app/components/templates/MainPage/WelcomeMessage";
 const MainPage = ({ params }: { params: Promise<{ locale: string }> }) => {
   return (
     <>
-      <Header params={params} />
+      <Header  />
       <div className="flex px-4 gap-6">
         <div className="w-full md:w-5/6">
           <WelcomeMessage params={params} />

@@ -2,6 +2,10 @@
   "main": {
     "name": "AFGHANPEDIA",
     "welcome_to": "Welcome to",
-    "slog": "The Free Encyclopedia"
+    "slog": "The Free Encyclopedia",
+    "github": "Github",
+    "create_account": "Create Account",
+    "login": "login",
+    "search": "Search"
   }
 }

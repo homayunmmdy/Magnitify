@@ -1,17 +1,25 @@
+"use client";
 import { useTranslations } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
-import { use } from "react";
 import SearchButton from "./SearchButton";
 
-const Header = ({ params }: { params: Promise<{ locale: string }> }) => {
-  const { locale } = use(params);
-
-  // Enable static rendering for this page
-  setRequestLocale(locale);
-
+const Header = () => {
   const t = useTranslations("main");
+  const headerLinks: headerLinksType[] = [
+    {
+      name: t("github"),
+      href: "https://github.com/homayounmmdy",
+    },
+    {
+      name: t("create_account"),
+      href: "#",
+    },
+    {
+      name: t("login"),
+      href: "#",
+    },
+  ];
   return (
     <div className="flex justify-between w-full items-center py-2 px-4">
       <div className="flex gap-2.5 items-center">
@@ -49,17 +57,3 @@ interface headerLinksType {
   name: string;
   href: string;
 }
-const headerLinks: headerLinksType[] = [
-  {
-    name: "Github",
-    href: "https://github.com/homayounmmdy",
-  },
-  {
-    name: "Create account",
-    href: "#",
-  },
-  {
-    name: "Login",
-    href: "#",
-  },
-];
