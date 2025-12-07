@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import SearchButton from "./SearchButton";
+import Container from "./Container";
 
 const Header = () => {
   const t = useTranslations("main");
@@ -21,7 +22,7 @@ const Header = () => {
     },
   ];
   return (
-    <div className="flex justify-between w-full items-center py-2 px-4">
+    <Container className="flex justify-between w-full items-center py-2 px-4">
       <div className="flex gap-2.5 items-center">
         <Image
           className="hidden md:block w-[50px] h-[50px]"
@@ -38,7 +39,7 @@ const Header = () => {
         </div>
         <SearchButton />
       </div>
-      <ul className="hidden md:flex gap-4">
+      <ul className="hidden lg:flex gap-4">
         {headerLinks.map((item) => (
           <li key={item.name}>
             <Link className="link" href={item.href}>
@@ -47,7 +48,7 @@ const Header = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </Container>
   );
 };
 
