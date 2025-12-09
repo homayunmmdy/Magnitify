@@ -16,7 +16,7 @@ const WelcomeMessage = ({
 
   const t = useTranslations("main");
   return (
-    <div className="flex-center flex-col p-7 mt-4 bg-[#f9f9f9] border border-[#ddd]">
+    <div className="flex-center mb-1 flex-col p-7 mt-4 bg-[#f9f9f9] border border-[#ddd]">
       {locale === "fa" ? (
         <Link title="به افغان پدیا خوش آمدید" href="/">
           <Image

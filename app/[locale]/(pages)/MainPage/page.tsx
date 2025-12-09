@@ -11,11 +11,11 @@ const MainPage = ({ params }: { params: Promise<{ locale: string }> }) => {
       <Container className="flex gap-6">
         <div className="w-full md:w-5/6">
           <WelcomeMessage params={params} />
-          <div className="flex gap-0.5">
-            <div className="w-3/5">
+          <div className="md:flex md:gap-0.5">
+            <div className="w-full md:w-3/5">
               <FullPost />
             </div>
-            <div className="w-2/5"></div>
+            <div className="w-full md:w-2/5"></div>
           </div>
         </div>
         <div className="hidden md:block w-1/6">

@@ -2,11 +2,12 @@
 import Image from "next/image";
 import useFetch from "../hooks/useFetch";
 import { PostsCashType } from "../types/DataTypes";
+import ContentWrapper from "./ContentWrapper";
 
 const FullPost = () => {
   const { data } = useFetch("article", "/api/posts");
   return (
-    <div>
+    <ContentWrapper title="از میان خبرها">
       {data?.map((post: PostsCashType) => ( 
         <div key={post._id}>
           <Image className="w-1/3 m-2.5 mr-4 mb-2 h-auto float-left" src={post.imgurl} width={124} height={124} alt="" />
@@ -16,7 +17,7 @@ const FullPost = () => {
           </p>
         </div>
       ))}
-    </div>
+    </ContentWrapper>
   );
 };
 
