@@ -6,6 +6,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { ContainerProvider } from "../context/ContainerContext";
 import "./globals.css";
+import MainProvider from "../provider/MainProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,7 +39,7 @@ export default async function RootLayout({ children, params }: Props) {
   }
   setRequestLocale(locale);
   return (
-    <ContainerProvider>
+    <MainProvider>
       <html lang={locale}>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -46,6 +47,6 @@ export default async function RootLayout({ children, params }: Props) {
           <NextIntlClientProvider>{children}</NextIntlClientProvider>
         </body>
       </html>
-    </ContainerProvider>
+    </MainProvider>
   );
 }
