@@ -9,7 +9,7 @@ const postSchema = new Schema(
       required: true,
       trim: true,
     },
-    imgURL: {
+    imgurl: {
       type: String,
       required: true,
     },

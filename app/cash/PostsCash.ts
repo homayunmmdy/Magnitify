@@ -3,11 +3,10 @@ import { PostsCashType } from "../types/DataTypes";
 const PostsCash: PostsCashType[] = [
   {
     _id: "66a1b06d0caf3407cd78b621",
-    title:
-      "Fist Item of Posts Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab magni possimus debitis necessitatibus repellat voluptates nesciunt ex blanditiis alias rerum veniam nisi architecto sequi, repellendus, sint velit eum, excepturi amet sed totam reiciendis soluta sunt nam maiores? Distinctio repellendus odio officiis quia atque molestiae! Facilis, pariatur temporibus necessitatibus tenetur suscipit perferendis, cum, maxime vel aliquam ratione minima quam nulla expedita.",
+    title: "پرچم هزارستان",
     imgurl:
-      "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
-    body: "<p>This is  <strong>bold and this is <em>italic</em></strong></p>",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Flag_of_Hazaristan.svg/500px-Flag_of_Hazaristan.svg.png",
+    body: " \n\nپرچم هزارستان به‌عنوان پرچم ملی غیررسمی مردم هزاره شناخته شده‌است که شامل سه رنگ: زرد، سفید و آبی است.\n\nاین پرچم برای اولین بار در سال ۲۰۱۳ در سایت کابل پرس، توسط کامران میرهزار پیشنهاد شده و سپس به‌صورت رسمی در سال ۲۰۱۴، روی جلد مجموعه شعر «برای هزاره» که مجموعه شعر ۱۲۵ شاعر مطرح بین‌المللی از ۶۸ کشور با ویرایش او می‌باشد طرح شده‌بود.\n\nماده سی و هفتم منشور هزارستان که در سال ۲۰۲۱ توسط پیشگامان جنبش استقلال هزارستان منتشر شده به پرچم هزارستان اختصاص دارد.\n\nدر جریان تظاهرات جهانی هزاره‌ها در ماه اکتبر سال ۲۰۲۲ که در کشورهای مختلف جهان علیه نسل‌کشی هزاره‌ها برگزار شد، پرچم هزارستان به‌صورت گسترده مورد استفاده قرار گرفت.\n\nپرچم هزارستان همچنین توسط نهادهای گوناگون هزاره در کشورهای مختلف از جمله انجمن هزاره‌های مونیخ، شورای هزاره‌های بریتانیا، جامعه هزاره‌های بریزبن و کنگره ملی هزاره به‌صورت رسمی استفاده می‌شود.",
     createdAt: "2024-05-22T08:56:49.785Z",
     updatedAt: "2024-05-22T08:56:49.785Z",
     __v: 0,

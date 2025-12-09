@@ -1,4 +1,5 @@
 import Container from "@/app/components/Container";
+import FullPost from "@/app/components/FullArticle";
 import Header from "@/app/components/Header";
 import Sidebar from "@/app/components/templates/MainPage/Sidebar";
 import WelcomeMessage from "@/app/components/templates/MainPage/WelcomeMessage";
@@ -6,10 +7,16 @@ import WelcomeMessage from "@/app/components/templates/MainPage/WelcomeMessage";
 const MainPage = ({ params }: { params: Promise<{ locale: string }> }) => {
   return (
     <>
-      <Header  />
+      <Header />
       <Container className="flex gap-6">
         <div className="w-full md:w-5/6">
           <WelcomeMessage params={params} />
+          <div className="flex gap-0.5">
+            <div className="w-3/5">
+              <FullPost />
+            </div>
+            <div className="w-2/5"></div>
+          </div>
         </div>
         <div className="hidden md:block w-1/6">
           <Sidebar />
