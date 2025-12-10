@@ -1,0 +1,139 @@
+/*
+ * Styles for the TipTap rich text editor.
+ * 
+ * All styles in this file are scoped to the `#tiptap-style` selector to ensure
+ * they only affect the TipTap editor and do not interfere with other parts of the application.
+ * 
+ * If you need to modify or add new styles, always prefix your selectors with `#tiptap-style`
+ * to maintain this scoping.
+ */
+
+@layer tiptap-body {
+   /* Heading styles for the editor */
+   #tiptap-style h1 {
+      font-size: 2.125rem;
+      font-weight: bold;
+   }
+   #tiptap-style h2 {
+      font-size: 1.875rem;
+      font-weight: bold;
+   }
+   #tiptap-style h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+   }
+
+   /* Ordered list styles */
+   #tiptap-style ol li {
+      list-style: decimal;
+   }
+
+   /* Unordered list styles */
+   #tiptap-style ul li {
+      list-style: disc;
+   }
+
+   /* Blockquote styles */
+   #tiptap-style blockquote {
+      font-size: 1.4em;
+      margin: 5px auto;
+      font-family: Open Sans;
+      font-style: italic;
+      color: #555555;
+      padding: 6px 10px 6px 35px;
+      border-left: 8px solid #4a00ff;
+      line-height: 1.6;
+      position: relative;
+   }
+
+   /* Blockquote opening quotation mark */
+   #tiptap-style blockquote::before {
+      font-family: Arial;
+      content: '\201C'; /* Unicode for opening quotation mark */
+      color: #4a00ff;
+      font-size: 2em;
+      position: absolute;
+      left: 10px;
+      bottom: -50%;
+      top: -50%;
+      margin-top: 10px;
+   }
+
+   /* Blockquote closing quotation mark (empty for now) */
+   #tiptap-style blockquote::after {
+      content: '';
+   }
+
+   /* Padding for the ProseMirror editor container */
+   #tiptap-style .ProseMirror {
+      padding: 30px;
+   }
+
+   /* Link styles */
+   #tiptap-style a {
+      color: blue;
+      text-decoration: underline;
+   }
+
+   /* Horizontal rule styles */
+   #tiptap-style hr {
+      margin-block: 10px;
+   }
+
+   /* Code block styles */
+   #tiptap-style pre {
+      background: #2e2b29;
+      border-radius: 0.5rem;
+      color: white;
+      margin: 1.5rem 0;
+      padding: 0.75rem 1rem;
+      white-space: pre-wrap; /* Preserve whitespace but wrap text */
+      word-wrap: break-word; /* Break long words */
+      overflow-x: auto; /* Add horizontal scroll if needed */
+   }
+
+   /* Character count styles */
+   #tiptap-style .character-count,
+   #tiptap-style .character-countcharacter-count--warning {
+      align-items: center;
+      color: gray;
+      display: flex;
+      font-size: 0.75rem;
+      gap: 0.5rem;
+      margin: 1.5rem;
+   }
+
+   /* Character count icon color */
+   #tiptap-style .character-count svg {
+      color: #4338ca;
+   }
+
+   /* Warning state for character count */
+   #tiptap-style .character-countcharacter-count--warning,
+   #tiptap-style .character-countcharacter-count--warning svg {
+      color: red;
+   }
+}
+
+/* Styles for the news body in the edit post form */
+#edit_post_form #news_body {
+   max-height: 450px;
+   overflow: auto;
+}
+
+.drag-handle {
+   align-items: center;
+   background: #f0f0f0;
+   border-radius: 0.25rem;
+   border: 1px solid rgba(0, 0, 0, 0.1);
+   cursor: grab;
+   display: flex;
+   height: 1.5rem;
+   justify-content: center;
+   width: 1.5rem;
+
+   svg {
+      width: 1.25rem;
+      height: 1.25rem;
+   }
+}

@@ -1,5 +1,15 @@
+/**
+ * @class RequestHandler
+ * @description A class that handles all the server side CRUD operations
+ * @template T
+ * @param {Model<T>} Model - The mongoose model
+ * @param {T[]} Cache - The cache array
+ * @example
+ * const requestHandler = new RequestHandler(UserModel, UserCache);
+ */
 import { Model } from "mongoose";
 import { NextResponse } from "next/server";
+import { DEV_MODE } from "../config/Constants";
 
 /**
  * @class RequestHandler
@@ -26,7 +36,44 @@ class RequestHandler<
     this.Model = Model;
     this.Cache = Cache;
   }
-  
+
+  /**
+   * @function FindPaginated
+   * @description Retrieve paginated data from the database or cache
+   * @param {number} skip - The number of documents to skip
+   * @param {number} limit - The number of documents to retrieve
+   * @returns {Promise<{ data: T[], total: number }>} - The paginated data and total count
+   */
+  async FindPaginated(skip: number, limit: number) {
+    try {
+      if (process.env.NEXT_PUBLIC_STATUS === DEV_MODE) {
+        // In DEV_MODE, simulate pagination using the cache
+        const total = this.Cache.length;
+
+        // Add sorting by createdAt in descending order
+        const data = this.Cache.sort(
+          (a, b) =>
+            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+        ) // Sort descending
+          .slice(skip, skip + limit);
+
+        return { data, total };
+      } else {
+        // In production, use the database
+        const data = await this.Model.find()
+          .sort({ createdAt: -1 }) // Sort by createdAt in descending order
+          .skip(skip)
+          .limit(limit)
+          .exec();
+
+        const total = await this.Model.countDocuments();
+        return { data, total };
+      }
+    } catch (error) {
+      console.error(error);
+      throw new Error("Error fetching paginated data");
+    }
+  }
 
   /**
    * @function GetAll
@@ -35,7 +82,7 @@ class RequestHandler<
    */
   async GetAll() {
     try {
-      if (process.env.NEXT_PUBLIC_STATUS === "dev") {
+      if (process.env.NEXT_PUBLIC_STATUS === DEV_MODE) {
         return NextResponse.json<T[]>({ data: this.Cache } as any, {
           status: 200,
         });
@@ -77,10 +124,12 @@ class RequestHandler<
    */
   async Get(id: string) {
     try {
-      if (process.env.NEXT_PUBLIC_STATUS === "dev") {
+      if (process.env.NEXT_PUBLIC_STATUS === DEV_MODE) {
         const document = this.Cache.find((doc) => doc._id === id);
         if (document) {
-          return NextResponse.json<T>({ document } as any, { status: 200 });
+          return NextResponse.json<T>({ document } as any, {
+            status: 200,
+          });
         }
       } else {
         const document = await this.Model.findOne({ _id: id });
@@ -88,6 +137,37 @@ class RequestHandler<
           return NextResponse.json({ message: "Not Found" }, { status: 404 });
         }
         return NextResponse.json<T>({ document } as any, { status: 200 });
+      }
+    } catch (error) {
+      console.error(error);
+      return this.ErrorResponse(error);
+    }
+  }
+
+  /**
+   * @function GetByField
+   * @description Get documents filtered by a specific field and value
+   * @param {string} field - The field to filter by (e.g., 'templates', 'services', 'section')
+   * @param {string} value - The value to match in the specified field
+   * @returns {NextResponse} - The response with the filtered data or error
+   */
+  async GetByField(field: string, id: string) {
+    try {
+      if (process.env.NEXT_PUBLIC_STATUS === DEV_MODE) {
+        // Filter cache by template ID
+        const documents = this.Cache.filter((doc: any) => doc[field] === id);
+        return NextResponse.json<T[]>({ data: documents } as any, {
+          status: 200,
+        });
+      } else {
+        // Query database for posts with matching template ID
+        const query: Record<string, unknown> = {};
+        query[field] = id;
+
+        const documents = await this.Model.find(query as any);
+        return NextResponse.json<T[]>({ data: documents } as any, {
+          status: 200,
+        });
       }
     } catch (error) {
       console.error(error);

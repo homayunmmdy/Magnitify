@@ -2,7 +2,7 @@ import { PostsCashType } from "../types/DataTypes";
 
 const PostsCash: PostsCashType[] = [
   {
-    _id: "66a1b06d0caf3407cd78b621",
+    _id: "1",
     title: "پرچم هزارستان",
     imgurl:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Flag_of_Hazaristan.svg/500px-Flag_of_Hazaristan.svg.png",
