@@ -110,7 +110,7 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange }) => {
   return (
     <div id="tiptap-style">
       <div className="mb-2 flex items-center shadow-[0_2px_1px_-1px_rgba(0,0,0,0.1)] justify-between flex-wrap gap-2  border-b border-[#c8ccd1]">
-        <div className="flex border-b border-[#c8ccd1]">
+        <div className="flex">
           <button
             onClick={() => editor.chain().focus().undo().run()}
             disabled={!canUndo}
@@ -131,14 +131,7 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange }) => {
           >
             <IoIosRedo />
           </button>
-          {/* <select name="cars" id="cars" className="p-3 border-x border-[#c8ccd1] text-sm">
-            <option value="volvo">
-              <button></button>
-            </option>
-            <option value="saab">Saab</option>
-            <option value="opel">Opel</option>
-            <option value="audi">Audi</option>
-          </select> */}
+       
           <div className="relative inline-block">
             <select
               value={getCurrentBlockType()}
