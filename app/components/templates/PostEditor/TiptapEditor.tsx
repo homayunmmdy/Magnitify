@@ -156,7 +156,7 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange }) => {
           </div>
         </div>
         <div>
-          <button className="p-3 bg-[#36c] text-white cursor-pointer font-bold">
+          <button form="post-form" type="submit" className="p-3 bg-[#36c] text-white cursor-pointer font-bold">
             Publish
           </button>
         </div>

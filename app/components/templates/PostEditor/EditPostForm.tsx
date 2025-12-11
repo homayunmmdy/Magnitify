@@ -24,7 +24,7 @@ const EditPostForm = ({ post }: { post: PostsCashType }) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form id="post-form" onSubmit={handleSubmit}>
         <TiptapEditor
           content={formData.body}
           onChange={handler.trakeBodyChanges}
