@@ -10,18 +10,31 @@
 
 @layer tiptap-body {
    /* Heading styles for the editor */
+   #tiptap-style h1 ,
+   #tiptap-style h2 ,
+   #tiptap-style h3 ,
+   #tiptap-style h4 ,
+   #tiptap-style h5 ,
+   #tiptap-style h6 {
+    font-family: 'Linux Libertine', 'Georgia', 'Times', 'Source Serif 4', serif;
+    line-height: 1.375;
+   }
    #tiptap-style h1 {
-      font-size: 2.125rem;
-      font-weight: bold;
+      font-size: 1.8em;
    }
    #tiptap-style h2 {
-      font-size: 1.875rem;
-      font-weight: bold;
+      font-size: 1.5em;
    }
    #tiptap-style h3 {
-      font-size: 1.5rem;
-      font-weight: bold;
+      font-size: 1.2em;
    }
+   #tiptap-style h4 ,
+   #tiptap-style h5 ,
+   #tiptap-style h6 {
+      font-size: 100%;
+      font-weight: 700;
+   }
+
 
    /* Ordered list styles */
    #tiptap-style ol li {
