@@ -26,7 +26,7 @@ const CentralFeatured = () => {
           >
             <strong className="link ">{item.title}</strong>
             <small className="font-[13px]">
-              {item.articles}+ <span>articles</span>
+              {item.articles}+ <span>{item.posts}</span>
             </small>
           </Link>
         </div>
@@ -43,6 +43,7 @@ interface topLanguagesType {
   articles: number;
   direction: "ltr" | "rtl";
   position: string;
+  posts: string;
 }
 const topLanguages: topLanguagesType[] = [
   {
@@ -51,6 +52,7 @@ const topLanguages: topLanguagesType[] = [
     articles: 0,
     direction: "ltr",
     position: "top-0 right-[60%]",
+    posts: "posts",
   },
   {
     title: "Deutsch",
@@ -58,6 +60,7 @@ const topLanguages: topLanguagesType[] = [
     articles: 0,
     direction: "ltr",
     position: "top-0 left-[60%]",
+    posts: "posts",
   },
   {
     title: "دری",
@@ -65,6 +68,7 @@ const topLanguages: topLanguagesType[] = [
     articles: 0,
     direction: "rtl",
     position: "top-[20%] right-[70%]",
+    posts: "پست‌ها",
   },
   {
     title: "日本語",
@@ -72,6 +76,7 @@ const topLanguages: topLanguagesType[] = [
     articles: 0,
     direction: "rtl",
     position: "top-[20%] left-[70%]",
+    posts: "投稿",
   },
   {
     title: "Русский",
@@ -79,6 +84,7 @@ const topLanguages: topLanguagesType[] = [
     articles: 0,
     direction: "rtl",
     position: "top-[40%] right-[72%]",
+    posts: "посты",
   },
   {
     title: "Français",
@@ -86,6 +92,7 @@ const topLanguages: topLanguagesType[] = [
     articles: 0,
     direction: "rtl",
     position: "top-[40%] left-[72%]",
+    posts: "posts",
   },
   {
     title: "Español",
@@ -93,6 +100,7 @@ const topLanguages: topLanguagesType[] = [
     articles: 0,
     direction: "rtl",
     position: "top-[60%] right-[70%]",
+    posts: "posts",
   },
   {
     title: "中文",
@@ -100,6 +108,7 @@ const topLanguages: topLanguagesType[] = [
     articles: 0,
     direction: "rtl",
     position: "top-[60%] left-[70%]",
+    posts: "帖子",
   },
   {
     title: "Italiano",
@@ -107,6 +116,7 @@ const topLanguages: topLanguagesType[] = [
     articles: 0,
     direction: "rtl",
     position: "top-[80%] right-[60%]",
+    posts: "post",
   },
   {
     title: "Polski",
@@ -114,5 +124,6 @@ const topLanguages: topLanguagesType[] = [
     articles: 0,
     direction: "rtl",
     position: "top-[80%] left-[60%]",
+    posts: "posty",
   },
 ];
