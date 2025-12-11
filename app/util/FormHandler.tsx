@@ -71,10 +71,10 @@ class FormHandler {
       this.loading = false;
 
       this.router.refresh();
-      this.router.push(route ?? "/admin");
+      // this.router.push(route ?? "/admin");
     } else {
       this.loading = false;
-      throw new Error(`Failed to ${EDITMODE ? "update" : "create"} ticket`);
+      throw new Error(`Failed to ${EDITMODE ? "update" : "create"} post`);
     }
   }
 

@@ -1,11 +1,14 @@
 import EditPostForm from "@/app/components/templates/PostEditor/EditPostForm";
 import { FetchDataForEditPage } from "@/app/util/ServerUtil";
 
-type SinglePageParamsType = {
-  id: string;
-};
-const EditAdminPosts = async ({ params }: { params: SinglePageParamsType }) => {
-  const updateData = await FetchDataForEditPage("/api/posts", params.id);
+const EditAdminPosts = async ({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) => {
+  const { id } = await params;
+
+  const updateData = await FetchDataForEditPage("/api/posts", id);
 
   return <EditPostForm post={updateData} />;
 };
