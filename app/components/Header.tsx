@@ -1,9 +1,9 @@
 "use client";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
 import Container from "./Container";
 import SearchForm from "./SearchForm";
+import {Link} from '@/i18n/navigation';
 
 const Header = () => {
   const t = useTranslations("main");
@@ -25,7 +25,7 @@ const Header = () => {
     <header className="shadow-[inset_0_-1px_3px_rgba(0,0,0,0.08)] md:shadow-none md:bg-white  bg-[#eaecf0]">
       <Container className="flex justify-between w-full items-center py-2 px-4">
         <div className="flex gap-2.5 w-full lg:w-fit justify-between md:justify-baseline items-center">
-          <div className="flex gap-2.5  items-center">
+          <Link href="/MainPage" className="flex gap-2.5  items-center">
             <Image
               className="hidden md:block w-[50px] h-[50px]"
               src="/images/central-featured-logo.png"
@@ -39,7 +39,7 @@ const Header = () => {
                 {t("slog")}
               </p>
             </div>
-          </div>
+          </Link>
           <SearchForm />
         </div>
         <ul className="hidden lg:flex gap-4">

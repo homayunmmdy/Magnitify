@@ -1,6 +1,8 @@
-"use clientp"
-import { UndoRedo } from "@tiptap/extensions";
-import { EditorContent, useEditor, useEditorState } from "@tiptap/react";
+"use client"
+
+import { useEditor } from "@tiptap/react";
+import StarterKit from "@tiptap/starter-kit"; // You need to install this
+import { EditorContent } from "@tiptap/react";
 import React from "react";
 import "./tiptap.css";
 
@@ -11,22 +13,17 @@ interface TiptapEditorProps {
 
 const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange }) => {
   const editor = useEditor({
-    extensions: [Document, Text, UndoRedo],
+    extensions: [
+      StarterKit, 
+    ],
     content,
     onUpdate: ({ editor }) => {
       onChange(editor.getHTML());
     },
   });
 
-    const { canUndo, canRedo } = useEditorState({
-    editor,
-    selector: ctx => {
-      return {
-        canUndo: ctx.editor.can().chain().focus().undo().run(),
-        canRedo: ctx.editor.can().chain().focus().redo().run(),
-      }
-    },
-  })
+  const canUndo = editor?.can().chain().focus().undo().run() || false;
+  const canRedo = editor?.can().chain().focus().redo().run() || false;
 
   if (!editor) {
     return null;

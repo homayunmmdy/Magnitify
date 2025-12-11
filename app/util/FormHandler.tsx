@@ -102,7 +102,6 @@ class FormHandler {
       categories: [...prevState.categories, newCategory],
     }));
     setCategoryInput(""); // Clear the input field
-    toast.success("Category added successfully");
   };
 
   /**

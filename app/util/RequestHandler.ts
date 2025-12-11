@@ -116,12 +116,7 @@ class RequestHandler<
       return this.ErrorResponse(error);
     }
   }
-  /**
-   * @function Get
-   * @description Get a single data from the database
-   * @param {string} id - The id of the data
-   * @returns {NextResponse} - The response with the data or error
-   */
+
   async Get(id: string) {
     try {
       if (process.env.NEXT_PUBLIC_STATUS === DEV_MODE) {
