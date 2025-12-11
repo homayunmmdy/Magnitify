@@ -24,12 +24,11 @@ const EditPostForm = ({ post }: { post: PostsCashType }) => {
 
   return (
     <div>
-      <form className="flex" onSubmit={handleSubmit}>
-        {/* <TiptapEditor
+      <form onSubmit={handleSubmit}>
+        <TiptapEditor
           content={formData.body}
           onChange={handler.trakeBodyChanges}
-        /> */}
-        <button className="p-3 bg-[#36c] text-white font-bold">Publish</button>
+        />
       </form>
     </div>
   );
