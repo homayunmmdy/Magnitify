@@ -1,7 +1,6 @@
 import PostsCash from "@/app/cash/PostsCash";
 import { PostModel } from "@/app/models";
 import RequestHandler from "@/app/util/RequestHandler";
-import { NextResponse } from "next/server";
 
 export async function GET(
   req: Request,
@@ -10,7 +9,6 @@ export async function GET(
   const { id } = await params;
   const handler = new RequestHandler(PostModel, PostsCash);
   return handler.Get(id);
-
 }
 
 export async function PUT(
