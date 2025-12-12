@@ -6,22 +6,18 @@ const postSchema = new Schema(
   {
     title: {
       type: String,
-      required: true,
       trim: true,
     },
     imgurl: {
       type: String,
-      required: true,
     },
     fields: [
       {
         key: {
           type: String,
-          required: true,
         },
         value: {
           type: String,
-          required: true,
         },
       },
     ],
