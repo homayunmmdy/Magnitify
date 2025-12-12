@@ -4,7 +4,6 @@ import FormHandler from "@/app/util/FormHandler";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import TiptapEditor from "./TiptapEditor";
-// import CategoriesForm from "./CategoriesForm";
 
 const EditPostForm = ({ post }: { post: PostsCashType }) => {
   const EDIT_MODE = post._id !== "new";
@@ -19,6 +18,7 @@ const EditPostForm = ({ post }: { post: PostsCashType }) => {
 
   const [formData, setFormData] = useState(startingTicketData);
   const handler = new FormHandler(setFormData, "/api/posts", router);
+  
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) =>
     handler.submit(e, formData, post._id);
 
@@ -28,6 +28,8 @@ const EditPostForm = ({ post }: { post: PostsCashType }) => {
         <TiptapEditor
           content={formData.body}
           onChange={handler.trakeBodyChanges}
+          formData={formData}
+          onTitleChange={handler.trakeChange} // Pass the title change handler
         />
       </form>
     </div>

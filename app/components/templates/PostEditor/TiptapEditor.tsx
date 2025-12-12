@@ -2,17 +2,25 @@
 import Heading from "@tiptap/extension-heading";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import React from "react";
+import React, { useState } from "react";
 import { BiChevronDown } from "react-icons/bi";
 import { IoIosRedo, IoIosUndo } from "react-icons/io";
+import { TfiLayoutAccordionMerged } from "react-icons/tfi";
 import "./tiptap.css";
 
 interface TiptapEditorProps {
   content: string;
   onChange: (content: string) => void;
+  formData?: any; // Add this to receive formData
+  onTitleChange?: (e: React.ChangeEvent<HTMLInputElement>) => void; // Add this for title change
 }
 
-const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange }) => {
+const TiptapEditor: React.FC<TiptapEditorProps> = ({ 
+  content, 
+  onChange,
+  formData,
+  onTitleChange 
+}) => {
   const editor = useEditor({
     extensions: [
       StarterKit,
@@ -29,6 +37,12 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange }) => {
 
   const canUndo = editor?.can().chain().focus().undo().run() || false;
   const canRedo = editor?.can().chain().focus().redo().run() || false;
+
+  const [dialogueOpen, setDialogueOpen] = useState(false); // Renamed for clarity
+
+  const toggleDialogue = () => {
+    setDialogueOpen(!dialogueOpen);
+  };
 
   if (!editor) {
     return null;
@@ -131,14 +145,12 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange }) => {
           >
             <IoIosRedo />
           </button>
-       
+
           <div className="relative inline-block">
             <select
               value={getCurrentBlockType()}
               onChange={(e) => handleBlockTypeChange(e.target.value)}
               className="border-x appearance-none pr-7 cursor-pointer border-[#c8ccd1] text-sm p-3"
-
-              // className="w-full max-w-sm appearance-none bg-white border-2 border-gray-200 rounded-xl px-4 py-3 pr-12 shadow-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 cursor-pointer transition-all duration-200"
             >
               {blockTypeOptions.map((option) => (
                 <option
@@ -155,12 +167,40 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ content, onChange }) => {
             </div>
           </div>
         </div>
-        <div>
-          <button form="post-form" type="submit" className="p-3 bg-[#36c] text-white cursor-pointer font-bold">
+        <div className="flex">
+          <button 
+            className="w-10 h-10 cursor-pointer place-items-center"
+            onClick={toggleDialogue} // Add onClick handler here
+            type="button"
+          >
+            <TfiLayoutAccordionMerged />
+          </button>
+          <button
+            form="post-form"
+            type="submit"
+            className="p-2.5 bg-[#36c] text-white cursor-pointer font-bold"
+          >
             Publish
           </button>
         </div>
       </div>
+      
+      {/* Conditionally render the dialogue */}
+      {dialogueOpen && (
+        <div className="border border-[#a2a9b1] p-1 mb-2">
+          <input
+            type="text"
+            id="title"
+            name="title"
+            className="bg-[#cbe] text-black font-bold w-full p-2"
+            value={formData?.title || ""}
+            onChange={onTitleChange}
+            required
+            placeholder="Enter title"
+          />
+        </div>
+      )}
+      
       <EditorContent
         editor={editor}
         className="prose max-w-none"
