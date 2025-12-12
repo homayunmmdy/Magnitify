@@ -6,20 +6,24 @@ import React, { useState } from "react";
 import { BiChevronDown } from "react-icons/bi";
 import { IoIosRedo, IoIosUndo } from "react-icons/io";
 import { TfiLayoutAccordionMerged } from "react-icons/tfi";
+import { FaLink } from "react-icons/fa";
+import Image from "next/image";
 import "./tiptap.css";
 
 interface TiptapEditorProps {
   content: string;
   onChange: (content: string) => void;
-  formData?: any; // Add this to receive formData
-  onTitleChange?: (e: React.ChangeEvent<HTMLInputElement>) => void; // Add this for title change
+  formData?: any;
+  onTitleChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onImageUrlChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const TiptapEditor: React.FC<TiptapEditorProps> = ({ 
   content, 
   onChange,
   formData,
-  onTitleChange 
+  onTitleChange,
+  onImageUrlChange 
 }) => {
   const editor = useEditor({
     extensions: [
@@ -38,7 +42,7 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
   const canUndo = editor?.can().chain().focus().undo().run() || false;
   const canRedo = editor?.can().chain().focus().redo().run() || false;
 
-  const [dialogueOpen, setDialogueOpen] = useState(false); // Renamed for clarity
+  const [dialogueOpen, setDialogueOpen] = useState(false);
 
   const toggleDialogue = () => {
     setDialogueOpen(!dialogueOpen);
@@ -122,9 +126,9 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
   ];
 
   return (
-    <div id="tiptap-style">
-      <div className="mb-2 flex items-center shadow-[0_2px_1px_-1px_rgba(0,0,0,0.1)] justify-between flex-wrap gap-2  border-b border-[#c8ccd1]">
-        <div className="flex">
+    <div id="tiptap-style" className="relative">
+      <div className="mb-2 flex items-center flex-nowrap shadow-[0_2px_1px_-1px_rgba(0,0,0,0.1)] justify-between flex-wrap gap-2  border-b border-[#c8ccd1]">
+        <div className="flex w-3/5">
           <button
             onClick={() => editor.chain().focus().undo().run()}
             disabled={!canUndo}
@@ -167,10 +171,10 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
             </div>
           </div>
         </div>
-        <div className="flex">
+        <div className="flex w-2/5 justify-end relative">
           <button 
             className="w-10 h-10 cursor-pointer place-items-center"
-            onClick={toggleDialogue} // Add onClick handler here
+            onClick={toggleDialogue}
             type="button"
           >
             <TfiLayoutAccordionMerged />
@@ -182,24 +186,61 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
           >
             Publish
           </button>
+          
+          {/* Dialogue positioned absolutely on the right side */}
+          {dialogueOpen && (
+            <div className="absolute top-full right-0 mt-1 z-10">
+              <div className="p-1 border border-[#a2a9b1] bg-white max-w-[380px]  overflow-hidden">
+                {/* Title input - Wikipedia style */}
+                <div className="mb-1">
+                  <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    className="w-full p-1 border border-[#a2a9b1] bg-[#f8f9fa] text-black font-bold text-sm"
+                    value={formData?.title || ""}
+                    onChange={onTitleChange}
+                    required
+                    placeholder="Enter title"
+                  />
+                </div>
+                
+                {/* Image preview - Wikipedia style */}
+                <div className="mb-1 border border-[#a2a9b1] p-1 bg-[#f8f9fa]">
+                  <div className="relative aspect-video w-full overflow-hidden">
+                    <Image
+                      src={formData?.imgurl}
+                      alt={formData?.title || "Post image"}
+                      title={formData?.title || "Post image"}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 380px) 380px, 380px"
+                    />
+                  </div>
+                </div>
+                
+                {/* Image URL input - Wikipedia style */}
+                <div className="border border-[#a2a9b1] p-1 bg-[#f8f9fa]">
+                  <div className="flex items-center">
+                    <div className="mr-1 text-[#36c]">
+                      <FaLink size={14} />
+                    </div>
+                    <input
+                      id="imgurl"
+                      type="url"
+                      name="imgurl"
+                      className="w-full p-1 bg-transparent text-sm border-none outline-none"
+                      placeholder="Enter image URL"
+                      value={formData?.imgurl || ""}
+                      onChange={onImageUrlChange}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
-      
-      {/* Conditionally render the dialogue */}
-      {dialogueOpen && (
-        <div className="border border-[#a2a9b1] p-1 mb-2">
-          <input
-            type="text"
-            id="title"
-            name="title"
-            className="bg-[#cbe] text-black font-bold w-full p-2"
-            value={formData?.title || ""}
-            onChange={onTitleChange}
-            required
-            placeholder="Enter title"
-          />
-        </div>
-      )}
       
       <EditorContent
         editor={editor}

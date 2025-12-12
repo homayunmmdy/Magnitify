@@ -29,7 +29,8 @@ const EditPostForm = ({ post }: { post: PostsCashType }) => {
           content={formData.body}
           onChange={handler.trakeBodyChanges}
           formData={formData}
-          onTitleChange={handler.trakeChange} // Pass the title change handler
+          onTitleChange={handler.trakeChange}
+          onImageUrlChange={handler.trakeChange} // Pass the same handler for image URL
         />
       </form>
     </div>
