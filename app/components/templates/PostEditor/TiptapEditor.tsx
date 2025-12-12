@@ -127,7 +127,7 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
 
   return (
     <div id="tiptap-style" className="relative">
-      <div className="mb-2 flex items-center flex-nowrap shadow-[0_2px_1px_-1px_rgba(0,0,0,0.1)] justify-between flex-wrap gap-2  border-b border-[#c8ccd1]">
+      <div className="mb-2 flex items-center md:flex-nowrap shadow-[0_2px_1px_-1px_rgba(0,0,0,0.1)] justify-between flex-wrap gap-2  border-b border-[#c8ccd1]">
         <div className="flex w-3/5">
           <button
             onClick={() => editor.chain().focus().undo().run()}
