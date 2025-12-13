@@ -6,6 +6,10 @@
     "github": "Github",
     "create_account": "Create Account",
     "login": "login",
-    "search": "Search"
+    "search": "Search",
+    "appearance": "Appearance",
+    "width": "Width",
+    "standard": "Standard",
+    "wide": "Wide"
   }
 }
