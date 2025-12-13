@@ -1,17 +1,17 @@
 "use client";
+import { useSearch } from "@/app/context/SearchContext";
 import useFetch from "@/app/hooks/useFetch";
 import { PostsCashType } from "@/app/types/DataTypes";
 import { Link } from "@/i18n/navigation";
 import { useRouter } from "next/navigation";
-import { useSearch } from "@/app/context/SearchContext";
 import { Suspense } from "react";
 
 const AdminPageContent = () => {
   const { searchQuery } = useSearch();
   const router = useRouter();
-  
+
   const { data } = useFetch("article", "/api/posts");
-  
+
   // Filter articles based on search query from context
   const filteredArticles =
     data?.filter((post: PostsCashType) => {
@@ -27,15 +27,15 @@ const AdminPageContent = () => {
       console.log("Delete article:", id);
       try {
         const res = await fetch(`/api/posts/${id}`, {
-          method: 'DELETE',
+          method: "DELETE",
         });
         if (res.ok) {
           router.refresh();
         } else {
-          console.error('Error deleting item:', res.statusText);
+          console.error("Error deleting item:", res.statusText);
         }
       } catch (error) {
-        console.error('Error deleting item:', error);
+        console.error("Error deleting item:", error);
       }
     }
   };
@@ -43,39 +43,22 @@ const AdminPageContent = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Search indicator removed - now using header search */}
-      
+
       <div>
         {/* Search and Add Section - Removed search input */}
-        <div className="mb-6 flex gap-4 items-end justify-end">
+        <div className="mb-2 w-full flex gap-4 items-center justify-between">
           <Link
             href="/a/new"
             className="font-bold cursor-pointer px-3 bg-[#f8f9fa] text-[#202122] border border-[#72777d]"
           >
             Add New Article
           </Link>
-        </div>
-
-        {/* Results count */}
-        <div className="text-sm text-gray-600 mb-4">
-          Showing {filteredArticles.length}{" "}
-          {filteredArticles.length === 1 ? "article" : "articles"}
-          {searchQuery && ` for "${searchQuery}"`}
-        </div>
-
-        {/* Clear search button */}
-        {searchQuery && (
-          <div className="mb-4">
-            <button
-              onClick={() => {
-                const { clearSearch } = useSearch();
-                clearSearch();
-              }}
-              className="text-sm text-blue-600 hover:text-blue-800 hover:underline"
-            >
-              Clear search
-            </button>
+          <div className="text-sm text-gray-600">
+            Showing {filteredArticles.length}{" "}
+            {filteredArticles.length === 1 ? "article" : "articles"}
+            {searchQuery && ` for "${searchQuery}"`}
           </div>
-        )}
+        </div>
 
         {/* Articles Table - Classic Wikipedia style */}
         <div className="border border-gray-300 bg-white">
@@ -100,7 +83,7 @@ const AdminPageContent = () => {
                     colSpan={4}
                     className="px-4 py-8 text-center text-gray-500"
                   >
-                    {searchQuery 
+                    {searchQuery
                       ? `No articles found for "${searchQuery}"`
                       : "No articles found"}
                   </td>
@@ -157,18 +140,20 @@ const AdminPageContent = () => {
 // Wrap in Suspense for useSearch
 const AdminPage = () => {
   return (
-    <Suspense fallback={
-      <div className="min-h-screen bg-white p-6">
-        <div className="animate-pulse">
-          <div className="h-4 bg-gray-200 rounded w-1/4 mb-4"></div>
-          <div className="h-10 bg-gray-200 rounded mb-6"></div>
-          <div className="space-y-3">
-            <div className="h-4 bg-gray-200 rounded"></div>
-            <div className="h-4 bg-gray-200 rounded"></div>
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-white p-6">
+          <div className="animate-pulse">
+            <div className="h-4 bg-gray-200 rounded w-1/4 mb-4"></div>
+            <div className="h-10 bg-gray-200 rounded mb-6"></div>
+            <div className="space-y-3">
+              <div className="h-4 bg-gray-200 rounded"></div>
+              <div className="h-4 bg-gray-200 rounded"></div>
+            </div>
           </div>
         </div>
-      </div>
-    }>
+      }
+    >
       <AdminPageContent />
     </Suspense>
   );
