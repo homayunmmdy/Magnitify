@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { ContainerProvider } from "../context/ContainerContext";
 import "./globals.css";
 import MainProvider from "../provider/MainProvider";
+import { RTL_LANGS } from "../config/Constants";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,9 +39,10 @@ export default async function RootLayout({ children, params }: Props) {
     notFound();
   }
   setRequestLocale(locale);
+  const direction = RTL_LANGS.includes(locale) ? 'rtl' : 'ltr';
   return (
     <MainProvider>
-      <html lang={locale}>
+      <html lang={locale} dir={direction}>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
