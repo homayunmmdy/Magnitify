@@ -2,13 +2,20 @@
 import useFetch from "@/app/hooks/useFetch";
 import { PostsCashType } from "@/app/types/DataTypes";
 import { Link } from "@/i18n/navigation";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const AdminPage = () => {
   const { data } = useFetch("article", "/api/posts");
-  const [searchQuery, setSearchQuery] = useState("");
-const router = useRouter();
+
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  // get search query from the url
+  const urlSearchQuery = searchParams.get("search") || "";
+  const [searchQuery, setSearchQuery] = useState(urlSearchQuery);
+
   // Filter articles based on search query
   const filteredArticles =
     data?.filter((post: PostsCashType) => {
@@ -19,25 +26,44 @@ const router = useRouter();
       );
     }) || [];
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const params = new URLSearchParams(searchParams.toString());
+
+      if (searchQuery) {
+        params.set("search", searchQuery);
+      } else {
+        params.delete("search");
+      }
+
+      router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, [searchQuery, pathname, router, searchParams]);
+
+  // Update local state when URL changes
+  useEffect(() => {
+    setSearchQuery(urlSearchQuery);
+  }, [urlSearchQuery]);
+
   const handleDelete = async (id: string) => {
     if (confirm("Are you sure you want to delete this article?")) {
       console.log("Delete article:", id);
-       try {
-            const res = await fetch(`/api/posts/${id}`, {
-               method: 'DELETE',
-            });
-            if (res.ok) {
-               router.refresh();
-            } else {
-               console.error('Error deleting item:', res.statusText);
-            }
-         } catch (error) {
-            console.error('Error deleting item:', error);
-         }
+      try {
+        const res = await fetch(`/api/posts/${id}`, {
+          method: "DELETE",
+        });
+        if (res.ok) {
+          router.refresh();
+        } else {
+          console.error("Error deleting item:", res.statusText);
+        }
+      } catch (error) {
+        console.error("Error deleting item:", error);
+      }
     }
   };
-
-
 
   return (
     <div className="min-h-screen bg-white">
