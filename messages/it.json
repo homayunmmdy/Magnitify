@@ -1,6 +1,11 @@
 {
   "main": {
-    "name": "Ciao",
-    "slog": "Forniscono piacere con desiderio e dentro. Cercava di scappare, come se volesse essere accettato come un esercizio. Nell'ammorbidirli, o nel ripudiarli, e solo a partire da questo."
+    "name": "AFGHANPEDIA",
+    "welcome_to": "Welcome to",
+    "slog": "The Free Encyclopedia",
+    "github": "Github",
+    "create_account": "Create Account",
+    "login": "login",
+    "search": "Search"
   }
 }

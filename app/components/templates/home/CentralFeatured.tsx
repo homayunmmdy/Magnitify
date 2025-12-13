@@ -119,11 +119,11 @@ const topLanguages: topLanguagesType[] = [
     posts: "post",
   },
   {
-    title: "Polski",
-    code: "pl",
+    title: "پښتو",
+    code: "ps",
     articles: 0,
     direction: "rtl",
     position: "top-[80%] left-[60%]",
-    posts: "posty",
+    posts: "پوسټونه",
   },
 ];

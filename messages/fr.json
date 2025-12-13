@@ -1,6 +1,11 @@
 {
   "main": {
-    "name": "Bonjour",
-    "slog": "Provident cupiditate voluptatem et in. Quaerat fugiat ut supposenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi."
+    "name": "AFGHANPEDIA",
+    "welcome_to": "Welcome to",
+    "slog": "The Free Encyclopedia",
+    "github": "Github",
+    "create_account": "Create Account",
+    "login": "login",
+    "search": "Search"
   }
 }
