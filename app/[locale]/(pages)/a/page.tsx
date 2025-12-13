@@ -2,21 +2,17 @@
 import useFetch from "@/app/hooks/useFetch";
 import { PostsCashType } from "@/app/types/DataTypes";
 import { Link } from "@/i18n/navigation";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useSearch } from "@/app/context/SearchContext";
+import { Suspense } from "react";
 
-const AdminPage = () => {
-  const { data } = useFetch("article", "/api/posts");
-
-  const searchParams = useSearchParams();
+const AdminPageContent = () => {
+  const { searchQuery } = useSearch();
   const router = useRouter();
-  const pathname = usePathname();
-
-  // get search query from the url
-  const urlSearchQuery = searchParams.get("search") || "";
-  const [searchQuery, setSearchQuery] = useState(urlSearchQuery);
-
-  // Filter articles based on search query
+  
+  const { data } = useFetch("article", "/api/posts");
+  
+  // Filter articles based on search query from context
   const filteredArticles =
     data?.filter((post: PostsCashType) => {
       const query = searchQuery.toLowerCase();
@@ -26,64 +22,31 @@ const AdminPage = () => {
       );
     }) || [];
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const params = new URLSearchParams(searchParams.toString());
-
-      if (searchQuery) {
-        params.set("search", searchQuery);
-      } else {
-        params.delete("search");
-      }
-
-      router.replace(`${pathname}?${params.toString()}`, { scroll: false });
-    }, 300);
-
-    return () => clearTimeout(timer);
-  }, [searchQuery, pathname, router, searchParams]);
-
-  // Update local state when URL changes
-  useEffect(() => {
-    setSearchQuery(urlSearchQuery);
-  }, [urlSearchQuery]);
-
   const handleDelete = async (id: string) => {
     if (confirm("Are you sure you want to delete this article?")) {
       console.log("Delete article:", id);
       try {
         const res = await fetch(`/api/posts/${id}`, {
-          method: "DELETE",
+          method: 'DELETE',
         });
         if (res.ok) {
           router.refresh();
         } else {
-          console.error("Error deleting item:", res.statusText);
+          console.error('Error deleting item:', res.statusText);
         }
       } catch (error) {
-        console.error("Error deleting item:", error);
+        console.error('Error deleting item:', error);
       }
     }
   };
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header - Wikipedia style */}
-
+      {/* Search indicator removed - now using header search */}
+      
       <div>
-        {/* Search and Add Section */}
-        <div className="mb-6 flex gap-4 items-end">
-          <div className="flex-1">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Search articles
-            </label>
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search by title or body ..."
-              className="w-full px-3 py-2 border border-gray-300 rounded bg-white text-black focus:outline-none focus:ring-1 focus:ring-blue-500"
-            />
-          </div>
+        {/* Search and Add Section - Removed search input */}
+        <div className="mb-6 flex gap-4 items-end justify-end">
           <Link
             href="/a/new"
             className="font-bold cursor-pointer px-3 bg-[#f8f9fa] text-[#202122] border border-[#72777d]"
@@ -96,7 +59,23 @@ const AdminPage = () => {
         <div className="text-sm text-gray-600 mb-4">
           Showing {filteredArticles.length}{" "}
           {filteredArticles.length === 1 ? "article" : "articles"}
+          {searchQuery && ` for "${searchQuery}"`}
         </div>
+
+        {/* Clear search button */}
+        {searchQuery && (
+          <div className="mb-4">
+            <button
+              onClick={() => {
+                const { clearSearch } = useSearch();
+                clearSearch();
+              }}
+              className="text-sm text-blue-600 hover:text-blue-800 hover:underline"
+            >
+              Clear search
+            </button>
+          </div>
+        )}
 
         {/* Articles Table - Classic Wikipedia style */}
         <div className="border border-gray-300 bg-white">
@@ -106,7 +85,6 @@ const AdminPage = () => {
                 <th className="px-4 py-3 text-left font-semibold text-black">
                   Title
                 </th>
-
                 <th className="px-4 py-3 text-left font-semibold text-black">
                   Created
                 </th>
@@ -122,7 +100,9 @@ const AdminPage = () => {
                     colSpan={4}
                     className="px-4 py-8 text-center text-gray-500"
                   >
-                    No articles found
+                    {searchQuery 
+                      ? `No articles found for "${searchQuery}"`
+                      : "No articles found"}
                   </td>
                 </tr>
               ) : (
@@ -142,7 +122,6 @@ const AdminPage = () => {
                           {article.body?.substring(0, 100)}...
                         </div>
                       </td>
-
                       <td className="px-4 py-3 text-gray-700">
                         {new Date(article.createdAt).toLocaleDateString()}
                       </td>
@@ -172,6 +151,26 @@ const AdminPage = () => {
         </div>
       </div>
     </div>
+  );
+};
+
+// Wrap in Suspense for useSearch
+const AdminPage = () => {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-white p-6">
+        <div className="animate-pulse">
+          <div className="h-4 bg-gray-200 rounded w-1/4 mb-4"></div>
+          <div className="h-10 bg-gray-200 rounded mb-6"></div>
+          <div className="space-y-3">
+            <div className="h-4 bg-gray-200 rounded"></div>
+            <div className="h-4 bg-gray-200 rounded"></div>
+          </div>
+        </div>
+      </div>
+    }>
+      <AdminPageContent />
+    </Suspense>
   );
 };
 

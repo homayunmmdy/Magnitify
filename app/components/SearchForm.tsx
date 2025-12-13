@@ -1,14 +1,40 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useEffect, useRef } from "react";
 import SearchButton from "./SearchButton";
+import { useSearch } from "@/app/context/SearchContext";
+import { usePathname, useRouter } from "next/navigation";
 
 const SearchForm = () => {
   const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false);
+  const { searchQuery, setSearchQuery } = useSearch();
+  const [localSearch, setLocalSearch] = useState(searchQuery);
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  const router = useRouter();
+  const pathname = usePathname();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const trimmedSearch = localSearch.trim();
+    
+    if (!trimmedSearch) return;
+    
+    // Check if we're already on admin page or an admin-related page
+    const isOnAdminPage = pathname.startsWith('/a') || pathname.startsWith('/a/');
+    
+    if (isOnAdminPage) {
+      // If already on admin page, just update the search
+      setSearchQuery(trimmedSearch);
+    } else {
+      // If outside admin page, redirect to admin with search query
+      router.push(`/a?search=${encodeURIComponent(trimmedSearch)}`);
+    }
+    
+    // Close mobile search after submission
+    if (isMobileSearchOpen) {
+      setIsMobileSearchOpen(false);
+    }
   };
 
   const handleMobileSearchClick = () => {
@@ -18,6 +44,18 @@ const SearchForm = () => {
   const handleMobileSearchClose = () => {
     setIsMobileSearchOpen(false);
   };
+
+  // Focus search input when mobile search opens
+  useEffect(() => {
+    if (isMobileSearchOpen && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [isMobileSearchOpen]);
+
+  // Sync local search with global search
+  useEffect(() => {
+    setLocalSearch(searchQuery);
+  }, [searchQuery]);
 
   const t = useTranslations("main");
 
@@ -67,13 +105,21 @@ const SearchForm = () => {
               />
             </svg>
           </button>
-          <SearchButton className="flex w-full" onSubmit={handleSubmit} />
+          <SearchButton 
+            className="flex w-full" 
+            onSubmit={handleSubmit}
+            inputRef={searchInputRef}
+            value={localSearch}
+            onChange={setLocalSearch}
+          />
         </div>
       )}
       {/* Desktop Search Form */}
       <SearchButton
         className="ml-4 hidden md:flex w-[474px]"
         onSubmit={handleSubmit}
+        value={localSearch}
+        onChange={setLocalSearch}
       />
     </>
   );
