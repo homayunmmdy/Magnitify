@@ -10,6 +10,8 @@
     "appearance": "ظاهر",
     "width": "عرض",
     "standard": "استاندارد",
-    "wide": "عریض"
+    "wide": "عریض",
+    "loading": "در حال بارگذاری",
+    "from_the_news": "از میان خبرها"
   }
 }

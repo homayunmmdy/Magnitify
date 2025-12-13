@@ -10,6 +10,8 @@
     "appearance": "Appearance",
     "width": "Width",
     "standard": "Standard",
-    "wide": "Wide"
+    "wide": "Wide",
+    "loading": "Loading",
+    "from_the_news": "From the news"
   }
 }

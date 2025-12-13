@@ -1,5 +1,6 @@
 "use client";
 import DOMPurify from "isomorphic-dompurify";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import useFetch from "../hooks/useFetch";
@@ -8,6 +9,7 @@ import ContentWrapper from "./ContentWrapper";
 
 const FullPost = () => {
   const { data } = useFetch("article", "/api/posts");
+  const t = useTranslations("main");
   const [randomPost, setRandomPost] = useState<PostsCashType | null>(null);
 
   useEffect(() => {
@@ -21,8 +23,8 @@ const FullPost = () => {
 
   if (!randomPost) {
     return (
-      <ContentWrapper title="از میان خبرها">
-        <p>در حال بارگذاری...</p>
+      <ContentWrapper title={t("from_the_news")}>
+        <p>{t("loading")}...</p>
       </ContentWrapper>
     );
   }
@@ -30,7 +32,7 @@ const FullPost = () => {
   const PostBody = DOMPurify.sanitize(randomPost.body);
 
   return (
-    <ContentWrapper title="از میان خبرها">
+    <ContentWrapper title={t("from_the_news")}>
       <div key={randomPost._id}>
         <Image
           className="w-1/3 m-2.5 mr-4 mb-2 h-auto float-left"
