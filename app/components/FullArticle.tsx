@@ -42,7 +42,6 @@ const FullPost = () => {
           alt={randomPost.title}
         />
         <p>
-          <b>{randomPost.title}</b>
           <div dangerouslySetInnerHTML={{ __html: PostBody }} />
         </p>
       </div>
