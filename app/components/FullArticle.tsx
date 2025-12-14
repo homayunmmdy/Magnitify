@@ -34,13 +34,15 @@ const FullPost = () => {
   return (
     <ContentWrapper title={t("from_the_news")}>
       <div key={randomPost._id}>
-        <Image
-          className="w-1/3 m-2.5 mr-4 mb-2 h-auto float-left"
-          src={randomPost.imgurl}
-          width={124}
-          height={124}
-          alt={randomPost.title}
-        />
+        {randomPost.imgurl && (
+          <Image
+            className="w-1/3 m-2.5 mr-4 mb-2 h-auto float-left"
+            src={randomPost.imgurl}
+            width={124}
+            height={124}
+            alt={randomPost.title}
+          />
+        )}
         <p>
           <div dangerouslySetInnerHTML={{ __html: PostBody }} />
         </p>
