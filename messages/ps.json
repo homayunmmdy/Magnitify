@@ -1,11 +1,18 @@
 {
   "main": {
-    "name": "AFGHANPEDIA",
-    "welcome_to": "Welcome to",
-    "slog": "The Free Encyclopedia",
-    "github": "Github",
-    "create_account": "Create Account",
-    "login": "login",
-    "search": "Search"
+    "name": "افغانپېډیا",
+    "welcome_to": "ته ښه راغلې",
+    "slog": "وړیا پوهنغونډ",
+    "github": "ګیتوب",
+    "create_account": "ګڼون جوړ کړئ",
+    "login": "ننوځئ",
+    "search": "پلټنه",
+    "appearance": "بڼه",
+    "width": "سور",
+    "standard": "معیاري",
+    "wide": "پراخ",
+    "loading": "بار کېږي",
+    "from_the_news": "له خبرونو څخه",
+    "latest_news": "وروستي خبرونه"
   }
 }

@@ -1,11 +1,18 @@
 {
   "main": {
     "name": "AFGHANPEDIA",
-    "welcome_to": "Welcome to",
-    "slog": "The Free Encyclopedia",
+    "welcome_to": "Willkommen bei",
+    "slog": "Die freie Enzyklopädie",
     "github": "Github",
-    "create_account": "Create Account",
-    "login": "login",
-    "search": "Search"
+    "create_account": "Benutzerkonto erstellen",
+    "login": "Anmelden",
+    "search": "Suchen",
+    "appearance": "Erscheinungsbild",
+    "width": "Breite",
+    "standard": "Standard",
+    "wide": "Breit",
+    "loading": "Lädt",
+    "from_the_news": "Aus den Nachrichten",
+    "latest_news": "Neueste Nachrichten"
   }
 }
