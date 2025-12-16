@@ -1,13 +1,14 @@
 "use client";
 import Heading from "@tiptap/extension-heading";
+import Link from "@tiptap/extension-link";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import React, { useState } from "react";
+import Image from "next/image";
+import React, { useCallback, useState } from "react";
 import { BiChevronDown } from "react-icons/bi";
+import { FaLink } from "react-icons/fa";
 import { IoIosRedo, IoIosUndo } from "react-icons/io";
 import { TfiLayoutAccordionMerged } from "react-icons/tfi";
-import { FaLink } from "react-icons/fa";
-import Image from "next/image";
 import "./tiptap.css";
 
 interface TiptapEditorProps {
@@ -18,16 +19,21 @@ interface TiptapEditorProps {
   onImageUrlChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const TiptapEditor: React.FC<TiptapEditorProps> = ({ 
-  content, 
+const TiptapEditor: React.FC<TiptapEditorProps> = ({
+  content,
   onChange,
   formData,
   onTitleChange,
-  onImageUrlChange 
+  onImageUrlChange,
 }) => {
   const editor = useEditor({
     extensions: [
       StarterKit,
+      Link.configure({
+        openOnClick: false,
+        autolink: true,
+        defaultProtocol: "https",
+      }),
       Heading.configure({
         levels: [1, 2, 3, 4, 5, 6],
       }),
@@ -38,6 +44,31 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
     },
     immediatelyRender: false,
   });
+
+    const setLink = useCallback(() => {
+    const previousUrl = editor?.getAttributes("link").href;
+    const url = window.prompt("URL", previousUrl);
+
+    // cancelled
+    if (url === null) {
+      return;
+    }
+
+    // empty
+    if (url === "") {
+      editor?.chain().focus().extendMarkRange("link").unsetLink().run();
+
+      return;
+    }
+
+    // update link
+    editor
+      ?.chain()
+      .focus()
+      .extendMarkRange("link")
+      .setLink({ href: url })
+      .run();
+  }, [editor]);
 
   const canUndo = editor?.can().chain().focus().undo().run() || false;
   const canRedo = editor?.can().chain().focus().redo().run() || false;
@@ -90,6 +121,8 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
         editor.chain().focus().setParagraph().run();
     }
   };
+
+
 
   const blockTypeOptions = [
     { value: "p", label: "Paragraph", className: "text-base text-gray-700" },
@@ -170,9 +203,17 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
               <BiChevronDown size={16} />
             </div>
           </div>
+          <button
+            type="button"
+            onClick={setLink}
+            // className={editor.isActive("link") ? "is-active" : ""}
+            className="w-10 h-10 cursor-pointer place-items-center"
+          >
+            <FaLink />
+          </button>
         </div>
         <div className="flex w-2/5 justify-end relative">
-          <button 
+          <button
             className="w-10 h-10 cursor-pointer place-items-center"
             onClick={toggleDialogue}
             type="button"
@@ -186,7 +227,7 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
           >
             Publish
           </button>
-          
+
           {/* Dialogue positioned absolutely on the right side */}
           {dialogueOpen && (
             <div className="absolute top-full right-0 mt-1 z-10">
@@ -204,7 +245,7 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
                     placeholder="Enter title"
                   />
                 </div>
-                
+
                 {/* Image preview - Wikipedia style */}
                 <div className="mb-1 border border-[#a2a9b1] p-1 bg-[#f8f9fa]">
                   <div className="relative aspect-video w-full overflow-hidden">
@@ -218,7 +259,7 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
                     />
                   </div>
                 </div>
-                
+
                 {/* Image URL input - Wikipedia style */}
                 <div className="border border-[#a2a9b1] p-1 bg-[#f8f9fa]">
                   <div className="flex items-center">
@@ -241,7 +282,7 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
           )}
         </div>
       </div>
-      
+
       <EditorContent
         editor={editor}
         className="prose max-w-none"
