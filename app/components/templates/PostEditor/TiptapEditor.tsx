@@ -6,11 +6,11 @@ import StarterKit from "@tiptap/starter-kit";
 import Image from "next/image";
 import React, { useState } from "react";
 import { FaLink } from "react-icons/fa";
-import { IoIosRedo, IoIosUndo } from "react-icons/io";
 import { TfiLayoutAccordionMerged } from "react-icons/tfi";
 import "../../../[locale]/tiptap.css";
 import BlockTypeSelector from "./BlockTypeSelector";
 import LinkMenu from "./LinkMenu";
+import UndoRedoButtons from "./UndoRedoButtons";
 
 interface TiptapEditorProps {
   content: string;
@@ -46,9 +46,6 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
     immediatelyRender: false,
   });
 
-  const canUndo = editor?.can().chain().focus().undo().run() || false;
-  const canRedo = editor?.can().chain().focus().redo().run() || false;
-
   const [dialogueOpen, setDialogueOpen] = useState(false);
 
   const toggleDialogue = () => {
@@ -63,27 +60,7 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
     <div id="tiptap-style" className="relative">
       <div className="mb-2 flex items-center md:flex-nowrap shadow-[0_2px_1px_-1px_rgba(0,0,0,0.1)] justify-between flex-wrap gap-2  border-b border-[#c8ccd1]">
         <div className="flex w-3/5">
-          <button
-            onClick={() => editor.chain().focus().undo().run()}
-            disabled={!canUndo}
-            type="button"
-            className={`w-10 h-10 cursor-pointer place-items-center ${
-              !canUndo ? "opacity-[0.3]" : "opacity-100"
-            }`}
-          >
-            <IoIosUndo />
-          </button>
-          <button
-            onClick={() => editor.chain().focus().redo().run()}
-            disabled={!canRedo}
-            type="button"
-            className={`w-10 h-10 cursor-pointer place-items-center ${
-              !canRedo ? "opacity-[0.3]" : "opacity-100"
-            }`}
-          >
-            <IoIosRedo />
-          </button>
-
+          <UndoRedoButtons editor={editor} />
           <BlockTypeSelector editor={editor} />
           <LinkMenu editor={editor} />
         </div>
