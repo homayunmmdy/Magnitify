@@ -65,7 +65,7 @@ const LinkMenu: React.FC<EditorType> = ({ editor }) => {
         // Treat as slug-only - need ID and slug
         // In a real implementation, you'd need to look up the post ID
         // For now, we'll prompt or use a placeholder
-        finalUrl = `/posts/[id]/${finalUrl.replace(/^\//, '')}`;
+        finalUrl = `/posts/${finalUrl.replace(/^\//, '')}`;
       }
     } else {
       // External links - ensure protocol
