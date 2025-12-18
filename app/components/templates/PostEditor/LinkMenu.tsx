@@ -1,13 +1,9 @@
-// components/LinkMenu.tsx
-import { Editor } from "@tiptap/react";
+import { EditorType } from "@/app/types/PropsTypes";
 import React, { useCallback } from "react";
 import { FaLink } from "react-icons/fa";
 
-interface LinkMenuProps {
-  editor: Editor | null;
-}
 
-const LinkMenu: React.FC<LinkMenuProps> = ({ editor }) => {
+const LinkMenu: React.FC<EditorType> = ({ editor }) => {
   const setLink = useCallback(() => {
     const previousUrl = editor?.getAttributes("link").href;
     const url = window.prompt("URL", previousUrl);
