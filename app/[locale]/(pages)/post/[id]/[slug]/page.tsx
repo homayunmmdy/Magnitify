@@ -24,7 +24,9 @@ const PostPage = () => {
     }
   }, [post, slug, router]);
 
-  return <div>PostPage</div>;
+  return <div>
+    <h1 className="text-2xl font-libertine border-b border-[#a2a9b1] pb-1">{post.title}</h1>
+  </div>;
 };
 
 export default PostPage;
