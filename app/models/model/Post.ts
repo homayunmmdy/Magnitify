@@ -4,6 +4,9 @@ import { defaultSchemaOptions } from "../schemaOptions"; // Importing default sc
 
 const postSchema = new Schema(
   {
+    lang: {
+      type: String,
+    },
     title: {
       type: String,
       trim: true,

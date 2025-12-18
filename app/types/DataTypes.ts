@@ -12,6 +12,7 @@ export type FieldsType = {
 };
 
 export type PostsCashType = {
+   lang?:string;
    title: string;
    imgurl: string;
    fields?: FieldsType[];

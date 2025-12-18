@@ -1,15 +1,17 @@
 "use client";
 import { PostsCashType } from "@/app/types/DataTypes";
 import FormHandler from "@/app/util/FormHandler";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import TiptapEditor from "./TiptapEditor";
 
 const EditPostForm = ({ post }: { post: PostsCashType }) => {
   const EDIT_MODE = post._id !== "new";
   const router = useRouter();
+  const pathname = usePathname();
 
   const startingTicketData = {
+    lang: pathname.slice(1,3),
     title: EDIT_MODE ? post.title : "",
     body: EDIT_MODE ? post.body : "",
     imgurl: EDIT_MODE ? post.imgurl : "",
