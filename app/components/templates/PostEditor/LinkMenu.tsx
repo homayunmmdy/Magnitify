@@ -21,7 +21,7 @@ const LinkMenu: React.FC<EditorType> = ({ editor }) => {
     if (previousUrl) {
       setLinkValue(previousUrl);
       // Check if it's an internal link
-      setLinkType(previousUrl.startsWith("/posts/") || previousUrl.startsWith("#") ? "internal" : "external");
+      setLinkType(previousUrl.startsWith("/post/") || previousUrl.startsWith("#") ? "internal" : "external");
     }
     
     if (selectedText) {
@@ -49,23 +49,23 @@ const LinkMenu: React.FC<EditorType> = ({ editor }) => {
       if (finalUrl.startsWith("#")) {
         // Anchor link - keep as is
         // e.g., #section-name
-      } else if (finalUrl.match(/^\/posts\/\d+\/[^\/]+$/)) {
+      } else if (finalUrl.match(/^\/post\/\d+\/[^\/]+$/)) {
         // Already a complete post URL - keep as is
-        // e.g., /posts/123/slug-name
+        // e.g., /post/123/slug-name
       } else if (finalUrl.match(/^\d+\/[^\/]+$/)) {
-        // Has ID and slug but missing /posts/ prefix
+        // Has ID and slug but missing /post/ prefix
         // e.g., 123/slug-name
-        finalUrl = `/posts/${finalUrl}`;
+        finalUrl = `/post/${finalUrl}`;
       } else if (finalUrl.match(/^\d+$/)) {
         // Just an ID - we need a slug too
         // In a real app, you might want to fetch the slug from the API
         // For now, we'll assume the slug is the same as ID or empty
-        finalUrl = `/posts/${finalUrl}/`;
+        finalUrl = `/post/${finalUrl}/`;
       } else {
         // Treat as slug-only - need ID and slug
         // In a real implementation, you'd need to look up the post ID
         // For now, we'll prompt or use a placeholder
-        finalUrl = `/posts/${finalUrl.replace(/^\//, '')}`;
+        finalUrl = `/post/${finalUrl.replace(/^\//, '')}`;
       }
     } else {
       // External links - ensure protocol
@@ -105,8 +105,8 @@ const LinkMenu: React.FC<EditorType> = ({ editor }) => {
   // Helper function to extract the display value for the input
   const getDisplayValue = useCallback(() => {
     if (linkType === "internal") {
-      // Remove /posts/ prefix and show just ID/slug or anchor
-      return linkValue.replace(/^\/posts\//, "").replace(/^#/, "");
+      // Remove /post/ prefix and show just ID/slug or anchor
+      return linkValue.replace(/^\/post\//, "").replace(/^#/, "");
     } else {
       // Remove https:// prefix for external links
       return linkValue.replace(/^https?:\/\//, "");
@@ -188,7 +188,7 @@ const LinkMenu: React.FC<EditorType> = ({ editor }) => {
             
             <div className="mt-2 text-xs text-gray-500">
               {linkType === "internal" 
-                ? "Links to other posts (e.g., /posts/123/article-slug) or anchors (e.g., #section)" 
+                ? "Links to other posts (e.g., /post/123/article-slug) or anchors (e.g., #section)" 
                 : "Links to external websites (e.g., https://example.com)"}
             </div>
           </div>
@@ -205,7 +205,7 @@ const LinkMenu: React.FC<EditorType> = ({ editor }) => {
                 </span>
               ) : !linkValue.startsWith("#") ? (
                 <span className="bg-gray-100 px-3 py-2 text-sm text-gray-500 border border-r-0 border-gray-300 rounded-l">
-                  /posts/
+                  /post/
                 </span>
               ) : (
                 <span className="bg-gray-100 px-3 py-2 text-sm text-gray-500 border border-r-0 border-gray-300 rounded-l">
