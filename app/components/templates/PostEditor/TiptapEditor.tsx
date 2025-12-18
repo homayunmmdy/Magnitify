@@ -9,7 +9,8 @@ import { BiChevronDown } from "react-icons/bi";
 import { FaLink } from "react-icons/fa";
 import { IoIosRedo, IoIosUndo } from "react-icons/io";
 import { TfiLayoutAccordionMerged } from "react-icons/tfi";
-import "./tiptap.css";
+import "../../../[locale]/tiptap.css";
+import LinkMenu from "./LinkMenu";
 
 interface TiptapEditorProps {
   content: string;
@@ -44,31 +45,6 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
     },
     immediatelyRender: false,
   });
-
-    const setLink = useCallback(() => {
-    const previousUrl = editor?.getAttributes("link").href;
-    const url = window.prompt("URL", previousUrl);
-
-    // cancelled
-    if (url === null) {
-      return;
-    }
-
-    // empty
-    if (url === "") {
-      editor?.chain().focus().extendMarkRange("link").unsetLink().run();
-
-      return;
-    }
-
-    // update link
-    editor
-      ?.chain()
-      .focus()
-      .extendMarkRange("link")
-      .setLink({ href: url })
-      .run();
-  }, [editor]);
 
   const canUndo = editor?.can().chain().focus().undo().run() || false;
   const canRedo = editor?.can().chain().focus().redo().run() || false;
@@ -121,8 +97,6 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
         editor.chain().focus().setParagraph().run();
     }
   };
-
-
 
   const blockTypeOptions = [
     { value: "p", label: "Paragraph", className: "text-base text-gray-700" },
@@ -203,14 +177,7 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({
               <BiChevronDown size={16} />
             </div>
           </div>
-          <button
-            type="button"
-            onClick={setLink}
-            // className={editor.isActive("link") ? "is-active" : ""}
-            className="w-10 h-10 cursor-pointer place-items-center"
-          >
-            <FaLink />
-          </button>
+          <LinkMenu editor={editor} />
         </div>
         <div className="flex w-2/5 justify-end relative">
           <button
