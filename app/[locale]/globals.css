@@ -14,4 +14,7 @@
   .link {
     @apply text-[#36c] hover:underline visited:text-[#6a60b0];
   }
+  .show-link a {
+    @apply text-[#36c] hover:underline visited:text-[#6a60b0];
+  }
 }

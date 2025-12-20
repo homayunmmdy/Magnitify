@@ -33,7 +33,7 @@ const FullPost = () => {
 
   return (
     <ContentWrapper title={t("from_the_news")}>
-      <div key={randomPost._id}>
+      <div className="show-link" key={randomPost._id}>
         {randomPost.imgurl && (
           <Image
             className="w-1/3 m-2.5 mr-4 mb-2 h-auto float-left"
