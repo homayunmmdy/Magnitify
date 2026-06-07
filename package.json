@@ -22,6 +22,7 @@
     "mongoose": "^8.12.1",
     "next": "16.0.10",
     "next-intl": "^4.4.0",
+    "next-mdx-remote": "^5.0.0",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-icons": "^5.5.0"
