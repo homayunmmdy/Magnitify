@@ -20,7 +20,7 @@
     "isomorphic-dompurify": "^2.16.0",
     "mongodb": "^6.14.2",
     "mongoose": "^8.12.1",
-    "next": "16.0.10",
+    "next": "16.2.7",
     "next-intl": "^4.4.0",
     "next-mdx-remote": "^5.0.0",
     "react": "19.2.0",
