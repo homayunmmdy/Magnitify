@@ -33,71 +33,138 @@ h1 {
   margin-bottom: 2em;
   font-style: italic;
 }
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #54595d;
+  font-style: italic;
+}
 .project-card {
   background-color: #f8f9fa;
   border: 1px solid #a2a9b1;
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 25px;
+  margin-bottom: 30px;
   border-radius: 2px;
 }
-.project-card h2 {
-  font-size: 1.8em;
-  font-weight: normal;
-  color: #0645ad;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #eaecf0;
-  padding-bottom: 5px;
-}
-.project-meta {
+/* GitHub Stats Bar */
+.github-stats {
   display: flex;
-  gap: 20px;
-  margin: 15px 0;
-  font-size: 0.95em;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 12px 15px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5da;
+  border-radius: 6px;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 0.9em;
 }
-.meta-item {
+.stat-item {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
+  color: #586069;
 }
-.label {
-  font-weight: bold;
-  color: #54595d;
+.stat-item strong {
+  color: #24292e;
 }
-.score {
-  display: inline-block;
-  padding: 4px 12px;
-  border-radius: 3px;
-  font-weight: bold;
-  color: #fff;
+.stat-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  background-color: #f1f8ff;
+  color: #0366d6;
+  border-radius: 12px;
+  font-size: 0.85em;
+  font-weight: 600;
 }
-.score-high {
-  background-color: #00af89;
-}
-.score-medium {
-  background-color: #ffcc33;
-  color: #000;
-}
-.score-low {
-  background-color: #d33;
-}
-.description {
-  margin: 15px 0;
+/* Rendered Markdown Styling (Wikipedia-like) */
+.markdown-content {
+  font-size: 1.05em;
   line-height: 1.7;
 }
-.tags {
-  margin-top: 15px;
+.markdown-content h2 {
+  font-size: 1.5em;
+  font-weight: normal;
+  color: #000;
+  border-bottom: 1px solid #a2a9b1;
+  padding-bottom: 0.3em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
 }
-.tag {
-  display: inline-block;
-  background-color: #eaecf0;
-  padding: 3px 10px;
-  margin: 3px 5px 3px 0;
-  border-radius: 2px;
+.markdown-content h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #000;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+}
+.markdown-content p {
+  margin-bottom: 1em;
+}
+.markdown-content ul,
+.markdown-content ol {
+  margin-left: 2em;
+  margin-bottom: 1em;
+}
+.markdown-content li {
+  margin-bottom: 0.3em;
+}
+.markdown-content code {
+  background-color: #f8f9fa;
+  border: 1px solid #eaecf0;
+  border-radius: 3px;
+  padding: 2px 6px;
+  font-family: monospace;
   font-size: 0.9em;
-  color: #202122;
+}
+.markdown-content pre {
+  background-color: #f6f8fa;
+  border: 1px solid #d1d5da;
+  border-radius: 6px;
+  padding: 16px;
+  overflow-x: auto;
+  margin-bottom: 1em;
+}
+.markdown-content pre code {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+.markdown-content blockquote {
+  border-left: 4px solid #a2a9b1;
+  padding-left: 15px;
+  color: #54595d;
+  font-style: italic;
+  margin: 1em 0;
+  background-color: #f8f9fa;
+  padding: 10px 15px;
+}
+.markdown-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+  font-size: 0.95em;
+}
+.markdown-content th,
+.markdown-content td {
+  border: 1px solid #a2a9b1;
+  padding: 8px 12px;
+  text-align: left;
+}
+.markdown-content th {
+  background-color: #eaecf0;
+  font-weight: bold;
+}
+/* AI Analysis Highlight */
+.markdown-content hr {
+  border: 0;
+  border-top: 2px solid #a2a9b1;
+  margin: 2em 0;
 }
 .links {
-  margin-top: 15px;
+  margin-top: 20px;
   padding-top: 15px;
   border-top: 1px solid #eaecf0;
 }
@@ -105,6 +172,7 @@ h1 {
   color: #0645ad;
   text-decoration: none;
   margin-right: 15px;
+  font-weight: bold;
 }
 .links a:hover {
   text-decoration: underline;

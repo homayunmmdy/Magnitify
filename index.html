@@ -5,15 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Afghan Open Source Projects</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- Marked.js for parsing Markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- DOMPurify for sanitizing rendered HTML -->
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
   </head>
   <body>
     <div id="content">
       <h1>Afghan Open Source Projects</h1>
       <p class="subtitle">
-        A curated list of open source projects from Afghanistan
+        A curated list of open source projects from Afghanistan, with live
+        GitHub metrics and AI-powered analysis.
       </p>
-      <div id="projects-list"></div>
+      <div id="projects-list">
+        <p class="loading">Loading projects and fetching live GitHub data...</p>
+      </div>
     </div>
-    <script src="./script.js"></script>
+
+    <script src="script.js"></script>
   </body>
 </html>

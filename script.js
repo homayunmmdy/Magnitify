@@ -1,86 +1,91 @@
-const projects = [
-  {
-    name: "AfghanLMS",
-    description:
-      "A learning management system designed for Afghan educational institutions. Supports multiple languages including Dari and Pashto.",
-    category: "Education",
-    language: "JavaScript",
-    license: "MIT",
-    score: 85,
-    tags: ["education", "lms", "multilingual"],
-    github: "https://github.com/example/afghanlms",
-    website: "https://afghanlms.example.com",
-  },
-  {
-    name: "Kabul Maps",
-    description:
-      "Open source mapping solution for Kabul with detailed local data and points of interest.",
-    category: "Geography",
-    language: "Python",
-    license: "GPL-3.0",
-    score: 72,
-    tags: ["maps", "gis", "kabul"],
-    github: "https://github.com/example/kabul-maps",
-    website: null,
-  },
-  {
-    name: "Dari NLP Toolkit",
-    description:
-      "Natural language processing tools for Dari language including tokenization, stemming, and sentiment analysis.",
-    category: "AI/ML",
-    language: "Python",
-    license: "Apache-2.0",
-    score: 91,
-    tags: ["nlp", "dari", "ai", "language-processing"],
-    github: "https://github.com/example/dari-nlp",
-    website: "https://dari-nlp.example.com",
-  },
-];
-function getScoreClass(score) {
-  if (score >= 80) return "score-high";
-  if (score >= 60) return "score-medium";
-  return "score-low";
-}
-function renderProjects() {
+async function loadProjects() {
   const container = document.getElementById("projects-list");
-  projects.forEach(project => {
-    const card = document.createElement('div');
-    card.className = 'project-card';
-    
-    card.innerHTML = `
-        <h2>${project.name}</h2>
-        <div class="project-meta">
-            <div class="meta-item">
-                <span class="label">Category:</span>
-                <span>${project.category}</span>
+  try {
+    // 1. Fetch the registry of projects
+    const registryResponse = await fetch("registry.json");
+    if (!registryResponse.ok) throw new Error("Failed to load registry.json");
+    const registry = await registryResponse.json();
+
+    container.innerHTML = ""; // Clear loading message
+
+    // 2. Process each project
+    for (const item of registry) {
+      const card = document.createElement("div");
+      card.className = "project-card";
+
+      // Fetch live GitHub data
+      const ghResponse = await fetch(
+        `https://api.github.com/repos/${item.owner}/${item.repo}`,
+      );
+      if (!ghResponse.ok) throw new Error(`GitHub API failed for ${item.repo}`);
+      const ghData = await ghResponse.json();
+      console.log(ghData)
+
+      // Fetch local Markdown report
+      const mdResponse = await fetch(item.reportFile);
+      if (!mdResponse.ok)
+        throw new Error(`Failed to load report: ${item.reportFile}`);
+      const mdText = await mdResponse.text();
+
+      // Parse and sanitize Markdown
+      const rawHtml = marked.parse(mdText);
+      const cleanHtml = DOMPurify.sanitize(rawHtml);
+
+      // Format date
+      const updatedDate = new Date(ghData.updated_at).toLocaleDateString(
+        "en-US",
+        {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+        },
+      );
+
+      // Build the card HTML
+      card.innerHTML = `
+            <div class="github-stats">
+                <div class="stat-item">
+                    <span>⭐</span> <strong>${ghData.stargazers_count}</strong> Stars
+                </div>
+                <div class="stat-item">
+                    <span>🍴</span> <strong>${ghData.forks_count}</strong> Forks
+                </div>
+                <div class="stat-item">
+                    <span>📌</span> <strong>${ghData.language || "N/A"}</strong>
+                </div>
+                <div class="stat-item">
+                    <span>⚖️</span> <strong>${ghData.license ? ghData.license.spdx_id : "No License"}</strong>
+                </div>
+                <div class="stat-item">
+                    <span>🕒</span> Updated: ${updatedDate}
+                </div>
+                <div class="stat-item" style="margin-left: auto;">
+                    <span class="stat-badge">AI Score: 95/100</span>
+                </div>
             </div>
-            <div class="meta-item">
-                <span class="label">Language:</span>
-                <span>${project.language}</span>
+
+            <div class="markdown-content">
+                ${cleanHtml}
             </div>
-            <div class="meta-item">
-                <span class="label">License:</span>
-                <span>${project.license}</span>
+
+            <div class="links">
+                <a href="${ghData.html_url}" target="_blank">View on GitHub</a>
+                ${ghData.homepage ? `<a href="${ghData.homepage}" target="_blank">Live Website</a>` : ""}
             </div>
-            <div class="meta-item">
-                <span class="label">Score:</span>
-                <span class="score ${getScoreClass(project.score)}">${project.score}/100</span>
-            </div>
-        </div>
-        <div class="description">
-            ${project.description}
-        </div>
-        <div class="tags">
-            ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-        </div>
-        <div class="links">
-            <a href="${project.github}" target="_blank">GitHub Repository</a>
-            ${project.website ? `<a href="${project.website}" target="_blank">Website</a>` : ''}
-        </div>
+        `;
+
+      container.appendChild(card);
+    }
+  } catch (error) {
+    console.error("Error loading projects:", error);
+    container.innerHTML = `
+        <p style="color: #d33; padding: 20px; background: #fee; border: 1px solid #d33; border-radius: 4px;">
+            <strong>Error:</strong> Failed to load project data. <br>
+            <small>${error.message}</small><br>
+            <em>Note: GitHub API has a rate limit of 60 requests/hour for unauthenticated requests.</em>
+        </p>
     `;
-    
-    container.appendChild(card);
-});
+  }
 }
-// Initialize
-renderProjects();
+
+loadProjects();
