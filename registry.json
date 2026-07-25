@@ -8,5 +8,10 @@
     "owner": "ahmadullahmukhlis",
     "repo": "tax-system",
     "reportFile": "projects/tax-system.md"
+  },
+  {
+    "owner": "Sajjad-Matin",
+    "repo": "timetable-generator",
+    "reportFile": "projects/timetable-generator.md"
   }
 ]
